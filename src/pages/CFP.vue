@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div id="cfp" class="main-container">
+    
   </div>
 </template>
 
