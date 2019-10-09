@@ -36,6 +36,8 @@ export default class Banner extends Vue {
 
   public mounted () {
     this.measureSightSize();
+
+    window.addEventListener('resize', this.measureSightSize);
   }
 
   private measureSightSize () {
