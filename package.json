@@ -1,10 +1,10 @@
 {
-  "name": "webpage",
+  "name": "coscup-taigi2019",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && mv ./dist/taigi2019/* ./dist && rm -rf taigi2019",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -19,9 +19,11 @@
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-typescript": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "prerender-spa-plugin": "^3.4.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "typescript": "^3.4.3",
+    "vue-cli-plugin-prerender-spa": "^1.1.6",
     "vue-template-compiler": "^2.6.10"
   }
 }
