@@ -27,6 +27,7 @@
 
     h1.title,
     h2.subtitle,
+    h3,
     p.content {
       text-align: right;
       transform: translateX(-150px);
@@ -63,6 +64,11 @@
           transform: translateY(5pt);
         }
       }
+    }
+
+    h3 {
+      color: $tone;
+      margin: 0 5pt 1rem 0;
     }
 
     p.content {
