@@ -6,7 +6,7 @@
     width: 100%;
   }
 
-  width: 840px;
+  width: $spotlight-width;
   margin: 2rem;
   padding: 2rem;
   
@@ -18,5 +18,13 @@
     line-height: 1.6;
     letter-spacing: 1.5pt;
     color: $dark;
+  }
+
+  @media screen and (max-width: calc(#{$spotlight-width} + 2rem * 2)) {
+    width: auto;
+  }
+
+  @media screen and (max-width: 720px) {
+    margin: 0;
   }
 }

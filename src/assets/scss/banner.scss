@@ -8,6 +8,10 @@
     height: $banner-height;
     position: relative;
     background-color: $black;
+
+    @media screen and (max-width: 720px) {
+      align-items: flex-end;
+    }
   }
 
   &-bg {
@@ -25,12 +29,20 @@
     padding: 4rem;
     z-index: 1;
 
+    @media screen and (max-width: 720px) {
+      padding: 2rem;
+    }
+
     h1.title,
     h2.subtitle,
     h3,
     p.content {
       text-align: right;
       transform: translateX(-150px);
+
+      @media screen and (max-width: #{$spotlight-width}) {
+        transform: translateX(0);
+      }
     }
 
     h1.title {
@@ -46,6 +58,13 @@
           font-size: 10pt;
           margin-bottom: -10pt;
           transform: translateY(8pt);
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        span {
+          display: block;
+          margin: 1rem 0;
         }
       }
     }
@@ -80,6 +99,15 @@
       
       ruby {
         font-weight: 100;
+      }
+
+      @media screen and (max-width: #{$spotlight-width}) {
+        position: relative;
+        margin-top: 1rem;
+        top: auto;
+        right: auto;
+        text-align: right;
+        color: $white;
       }
     }
 
