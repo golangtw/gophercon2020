@@ -9,12 +9,17 @@
     </div>
     <header class="banner-header">
       <h1
-        class="title"
-        v-html="`COSCUP 2019 ${parser('來/Laí/台/Taí/講/Jiǎng/')}`"
+        class="title bold"
+        v-html="`COSCUP 2019 ${parser('來/Laí/台/Taí/講/Gàng/')}`"
       />
-      <h2 class="subtitle">
-        <ruby>來用台語講開源</ruby>
-      </h2>
+      <h2 
+        class="subtitle"
+        v-html="parser('來/Laí/用/Yòng/台/Taí/語/Gí/講/Gong/開/Kai/源/Yuán/')"
+      />
+      <p class="content">
+        <span class="date">2019/12/21</span>
+        <span class="place"><font-awesome-icon :icon="['fas', 'map-marker-alt']"/> 臺中科技大學</span>
+      </p>
     </header>
   </div>
 </template>

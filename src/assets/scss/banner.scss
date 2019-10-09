@@ -1,6 +1,10 @@
 .banner {
   &-container {
     @include ImgBgContainer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: $banner-height;
     position: relative;
     background-color: $black;
@@ -15,8 +19,56 @@
   }
 
   &-header {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    height: 100%;
+    padding: 4rem;
     z-index: 1;
+    color: $white;
+
+    h1.title,
+    h2.subtitle,
+    p.content {
+      text-align: right;
+    }
+
+    h1.title {
+      font-size: 36pt;
+      line-height: 1;
+
+      ruby {
+        letter-spacing: 3px;
+
+        rt {
+          font-size: 10pt;
+          margin-bottom: -8pt;
+        }
+      }
+    }
+
+    h2.subtitle {
+      font-size: 24pt;
+      line-height: 1;
+
+      ruby {
+        letter-spacing: 3px;
+
+        rt {
+          font-size: 8pt;
+          margin-bottom: -5pt;
+        }
+      }
+    }
+
+    p.content {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1.5rem;
+      line-height: 1.4;
+
+      span {
+        margin: 5pt 0;
+      }
+    }
   }
 }

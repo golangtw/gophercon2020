@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700.900');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700.900');
 
 h1,
 h2,
@@ -11,7 +11,7 @@ p,
 ul,
 li,
 span {
-  line-height: 1.4;
+  line-height: 1;
   font-family: Noto Sans TC, Din, Microsoft JhengHei, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
@@ -19,4 +19,13 @@ span {
 
 .bold {
   font-weight: 500;
+}
+
+ruby {
+  ruby-align: center;
+
+  rt {
+    letter-spacing: 0;
+    font-weight: 300;
+  }
 }
