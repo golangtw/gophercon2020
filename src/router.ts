@@ -11,12 +11,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home
     },
     {
       path: '/cfp',
-      name: 'cfp',
+      name: 'CFP',
       component: CFP
     }
   ]
