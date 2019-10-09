@@ -8,7 +8,10 @@
       />
     </div>
     <header class="banner-header">
-      <h1 class="title">COSCUP 2019 來台講</h1>
+      <h1
+        class="title"
+        v-html="`COSCUP 2019 ${parser('來/Laí/台/Taí/講/Jiǎng/')}`"
+      />
       <h2 class="subtitle">
         <ruby>來用台語講開源</ruby>
       </h2>
@@ -20,7 +23,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
-import { AppState } from '../store/types/app';
+import { AppState } from '@/store/types/app';
+import { pinYinParser } from '@/util/parser';
 import Sight from '@/components/Sight.vue';
 
 const namespace: string = 'app';
@@ -31,6 +35,8 @@ const namespace: string = 'app';
   }
 })
 export default class Banner extends Vue {
+  private parser = pinYinParser;
+
   @Action('setSight', { namespace }) private setSight: any;
   @Getter('sight', { namespace }) private sight: any;
 
