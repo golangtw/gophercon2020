@@ -8,7 +8,12 @@
       />
     </div>
     <header class="banner-header">
-      <h3 v-if="$route.name === 'CFP'">Call of Paper｜徵稿開催</h3>
+      <h3
+        v-if="$route.name === 'CFP'"
+        class="flag"
+      >
+        Call of Paper｜徵稿開催
+      </h3>
       <h1
         class="title bold"
         v-html="`COSCUP 2019 ${parser('來/Laí/台/Taí/講/Gàng/')}`"
@@ -17,6 +22,12 @@
         class="subtitle"
         v-html="parser('來/Laí/用/Yòng/台/Taí/語/Gí/講/Gong/開/Kai/源/Yuán/')"
       />
+      <h2
+        v-if="$route.name === 'CFP'"
+        class="button"
+      >
+        <a v-html="parser('我/Wǒ/要/Yaò/投/Toú/稿/Gaǒ/')"></a>
+      </h2>
       <p class="content">
         <span class="date">Dec. 21, 2019</span>
         <span class="place"><font-awesome-icon :icon="['fas', 'map-marker-alt']"/> 臺中科技大學</span>
