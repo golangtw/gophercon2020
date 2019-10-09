@@ -1,5 +1,5 @@
 <template>
-  <dev id="cfp" class="main-container">
+  <div id="cfp" class="main-container">
     <Banner/>
     <main class="spotlight-container">
       <div class="spotlight">
@@ -9,7 +9,7 @@
         <p>開發者 (Coders)、使用者 (Users) 和推廣者 (Promoters) 是讓自由及開放原始碼軟體發光發熱的三大支柱，這個研討會就是專為這三種人舉辦的：你可以是 A 軟體的開發者、B 軟體的推廣者、C 軟體的使用者，不論你是已經踏入自由及開放原始碼軟體領域，還是一直站在門口不知如何入門，歡迎你來參加 COSCUP — Conference for Open Source Coders, Users and Promoters!</p>
       </div>
     </main>
-  </dev>
+  </div>
 </template>
 
 <script lang="ts">

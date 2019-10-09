@@ -3,7 +3,7 @@
     <nav class="menu">
       <ul>
         <li>
-          <router-link></router-link>
+          <router-link to=""></router-link>
         </li>
       </ul>
     </nav>
