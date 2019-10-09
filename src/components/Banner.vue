@@ -17,7 +17,7 @@
         v-html="parser('來/Laí/用/Yòng/台/Taí/語/Gí/講/Gong/開/Kai/源/Yuán/')"
       />
       <p class="content">
-        <span class="date">2019/12/21</span>
+        <span class="date">Dec. 21, 2019</span>
         <span class="place"><font-awesome-icon :icon="['fas', 'map-marker-alt']"/> 臺中科技大學</span>
       </p>
     </header>
