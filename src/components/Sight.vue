@@ -49,21 +49,21 @@
         />
     </g>
     <g stroke="rgb(59, 156, 96)"
-      stroke-opacity="0.08"
+      stroke-opacity="0.2"
       fill="none"
       >
       <path v-for="dy in steps(width / 16, width / 8 - 6, 6)"
         :key="dy"
-        :d="`M 0 ${(height - dy) / 4 + height / 2} L ${spot.x} ${spot.y}`"
+        :d="`M 0 ${height / 2 + dy} L ${spot.x} ${spot.y}`"
         />
       <path v-for="dy in steps(width / 8 - 3, width / 4, 6)"
         :key="dy"
-        :d="`M 0 ${(height - dy) / 4 + height / 2} L ${spot.x} ${spot.y}`"
+        :d="`M 0 ${height / 2 + dy} L ${spot.x} ${spot.y}`"
         stroke-width="2"
         />
       <path v-for="dy in steps(width / 4 + 3, width / 8 * 3, 6)"
         :key="dy"
-        :d="`M 0 ${(height - dy) / 4 + height / 2} L ${spot.x} ${spot.y}`"
+        :d="`M 0 ${height / 2 + dy} L ${spot.x} ${spot.y}`"
         />
     </g>
   </svg>

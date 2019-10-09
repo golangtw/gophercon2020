@@ -35,7 +35,7 @@
     h1.title {
       font-size: 36pt;
       line-height: 1;
-      color: $white;
+      color: $tone;
 
       ruby {
         font-size: 48pt;
@@ -44,6 +44,7 @@
         rt {
           font-size: 10pt;
           margin-bottom: -8pt;
+          transform: translateY(8pt);
         }
       }
     }
@@ -51,7 +52,7 @@
     h2.subtitle {
       font-size: 24pt;
       line-height: 1;
-      color: $white;
+      color: $tone;
 
       ruby {
         letter-spacing: 3px;
@@ -59,6 +60,7 @@
         rt {
           font-size: 8pt;
           margin-bottom: -5pt;
+          transform: translateY(5pt);
         }
       }
     }
@@ -68,7 +70,7 @@
       flex-direction: column;
       margin-top: 3.5rem;
       line-height: 1.4;
-      color: $tone;
+      color: $white;
 
       span {
         margin: 5pt 0;
