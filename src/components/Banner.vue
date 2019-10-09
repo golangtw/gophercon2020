@@ -58,8 +58,8 @@ export default class Banner extends Vue {
       width: sightContainer.clientWidth,
       height: sightContainer.clientHeight,
       spot: {
-        x: sightContainer.clientWidth / 2.0,
-        y: sightContainer.clientHeight / 2.0
+        x: sightContainer.clientWidth / 2.0 + 140,
+        y: sightContainer.clientHeight / 2.0 + 50
       }
     });
   }

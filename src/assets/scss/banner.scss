@@ -24,19 +24,21 @@
     position: relative;
     padding: 4rem;
     z-index: 1;
-    color: $white;
 
     h1.title,
     h2.subtitle,
     p.content {
       text-align: right;
+      transform: translateX(-150px);
     }
 
     h1.title {
       font-size: 36pt;
       line-height: 1;
+      color: $white;
 
       ruby {
+        font-size: 48pt;
         letter-spacing: 3px;
 
         rt {
@@ -49,6 +51,7 @@
     h2.subtitle {
       font-size: 24pt;
       line-height: 1;
+      color: $white;
 
       ruby {
         letter-spacing: 3px;
@@ -63,8 +66,9 @@
     p.content {
       display: flex;
       flex-direction: column;
-      margin-top: 1.5rem;
+      margin-top: 3.5rem;
       line-height: 1.4;
+      color: $tone;
 
       span {
         margin: 5pt 0;
