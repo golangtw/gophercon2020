@@ -4,3 +4,6 @@ $main-width: calc(100% - #{$main-padding} * 2);
 $banner-height: calc(100vh - #{$main-padding} * 2);
 $banner-top: 132px;
 $banner-gap: 108px;
+
+$spotlight-padding: $main-padding * 4;
+$spotlight-width: calc(100% - #{$spotlight-padding} * 2);

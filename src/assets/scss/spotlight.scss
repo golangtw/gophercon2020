@@ -3,16 +3,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: $main-width;
-    margin: 0 $main-padding;
+    width: 100%;
   }
 
-  width: 100%;
+  width: $spotlight-width;
+    padding: 40px $spotlight-padding;
   
   h1,
   h2,
   h3,
   p,
   span {
+    color: $black;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  h1 {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    font-size: 36px;
+
+    .sub {
+      font-size: 18px;
+    }
+  }
+
+  a {
+    color: $tone;
+    text-decoration: none;
+    transition: all ease-in-out .3s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: $dark-3;
   }
 }
