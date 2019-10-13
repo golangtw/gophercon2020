@@ -11,7 +11,7 @@
     </div>
     <header
       class="banner-header"
-      :style="{ '--box-width': `${ ((sight.height - (sight.rows - 1) * sight.gap) / sight.rows + sight.gap) * 3 }px`, '--box-gap': `${sight.gap}px` }"
+      :style="{ '--box-width': `${ ((sight.width - (sight.cols - 1) * sight.gap) / sight.cols + sight.gap) * 3 }px`, '--box-gap': `${sight.gap}px` }"
     >
       <div class="view-box">
         <h3 class="flag font-bold">SITCON 2020</h3>
@@ -79,7 +79,7 @@ export default class Banner extends Vue {
     this.setSightMeasure({
       width: sightContainer.clientWidth,
       height: sightContainer.clientHeight,
-      cols: 10,
+      cols: 7,
       rows: 3,
       gap: 40
     });

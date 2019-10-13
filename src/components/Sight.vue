@@ -61,8 +61,8 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class Sight extends Vue {
   get box () {
     return {
-      width: (this.height - (this.rows - 1) * this.gap) / this.rows,
-      height: (this.height - (this.rows - 1) * this.gap) / this.rows
+      width: (this.width - (this.cols - 1) * this.gap) / this.cols,
+      height: (this.width - (this.cols - 1) * this.gap) / this.cols
     };
   }
 }
