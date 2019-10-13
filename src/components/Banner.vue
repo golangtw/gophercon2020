@@ -3,8 +3,9 @@
     <div class="banner-bg" ref="sightContainer">
     </div>
     <header class="banner-header">
-      <h1 class="title">Call for Paper</h1>
-      <h2 class="subtitle">稿件徵求中！</h2>
+      <h3 class="flag font-bold">SITCON 2020</h3>
+      <h1 class="title font-black">Call for<br>Paper</h1>
+      <h2 class="subtitle font-black">稿件徵求中！</h2>
     </header>
   </div>
 </template>

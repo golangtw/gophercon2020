@@ -1,5 +1,8 @@
 .banner {
   &-container {
+    width: $main-width;
+    height: $banner-height;
+    margin: $main-padding;
   }
 
   &-bg {
@@ -8,13 +11,23 @@
   &-header {
     h1.title,
     h2.subtitle,
+    h3.flag,
     p.paragraph {
     }
 
     h1.title {
+      font-size: 96px;
+      line-height: 100px;
+      margin-bottom: 64px;
     }
 
     h2.subtitle {
+      font-size: 72px;
+    }
+
+    h3.flag {
+      height: 108px;
+      font-size: 48px;
     }
 
     p.paragraph {

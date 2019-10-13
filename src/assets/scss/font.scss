@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700.900');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700');
 
 h1,
 h2,
@@ -17,8 +17,14 @@ span {
   letter-spacing: 1px;
 }
 
-.bold {
-  font-weight: 500;
+.font {
+  &-bold {
+    font-weight: 500;
+  }
+  
+  &-black {
+    font-weight: 700;
+  }
 }
 
 ruby {

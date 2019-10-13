@@ -1,2 +1,4 @@
 $main-padding: 84px;
-$main-width: calc(100% - $main-padding * 2);
+$main-width: calc(100% - #{$main-padding} * 2);
+
+$banner-height: calc(1024px - #{$main-padding} * 2);
