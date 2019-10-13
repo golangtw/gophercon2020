@@ -11,7 +11,7 @@
     </div>
     <header
       class="banner-header"
-      :style="{ '--box-width': `${ ((sight.height - (sight.rows - 1) * sight.gap) / sight.rows + sight.gap) * 3 }px` }"
+      :style="{ '--box-width': `${ ((sight.height - (sight.rows - 1) * sight.gap) / sight.rows + sight.gap) * 3 }px`, '--box-gap': `${sight.gap}px` }"
     >
       <div class="view-box">
         <h3 class="flag font-bold">SITCON 2020</h3>
@@ -32,6 +32,14 @@
             <h2 class="font-bold">人文社會科學館</h2>
           </div>
         </div>
+      </div>
+      <div class="view-box side-menu">
+        <a class="button">
+          <p>投稿資訊</p>
+        </a>
+        <a class="button">
+          <p>我要投稿</p>
+        </a>
       </div>
     </header>
   </div>

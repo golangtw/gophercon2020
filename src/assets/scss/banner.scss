@@ -47,6 +47,7 @@
       z-index: 1;
       
       $box-width: var(--box-width);
+      $box-gap: var(--box-gap);
   
       h1.title,
       h2.subtitle,
@@ -74,6 +75,37 @@
       .view-box {
         width: $box-width;
         height: 100%;
+
+        &.side-menu {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 96px 0;
+          width: calc(100% - #{$box-width} * 2 + #{$main-padding} + #{$box-gap});
+          height: calc(100vh - 96px * 2);
+          position: absolute;
+          top: -$main-padding;
+          right: -$main-padding;
+          background-color: $dark-3;
+          
+          a.button {
+            display: inline-flex;
+            margin: 25px 0;
+            padding: 12px 48px;
+            border: 1px solid $black;
+            cursor: pointer;
+
+            p {
+              font-size: 36px;
+              color: $black;
+
+              &:first-child {
+                margin: 0;
+              }
+            }
+          }
+        }
 
         p {
           font-size: 24px;
