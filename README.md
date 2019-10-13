@@ -1,4 +1,4 @@
-# COSCUP Taigi 2019
+# SITCON 2020
 
 ## Project setup
 ```
