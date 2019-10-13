@@ -20,9 +20,9 @@
   
     &-bg {
       width: 100%;
-      height: calc(100% - 132px);
+      height: calc(100% - #{$banner-top});
       position: absolute;
-      top: 132px;
+      top: $banner-top;
       left: 0;
   
       svg {
@@ -39,13 +39,19 @@
     }
   
     &-header {
+      width: 100%;
+      height: 100%;
       position: relative;
+      display: flex;
+      flex-direction: row;
       z-index: 1;
+      
+      $box-width: var(--box-width);
   
       h1.title,
       h2.subtitle,
       h3.flag,
-      p.paragraph {
+      p {
         color: $font-color;
         transition: color ease-in-out .3s;
       }
@@ -64,8 +70,20 @@
         height: 108px;
         font-size: 48px;
       }
-  
-      p.paragraph {
+      
+      .view-box {
+        width: $box-width;
+        height: 100%;
+
+        p {
+          font-size: 24px;
+          line-height: 1.2;
+
+          &:first-child {
+            margin-top: $banner-gap;
+            font-size: 48px;
+          }
+        }
       }
     }
   }

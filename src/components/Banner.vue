@@ -9,10 +9,25 @@
         :gap="sight.gap"
       />
     </div>
-    <header class="banner-header">
-      <h3 class="flag font-bold">SITCON 2020</h3>
-      <h1 class="title font-black">Call for<br>Paper</h1>
-      <h2 class="subtitle font-black">稿件徵求中！</h2>
+    <header
+      class="banner-header"
+      :style="{ '--box-width': `${ ((sight.height - (sight.rows - 1) * sight.gap) / sight.rows + sight.gap) * 3 }px` }"
+    >
+      <div class="view-box">
+        <h3 class="flag font-bold">SITCON 2020</h3>
+        <h1 class="title font-black">Call for<br>Paper</h1>
+        <h2 class="subtitle font-black">稿件徵求中！</h2>
+      </div>
+      <div class="view-box">
+        <div class="define">
+          <p class="code font-black font-italic">#define</p>
+          <p class="code font-black font-italic">2020</p>
+          <p class="code font-black font-italic">Future</p>
+          <p class="code font-black font-italic">Student</p>
+          <p class="code font-black font-italic">Programmer</p>
+          <p class="code font-black font-italic">SecurityGuard</p>
+        </div>
+      </div>
     </header>
   </div>
 </template>
