@@ -15,7 +15,8 @@ export const state: AppState = {
     cols: 0,
     rows: 0,
     gap: 0
-  }
+  },
+  theme: 'LIGHT'
 };
 
 export const getters: GetterTree<AppState, RootState> = {
@@ -29,6 +30,10 @@ export const getters: GetterTree<AppState, RootState> = {
 
   sight (state): AppState['sight'] {
     return state.sight;
+  },
+
+  theme (state): AppState['theme'] {
+    return state.theme;
   }
 };
 
@@ -41,7 +46,11 @@ export const actions: ActionTree<AppState, RootState> = {
     commit(mutationTypes.APP_DEVICE, device);
   },
 
-  setSightMensure ({ commit }, sight: AppState['sight']): any {
+  toggleTheme ({ commit }, theme: AppState['theme']): any {
+    commit(mutationTypes.APP_THEME, theme);
+  },
+
+  setSightMeasure ({ commit }, sight: AppState['sight']): any {
     commit(mutationTypes.APP_SIGHT, sight);
   }
 };
@@ -55,8 +64,12 @@ export const mutations: MutationTree<AppState> = {
     state.device = device;
   },
 
+  [mutationTypes.APP_THEME] (state, theme: AppState['theme']) {
+    state.theme = theme;
+  },
+
   [mutationTypes.APP_SIGHT] (state, sight: AppState['sight']) {
-    state.sight = sigth;
+    state.sight = sight;
   }
 };
 

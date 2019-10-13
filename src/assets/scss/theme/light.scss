@@ -1,0 +1,3 @@
+@mixin light {
+  @include banner($black, $white, rgba($dark-2, 1), rgba($dark-2, 0.3));
+}

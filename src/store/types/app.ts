@@ -1,9 +1,10 @@
-import { Sight } from './sight';
+import { SightState } from './sight';
 
 export interface AppState {
   mode: AppMode;
   device: DeviceType;
   sight: SightState;
+  theme: ThemeType;
 }
 
 export type AppMode =
@@ -14,4 +15,9 @@ export type AppMode =
 export type DeviceType =
   'DESKTOP' |
   'MOBILE'
+;
+
+export type ThemeType =
+  'LIGHT' |
+  'DARK'
 ;
