@@ -93,8 +93,13 @@
             display: inline-flex;
             margin: 25px 0;
             padding: 12px 48px;
-            border: 1px solid $black;
+            border: 1px solid $dark-2;
             cursor: pointer;
+            transition: all ease-in-out .3s;
+
+            &:hover {
+              background-color: $dark-2;
+            }
 
             p {
               font-size: 36px;
