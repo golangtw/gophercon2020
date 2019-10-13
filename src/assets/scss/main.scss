@@ -8,3 +8,17 @@
 @import 'container';
 @import 'spotlight';
 @import 'banner';
+@import 'theme';
+
+#app {
+  width: 100%;
+  display: flex;
+
+  &.theme-light {
+    @include light;
+  }
+
+  &.theme-dark {
+    @include dark;
+  }
+}

@@ -1,36 +1,68 @@
-.banner {
-  &-container {
-    width: $main-width;
-    height: $banner-height;
-    margin: $main-padding;
-  }
-
-  &-bg {
-  }
-
-  &-header {
-    h1.title,
-    h2.subtitle,
-    h3.flag,
-    p.paragraph {
+@mixin banner ($font-color, $background-color, $box-color, $box-special-color) {
+  .banner {
+    &-container {
+      width: $main-width;
+      height: $banner-height;
+      position: relative;
+      margin: $main-padding;
+      
+      &:before {
+        content: '';
+        width: calc(100% + #{$main-padding} * 2);
+        height: calc(100% + #{$main-padding} * 2);
+        top: -$main-padding;
+        left: -$main-padding;
+        position: absolute;
+        background-color: $background-color;
+      }
     }
-
-    h1.title {
-      font-size: 96px;
-      line-height: 100px;
-      margin-bottom: 64px;
+  
+    &-bg {
+      width: 100%;
+      height: calc(100% - 132px);
+      position: absolute;
+      top: 132px;
+      left: 0;
+  
+      svg {
+        rect {
+          fill: $box-color;
+  
+          &.box-1-1 {
+            fill: $box-special-color;
+          }
+        }
+      }
     }
-
-    h2.subtitle {
-      font-size: 72px;
-    }
-
-    h3.flag {
-      height: 108px;
-      font-size: 48px;
-    }
-
-    p.paragraph {
+  
+    &-header {
+      position: relative;
+      z-index: 1;
+  
+      h1.title,
+      h2.subtitle,
+      h3.flag,
+      p.paragraph {
+        color: $font-color;
+      }
+  
+      h1.title {
+        font-size: 96px;
+        line-height: 100px;
+        margin-bottom: 64px;
+      }
+  
+      h2.subtitle {
+        font-size: 72px;
+      }
+  
+      h3.flag {
+        height: 108px;
+        font-size: 48px;
+      }
+  
+      p.paragraph {
+      }
     }
   }
 }
