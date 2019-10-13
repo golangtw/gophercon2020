@@ -26,6 +26,11 @@
           <p class="code font-black font-italic">Student</p>
           <p class="code font-black font-italic">Programmer</p>
           <p class="code font-black font-italic">SecurityGuard</p>
+          <div class="board">
+            <h1 class="date font-black">3/28（日）</h1>
+            <h3>中央研究院</h3>
+            <h2 class="font-bold">人文社會科學館</h2>
+          </div>
         </div>
       </div>
     </header>
