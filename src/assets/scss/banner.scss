@@ -1,135 +1,23 @@
 .banner {
   &-container {
-    @include ImgBgContainer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: $banner-height;
-    position: relative;
-    background-color: $black;
-
-    @media screen and (max-width: 720px) {
-      align-items: flex-end;
-    }
   }
 
   &-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
   }
 
   &-header {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: 4rem;
-    z-index: 1;
-
-    @media screen and (max-width: 720px) {
-      padding: 2rem;
-    }
-
     h1.title,
     h2.subtitle,
-    h3,
-    p.content {
-      text-align: right;
-      transform: translateX(-150px);
-
-      @media screen and (max-width: #{$spotlight-width}) {
-        transform: translateX(0);
-      }
+    p.paragraph {
     }
 
     h1.title {
-      font-size: 36pt;
-      line-height: 1;
-      color: $tone;
-
-      ruby {
-        font-size: 48pt;
-        letter-spacing: 3px;
-
-        rt {
-          font-size: 10pt;
-          margin-bottom: -10pt;
-          transform: translateY(8pt);
-        }
-      }
-
-      @media screen and (max-width: 600px) {
-        span {
-          display: block;
-          margin: 1rem 0;
-        }
-      }
     }
 
-    h2.subtitle,
-    h2.button {
-      font-size: 24pt;
-      line-height: 1;
-      color: $tone;
-
-      ruby {
-        letter-spacing: 3px;
-
-        rt {
-          font-size: 8pt;
-          margin-bottom: -5pt;
-          transform: translateY(5pt);
-        }
-      }
+    h2.subtitle {
     }
 
-    h2.button {
-      position: absolute;
-      top: calc(50% + 24pt / 2);
-      right: -50pt;
-      transition: color .3s ease-in-out;
-      cursor: pointer;
-
-      &:hover {
-        color: $white;
-      }
-      
-      ruby {
-        font-weight: 100;
-      }
-
-      @media screen and (max-width: #{$spotlight-width}) {
-        position: relative;
-        margin-top: 1rem;
-        top: auto;
-        right: auto;
-        text-align: right;
-        color: $white;
-      }
-    }
-
-    h3 {
-      color: $tone;
-      margin: 0 5pt 1rem 0;
-
-      &.flag {
-        animation: blink 2s infinite ease-in-out;
-      }
-    }
-
-    p.content {
-      display: flex;
-      flex-direction: column;
-      margin-top: 3.5rem;
-      line-height: 1.4;
-      color: $white;
-
-      span {
-        margin: 5pt 0;
-      }
+    p.paragraph {
     }
   }
 }

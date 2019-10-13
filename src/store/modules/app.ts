@@ -7,31 +7,37 @@ import * as mutationTypes from '../mutation-types';
 const namespaced: boolean = true;
 
 export const state: AppState = {
-  sight: {
-    width: 0,
-    height: 0,
-    spot: {
-      x: 0,
-      y: 0
-    }
-  }
+  mode: 'WEB',
+  device: 'DESKTOP'
 };
 
 export const getters: GetterTree<AppState, RootState> = {
-  sight (state): AppState['sight'] {
-    return state.sight;
+  mode (state): AppState['mode'] {
+    return state.mode;
+  },
+
+  device (state): AppState['device'] {
+    return state.device;
   }
 };
 
 export const actions: ActionTree<AppState, RootState> = {
-  setSight ({ commit }, data: AppState['sight']): any {
-    commit(mutationTypes.SIGHT, data);
+  toggleMode ({ commit }, mode: AppState['mode']): any {
+    commit(mutationTypes.APP_MODE, mode);
+  },
+
+  toggleDevice ({ commit }, device: AppState['device']): any {
+    commit(mutationTypes.APP_DEVICE, device);
   }
 };
 
 export const mutations: MutationTree<AppState> = {
-  [mutationTypes.SIGHT] (state, data: AppState['sight']) {
-    state.sight = data;
+  [mutationTypes.APP_MODE] (state, mode: AppState['mode']) {
+    state.mode = mode;
+  },
+
+  [mutationTypes.APP_DEVICE] (state, device: AppState['device']) {
+    state.device = device;
   }
 };
 

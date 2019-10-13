@@ -3,10 +3,24 @@
     <Banner/>
     <main class="spotlight-container">
       <div class="spotlight">
-        <h1>關於</h1>
-        <p>COSCUP 是由台灣開放原始碼社群聯合推動的年度研討會，起源於 2006 年，是台灣自由軟體運動 (FOSSM) 重要的推動者之一。活動包括有講座、攤位、社團同樂會等，除了邀請國際的重量級演講者之外，台灣本土的自由軟體推動者也經常在此發表演說，會議的發起人、工作人員與講者都是志願參與的志工。COSCUP 的宗旨在於提供一個聯結開放原始碼開發者、使用者與推廣者的平台。希望藉由每年一度的研討會，來推動自由及開放原始碼軟體 (FLOSS)。由於有許多贊助商及熱心捐助者，所有議程都是免費參加，但因會場人數限制，通常在一開放網路報名後就會立刻額滿。</p>
-        <p>開放原始碼 (Open source) 是在 1998 年出現的名詞，大家早已耳熟能詳。這種在網路上已經進行二、三十年的軟體開發模式之所以能成功，有許多原因。其中一個極為關鍵的因素，就是開發者與使用者的直接接觸。無屏障的交流加速了問題的回報和修補機制，而當這個機制被網路效應放大到極限時，Linus 定律就出現了：「臭蟲難逃眾人法眼」(With enough eyeballs, all bugs are shallow)，軟體品質因此顯著提昇。在開放原始碼的模式中，開發者和使用者中間的人不再是銷售員或客服，而是讓軟體更容易被接受的推廣者 (Promoters)，他們打包套件讓軟體更好裝、寫說明文件讓軟體更易學、辦推廣活動讓更多人接觸到好軟體、在網路上回答問題解決使用者的疑惑，而且不會把開發者藏在背後產生資訊的不對稱。</p>
-        <p>開發者 (Coders)、使用者 (Users) 和推廣者 (Promoters) 是讓自由及開放原始碼軟體發光發熱的三大支柱，這個研討會就是專為這三種人舉辦的：你可以是 A 軟體的開發者、B 軟體的推廣者、C 軟體的使用者，不論你是已經踏入自由及開放原始碼軟體領域，還是一直站在門口不知如何入門，歡迎你來參加 COSCUP — Conference for Open Source Coders, Users and Promoters!</p>
+        <h1 class="title">
+          <span class="sub">About</span>
+          <span>關於 SITCON</span>
+        </h1>
+        <p class="paragraph">SITCON 學生計算機年會係一學生自發組成的研討會，秉持著以學生為主軸的核心價值，藉以凝聚與傳遞學生的力量。希望藉由提供一個經驗交流與資訊技術實務分享的平台，使已有成就者能夠傳承己身經驗，嶄露頭角者在激盪中獲得靈感與啟發，並同時讓初入茅廬者得以對資訊科學有更深入的了解；進而達到「學以致用、教學相長」的目標。</p>
+      </div>
+      <div class="spotlight">
+        <h1 class="title">
+          <span class="sub">Call for Sponsor</span>
+          <span>贊助徵求</span>
+        </h1>
+        <p class="paragraph">
+          SITCON 的運作，除了眾多努力的志工，也還是少不了金錢的支持。<br>
+          如果認同 SITCON 的理念與作為，歡迎加入成為支持 SITCON 運作的一份子！
+        </p>
+        <p class="paragraph">
+          歡迎聯繫 <a href="mailto:contact@sitcon.org">contact@sitcon.org</a>
+        </p>
       </div>
     </main>
   </div>
@@ -27,12 +41,12 @@ export default class CFP extends Vue {
     const metaList = Array.from(document.querySelectorAll('head>meta'));
 
     if (title) {
-      title.innerHTML = 'Call of Paper｜徵稿開催 — COSCUP 2019 來台講';
+      title.innerHTML = 'Call for Paper｜稿件徵求中！ — SITCON 2020';
     }
 
-    metaList[3].setAttribute('content', 'Call of Paper｜徵稿開催 — COSCUP 2019 來台講');
-    metaList[5].setAttribute('content', 'https://coscup.org/taigi2019/cfp/');
-    metaList[6].setAttribute('content', 'https://coscup.org/taigi2019/img/cfp-og.png');
+    metaList[3].setAttribute('content', 'Call for Paper｜稿件徵求中！ — SITCON 2020');
+    metaList[5].setAttribute('content', 'https://sitcon.org/2020/cfp/');
+    metaList[6].setAttribute('content', 'https://sitcon.org/2020/img/cfp-og.png');
   }
 }
 </script>

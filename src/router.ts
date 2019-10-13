@@ -7,7 +7,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: 'history',
-  base: '/taigi2019/',
+  base: '/2020/',
   routes: [
     {
       path: '/',
