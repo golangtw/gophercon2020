@@ -14,6 +14,7 @@
         left: -$main-padding;
         position: absolute;
         background-color: $background-color;
+        transition: background-color ease-in-out .3s;
       }
     }
   
@@ -27,9 +28,11 @@
       svg {
         rect {
           fill: $box-color;
+          transition: fill ease-in-out .3s;
   
           &.box-1-1 {
             fill: $box-special-color;
+            transition: fill ease-in-out .3s;
           }
         }
       }
@@ -44,6 +47,7 @@
       h3.flag,
       p.paragraph {
         color: $font-color;
+        transition: color ease-in-out .3s;
       }
   
       h1.title {
