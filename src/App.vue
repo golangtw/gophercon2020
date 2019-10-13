@@ -23,7 +23,25 @@ const namespace: string = 'app';
 })
 export default class App extends Vue {
   @Action('toggleTheme', { namespace }) private toggleTheme: any;
+  @Action('getSunRiseSunSetData', { namespace: 'sunRiseSunSet' }) private getSunRiseSunSetData: any;
   @Getter('theme', { namespace }) private theme: any;
+  @Getter('sunrise', { namespace: 'sunRiseSunSet' }) private sunrise: any;
+  @Getter('sunset', { namespace: 'sunRiseSunSet' }) private sunset: any;
+
+  public async mounted () {
+    await this.getSunRiseSunSetData()
+    this.toggleThemeViaSunRiseSunSet()
+  }
+
+  private toggleThemeViaSunRiseSunSet () {
+    const now = new Date();
+    
+    if (now.getDate() > this.sunrise.getDate() && now.getDate() < this.sunset.getDate()) {
+      this.toggleTheme('LIGHT');
+    } else {
+      this.toggleTheme('DARK');
+    }
+  }
 }
 </script>
 
