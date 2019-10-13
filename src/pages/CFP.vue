@@ -23,16 +23,20 @@
         </p>
       </div>
     </main>
+    <Footer/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+
 import Banner from '@/components/Banner.vue';
+import Footer from '@/components/Footer.vue';
 
 @Component({
   components: {
-    Banner
+    Banner,
+    Footer
   }
 })
 export default class CFP extends Vue {
