@@ -29,14 +29,18 @@ export default class App extends Vue {
   @Getter('sunset', { namespace: 'sunRiseSunSet' }) private sunset: any;
 
   public async mounted () {
-    await this.getSunRiseSunSetData()
-    this.toggleThemeViaSunRiseSunSet()
+    await this.getSunRiseSunSetData();
+    this.toggleThemeViaSunRiseSunSet();
+
+    setInterval(() => {
+      this.toggleThemeViaSunRiseSunSet();
+    }, 1000);
   }
 
   private toggleThemeViaSunRiseSunSet () {
     const now = new Date();
-    
-    if (now.getDate() > this.sunrise.getDate() && now.getDate() < this.sunset.getDate()) {
+
+    if (now.getTime() > this.sunrise.getTime() && now.getTime() < this.sunset.getTime()) {
       this.toggleTheme('LIGHT');
     } else {
       this.toggleTheme('DARK');
