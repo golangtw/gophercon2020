@@ -4,9 +4,9 @@
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    :width="width"
-    :height="height"
-    :viewBox="`0 0 ${width} ${height}`">
+    :width="containerWidth"
+    :height="containerHeight"
+    :viewBox="`0 0 ${width * cols + gap * (cols - 1)} ${height * rows + gap * (rows - 1)}`">
   >
     <defs>
       <filter id="f1" x="0" y="0">
@@ -20,10 +20,10 @@
       <rect
         v-for="y in rows"
         :key="`row-${y}`"
-        :x="(x - 1) * (box.width + gap)"
-        :y="(y - 1) * (box.height + gap)"
-        :width="box.width"
-        :height="box.height"
+        :x="(x - 1) * (width + gap)"
+        :y="(y - 1) * (height + gap)"
+        :width="width"
+        :height="height"
         :class="`box-${x}-${y}`"
         class="box"
       />
@@ -36,6 +36,14 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   props: {
+    containerWidth: {
+      type: Number,
+      required: true
+    },
+    containerHeight: {
+      type: Number,
+      required: true
+    },
     width: {
       type: Number,
       required: true
@@ -59,11 +67,5 @@ import { Component, Vue } from 'vue-property-decorator';
   }
 })
 export default class Sight extends Vue {
-  get box () {
-    return {
-      width: (this.width - (this.cols - 1) * this.gap) / this.cols,
-      height: (this.width - (this.cols - 1) * this.gap) / this.cols
-    };
-  }
 }
 </script>

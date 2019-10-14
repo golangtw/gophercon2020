@@ -1,7 +1,20 @@
 <template>
-  <div id="banner" class="banner-container">
+  <div
+    id="banner"
+    class="banner-container"
+    :style="{
+      '--viewbox-width': `${(sight.width + sight.gap) * 3}px`,
+      '--viewbox-height': `${sight.offset + (sight.height + sight.gap) * 3}px`,
+      '--box-width': `${(sight.width)}px`,
+      '--box-height': `${(sight.height)}px`,
+      '--box-gap': `${sight.gap}px`,
+      '--sight-offset': `${sight.offset}px`
+     }"
+  >
     <div class="banner-bg" ref="sightContainer">
       <Sight
+        :containerWidth="sight.containerWidth"
+        :containerHeight="sight.containerHeight"
         :width="sight.width"
         :height="sight.height"
         :cols="sight.cols"
@@ -9,10 +22,7 @@
         :gap="sight.gap"
       />
     </div>
-    <header
-      class="banner-header"
-      :style="{ '--box-width': `${ ((sight.width - (sight.cols - 1) * sight.gap) / sight.cols + sight.gap) * 3 }px`, '--box-gap': `${sight.gap}px` }"
-    >
+    <header class="banner-header">
       <div class="view-box">
         <h3 class="flag font-bold">SITCON 2020</h3>
         <h1 class="title font-black">Call for<br>Paper</h1>
@@ -76,12 +86,24 @@ export default class Banner extends Vue {
   private measureSightSize () {
     const sightContainer: any = this.$refs.sightContainer;
 
+    const sightOffset: number = sightContainer.offsetTop;
+    const boxCols: number = 8;
+    const boxRows: number = 3;
+    const boxGap = 40;
+    const boxWidth: number = (sightContainer.clientWidth - boxGap * (boxCols - 1)) / boxCols;
+    const boxHeight: number = boxWidth;
+    const containerWidth: number = boxWidth * boxCols + boxGap * (boxCols - 1);
+    const containerHeight: number = boxHeight * boxRows + boxGap * (boxRows - 1);
+
     this.setSightMeasure({
-      width: sightContainer.clientWidth,
-      height: sightContainer.clientHeight,
-      cols: 7,
-      rows: 3,
-      gap: 40
+      offset: sightOffset,
+      containerWidth,
+      containerHeight,
+      width: boxWidth,
+      height: boxHeight,
+      cols: boxCols,
+      rows: boxRows,
+      gap: boxGap
     });
   }
 }

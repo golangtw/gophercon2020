@@ -10,6 +10,9 @@ export const state: AppState = {
   mode: 'WEB',
   device: 'DESKTOP',
   sight: {
+    offset: 0,
+    containerWidth: 0,
+    containerHeight: 0,
     width: 0,
     height: 0,
     cols: 0,
