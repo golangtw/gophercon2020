@@ -19,7 +19,8 @@ export const state: AppState = {
     rows: 0,
     gap: 0
   },
-  theme: 'LIGHT'
+  theme: 'LIGHT',
+  isPopup: false
 };
 
 export const getters: GetterTree<AppState, RootState> = {
@@ -37,6 +38,10 @@ export const getters: GetterTree<AppState, RootState> = {
 
   theme (state): AppState['theme'] {
     return state.theme;
+  },
+
+  isPopup (state): AppState['isPopup'] {
+    return state.isPopup;
   }
 };
 
@@ -51,6 +56,10 @@ export const actions: ActionTree<AppState, RootState> = {
 
   toggleTheme ({ commit }, theme: AppState['theme']): any {
     commit(mutationTypes.APP_THEME, theme);
+  },
+
+  togglePopup ({ commit }, status: AppState['isPopup']): any {
+    commit(mutationTypes.APP_POPUP, status);
   },
 
   setSightMeasure ({ commit }, sight: AppState['sight']): any {
@@ -69,6 +78,10 @@ export const mutations: MutationTree<AppState> = {
 
   [mutationTypes.APP_THEME] (state, theme: AppState['theme']) {
     state.theme = theme;
+  },
+
+  [mutationTypes.APP_POPUP] (state, status: AppState['isPopup']) {
+    state.isPopup = status;
   },
 
   [mutationTypes.APP_SIGHT] (state, sight: AppState['sight']) {

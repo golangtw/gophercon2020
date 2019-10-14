@@ -3,7 +3,14 @@
     v-if="isOpen"
     class="popup-container"
   >
-    <div class="popup-close">
+    <div
+      class="popup-close" 
+      @click="togglePopup(false)"
+    />
+    <div
+      class="popup-close"
+      @click="togglePopup(false)"
+    >
       <font-awesome-icon :icon="['fas', 'times']"/>
     </div>
     <article
@@ -13,8 +20,11 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Action } from 'vuex-class';
+
+const namespace: string = 'app';
 
 @Component({
   props: {
@@ -30,5 +40,6 @@ import { Component, Vue } from 'vue-property-decorator';
   }
 })
 export default class Popup extends Vue {
+  @Action('togglePopup', { namespace }) private togglePopup: any;
 }
 </script>

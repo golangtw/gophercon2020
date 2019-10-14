@@ -6,4 +6,6 @@ export const APP_THEME = 'APP_THEME';
 
 export const APP_SIGHT = 'APP_SIGHT';
 
+export const APP_POPUP = 'POPUP';
+
 export const SUNRISE_SUNSET = 'SUNRISE_SUNSET';

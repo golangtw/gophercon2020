@@ -44,7 +44,10 @@
         </div>
       </div>
       <div class="view-box side-menu">
-        <a class="button">
+        <a
+          @click="togglePopup(true)"
+          class="button"
+        >
           <p>投稿資訊</p>
         </a>
         <a class="button">
@@ -71,6 +74,7 @@ const namespace: string = 'app';
 })
 export default class Banner extends Vue {
   @Action('setSightMeasure', { namespace }) private setSightMeasure: any;
+  @Action('togglePopup', { namespace }) private togglePopup: any;
   @Getter('sight', { namespace }) private sight: any;
 
   public mounted () {

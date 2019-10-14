@@ -5,6 +5,7 @@ export interface AppState {
   device: DeviceType;
   sight: SightState;
   theme: ThemeType;
+  isPopup: boolean;
 }
 
 export type AppMode =

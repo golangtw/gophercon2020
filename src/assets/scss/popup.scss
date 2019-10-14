@@ -7,41 +7,65 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 10000;
+    width: calc(100% - $main-padding * 2);
+    padding: $main-padding;
+    padding-top: $main-padding * 2;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     animation: popup .1s ease-in-out;
     animation-fill-mode: forwards;
     user-select: text;
+    z-index: 10000;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
   &-close {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
     height: 48px;
     width: 48px;
-    top: calc(#{$main-padding} * 2);
-    right: $main-padding;
+    margin-bottom: -48px;
+    position: sticky;
+    top: 0;
+    right: 0;
     font-size: 24px;
     cursor: pointer;
-    z-index: 10001;
+    z-index: 9999;
+
+    &:before {
+      content: '';
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      background-color: rgba($black, .3);
+      top: 0;
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      z-index: 10000;
+
+      &::before {
+        display: none;
+      }
+    }
   }
 
   &-content {
-    width: calc(100% - #{$main-padding} * 4);
-    margin: $main-padding;
-    margin-top: $main-padding * 2;
-    padding: $main-padding;
+    width: calc(100% - #{$main-padding} * 2);
     display: flex;
     flex-direction: column;
+    padding: $main-padding;
+    margin-bottom: $main-padding;
     position: relative;
-    z-index: 10000;
     background-color: $white;
+    box-shadow: 0 2px 26px rgba($black, .35);
+    z-index: 9999;
 
     &::-webkit-scrollbar {
       display: none

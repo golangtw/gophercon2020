@@ -1,6 +1,8 @@
 <template>
   <div id="cfp" class="main-container">
-    <Banner/>
+    <Banner
+      :class="{ 'popuped': isPopup }"
+    />
     <main class="spotlight-container">
       <div class="spotlight">
         <h1 class="title">
@@ -174,17 +176,23 @@
         <li>為了維護所有講者的權利，試講時間恕不接受更改，請各位講者者準時參與。</li>
       </ul>
     </main>
-    <Popup :content="popupContent"/>
+    <Popup
+      :isOpen="isPopup"
+      :content="popupContent"
+    />
     <Footer/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
 
 import Banner from '@/components/Banner.vue';
 import Footer from '@/components/Footer.vue';
 import Popup from '@/components/Popup.vue';
+
+const namespace: string = 'app';
 
 @Component({
   components: {
@@ -194,6 +202,8 @@ import Popup from '@/components/Popup.vue';
   }
 })
 export default class CFP extends Vue {
+  @Getter('isPopup', { namespace }) private isPopup: any;
+
   private popupContent: string = '';
 
   public mounted () {
