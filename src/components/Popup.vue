@@ -1,6 +1,6 @@
 <template>
   <main
-    v-if="!isOpen"
+    v-if="isOpen"
     class="popup-container"
   >
     <div class="popup-close">
