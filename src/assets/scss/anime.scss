@@ -11,3 +11,13 @@
     opacity: 0;
   }
 }
+
+@keyframes popup {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
