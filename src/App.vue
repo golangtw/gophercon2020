@@ -30,6 +30,10 @@ export default class App extends Vue {
 
   public async mounted () {
     await this.detectSystemPrefersColorSchema()
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', async () => {
+      await this.detectSystemPrefersColorSchema()
+    })
   }
 
   private async detectSystemPrefersColorSchema () {
