@@ -7,7 +7,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% - $main-padding * 2);
+    width: calc(100% - #{$main-padding} * 2);
     padding: $main-padding;
     padding-top: $main-padding * 2;
     display: flex;
