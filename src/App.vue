@@ -29,17 +29,17 @@ export default class App extends Vue {
   @Getter('sunset', { namespace: 'sunRiseSunSet' }) private sunset: any;
 
   public async mounted () {
-    await this.detectSystemPrefersColorSchema()
+    await this.detectSystemPrefersColorSchema();
 
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', async () => {
-      await this.detectSystemPrefersColorSchema()
-    })
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', async () => {
+      await this.detectSystemPrefersColorSchema();
+    });
   }
 
   private async detectSystemPrefersColorSchema () {
-    const isDarkMode: boolean = window.matchMedia("(prefers-color-scheme: dark)").matches
-    const isLightMode: boolean = window.matchMedia("(prefers-color-scheme: light)").matches
-    const isNotSpecified: boolean = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+    const isDarkMode: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isLightMode: boolean = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const isNotSpecified: boolean = window.matchMedia('(prefers-color-scheme: no-preference)').matches;
 
     if (isNotSpecified) {
       await this.getSunRiseSunSetData();
@@ -49,9 +49,9 @@ export default class App extends Vue {
         this.toggleThemeViaSunRiseSunSet();
       }, 1000);
     } else if (isDarkMode) {
-      this.toggleTheme('DARK')
+      this.toggleTheme('DARK');
     } else {
-      this.toggleTheme('LIGHT')
+      this.toggleTheme('LIGHT');
     }
   }
 

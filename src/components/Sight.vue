@@ -6,7 +6,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     :width="containerWidth"
     :height="containerHeight"
-    :viewBox="`0 0 ${width * cols + gap * (cols - 1)} ${height * rows + gap * (rows - 1)}`">
+    :viewBox="`0 0 ${containerWidth} ${containerHeight}`">
   >
     <defs>
       <filter id="f1" x="0" y="0">
