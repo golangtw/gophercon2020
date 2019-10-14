@@ -19,5 +19,21 @@ export default new Router({
       name: 'CFP',
       component: CFP
     }
-  ]
+  ],
+  scrollBehavior (to, from) {
+    if (to.name === 'CFP' && to.hash) {
+      return {
+        selector: `.popup-content>${to.hash}`
+      };
+    } else if (to.hash) {
+      return {
+        selector: to.hash
+      };
+    } else {
+      return {
+        x: 0,
+        y: 0
+      };
+    }
+  }
 });
