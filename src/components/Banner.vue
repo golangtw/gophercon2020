@@ -31,11 +31,10 @@
       <div class="view-box">
         <div class="define">
           <p class="code font-black font-italic">#define</p>
+          <p class="code font-black font-italic">student</p>
           <p class="code font-black font-italic">2020</p>
-          <p class="code font-black font-italic">Future</p>
-          <p class="code font-black font-italic">Student</p>
-          <p class="code font-black font-italic">Programmer</p>
-          <p class="code font-black font-italic">SecurityGuard</p>
+          <p class="code font-black font-italic">future</p>
+          <p class="code font-black font-italic">programmer</p>
           <div class="board">
             <h1 class="date font-black">3/28（日）</h1>
             <h3>中央研究院</h3>

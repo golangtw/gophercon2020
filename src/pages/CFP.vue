@@ -7,7 +7,7 @@
       <div class="spotlight">
         <h1 class="title">
           <span class="sub">About</span>
-          <span class="font-bold">關於 SITCON</span>
+          <span class="font-black">關於 SITCON</span>
         </h1>
         <p class="paragraph">學生計算機年會（SITCON）自 2013 年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。</p>
         <p class="paragraph">二十一世紀已經過了五分之一，今年，我們期待帶著豐沛熱情的你，能和我們一起在 2020 年這麼一個「承先啟後」的年份，綜觀不同領域發展與事件脈絡，自主學習感興趣之專長與技術，彼此分享、相濡以沫。在 SITCON 2020 裡，願所有與會者皆能拓展視野，鍛鍊與發展自我，找到向前邁步的勇氣與目標。相信身為學生的我們，也將能重新定義自我、定義未來！</p>
@@ -16,7 +16,7 @@
       <div class="spotlight">
         <h1 class="title">
           <span class="sub">Call for Sponsor</span>
-          <span class="font-bold">贊助徵求</span>
+          <span class="font-black">贊助徵求</span>
         </h1>
         <p class="paragraph">
           SITCON 的運作，除了眾多努力的志工，也還是少不了金錢的支持。<br>

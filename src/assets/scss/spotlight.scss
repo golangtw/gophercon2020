@@ -41,6 +41,17 @@
   }
 
   &:nth-child(even) {
-    background-color: $dark-3;
+    background-color: $dark-tone;
+    
+    h1.title,
+    h2.subtitle,
+    p.paragraph,
+    span {
+      color: $white;
+    }
+
+    a {
+      color: $light-tone;
+    }
   }
 }
