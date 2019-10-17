@@ -23,7 +23,10 @@
           如果認同 SITCON 的理念與作為，歡迎加入成為支持 SITCON 運作的一份子！
         </p>
         <p class="paragraph">
-          歡迎聯繫 <a href="mailto:contact@sitcon.org" class="font-black">contact@sitcon.org</a>
+          <a href="https://sitcon.kktix.cc/events/sitcon2020-individual-sponsor" target="_blank" rel="noopener noreferrer">個人贊助傳送門</a>｜<a href="https://sitcon.kktix.cc/events/sitcon2020-individual-sponsor1" target="_blank" rel="noopener noreferrer">個人贊助（純粹贊助）</a>
+        </p>
+        <p class="paragraph">
+          企業合作歡迎聯繫 <a href="mailto:contact@sitcon.org" class="font-black">contact@sitcon.org</a>
         </p>
       </div>
     </main>
