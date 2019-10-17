@@ -78,7 +78,7 @@ export default class Banner extends Vue {
   @Getter('sight', { namespace }) private sight: any;
 
   @Watch('device')
-  onDeviceChanged(val: string, newVal: string) {
+  public onDeviceChanged (val: string, newVal: string) {
     this.measureSightSize();
   }
 

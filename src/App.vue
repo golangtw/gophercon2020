@@ -31,17 +31,16 @@ export default class App extends Vue {
   @Getter('sunset', { namespace: 'sunRiseSunSet' }) private sunset: any;
 
   public async mounted () {
-    await this.detectSystemPrefersColorSchema();
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', this.detectSystemPrefersColorSchema);
-
     this.detectDeviceType();
     window.addEventListener('resize', this.detectDeviceType);
+
+    await this.detectSystemPrefersColorSchema();
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(async () => {
+      await this.detectSystemPrefersColorSchema();
+    });
   }
 
   public destroyed () {
-    window.removeEventListener('change', this.detectSystemPrefersColorSchema);
     window.removeEventListener('resize', this.detectDeviceType);
   }
 
