@@ -1,3 +1,4 @@
+// Desktop
 $main-padding: 84px;
 $main-width: calc(100% - #{$main-padding} * 2);
 
@@ -8,6 +9,11 @@ $banner-board-delta-y: 20px;
 
 $spotlight-padding: $main-padding * 4;
 $spotlight-width: calc(100% - #{$spotlight-padding} * 2);
+
+// Mobile (iPhone8)
+$m-i8-banner-gap: 32px;
+$m-i8-banner-inner-gap: 24px;
+$m-i8-banner-top: 76px;
 
 // RWD zomm
 $zoom-1440: 0.9;

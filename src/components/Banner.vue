@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
 import { AppState } from '@/store/types/app';
@@ -77,6 +77,11 @@ export default class Banner extends Vue {
   @Getter('device', { namespace }) private device: any;
   @Getter('sight', { namespace }) private sight: any;
 
+  @Watch('device')
+  onDeviceChanged(val: string, newVal: string) {
+    this.measureSightSize();
+  }
+
   public mounted () {
     this.measureSightSize();
 
@@ -91,9 +96,9 @@ export default class Banner extends Vue {
     const sightContainer: any = this.$refs.sightContainer;
 
     const sightOffset: number = sightContainer.offsetTop;
-    const boxCols: number = 8;
+    const boxCols: number = this.device === 'MOBILE' ? 3 : 8;
     const boxRows: number = 3;
-    const boxGap = 40;
+    const boxGap = this.device === 'MOBILE' ? 27 : 40;
     const boxWidth: number = (sightContainer.clientWidth - boxGap * (boxCols - 1)) / boxCols;
     const boxHeight: number = boxWidth;
     const containerWidth: number = boxWidth * boxCols + boxGap * (boxCols - 1);

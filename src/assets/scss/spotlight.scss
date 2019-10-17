@@ -7,7 +7,12 @@
   }
 
   width: $spotlight-width;
-    padding: 40px $spotlight-padding;
+  padding: 40px $spotlight-padding;
+
+  @media screen and (max-width: 375px) {
+    width: auto;
+    padding: $m-i8-banner-inner-gap * 3 $m-i8-banner-inner-gap;
+  }
   
   h1,
   h2,
@@ -28,6 +33,10 @@
     .sub {
       font-size: 18px;
     }
+  }
+
+  p.paragraph {
+    margin-bottom: 1rem;
   }
 
   a {
