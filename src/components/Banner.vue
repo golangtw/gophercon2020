@@ -36,7 +36,7 @@
           <p class="code font-black font-italic">future</p>
           <p class="code font-black font-italic">programmer</p>
           <div class="board">
-            <h1 class="date font-black">3/28（日）</h1>
+            <h1 class="date font-black">3/28（六）</h1>
             <h3>中央研究院</h3>
             <h2 class="font-bold">人文社會科學館</h2>
           </div>
@@ -49,7 +49,7 @@
         >
           <p>投稿資訊</p>
         </a>
-        <a class="button">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuKARckZoYPw5RdagVQk9IBrASuS3TA-rS8LUzaCBB79955A/viewform" class="button" target="_blank" rel="noopener noreferrer">
           <p>我要投稿</p>
         </a>
       </div>

@@ -42,7 +42,7 @@
         <li>2019/10/18（五）投稿開始</li>
         <li>2020/01/02（四）早上 06:41 分投稿截止</li>
         <li>一月下旬審稿結束、隨後公佈完整議程</li>
-        <li>2020/03/28（日）SITCON 2020</li>
+        <li>2020/03/28（六）SITCON 2020</li>
       </ul>
       <h1 id="example" class="title font-black">投稿主題範例</h1>
       <p class="paragraph">
