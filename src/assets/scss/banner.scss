@@ -7,16 +7,13 @@
 
       @media screen and (max-width: 1000px) {
         width: calc(100% - #{$m-i8-banner-gap});
-        min-height: calc(100vh - #{$m-i8-banner-gap * 2});
+        min-height: calc((var(--box-width) + var(--box-gap)) * 5);
         margin: $m-i8-banner-gap;
         margin-right: 0;
       }
 
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 650px) {
         width: calc(100% - #{$m-i8-banner-gap});
-        min-height: calc(100vh - #{$m-i8-banner-gap * 2});
-        margin: $m-i8-banner-gap;
-        margin-right: 0;
       }
 
       &:before {
@@ -158,14 +155,13 @@
 
         @media screen and (max-width: 1000px) {
           width: calc(100vw - #{$m-i8-banner-gap});
-          height: calc(100vh - #{$m-i8-banner-top});
+          height: calc((var(--box-width) + var(--box-gap)) * 5);
           position: absolute;
         }
 
-        @media screen and (max-width: 375px) {
-          width: calc(100vw - #{$m-i8-banner-gap});
+        @media screen and (max-width: 650px) {
           height: calc(100vh - #{$m-i8-banner-top});
-          position: absolute;
+          max-height: calc((var(--box-width) + var(--box-gap)) * 5);
         }
 
         &.side-menu {
@@ -189,12 +185,8 @@
           }
 
           @media screen and (max-width: 1000px) {
-            border-width: 5px * $zoom-1024;
-          }
-
-          @media screen and (max-width: 1000px) {
             width: calc(100vw - #{$m-i8-banner-inner-gap * 2});
-            height: calc(100vh - #{$m-i8-banner-top});
+            height: calc((var(--box-width) + var(--box-gap)) * 5);
             margin: 0;
             top: 0;
             left: calc(#{$m-i8-banner-inner-gap} - #{$m-i8-banner-gap});
@@ -202,22 +194,13 @@
             background-color: transparent;
             border: none;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: flex-end;
           }
 
-          @media screen and (max-width: 375px) {
-            width: calc(100vw - #{$m-i8-banner-inner-gap * 2});
+          @media screen and (max-width: 650px) {
             height: calc(100vh - #{$m-i8-banner-top});
-            margin: 0;
-            top: 0;
-            left: calc(#{$m-i8-banner-inner-gap} - #{$m-i8-banner-gap});
-            bottom: 0;
-            background-color: transparent;
-            border: none;
-            flex-direction: row;
             justify-content: space-between;
-            align-items: flex-end;
           }
           
           a.button {
@@ -238,15 +221,17 @@
             @media screen and (max-width: 1000px) {
               border-width: 5px * $zoom-1024;
               padding: 12px 48px * $zoom-1024;
-            }
-
-            @media screen and (max-width: 1000px) {
-              padding: 12px 18px;
               margin: 0;
+              margin-left: $m-i8-banner-inner-gap;
 
               p {
                 font-size: 24px !important;
               }
+            }
+
+            @media screen and (max-width: 650px) {
+              margin: 0;
+              margin-bottom: 1.5rem;
             }
 
             @media screen and (max-width: 375px) {
