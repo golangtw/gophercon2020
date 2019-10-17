@@ -21,6 +21,11 @@
     overflow: hidden;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      padding: 0;
+    }
   }
 
   &-close {
@@ -67,6 +72,12 @@
     box-shadow: 0 2px 26px rgba($black, .35);
     z-index: 9999;
 
+    @media screen and (max-width: 1024px) {
+      width: calc(100% - #{$m-i8-banner-gap} * 2);
+      margin: 0;
+      padding: $m-i8-banner-gap * 2 $m-i8-banner-gap;
+    }
+
     &::-webkit-scrollbar {
       display: none
     }
@@ -81,14 +92,26 @@
 
     h1.title {
       font-size: 36px;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 36px * $zoom-general-mobile-font;
+      }
     }
 
     h2.subtitle {
-      font-size: 24px
+      font-size: 24px;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 24px * $zoom-general-mobile-font;
+      }
     }
 
     p.paragraph {
       font-size: 18px;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 18px * $zoom-general-mobile-font;
+      }
     }
 
     a {
@@ -100,6 +123,10 @@
       li {
         line-height: 1.4;
         font-size: 18px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 18px * $zoom-general-mobile-font;
+        }
 
         a {
           color: $tone;
@@ -113,6 +140,10 @@
 
         li {
           margin-left: 18px;
+
+          @media screen and (max-width: 1024px) {
+            font-size: 18px * $zoom-general-mobile-font;
+          }
         }
       }
     }
