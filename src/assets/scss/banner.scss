@@ -59,15 +59,27 @@
         font-size: 96px;
         line-height: 100px;
         margin-bottom: 64px;
+
+        @media screen and (max-width: 1440px) {
+          font-size: 96px * $zoom-1440;
+        }
       }
   
       h2.subtitle {
         font-size: 72px;
+
+        @media screen and (max-width: 1440px) {
+          font-size: 72px * $zoom-1440;
+        }
       }
   
       h3.flag {
         height: 108px;
         font-size: 48px;
+
+        @media screen and (max-width: 1440px) {
+          font-size: 48px * $zoom-1440;
+        }
       }
       
       .view-box {
@@ -89,6 +101,10 @@
           right: -$main-padding;
           background-color: $background-color;
           border: 5px solid $font-color;
+
+          @media screen and (max-width: 1440px) {
+            border-width: 5px * $zoom-1440;
+          }
           
           a.button {
             display: inline-flex;
@@ -99,6 +115,11 @@
             border: 5px solid $font-color;
             cursor: pointer;
             transition: all ease-in-out .3s;
+
+            @media screen and (max-width: 1440px) {
+              border-width: 5px * $zoom-1440;
+              padding: 12px 48px * $zoom-1440;
+            }
 
             &:hover {
               background-color: $font-color;
@@ -112,6 +133,10 @@
               font-size: 36px;
               color: $font-color;
 
+              @media screen and (max-width: 1440px) {
+                font-size: 36px * $zoom-1440;
+              }
+
               &:first-child {
                 margin: 0;
               }
@@ -123,9 +148,17 @@
           font-size: 24px;
           line-height: 1.2;
 
+          @media screen and (max-width: 1440px) {
+            font-size: 24px * $zoom-1440;
+          }
+
           &:first-child {
             margin-top: $banner-gap;
             font-size: 48px;
+
+            @media screen and (max-width: 1440px) {
+              font-size: 48px * $zoom-1440;
+            }
           }
         }
 
@@ -138,18 +171,37 @@
           border: 5px solid $font-color;
           bottom: 0;
 
+          @media screen and (max-width: 1440px) {
+            border-width: 5px * $zoom-1440;
+            padding: 25px * $zoom-1440 50px * $zoom-1440;
+          }
+
           h1.date {
             font-size: 48px;
+
+            @media screen and (max-width: 1440px) {
+              font-size: 48px * $zoom-1440;
+            }
           }
 
           h2 {
             margin-top: 16px;
             font-size: 32px;
+
+            @media screen and (max-width: 1440px) {
+              margin-top: 16px * $zoom-1440;
+              font-size: 32px * $zoom-1440;
+            }
           }
 
           h3 {
             margin-top: 32px;
             font-size: 16px;
+
+            @media screen and (max-width: 1440px) {
+              margin-top: 32px * $zoom-1440;
+              font-size: 16px * $zoom-1440;
+            }
           }
         }
       }
