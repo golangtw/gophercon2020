@@ -23,17 +23,36 @@ const namespace: string = 'app';
 })
 export default class App extends Vue {
   @Action('toggleTheme', { namespace }) private toggleTheme: any;
+  @Action('toggleDevice', { namespace }) private toggleDevice: any;
   @Action('getSunRiseSunSetData', { namespace: 'sunRiseSunSet' }) private getSunRiseSunSetData: any;
+  @Getter('device', { namespace }) private device: any;
   @Getter('theme', { namespace }) private theme: any;
   @Getter('sunrise', { namespace: 'sunRiseSunSet' }) private sunrise: any;
   @Getter('sunset', { namespace: 'sunRiseSunSet' }) private sunset: any;
 
   public async mounted () {
     await this.detectSystemPrefersColorSchema();
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', this.detectSystemPrefersColorSchema);
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', async () => {
-      await this.detectSystemPrefersColorSchema();
-    });
+    this.detectDeviceType();
+    window.addEventListener('resize', this.detectDeviceType);
+  }
+
+  public destroyed () {
+    window.removeEventListener('change', this.detectSystemPrefersColorSchema);
+    window.removeEventListener('resize', this.detectDeviceType);
+  }
+
+  private detectDeviceType () {
+    const isDesktop: boolean = window.matchMedia('(min-width: 1024px)').matches;
+
+    if (isDesktop) {
+      this.toggleDevice('DESKTOP');
+    } else {
+      this.toggleDevice('MOBILE');
+    }
   }
 
   private async detectSystemPrefersColorSchema () {

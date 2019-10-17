@@ -74,6 +74,7 @@ const namespace: string = 'app';
 export default class Banner extends Vue {
   @Action('setSightMeasure', { namespace }) private setSightMeasure: any;
   @Action('togglePopup', { namespace }) private togglePopup: any;
+  @Getter('device', { namespace }) private device: any;
   @Getter('sight', { namespace }) private sight: any;
 
   public mounted () {

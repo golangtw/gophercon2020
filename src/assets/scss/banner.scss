@@ -5,6 +5,12 @@
       position: relative;
       margin: $main-padding;
 
+      @media screen and (max-width: 375px) {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+      }
+
       &:before {
         content: '';
         width: calc(100% + #{$main-padding} * 2);
@@ -14,6 +20,13 @@
         position: absolute;
         background-color: $background-color;
         transition: background-color ease-in-out .3s;
+
+        @media screen and (max-width: 375px) {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
       }
 
       &.popuped {
