@@ -19,8 +19,6 @@ module.exports = {
         route.html = route.html
           .replace(/<(script|link|img)(.*?) (src|href)="(.*?)">(.*?)/g, '<$1$2 $3="/2020$4">$5');
 
-          console.log(route.html);
-
         // Auto inject GA template
         route.html = route.html
           .replace('<noscript>{{{ %GA_TEMPLATE% }}}</noscript>', gaTempHTML);
