@@ -55,23 +55,23 @@ export default class Footer extends Vue {
   private communityMedia = [
     {
       icon: [ 'fab', 'youtube' ],
-      link: 'https://www.youtube.com/user/SITCONArchive'
+      link: 'https://sitcon.org/youtube'
     },
     {
       icon: [ 'fab', 'facebook-f' ],
-      link: 'https://www.facebook.com/SITCONtw/'
+      link: 'https://sitcon.org/facebook'
     },
     {
       icon: [ 'fab', 'twitter' ],
-      link: 'https://twitter.com/sitcontw'
+      link: 'https://sitcon.org/twitter'
     },
     {
       icon: [ 'fab', 'telegram-plane' ],
-      link: 'https://www.youtube.com/user/SITCONArchive'
+      link: 'https://sitcon.org/telegram'
     },
     {
       icon: [ 'fab', 'flickr' ],
-      link: 'https://www.flickr.com/people/sitcon/'
+      link: 'https://sitcon.org/flickr'
     }
   ];
 }
