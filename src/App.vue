@@ -46,7 +46,7 @@ export default class App extends Vue {
   }
 
   private detectDeviceType () {
-    const isDesktop: boolean = window.matchMedia('(min-width: 1024px)').matches;
+    const isDesktop: boolean = window.matchMedia('(min-width: 1000px)').matches;
 
     if (isDesktop) {
       this.toggleDevice('DESKTOP');

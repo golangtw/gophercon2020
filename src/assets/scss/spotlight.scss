@@ -9,8 +9,8 @@
   width: $spotlight-width;
   padding: 40px $spotlight-padding;
 
-  @media screen and (max-width: 375px) {
-    width: auto;
+  @media screen and (max-width: 1000px) {
+    width: calc(100% - #{$m-i8-banner-inner-gap * 2});
     padding: $m-i8-banner-inner-gap * 3 $m-i8-banner-inner-gap;
   }
   

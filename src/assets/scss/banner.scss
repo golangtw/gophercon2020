@@ -5,6 +5,13 @@
       position: relative;
       margin: $main-padding;
 
+      @media screen and (max-width: 1000px) {
+        width: calc(100% - #{$m-i8-banner-gap});
+        min-height: calc(100vh - #{$m-i8-banner-gap * 2});
+        margin: $m-i8-banner-gap;
+        margin-right: 0;
+      }
+
       @media screen and (max-width: 375px) {
         width: calc(100% - #{$m-i8-banner-gap});
         min-height: calc(100vh - #{$m-i8-banner-gap * 2});
@@ -22,7 +29,7 @@
         background-color: $background-color;
         transition: background-color ease-in-out .3s;
 
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 1000px) {
           width: calc(100% + #{$m-i8-banner-gap});
           height: calc(100% + #{$m-i8-banner-gap * 2});
           top: -$m-i8-banner-gap;
@@ -41,8 +48,8 @@
       top: $banner-top;
       left: 0;
 
-      @media screen and (max-width: 375px) {
-        width: calc(100% - #{$m-i8-banner-gap});
+      @media screen and (max-width: 1000px) {
+        width: 100%;
         top: $m-i8-banner-top;
       }
   
@@ -66,6 +73,10 @@
       flex-direction: row;
       z-index: 1;
 
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+      }
+
       @media screen and (max-width: 375px) {
         flex-direction: column;
       }
@@ -87,6 +98,13 @@
           font-size: 96px * $zoom-1440;
         }
 
+        @media screen and (max-width: 1000px) {
+          position: absolute;
+          top: calc(var(--sight-offset) - #{$m-i8-banner-top / 2});
+          font-size: 48px;
+          line-height: 1.2;
+        }
+
         @media screen and (max-width: 375px) {
           position: absolute;
           top: calc(var(--sight-offset) - #{$m-i8-banner-top / 2});
@@ -100,6 +118,12 @@
 
         @media screen and (max-width: 1440px) {
           font-size: 72px * $zoom-1440;
+        }
+
+        @media screen and (max-width: 1000px) {
+          position: absolute;
+          top: calc(var(--sight-offset) + var(--box-height) + var(--box-gap));
+          font-size: 36px;
         }
 
         @media screen and (max-width: 375px) {
@@ -117,6 +141,11 @@
           font-size: 48px * $zoom-1440;
         }
 
+        @media screen and (max-width: 1000px) {
+          height: auto;
+          font-size: 24px;
+        }
+
         @media screen and (max-width: 375px) {
           height: auto;
           font-size: 24px;
@@ -126,6 +155,12 @@
       .view-box {
         width: var(--viewbox-width);
         height: var(--viewbox-height);
+
+        @media screen and (max-width: 1000px) {
+          width: calc(100vw - #{$m-i8-banner-gap});
+          height: calc(100vh - #{$m-i8-banner-top});
+          position: absolute;
+        }
 
         @media screen and (max-width: 375px) {
           width: calc(100vw - #{$m-i8-banner-gap});
@@ -151,6 +186,24 @@
 
           @media screen and (max-width: 1440px) {
             border-width: 5px * $zoom-1440;
+          }
+
+          @media screen and (max-width: 1000px) {
+            border-width: 5px * $zoom-1024;
+          }
+
+          @media screen and (max-width: 1000px) {
+            width: calc(100vw - #{$m-i8-banner-inner-gap * 2});
+            height: calc(100vh - #{$m-i8-banner-top});
+            margin: 0;
+            top: 0;
+            left: calc(#{$m-i8-banner-inner-gap} - #{$m-i8-banner-gap});
+            bottom: 0;
+            background-color: transparent;
+            border: none;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
           }
 
           @media screen and (max-width: 375px) {
@@ -180,6 +233,20 @@
             @media screen and (max-width: 1440px) {
               border-width: 5px * $zoom-1440;
               padding: 12px 48px * $zoom-1440;
+            }
+
+            @media screen and (max-width: 1000px) {
+              border-width: 5px * $zoom-1024;
+              padding: 12px 48px * $zoom-1024;
+            }
+
+            @media screen and (max-width: 1000px) {
+              padding: 12px 18px;
+              margin: 0;
+
+              p {
+                font-size: 24px !important;
+              }
             }
 
             @media screen and (max-width: 375px) {
@@ -215,6 +282,15 @@
         }
 
         .define {
+          @media screen and (max-width: 1000px) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: var(--box-width);
+            margin-left: auto;
+            margin-right: $m-i8-banner-inner-gap;
+          }
+
           @media screen and (max-width: 375px) {
             display: flex;
             flex-direction: column;
@@ -233,6 +309,10 @@
             font-size: 24px * $zoom-1440;
           }
 
+          @media screen and (max-width: 1000px) {
+            font-size: 12px;
+          }
+
           @media screen and (max-width: 375px) {
             font-size: 12px;
           }
@@ -243,6 +323,11 @@
 
             @media screen and (max-width: 1440px) {
               font-size: 48px * $zoom-1440;
+            }
+
+            @media screen and (max-width: 1000px) {
+              margin-top: calc(#{$m-i8-banner-top} - 10px);
+              font-size: 24px;
             }
 
             @media screen and (max-width: 375px) {
@@ -266,6 +351,18 @@
             padding: 25px * $zoom-1440 50px * $zoom-1440;
           }
 
+          @media screen and (max-width: 1000px) {
+            border-width: 5px * $zoom-1024;
+            padding: 25px * $zoom-1024 50px * $zoom-1024;
+          }
+
+          @media screen and (max-width: 1000px) {
+            padding: 22.5px;
+            width: 200px;
+            top: calc(#{$m-i8-banner-top} + (var(--box-height) + var(--box-gap)) * 2);
+            bottom: auto;
+          }
+
           @media screen and (max-width: 375px) {
             padding: 22.5px;
             width: 200px;
@@ -278,6 +375,10 @@
 
             @media screen and (max-width: 1440px) {
               font-size: 48px * $zoom-1440;
+            }
+
+            @media screen and (max-width: 1000px) {
+              font-size: 24px;
             }
 
             @media screen and (max-width: 375px) {
@@ -294,6 +395,10 @@
               font-size: 32px * $zoom-1440;
             }
 
+            @media screen and (max-width: 1000px) {
+              font-size: 24px;
+            }
+
             @media screen and (max-width: 375px) {
               font-size: 24px;
             }
@@ -306,6 +411,10 @@
             @media screen and (max-width: 1440px) {
               margin-top: 32px * $zoom-1440;
               font-size: 16px * $zoom-1440;
+            }
+
+            @media screen and (max-width: 1000px) {
+              font-size: 12px;
             }
 
             @media screen and (max-width: 375px) {
