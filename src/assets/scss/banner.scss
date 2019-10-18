@@ -185,6 +185,7 @@
           box-sizing: border-box;
           margin: $main-padding 0;
           margin-top: calc(#{$main-padding} + #{$banner-gap});
+          padding: var(--box-gap) 0;
           width: calc(100% - var(--viewbox-width) * 2 + #{$main-padding} + var(--box-gap));
           height: calc(var(--viewbox-height) - #{$banner-gap});
           position: absolute;
@@ -195,6 +196,10 @@
 
           @media screen and (max-width: 1440px) {
             border-width: 5px * $zoom-1440;
+          }
+
+          @media screen and (max-width: 1280px) {
+            padding: 0;
           }
 
           @media screen and (max-width: 1000px) {

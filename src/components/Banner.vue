@@ -49,8 +49,8 @@
         >
           <p>投稿資訊</p>
         </a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuKARckZoYPw5RdagVQk9IBrASuS3TA-rS8LUzaCBB79955A/viewform" class="button" target="_blank" rel="noopener noreferrer">
-          <p>我要投稿</p>
+        <a href="#sponsor" class="button">
+          <p>贊助資訊</p>
         </a>
       </div>
     </header>

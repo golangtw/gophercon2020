@@ -13,7 +13,7 @@
         <p class="paragraph">二十一世紀已經過了五分之一，今年，我們期待帶著豐沛熱情的你，能和我們一起在 2020 年這麼一個「承先啟後」的年份，綜觀不同領域發展與事件脈絡，自主學習感興趣之專長與技術，彼此分享、相濡以沫。在 SITCON 2020 裡，願所有與會者皆能拓展視野，鍛鍊與發展自我，找到向前邁步的勇氣與目標。相信身為學生的我們，也將能重新定義自我、定義未來！</p>
         <p class="paragraph">SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。</p>
       </div>
-      <div class="spotlight">
+      <div id="sponsor" class="spotlight">
         <h1 class="title">
           <span class="sub">Call for Sponsor</span>
           <span class="font-black">贊助徵求</span>
