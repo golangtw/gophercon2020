@@ -6,5 +6,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  public mounted () {
+    // Temprary redirect to CFP.
+    this.$router.push({
+      name: 'CFP'
+    });
+  }
+}
 </script>
