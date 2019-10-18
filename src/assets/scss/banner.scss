@@ -215,6 +215,10 @@
             height: calc(100vh - #{$m-i8-banner-top});
             justify-content: space-between;
           }
+
+          @media screen and (max-height: 568px) {
+            height: calc(568px - #{$m-i8-banner-top});
+          }
           
           a.button {
             display: inline-flex;
