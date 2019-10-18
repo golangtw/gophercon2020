@@ -19,11 +19,11 @@
           <span class="font-black">贊助徵求</span>
         </h1>
         <p class="paragraph">
-          SITCON 的運作，除了眾多努力的志工，也還是少不了金錢的支持。<br>
-          如果認同 SITCON 的理念與作為，歡迎加入成為支持 SITCON 運作的一份子！
+          SITCON 的舉辦，除了眾多志工的努力，也需要金錢的支持。<br>
+          如果您認同 SITCON 的理念，歡迎以行動支持 SITCON 的運作，讓更多交流產生！
         </p>
         <p class="paragraph">
-          <a href="https://sitcon.kktix.cc/events/sitcon2020-individual-sponsor" class="fix-center font-bold" target="_blank" rel="noopener noreferrer">個人贊助傳送門</a>｜<a href="https://sitcon.kktix.cc/events/sitcon2020-individual-sponsor1" class="font-bold" target="_blank" rel="noopener noreferrer">個人贊助（純粹贊助）</a>
+          <a href="http://bit.ly/donatesitcon2020" class="font-bold" target="_blank" rel="noopener noreferrer">個人贊助方案</a>
         </p>
         <p class="paragraph">
           企業合作歡迎聯繫 <a href="mailto:contact@sitcon.org" class="font-black">contact@sitcon.org</a>
