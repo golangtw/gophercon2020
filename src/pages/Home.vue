@@ -9,9 +9,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class Home extends Vue {
   public mounted () {
     // Temprary redirect to CFP.
-    this.$router.push({
-      name: 'CFP'
-    });
+    window.location.assign('https://sitcon.org/2020/cfp');
   }
 }
 </script>
