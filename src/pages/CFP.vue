@@ -19,7 +19,7 @@
           <span class="font-black">贊助徵求</span>
         </h1>
         <p class="paragraph">
-          SITCON 的舉辦，除了眾多志工的努力，也需要金錢的支持。<br>
+          SITCON 的舉辦，除了有賴眾多志工的努力，也需要金錢的支持。<br>
           如果您認同 SITCON 的理念，歡迎以行動支持 SITCON 的運作，讓更多交流產生！
         </p>
         <p class="paragraph">
