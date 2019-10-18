@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && mv ./dist/2020/* ./dist && rm -rf 2020",
+    "build": "vue-cli-service build && mv ./dist/2020/* ./dist && cp -f ./dist/cfp.html ./dist/index.html && rm -rf 2020",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

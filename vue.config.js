@@ -9,6 +9,7 @@ module.exports = {
       registry: undefined,
       renderRoutes: [
         '/2020/',
+        '/2020/cfp',
         '/2020/cfp/'
       ],
       useRenderEvent: true,
