@@ -167,6 +167,9 @@
         Q：還有疑問怎麼辦？<br>
         A：歡迎來投稿者小聚與我們聊聊，或是寄信至 <a href="mailto:session@sitcon.org" class="font-bold">session@sitcon.org</a> 詢問，我們會儘速回應。
       </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuKARckZoYPw5RdagVQk9IBrASuS3TA-rS8LUzaCBB79955A/viewform" class="submission button font-black" target="_blank" rel="noopener noreferrer">
+        <p>我要投稿</p>
+      </a>
     </main>
     <Popup
       :isOpen="isPopup"

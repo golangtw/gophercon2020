@@ -125,6 +125,41 @@
     a {
       color: $tone;
       text-decoration: none;
+
+      &.button {
+        width: calc(250px - 48px * 2);
+        position: absolute;
+        right: 64px;
+        display: inline-block;
+        background-color: $white;
+        color: $black;
+        text-decoration: none;
+        margin: 0;
+        margin-bottom: 48px;
+        padding: 12px 48px;
+        border: 5px solid $black;
+        font-size: 36px;
+        cursor: pointer;
+        transition: all ease-in-out .3s;
+
+        @media screen and (max-width: 630px) {
+          position: relative;
+          right: 0;
+          text-align: center;
+        }
+
+        @media screen and (max-width: 500px) {
+          width: calc(100% - 48px * 2 - 10px);
+        }
+
+        &:hover {
+          background-color: $black;
+          
+          p {
+            color: $white;
+          }
+        }
+      }
     }
 
     ul {
