@@ -37,6 +37,14 @@
 
   p.paragraph {
     margin-bottom: 1rem;
+
+    .fix-center {
+      margin-left: 18px * 3;
+
+      @media screen and (max-width: 410px) {
+        margin-left: 0;
+      }
+    }
   }
 
   a {

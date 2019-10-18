@@ -108,6 +108,11 @@
           font-size: 48px;
           line-height: 1.2;
         }
+
+        @media screen and (max-width: 320px) {
+          font-size: 42px;
+          line-height: 1.2;
+        }
       }
   
       h2.subtitle {
@@ -128,6 +133,10 @@
           top: calc(var(--sight-offset) + var(--box-height) + var(--box-gap));
           font-size: 36px;
         }
+
+        @media screen and (max-width: 320px) {
+          font-size: 28px;
+        }
       }
   
       h3.flag {
@@ -146,6 +155,10 @@
         @media screen and (max-width: 375px) {
           height: auto;
           font-size: 24px;
+        }
+
+        @media screen and (max-width: 320px) {
+          font-size: 18px;
         }
       }
       
@@ -244,6 +257,15 @@
               }
             }
 
+            @media screen and (max-width: 320px) {
+              padding: 6px 12px;
+              margin: 0;
+
+              p {
+                font-size: 20px !important;
+              }
+            }
+
             &:hover {
               background-color: $font-color;
               
@@ -303,6 +325,10 @@
             font-size: 12px;
           }
 
+          @media screen and (max-width: 320px) {
+            font-size: 10px;
+          }
+
           &:first-child {
             margin-top: $banner-gap;
             font-size: 48px;
@@ -319,6 +345,11 @@
             @media screen and (max-width: 375px) {
               margin-top: calc(#{$m-i8-banner-top} - 10px);
               font-size: 24px;
+            }
+
+            @media screen and (max-width: 320px) {
+              margin-top: calc(#{$m-i8-banner-top} - 10px);
+              font-size: 20px;
             }
           }
         }
@@ -354,6 +385,11 @@
             width: 200px;
             top: calc(#{$m-i8-banner-top} + (var(--box-height) + var(--box-gap)) * 2);
             bottom: auto;
+          }
+
+          @media screen and (max-width: 320px) {
+            padding: 15.6px 18px;
+            width: 180px;
           }
 
           h1.date {

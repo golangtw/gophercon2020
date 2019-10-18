@@ -96,7 +96,7 @@ export default class Banner extends Vue {
     const sightContainer: any = this.$refs.sightContainer;
 
     const sightOffset: number = sightContainer.offsetTop;
-    const boxCols: number = this.device === 'MOBILE' ? Math.floor(sightContainer.clientWidth / 100) : 8;
+    const boxCols: number = this.device === 'MOBILE' ? Math.floor((sightContainer.clientWidth + 12) / 100) : 8;
     const boxRows: number = 3;
     const boxGap = this.device === 'MOBILE' ? 27 : 40;
     const boxWidth: number = (sightContainer.clientWidth - boxGap * (boxCols - 1)) / boxCols;
