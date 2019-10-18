@@ -210,6 +210,7 @@ export default class CFP extends Vue {
     }
 
     metaList[3].setAttribute('content', 'Call for Paper｜稿件徵求中！ — SITCON 2020');
+    metaList[4].setAttribute('content', 'SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
     metaList[5].setAttribute('content', 'https://sitcon.org/2020/cfp/');
     metaList[6].setAttribute('content', 'https://sitcon.org/2020/img/cfp-og.png');
 
