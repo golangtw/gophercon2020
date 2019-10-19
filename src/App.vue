@@ -57,19 +57,18 @@ export default class App extends Vue {
   private async detectSystemPrefersColorSchema () {
     const isDarkMode: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const isLightMode: boolean = window.matchMedia('(prefers-color-scheme: light)').matches;
-    const isNotSpecified: boolean = window.matchMedia('(prefers-color-scheme: no-preference)').matches;
 
-    if (isNotSpecified) {
+    if (isLightMode) {
+      this.toggleTheme('LIGHT');
+    } else if (isDarkMode) {
+      this.toggleTheme('DARK');
+    } else {
       await this.getSunRiseSunSetData();
       this.toggleThemeViaSunRiseSunSet();
 
       setInterval(() => {
         this.toggleThemeViaSunRiseSunSet();
       }, 1000);
-    } else if (isDarkMode) {
-      this.toggleTheme('DARK');
-    } else {
-      this.toggleTheme('LIGHT');
     }
   }
 
