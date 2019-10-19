@@ -91,6 +91,12 @@
         line-height: 100px;
         margin-bottom: 64px;
 
+        @media screen and (max-width: 2560px) {
+          font-size: 96px * $zoom-2560;
+          line-height: 100px * $zoom-2560;
+          margin-bottom: 64px * $zoom-2560;
+        }
+
         @media screen and (max-width: 1440px) {
           font-size: 96px * $zoom-1440;
         }
@@ -118,6 +124,10 @@
       h2.subtitle {
         font-size: 72px;
 
+        @media screen and (max-width: 2560px) {
+          font-size: 72px * $zoom-2560;
+        }
+
         @media screen and (max-width: 1440px) {
           font-size: 72px * $zoom-1440;
         }
@@ -142,6 +152,10 @@
       h3.flag {
         height: 108px;
         font-size: 48px;
+
+        @media screen and (max-width: 2560px) {
+          font-size: 48px * $zoom-2560;
+        }
 
         @media screen and (max-width: 1440px) {
           font-size: 48px * $zoom-1440;
@@ -307,20 +321,15 @@
             margin-left: auto;
             margin-right: $m-i8-banner-inner-gap;
           }
-
-          @media screen and (max-width: 375px) {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            width: var(--box-width);
-            margin-left: auto;
-            margin-right: $m-i8-banner-inner-gap;
-          }
         }
 
         p {
           font-size: 24px;
           line-height: 1.2;
+
+          @media screen and (max-width: 2560px) {
+            font-size: 24px * $zoom-2560;
+          }
 
           @media screen and (max-width: 1440px) {
             font-size: 24px * $zoom-1440;
@@ -341,6 +350,10 @@
           &:first-child {
             margin-top: $banner-gap;
             font-size: 48px;
+
+            @media screen and (max-width: 2560px) {
+              font-size: 48px * $zoom-2560;
+            }
 
             @media screen and (max-width: 1440px) {
               font-size: 48px * $zoom-1440;
@@ -404,6 +417,10 @@
           h1.date {
             font-size: 48px;
 
+            @media screen and (max-width: 2560px) {
+              font-size: 48px * $zoom-2560;
+            }
+
             @media screen and (max-width: 1440px) {
               font-size: 48px * $zoom-1440;
             }
@@ -420,6 +437,11 @@
           h2 {
             margin-top: 16px;
             font-size: 32px;
+
+            @media screen and (max-width: 2560px) {
+              margin-top: 16px * $zoom-2560;
+              font-size: 32px * $zoom-2560;
+            }
 
             @media screen and (max-width: 1440px) {
               margin-top: 16px * $zoom-1440;
@@ -438,6 +460,11 @@
           h3 {
             margin-top: 32px;
             font-size: 16px;
+
+            @media screen and (max-width: 2560px) {
+              margin-top: 32px * $zoom-2560;
+              font-size: 16px * $zoom-2560;
+            }
 
             @media screen and (max-width: 1440px) {
               margin-top: 32px * $zoom-1440;
