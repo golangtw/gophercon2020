@@ -34,14 +34,27 @@ export default class App extends Vue {
     this.detectDeviceType();
     window.addEventListener('resize', this.detectDeviceType);
 
-    await this.detectSystemPrefersColorSchema();
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(async () => {
+    if (!this.detectedEgg()) {
       await this.detectSystemPrefersColorSchema();
-    });
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(async () => {
+        await this.detectSystemPrefersColorSchema();
+      });
+    }
   }
 
   public destroyed () {
     window.removeEventListener('resize', this.detectDeviceType);
+  }
+
+  private detectedEgg () {
+    const now: Date = new Date();
+
+    if (now.toLocaleString('en-US', {timeZone: 'Asia/Taipei'}).split(',')[0] === '10/26/2019') {
+      this.toggleTheme('RAINBOW');
+      return true;
+    } else {
+      return false;
+    }
   }
 
   private detectDeviceType () {

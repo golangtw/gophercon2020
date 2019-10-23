@@ -23,4 +23,8 @@
   &.theme-dark {
     @include dark;
   }
+
+  &.theme-rainbow {
+    @include rainbow;
+  }
 }

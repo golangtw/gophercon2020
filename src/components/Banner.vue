@@ -31,6 +31,12 @@
       <div class="view-box">
         <div class="define">
           <p class="code font-black font-italic">#define</p>
+          <p
+            v-if="theme === 'RAINBOW'"
+            class="code font-black font-italic"
+          >
+            GenderEquality
+          </p>
           <p class="code font-black font-italic">student</p>
           <p class="code font-black font-italic">2020</p>
           <p class="code font-black font-italic">future</p>
@@ -75,6 +81,7 @@ export default class Banner extends Vue {
   @Action('setSightMeasure', { namespace }) private setSightMeasure: any;
   @Action('togglePopup', { namespace }) private togglePopup: any;
   @Getter('device', { namespace }) private device: any;
+  @Getter('theme', { namespace }) private theme: any;
   @Getter('sight', { namespace }) private sight: any;
 
   @Watch('device')
