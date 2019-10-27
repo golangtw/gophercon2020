@@ -34,12 +34,13 @@ export default class App extends Vue {
     this.detectDeviceType();
     window.addEventListener('resize', this.detectDeviceType);
 
-    if (!this.detectedEgg()) {
+    await this.detectSystemPrefersColorSchema();
+    this.detectedEgg();
+
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(async () => {
       await this.detectSystemPrefersColorSchema();
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(async () => {
-        await this.detectSystemPrefersColorSchema();
-      });
-    }
+      this.detectedEgg();
+    });
   }
 
   public destroyed () {

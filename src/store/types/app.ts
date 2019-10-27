@@ -21,5 +21,6 @@ export type DeviceType =
 export type ThemeType =
   'LIGHT' |
   'DARK' |
-  'RAINBOW'
+  'RAINBOW-LIGHT' |
+  'RAINBOW-DARK'
 ;
