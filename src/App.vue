@@ -35,11 +35,9 @@ export default class App extends Vue {
     window.addEventListener('resize', this.detectDeviceType);
 
     await this.detectSystemPrefersColorSchema();
-    this.detectedEgg();
 
     window.matchMedia('(prefers-color-scheme: dark)').addListener(async () => {
       await this.detectSystemPrefersColorSchema();
-      this.detectedEgg();
     });
   }
 
@@ -47,15 +45,13 @@ export default class App extends Vue {
     window.removeEventListener('resize', this.detectDeviceType);
   }
 
-  private detectedEgg () {
+  private detectedEgg (): boolean {
     const now: Date = new Date();
 
-    if (now.getTime() > new Date('2019-10-26').getTime() && now.getTime() < new Date('2019-11-27').getTime()) {
-      this.toggleTheme(`RAINBOW-${this.theme}`);
-    }
+    return now.getTime() > new Date('2019-10-26').getTime() && now.getTime() < new Date('2019-11-27').getTime();
   }
 
-  private detectDeviceType () {
+  private detectDeviceType (): void {
     const isDesktop: boolean = window.matchMedia('(min-width: 1000px)').matches;
 
     if (isDesktop) {
@@ -65,14 +61,14 @@ export default class App extends Vue {
     }
   }
 
-  private async detectSystemPrefersColorSchema () {
+  private async detectSystemPrefersColorSchema (): Promise<void> {
     const isDarkMode: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const isLightMode: boolean = window.matchMedia('(prefers-color-scheme: light)').matches;
 
     if (isLightMode) {
-      this.toggleTheme('LIGHT');
+      this.detectedEgg() ? this.toggleTheme('RAINBOW-LIGHT') : this.toggleTheme('LIGHT');
     } else if (isDarkMode) {
-      this.toggleTheme('DARK');
+      this.detectedEgg() ? this.toggleTheme('RAINBOW-DARK') : this.toggleTheme('DARK');
     } else {
       await this.getSunRiseSunSetData();
       this.toggleThemeViaSunRiseSunSet();
@@ -83,14 +79,26 @@ export default class App extends Vue {
     }
   }
 
-  private toggleThemeViaSunRiseSunSet () {
+  private toggleThemeViaSunRiseSunSet (): void {
     const now = new Date();
+    const isEgg: boolean = this.detectedEgg();
+    const isDay: boolean = now.getTime() > this.sunrise.getTime() && now.getTime() < this.sunset.getTime();
 
-    if (now.getTime() > this.sunrise.getTime() && now.getTime() < this.sunset.getTime()) {
-      this.toggleTheme('LIGHT');
+    let themePrefix: string = '';
+
+    if (isEgg) {
+      themePrefix = 'RAINBOW-';
     } else {
-      this.toggleTheme('DARK');
+      themePrefix = '';
     }
+
+    if (isDay) {
+      themePrefix += 'LIGHT';
+    } else {
+      themePrefix += 'DARK';
+    }
+
+    this.toggleTheme(themePrefix);
   }
 }
 </script>
