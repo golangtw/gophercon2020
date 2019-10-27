@@ -49,11 +49,8 @@ export default class App extends Vue {
   private detectedEgg () {
     const now: Date = new Date();
 
-    if (now.toLocaleString('en-US', {timeZone: 'Asia/Taipei'}).split(',')[0] === '10/26/2019') {
-      this.toggleTheme('RAINBOW');
-      return true;
-    } else {
-      return false;
+    if (now.getTime() > new Date('2019-10-26').getTime() && now.getTime() < new Date('2019-11-27').getTime()) {
+      this.toggleTheme(`RAINBOW-${this.theme}`);
     }
   }
 
