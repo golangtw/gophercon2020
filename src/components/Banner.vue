@@ -32,7 +32,7 @@
         <div class="define">
           <p class="code font-black font-italic">#define</p>
           <p
-            v-if="theme === 'RAINBOW'"
+            v-if="theme.includes('RAINBOW')"
             class="code font-black font-italic"
           >
             GenderEquality
