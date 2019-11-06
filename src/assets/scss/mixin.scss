@@ -3,3 +3,10 @@
   background-position: center;
   background-size: cover;
 }
+
+@mixin ResetWebAppearance {
+  appearance: none;
+  background: none;
+  border: 0;
+  color: inherit;
+}

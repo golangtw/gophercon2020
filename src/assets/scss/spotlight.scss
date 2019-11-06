@@ -57,7 +57,22 @@
     }
   }
 
-  &:nth-child(even) {
+  &:nth-child(2n) {
+    background-color: $gray;
+    
+    h1.title,
+    h2.subtitle,
+    p.paragraph,
+    span {
+      color: $white;
+    }
+
+    a {
+      color: $light-tone;
+    }
+  }
+
+  &:nth-child(3n) {
     background-color: $dark-tone;
     
     h1.title,

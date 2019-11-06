@@ -1,0 +1,65 @@
+.input-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  width: 450px;
+  height: 54px;
+  margin: 32px auto;
+  background-color: $white;
+  color: rgba($black, .7);
+  font-size: 36px;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
+  @media (max-width: 400px) {
+    width: calc(100% + 24px * 2);
+    margin-left: -24px;
+  }
+
+  label{
+    display: inline-flex;
+    padding: 0 16px;
+
+    >span {
+      color: rgba($black, .7) !important;
+    }
+
+    @media (max-width: 400px) {
+      padding: 0 8px;
+    }
+  }
+
+  input {
+    @include ResetWebAppearance;
+    width: 260px;
+    display: inline-flex;
+    color: rgba($black, .7);
+    font-size: 24px;
+    border-bottom: 1px solid $gray;
+    margin: 6px;
+
+    @media (max-width: 500px) {
+      width: calc(100% - 12rem);
+    }
+
+    @media (max-width: 400px) {
+      width: calc(100% - 11rem);
+    }
+  }
+
+  span.icon {
+    position: absolute;
+    display: inline-flex;
+    width: 54px;
+    height: 54px;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    color: $gray !important;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
