@@ -16,12 +16,12 @@
       <div id="call-of-define" class="spotlight">
         <h1 class="title">
           <span class="sub">Call for #define</span>
-          <span class="font-black">define SITCON</span>
+          <span class="font-black">#define student</span>
         </h1>
         <p class="paragraph">
           你對 SITCON 的想像是什麼呢？<br>
           或者今年的 SITCON 有期待見到什麼主題 / 活動？<br>
-          歡迎跟大家分享你的想法，一起 define SITCON
+          歡迎跟大家分享你的想法，一起 #define student
         </p>
         <div class="input-box">
           <label for="define"><span class="font-black">#define</span></label>
@@ -29,7 +29,7 @@
             v-model="defineString"
             type="text"
             name="define"
-            placeholder="SITCON"
+            placeholder="student"
             class="font-black"
             maxlength="15"
             @keypress.enter="sendDefineForm"
