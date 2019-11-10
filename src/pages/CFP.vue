@@ -254,6 +254,7 @@ export default class CFP extends Vue {
     if (this.defineString) {
       try {
         await axios.post(`https://docs.google.com/forms/d/e/1FAIpQLSf60kH6sRpI_7ctpKi8ptcI7cG2OpvGmW3SjWUGcyiDEekQ4w/formResponse?entry.2121946644=${this.defineString}`);
+        this.defineString = '';
       } catch (error) {
         console.error('Google Form POST', error);
       }
