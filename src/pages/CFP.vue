@@ -83,6 +83,9 @@
       </p>
       <p class="paragraph">以下是我們以往的熱門議程，可供您參考：</p>
       <ul>Presentation：
+        <li>從學校到業界，工程師作為職業的現實（<a href="https://sitcon.org/2019/agenda/7a67f4fb-b6f4-4595-b9af-527b3024c8f8" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/qYxdomoMEf8" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+        <li>TMML 真相靠自己─You are Fake News！（<a href="https://sitcon.org/2019/agenda/f5d28cd1-5165-4388-9dc2-5d2257a5b5bc" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/9PFZ0_C2Sxo" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+        <li>黑客、社團、資訊魔法學習大總匯（<a href="https://sitcon.org/2019/agenda/64ed212c-f1a9-40df-a84e-5f7411d4c887" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/SkUuK731XGY" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
         <li>奔跑吧！台北：遊戲開發經驗分享（<a href="https://sitcon.org/2018/#/agenda/sub/d946b6e1-d826-4c64-86a4-bf013bcc0c06" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=85bW97XI4i0" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
         <li>Club Mate 與德國駭客精神：34C3 大會實錄（<a href="https://sitcon.org/2018/#/agenda/sub/35598abf-4efe-48fc-93a4-3d539e6f6c47" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=8xrYLc4num8" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
         <li>由淺入坑區塊鏈～從認識架構到應用智能合約！（<a href="https://sitcon.org/2018/#/agenda/sub/08c2816d-ea25-4169-89e6-dc0e0bc7b9a4" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=B3fXXElzc9Q" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
@@ -91,12 +94,13 @@
         <li>cjdns: 重新發明網路（<a href="https://sitcon.org/2017/#schedule-page" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=l75ArFBCMlM" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
       </ul>
       <ul>Espresso：
+        <li>淺談社會網路分析（<a href="https://sitcon.org/2019/agenda/f60637a1-0ccb-4c02-b1b0-be7a6a393d87" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/GFfaD-kVe_A" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+        <li>你所不知道的維基 - Wikidata（<a href="https://sitcon.org/2019/agenda/7959ab0b-cdfa-40bc-8566-099477abb195" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/kD-jGfDZGGo" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+        <li>AI for the Art in a Box（<a href="https://sitcon.org/2019/agenda/0b49bfce-a147-4702-a5b9-87eb2dfa5135" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/iZz5au-vVHk" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
         <li>校園駭客-看你學號() return 你家住址; （<a href="https://sitcon.org/2018/#/agenda/sub/b8998705-c6e2-4c48-ae76-984f23b54719" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=yahEwM88q-Q" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
         <li>600秒學會UI設計（<a href="https://sitcon.org/2018/#/agenda/sub/d6daa14b-39ef-410b-883c-0b1c3ae02a60" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=hqhmwt7SCJc" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
         <li>深度學習如何深度學習（<a href="https://sitcon.org/2018/#/agenda/sub/f3c6853d-2b0e-464c-8837-9411455961d8" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=H5o5Oa_nbqs" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
         <li>格鬥遊戲 AI 開發經驗談（<a href="https://www.youtube.com/watch?v=ryLLzSwQ54w" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-        <li>第一次做光劍就上手（<a href="https://www.youtube.com/watch?v=vokwxRmT2WU" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-        <li>從零開始的線上字型（<a href="https://www.youtube.com/watch?v=HiQ35KuORFM" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
       </ul>
       <h1 id="coc" class="title font-black">Code of Conduct 行為準則</h1>
       <p class="paragraph">
