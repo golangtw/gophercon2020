@@ -31,7 +31,7 @@
             name="define"
             placeholder="student"
             class="font-black"
-            maxlength="15"
+            maxlength="30"
             @keypress.enter="sendDefineForm"
           >
           <span
