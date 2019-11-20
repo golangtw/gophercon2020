@@ -19,9 +19,8 @@
           <span class="font-black">#define student</span>
         </h1>
         <p class="paragraph">
-          你對 SITCON 的想像是什麼呢？<br>
-          或者今年的 SITCON 有期待見到什麼主題 / 活動？<br>
-          歡迎跟大家分享你的想法，一起 #define student
+          今年 SITCON 以 #define student 作為 slogan，希望能夠重新定義學生的價值，同時我們也想知道有什麼大家想瞭解的議題或重新定義的事物。<br>
+          不論是你期望在 SITCON 見到的議題、認同的字彙、想要大家知道的技術，歡迎來和大家分享你的看法，一起 define anything。
         </p>
         <div class="input-box">
           <label for="define"><span class="font-black">#define</span></label>
