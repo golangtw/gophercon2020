@@ -220,8 +220,8 @@ import axios from 'axios';
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
 
-import Banner from '@/components/Banner.vue';
-import Footer from '@/components/Footer.vue';
+import Banner from '@/components/CFP/Banner.vue';
+import Footer from '@/components/CFP/Footer.vue';
 import Popup from '@/components/Popup.vue';
 
 const namespace: string = 'app';
@@ -272,3 +272,7 @@ export default class CFP extends Vue {
   }
 }
 </script>
+
+<style lang="scss">
+@import '../assets/scss/CFP/main.scss';
+</style>
