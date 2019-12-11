@@ -13,7 +13,21 @@
         <p class="paragraph">二十一世紀已經過了五分之一，今年，我們期待帶著豐沛熱情的你，能和我們一起在 2020 年這麼一個「承先啟後」的年份，綜觀不同領域發展與事件脈絡，自主學習感興趣之專長與技術，彼此分享、相濡以沫。在 SITCON 2020 裡，願所有與會者皆能拓展視野，鍛鍊與發展自我，找到向前邁步的勇氣與目標。相信身為學生的我們，也將能重新定義自我、定義未來！</p>
         <p class="paragraph">SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。</p>
       </div>
-      <div id="call-for-define" class="spotlight">
+      <div
+        id="call-for-define"
+        class="spotlight"
+        ref="bulletScreen"
+        :class="{ 'on-send': onSend }"
+      >
+        <BulletScreen
+          class="sketch-box"
+          :class="{ 'on-send': onSend }"
+          :msg="defineString"
+          :width="bulletScreenWidth"
+          :height="bulletScreenHeight"
+          :active="onSend"
+          :quality="defineString.replace(/[^\x00-\xff]/g, 'xx').length > 10 ? 25 : 50"
+        />
         <h1 class="title">
           <span class="sub">Call for #define</span>
           <span class="font-black">#define student</span>
@@ -221,6 +235,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
 
 import Banner from '@/components/CFP/Banner.vue';
+import BulletScreen from '@/components/CFP/BulletScreen.vue';
 import Footer from '@/components/CFP/Footer.vue';
 import Popup from '@/components/Popup.vue';
 
@@ -229,6 +244,7 @@ const namespace: string = 'app';
 @Component({
   components: {
     Banner,
+    BulletScreen,
     Footer,
     Popup
   }
@@ -238,6 +254,9 @@ export default class CFP extends Vue {
 
   private popupContent: string = '';
   private defineString: string = '';
+  private onSend: boolean = false;
+  private bulletScreenWidth: number = 0;
+  private bulletScreenHeight: number = 0;
 
   public mounted () {
     const title = document.querySelector('head>title');
@@ -255,13 +274,30 @@ export default class CFP extends Vue {
     const popupPre = this.$refs.popupPreContent as Element;
 
     this.popupContent = popupPre.innerHTML;
+
+    this.measureBulletScreenSize();
   }
 
-  private async sendDefineForm () {
+  private toggleSendAnimate (): void {
+    this.onSend = true;
+    setTimeout(() => {
+      this.defineString = '';
+      this.onSend = false;
+    }, 3000);
+  }
+
+  private measureBulletScreenSize (): void {
+    const bulletScreen: any = this.$refs.bulletScreen;
+
+    this.bulletScreenWidth = bulletScreen.clientWidth;
+    this.bulletScreenHeight = bulletScreen.clientHeight;
+  }
+
+  private async sendDefineForm (): Promise<void> {
     if (this.defineString) {
       try {
         const defineString = this.defineString;
-        this.defineString = '';
+        this.toggleSendAnimate();
         await axios.post(`https://docs.google.com/forms/d/e/1FAIpQLSf60kH6sRpI_7ctpKi8ptcI7cG2OpvGmW3SjWUGcyiDEekQ4w/formResponse?entry.2121946644=${defineString}`);
       } catch (error) {
         // tslint:disable:no-console

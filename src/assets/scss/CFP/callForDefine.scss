@@ -1,0 +1,65 @@
+@keyframes onSend {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sketchOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#call-for-define {
+  position: relative;
+  overflow: hidden;
+
+  &.on-send {
+    >h1,
+    >h2,
+    >p,
+    >div {
+      animation: onSend 3s cubic-bezier(.89, -0.93, .2, 1.58) forwards;
+    }
+  }
+
+  .sketch-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    stroke: $black;
+    fill: $white;
+
+    &.on-send {
+      animation: sketchOpacity 3s ease-in-out forwards;
+    }
+  }
+}
