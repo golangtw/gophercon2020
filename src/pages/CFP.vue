@@ -87,7 +87,7 @@
 <script lang="ts">
 import axios from 'axios';
 import { Component, Vue } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
+import { Action, Getter } from 'vuex-class';
 
 import Banner from '@/components/CFP/Banner.vue';
 import BulletScreen from '@/components/CFP/BulletScreen.vue';
@@ -105,6 +105,7 @@ const namespace: string = 'app';
   }
 })
 export default class CFP extends Vue {
+  @Action('toggleTheme', { namespace }) private toggleTheme: any;
   @Getter('isPopup', { namespace }) private isPopup: any;
   @Getter('popupContent', { namespace }) private popupContent: any;
 
@@ -147,6 +148,11 @@ export default class CFP extends Vue {
   private async sendDefineForm (): Promise<void> {
     if (this.defineString) {
       try {
+        // Detect Egg
+        if (this.defineString.toLowerCase().trim().replace(/ /g, '') === 'genderequality') {
+          this.toggleTheme('RAINBOW-DARK');
+        }
+
         const defineString = this.defineString;
         this.toggleSendAnimate();
         await axios.post(`https://docs.google.com/forms/d/e/1FAIpQLSf60kH6sRpI_7ctpKi8ptcI7cG2OpvGmW3SjWUGcyiDEekQ4w/formResponse?entry.2121946644=${defineString}`);
