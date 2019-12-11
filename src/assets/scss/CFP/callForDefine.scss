@@ -57,9 +57,14 @@
     left: 0;
     stroke: $black;
     fill: $white;
+    font-family: 'Noto Sans TC', sans-serif;
 
     &.on-send {
       animation: sketchOpacity 3s ease-in-out forwards;
+    }
+
+    text {
+      font-family: 'Noto Sans TC', sans-serif;
     }
   }
 }

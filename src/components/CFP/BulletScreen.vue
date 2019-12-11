@@ -15,7 +15,7 @@
       :y="coordinates[index - 1].y"
       :font-weight="fontWeightSets[index - 1]"
       :opacity="active ? 1 : 0"
-      font-family="Noto Sans CJK TC"
+      font-family="Noto Sans TC"
       font-style="italic"
     >
       {{ msg }}
