@@ -6,6 +6,7 @@ export interface AppState {
   sight: SightState;
   theme: ThemeType;
   isPopup: boolean;
+  popupContent: string;
 }
 
 export type AppMode =
