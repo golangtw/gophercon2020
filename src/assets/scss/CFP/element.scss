@@ -39,6 +39,8 @@
     color: rgba($black, .7);
     font-size: 24px;
     border-bottom: 1px solid $gray;
+    border-radius: 0px;
+    outline: none;
     margin: 6px;
 
     @media (max-width: 500px) {
