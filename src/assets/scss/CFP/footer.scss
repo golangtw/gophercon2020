@@ -9,7 +9,7 @@
     grid-gap: 42px;
     padding: 64px $main-padding;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
       grid-gap: 32px;
       position: relative;
       padding: 64px $m-i8-banner-inner-gap;
@@ -35,7 +35,7 @@
     flex-direction: column;
     color: $dark-1;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
       word-break: break-word;
       font-size: 18px;
     }
@@ -43,12 +43,12 @@
     span {
       line-height: 1.4;
 
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 1024px) {
         margin-bottom: 5px;
       }
 
       &:nth-child(1) {
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 1024px) {
           margin-bottom: 16px;
         }
       }
@@ -71,7 +71,7 @@
     border: 1px solid $dark-2;
     width: 450px;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
       width: 33%;
     }
   }
@@ -90,7 +90,7 @@
     >p>span:nth-child(2)>a {
       margin-right: 1rem;
 
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 1024px) {
         font-size: 16px;
       }
 
@@ -106,7 +106,7 @@
 
     >p>span {
       &:nth-child(2) {
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 1024px) {
           display: flex;
           justify-content: space-between;
         }
