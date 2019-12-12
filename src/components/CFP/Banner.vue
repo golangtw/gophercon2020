@@ -85,28 +85,21 @@ import { Action, Getter } from 'vuex-class';
 import { AppState } from '@/store/types/app';
 import Sight from './Sight.vue';
 
-import submitInfoDOMString from '../../../template/submitInfo.mod';
-import openSubmitDOMString from '../../../template/openSubmit.mod';
-import loudlyDOMString from '../../../template/loudly.mod';
-
-const namespace: string = 'app';
-
 @Component({
   components: {
     Sight
   }
 })
 export default class Banner extends Vue {
-  private submitInfo: string = submitInfoDOMString;
-  private openSubmit: string = openSubmitDOMString;
-  private loudly: string = loudlyDOMString;
-
-  @Action('setSightMeasure', { namespace }) private setSightMeasure: any;
-  @Action('togglePopup', { namespace }) private togglePopup: any;
-  @Action('togglePopupContent', { namespace }) private togglePopupContent: any;
-  @Getter('device', { namespace }) private device: any;
-  @Getter('theme', { namespace }) private theme: any;
-  @Getter('sight', { namespace }) private sight: any;
+  @Action('setSightMeasure', { namespace: 'app' }) private setSightMeasure: any;
+  @Action('togglePopup', { namespace: 'app' }) private togglePopup: any;
+  @Action('togglePopupContent', { namespace: 'app' }) private togglePopupContent: any;
+  @Getter('device', { namespace: 'app' }) private device: any;
+  @Getter('theme', { namespace: 'app' }) private theme: any;
+  @Getter('sight', { namespace: 'app' }) private sight: any;
+  @Getter('submitInfo', { namespace: 'template' }) private submitInfo: any;
+  @Getter('openSubmit', { namespace: 'template' }) private openSubmit: any;
+  @Getter('loudly', { namespace: 'template' }) private loudly: any;
 
   @Watch('device')
   public onDeviceChanged (val: string, newVal: string) {
@@ -115,9 +108,6 @@ export default class Banner extends Vue {
 
   public mounted () {
     this.measureSightSize();
-    this.submitInfo = submitInfoDOMString;
-    this.openSubmit = openSubmitDOMString;
-    this.loudly = loudlyDOMString;
 
     window.addEventListener('resize', this.measureSightSize);
   }
@@ -151,9 +141,11 @@ export default class Banner extends Vue {
   }
 
   private processPopup (hook: string): void {
-    this.togglePopup(true);
     const targetDOM = this.$refs[hook] as HTMLElement;
+
+    this.togglePopup(true);
     this.togglePopupContent(targetDOM.innerHTML);
+    this.$router.push({ query: { popUp: hook } });
   }
 }
 </script>
