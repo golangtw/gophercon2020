@@ -4,5 +4,7 @@
 
   &.popuped {
     position: fixed;
+    filter: blur(5px);
+    -moz-filter: blur(5px);
   }
 }
