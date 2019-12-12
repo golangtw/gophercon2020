@@ -84,7 +84,7 @@
 
 <script lang="ts">
 import axios from 'axios';
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
 import Banner from '@/components/CFP/Banner.vue';
@@ -106,18 +106,20 @@ export default class CFP extends Vue {
   @Action('toggleTheme', { namespace }) private toggleTheme: any;
   @Getter('isPopup', { namespace }) private isPopup: any;
 
+  @Watch('isPopup')
+  public onChangePopup(newVal: boolean) {
+    if (!newVal) {
+      this.setMeta();
+    }
+  }
+
   private defineString: string = '';
   private onSend: boolean = false;
   private bulletScreenWidth: number = 0;
   private bulletScreenHeight: number = 0;
 
   public mounted () {
-    head.title('Call for Paper｜稿件徵求中！ — SITCON 2020');
-    head.ogTitle('Call for Paper｜稿件徵求中！ — SITCON 2020');
-    head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
-    head.ogUrl('https://sitcon.org/2020/cfp/');
-    head.ogImage('https://sitcon.org/2020/img/cfp-og.png');
-
+    this.setMeta();
     this.measureBulletScreenSize();
   }
 
@@ -153,6 +155,14 @@ export default class CFP extends Vue {
         // tslint:enable
       }
     }
+  }
+
+  private setMeta (): void {
+    head.title('Call for Paper｜稿件徵求中！ — SITCON 2020');
+    head.ogTitle('Call for Paper｜稿件徵求中！ — SITCON 2020');
+    head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+    head.ogUrl('https://sitcon.org/2020/cfp/');
+    head.ogImage('https://sitcon.org/2020/img/cfp-og.png');
   }
 }
 </script>
