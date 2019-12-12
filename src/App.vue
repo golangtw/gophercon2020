@@ -20,6 +20,9 @@ import Navbar from '@/components/Navbar.vue';
 import Popup from '@/components/Popup.vue';
 import { TemplateState } from './store/types/template';
 
+import head from './util/head';
+head.reset();
+
 @Component({
   components: {
     Navbar,

@@ -91,6 +91,8 @@ import Banner from '@/components/CFP/Banner.vue';
 import BulletScreen from '@/components/CFP/BulletScreen.vue';
 import Footer from '@/components/CFP/Footer.vue';
 
+import head from '../util/head';
+
 const namespace: string = 'app';
 
 @Component({
@@ -110,17 +112,11 @@ export default class CFP extends Vue {
   private bulletScreenHeight: number = 0;
 
   public mounted () {
-    const title = document.querySelector('head>title');
-    const metaList = Array.from(document.querySelectorAll('head>meta'));
-
-    if (title) {
-      title.innerHTML = 'Call for Paper｜稿件徵求中！ — SITCON 2020';
-    }
-
-    metaList[3].setAttribute('content', 'Call for Paper｜稿件徵求中！ — SITCON 2020');
-    metaList[4].setAttribute('content', 'SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
-    metaList[5].setAttribute('content', 'https://sitcon.org/2020/cfp/');
-    metaList[6].setAttribute('content', 'https://sitcon.org/2020/img/cfp-og.png');
+    head.title('Call for Paper｜稿件徵求中！ — SITCON 2020');
+    head.ogTitle('Call for Paper｜稿件徵求中！ — SITCON 2020');
+    head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+    head.ogUrl('https://sitcon.org/2020/cfp/');
+    head.ogImage('https://sitcon.org/2020/img/cfp-og.png');
 
     this.measureBulletScreenSize();
   }
