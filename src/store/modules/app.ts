@@ -6,7 +6,7 @@ import * as mutationTypes from '../mutation-types';
 
 const namespaced: boolean = true;
 
-export const state: AppState = {
+const state: AppState = {
   mode: 'WEB',
   device: 'DESKTOP',
   sight: {
@@ -24,7 +24,7 @@ export const state: AppState = {
   popupContent: ''
 };
 
-export const getters: GetterTree<AppState, RootState> = {
+const getters: GetterTree<AppState, RootState> = {
   mode (state): AppState['mode'] {
     return state.mode;
   },
@@ -50,7 +50,7 @@ export const getters: GetterTree<AppState, RootState> = {
   }
 };
 
-export const actions: ActionTree<AppState, RootState> = {
+const actions: ActionTree<AppState, RootState> = {
   toggleMode ({ commit }, mode: AppState['mode']): any {
     commit(mutationTypes.APP_MODE, mode);
   },
@@ -76,7 +76,7 @@ export const actions: ActionTree<AppState, RootState> = {
   }
 };
 
-export const mutations: MutationTree<AppState> = {
+const mutations: MutationTree<AppState> = {
   [mutationTypes.APP_MODE] (state, mode: AppState['mode']) {
     state.mode = mode;
   },

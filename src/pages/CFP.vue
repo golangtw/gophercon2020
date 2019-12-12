@@ -1,9 +1,10 @@
 <template>
   <div id="cfp" class="main-container">
-    <Banner
+    <Banner :class="{ 'popuped': isPopup }"/>
+    <main
+      class="spotlight-container"
       :class="{ 'popuped': isPopup }"
-    />
-    <main class="spotlight-container">
+    >
       <div class="spotlight">
         <h1 class="title">
           <span class="sub">About</span>
