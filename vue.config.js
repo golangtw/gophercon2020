@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const gaTempHTML = fs.readFileSync(path.join(__dirname, './ga-template.html'));
+const gaTempHTML = fs.readFileSync(path.join(__dirname, './template/ga.html'));
 
 module.exports = {
   pluginOptions: {
