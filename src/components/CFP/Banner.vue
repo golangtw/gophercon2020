@@ -50,7 +50,7 @@
       </div>
       <div class="view-box side-menu">
         <a
-          @click="processPopup('submitExample')"
+          @click="processPopup('submitInfo')"
           class="button"
         >
           <p>投稿資訊</p>
@@ -72,7 +72,7 @@
         </a>
       </div>
     </header>
-    <main class="popup-pre-content" ref="submitExample">
+    <main class="popup-pre-content" ref="submitInfo">
       <ul class="summary">
         <li><a href="#important-time">重要時程</a></li>
         <li><a href="#example">投稿主題範例</a></li>
