@@ -156,8 +156,8 @@ export default class CFP extends Vue {
   }
 
   private setMeta (): void {
-    head.title('Call for Paper｜稿件徵求中！ — SITCON 2020');
-    head.ogTitle('Call for Paper｜稿件徵求中！ — SITCON 2020');
+    head.title('Call for Paper｜稿件徵求中！');
+    head.ogTitle('Call for Paper｜稿件徵求中！');
     head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
     head.ogUrl('https://sitcon.org/2020/cfp/');
     head.ogImage('https://sitcon.org/2020/img/cfp-og.png');

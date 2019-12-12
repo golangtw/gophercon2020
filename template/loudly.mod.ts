@@ -6,7 +6,7 @@
 const content = `
 <script id="meta-content" type="application/json">
 {
-  "title": "大鳴大放 - Call for Paper｜稿件徵求中！ — SITCON 2020",
+  "title": "大鳴大放",
   "description": "籌備中，敬請期待",
   "url": "https://sitcon.org/2020/cfp?popUp=loudly"
 }
