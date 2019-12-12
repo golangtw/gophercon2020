@@ -7,6 +7,7 @@ export interface AppState {
   theme: ThemeType;
   isPopup: boolean;
   popupContent: string;
+  validPopupTypes: Array<keyof typeof PopupType>;
 }
 
 export type AppMode =
@@ -25,3 +26,9 @@ export type ThemeType =
   'RAINBOW-LIGHT' |
   'RAINBOW-DARK'
 ;
+
+export enum PopupType {
+  submitInfo = 'submitInfo',
+  openSubmit = 'openSubmit',
+  loudly = 'loudly'
+}

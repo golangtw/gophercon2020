@@ -25,8 +25,6 @@ export default new Router({
     }
   ],
   scrollBehavior (to, from, savedPosition) {
-    console.log(to, from, savedPosition);
-
     if (to.name === 'CFP' && to.query.popUp && to.hash) {
       const target = document.querySelector(`.popup-content>${to.hash}`) as HTMLElement;
       const popUp = document.querySelector(`.popup-content`) as HTMLElement;

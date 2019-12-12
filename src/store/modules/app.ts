@@ -21,7 +21,8 @@ const state: AppState = {
   },
   theme: 'LIGHT',
   isPopup: false,
-  popupContent: ''
+  popupContent: '',
+  validPopupTypes: ['submitInfo', 'openSubmit', 'loudly']
 };
 
 const getters: GetterTree<AppState, RootState> = {
@@ -47,6 +48,10 @@ const getters: GetterTree<AppState, RootState> = {
 
   popupContent (state): AppState['popupContent'] {
     return state.popupContent;
+  },
+
+  validPopupTypes (state): AppState['validPopupTypes'] {
+    return state.validPopupTypes;
   }
 };
 
