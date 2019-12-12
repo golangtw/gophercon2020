@@ -5,11 +5,11 @@
   >
     <div
       class="popup-close" 
-      @click="togglePopup(false)"
+      @click="closePopup()"
     />
     <div
       class="popup-close"
-      @click="togglePopup(false)"
+      @click="closePopup()"
     >
       <font-awesome-icon :icon="['fas', 'times']"/>
     </div>
@@ -41,5 +41,10 @@ const namespace: string = 'app';
 })
 export default class Popup extends Vue {
   @Action('togglePopup', { namespace }) private togglePopup: any;
+
+  private closePopup (): void {
+    this.$router.push({ query: {} })
+    this.togglePopup(false);
+  }
 }
 </script>

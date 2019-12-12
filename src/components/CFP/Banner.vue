@@ -67,7 +67,10 @@
         >
           <p>大鳴大放</p>
         </a>
-        <a href="#sponsor" class="button">
+        <a
+          class="button"
+          @click="$router.push({ hash: '#sponsor' })"
+        >
           <p>贊助資訊</p>
         </a>
       </div>
