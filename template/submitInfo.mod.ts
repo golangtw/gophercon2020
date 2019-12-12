@@ -4,6 +4,13 @@
 // This is a "Submit Information" template block, edit this and it will auto inject contents as popup-ready DOMElement.
 
 const content = `
+<script id="meta-content" type="application/json">
+{
+  "title": "投稿資訊 - Call for Paper｜稿件徵求中！ — SITCON 2020",
+  "description": "我們特別期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是探討學生相關議題等等；廣義而言，只要是與資訊技術、電腦相關的講題，都歡迎投稿！以下的投稿範例可以提供一些靈感，或是您可以參與投稿者小聚，亦可前往 SITCON 前幾屆的網站（2013、 2014、 2015、 2016、 2017、2018、2019）查看過去的議程。",
+  "url": "https://sitcon.org/2020/cfp?popUp=submitInfo"
+}
+</script>
 <ul class="summary">
   <li><a href="#important-time">重要時程</a></li>
   <li><a href="#subject">投稿主題範例</a></li>

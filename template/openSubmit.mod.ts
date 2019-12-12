@@ -4,6 +4,13 @@
 // This is a "Open Submit" template block, edit this and it will auto inject contents as popup-ready DOMElement.
 
 const content = `
+<script id="meta-content" type="application/json">
+{
+  "title": "開放式議程 - Call for Paper｜稿件徵求中！ — SITCON 2020",
+  "description": "過往的議程都是從講者對聽眾單向式的演講，而開放式議程跳脫這種單向的資訊傳遞，期待藉由主講者與與會者的雙向交流，碰撞出更多的觀點與討論。在開放式議程，你可以主持一個圓桌會議，一起腦力激盪，甚至辦一場競賽，任何你想得到的非傳統議程形式，都可以在開放式議程中進行；我們特別期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是探討學生相關議題等等；廣義而言，只要是與資訊技術、電腦相關的講題，都歡迎投稿！主題可以是：新課綱的現狀與困難、程式相關科目的家教市場、自由軟體滋潤不同領域的成果、女性與 LGBTQ 族群在資訊學術界或產業的處境等。",
+  "url": "https://sitcon.org/2020/cfp?popUp=openSubmit"
+}
+</script>
 <ul class="summary">
   <li><a href="#important-time">重要時程</a></li>
   <li><a href="#subject">投稿主題</a></li>
