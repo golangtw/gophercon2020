@@ -56,7 +56,7 @@ export default class App extends Vue {
       await this.detectSystemPrefersColorSchema();
     });
 
-    this.detectedPageBehaviorWithinUrlFallback()
+    this.detectedPageBehaviorWithinUrlFallback();
   }
 
   public destroyed () {
@@ -136,7 +136,7 @@ export default class App extends Vue {
 
       this.togglePopupContent(popupContent);
       this.togglePopup(true);
-      
+
       setTimeout(() => {
         this.detectedPopupHashHook();
       }, 500);
@@ -147,7 +147,7 @@ export default class App extends Vue {
     if (this.$route.hash) {
       const target = document.querySelector(this.$route.hash) as HTMLElement;
 
-      window.scrollTo({ top: target.offsetTop })
+      window.scrollTo({ top: target.offsetTop });
     }
   }
 

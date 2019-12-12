@@ -31,41 +31,17 @@
   </svg>
 </template>
 
-<script>
-import { Component, Vue } from 'vue-property-decorator';
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
-@Component({
-  props: {
-    containerWidth: {
-      type: Number,
-      required: true
-    },
-    containerHeight: {
-      type: Number,
-      required: true
-    },
-    width: {
-      type: Number,
-      required: true
-    },
-    height: {
-      type: Number,
-      required: true
-    },
-    cols: {
-      type: Number,
-      required: true
-    },
-    rows: {
-      type: Number,
-      required: true
-    },
-    gap: {
-      type: Number,
-      required: true
-    }
-  }
-})
+@Component
 export default class Sight extends Vue {
+  @Prop({ required: true }) private containerWidth!: number;
+  @Prop({ required: true }) private containerHeight!: number;
+  @Prop({ required: true }) private width!: number;
+  @Prop({ required: true }) private height!: number;
+  @Prop({ required: true }) private cols!: number;
+  @Prop({ required: true }) private rows!: number;
+  @Prop({ required: true }) private gap!: number;
 }
 </script>

@@ -106,17 +106,15 @@ export default class CFP extends Vue {
   @Action('toggleTheme', { namespace }) private toggleTheme: any;
   @Getter('isPopup', { namespace }) private isPopup: any;
 
-  @Watch('isPopup')
-  public onChangePopup(newVal: boolean) {
-    if (!newVal) {
-      this.setMeta();
-    }
-  }
-
   private defineString: string = '';
   private onSend: boolean = false;
   private bulletScreenWidth: number = 0;
   private bulletScreenHeight: number = 0;
+
+  @Watch('isPopup')
+  public onChangePopup (newVal: boolean) {
+    if (!newVal) { this.setMeta(); }
+  }
 
   public mounted () {
     this.setMeta();

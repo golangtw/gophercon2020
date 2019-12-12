@@ -34,7 +34,7 @@ export default class Popup extends Vue {
   @Action('togglePopup', { namespace: 'app' }) private togglePopup: any;
 
   @Watch('isOpen', { immediate: true, deep: true })
-  public onChangePopup(newVal: boolean) {
+  public onChangePopup (newVal: boolean) {
     if (newVal) {
       this.detectMetaContent();
     }
@@ -45,14 +45,14 @@ export default class Popup extends Vue {
   }
 
   private closePopup (): void {
-    this.$router.push({ query: {} })
+    this.$router.push({ query: {} });
     this.togglePopup(false);
   }
 
   private detectMetaContent (): void {
     const virtualElement: HTMLElement = document.createElement('pre');
     virtualElement.innerHTML = this.content;
-    
+
     const metaContentElement = virtualElement.querySelector('#meta-content') as HTMLElement;
     if (metaContentElement) {
       const metaContent = JSON.parse(metaContentElement.innerText);
@@ -60,9 +60,9 @@ export default class Popup extends Vue {
       if (metaContent && metaContent.title) {
         head.title(metaContent.title);
         head.ogTitle(metaContent.ogTitle);
-        metaContent.description ? head.ogDescription(metaContent.description) : null;
-        metaContent.image ? head.ogImage(metaContent.image) : null;
-        metaContent.url ? head.ogUrl(metaContent.url) : null;
+        if (metaContent.description) { head.ogDescription(metaContent.description); }
+        if (metaContent.image) { head.ogImage(metaContent.image); }
+        if (metaContent.url) { head.ogUrl(metaContent.url); }
       }
     }
   }
