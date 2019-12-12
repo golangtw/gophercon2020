@@ -20,6 +20,7 @@
     user-select: text;
     z-index: 10000;
     overflow: hidden;
+    backdrop-filter: blur(5px);
 
     @media screen and (max-width: 1024px) {
       width: 100%;
