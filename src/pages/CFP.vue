@@ -1,10 +1,11 @@
 <template>
-  <div id="cfp" class="main-container">
-    <Banner :class="{ 'popuped': isPopup }"/>
-    <main
-      class="spotlight-container"
-      :class="{ 'popuped': isPopup }"
-    >
+  <div
+    id="cfp"
+    class="main-container"
+    :class="{ 'popuped': isPopup }"
+  >
+    <Banner/>
+    <main class="spotlight-container">
       <div class="spotlight">
         <h1 class="title">
           <span class="sub">About</span>
@@ -35,11 +36,11 @@
         </h1>
         <p class="paragraph">
           今年 SITCON 以 #define student 作為 slogan，希望能夠重新定義學生的價值，<br>
-		  同時我們也想知道有什麼大家想瞭解的議題或重新定義的事物。<br>
+      同時我們也想知道有什麼大家想瞭解的議題或重新定義的事物。<br>
         </p>
         <p class="paragraph">
           不論是你期望在 SITCON 見到的議題、認同的字彙、想要大家知道的技術，<br>
-		  歡迎來和大家分享你的看法，一起 define anything。
+      歡迎來和大家分享你的看法，一起 define anything。
         </p>
         <div class="input-box">
           <label for="define"><span class="font-black">#define</span></label>
@@ -77,10 +78,6 @@
         </p>
       </div>
     </main>
-    <Popup
-      :isOpen="isPopup"
-      :content="popupContent"
-    />
     <Footer/>
   </div>
 </template>
@@ -93,7 +90,6 @@ import { Action, Getter } from 'vuex-class';
 import Banner from '@/components/CFP/Banner.vue';
 import BulletScreen from '@/components/CFP/BulletScreen.vue';
 import Footer from '@/components/CFP/Footer.vue';
-import Popup from '@/components/Popup.vue';
 
 const namespace: string = 'app';
 
@@ -101,14 +97,12 @@ const namespace: string = 'app';
   components: {
     Banner,
     BulletScreen,
-    Footer,
-    Popup
+    Footer
   }
 })
 export default class CFP extends Vue {
   @Action('toggleTheme', { namespace }) private toggleTheme: any;
   @Getter('isPopup', { namespace }) private isPopup: any;
-  @Getter('popupContent', { namespace }) private popupContent: any;
 
   private defineString: string = '';
   private onSend: boolean = false;

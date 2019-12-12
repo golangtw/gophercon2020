@@ -5,6 +5,10 @@
   >
     <Navbar/>
     <router-view/>
+    <Popup
+      :isOpen="isPopup"
+      :content="popupContent"
+    />
   </div>
 </template>
 
@@ -13,12 +17,14 @@ import { Component, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
 import Navbar from '@/components/Navbar.vue';
+import Popup from '@/components/Popup.vue';
 
 const namespace: string = 'app';
 
 @Component({
   components: {
-    Navbar
+    Navbar,
+    Popup
   }
 })
 export default class App extends Vue {
@@ -29,6 +35,8 @@ export default class App extends Vue {
   @Getter('theme', { namespace }) private theme: any;
   @Getter('sunrise', { namespace: 'sunRiseSunSet' }) private sunrise: any;
   @Getter('sunset', { namespace: 'sunRiseSunSet' }) private sunset: any;
+  @Getter('isPopup', { namespace }) private isPopup: any;
+  @Getter('popupContent', { namespace }) private popupContent: any;
 
   public async mounted () {
     this.detectDeviceType();
