@@ -59,7 +59,7 @@ export default class Popup extends Vue {
 
       if (metaContent && metaContent.title) {
         head.title(metaContent.title);
-        head.ogTitle(metaContent.ogTitle);
+        head.ogTitle(metaContent.title);
         if (metaContent.description) { head.ogDescription(metaContent.description); }
         if (metaContent.image) { head.ogImage(metaContent.image); }
         if (metaContent.url) { head.ogUrl(metaContent.url); }
