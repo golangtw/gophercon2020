@@ -12,12 +12,22 @@
   }
 }
 
-@keyframes popup {
+@keyframes popupFillIn {
   from {
     opacity: 0;
   }
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes popupJumpOut {
+  from {
+    transform: perspective(400px) translate3d(0, 10px, -200px);
+  }
+
+  to {
+    transform: perspective(400px) translate3d(0, 0, 0);
   }
 }
