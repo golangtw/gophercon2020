@@ -6,10 +6,10 @@
 const content = `
 <ul class="summary">
   <li><a href="#important-time">重要時程</a></li>
-  <li><a href="#example">投稿主題範例</a></li>
+  <li><a href="#subject">投稿主題範例</a></li>
   <li><a href="#coc">Code of Conduct 行為準則</a></li>
   <li><a href="#session-type">議程種類</a></li>
-  <li><a href="#paper-rule">投稿方式</a></li>
+  <li><a href="#submission">投稿方式</a></li>
   <li><a href="#paper-trail">審稿方式</a></li>
   <li><a href="#notice">投稿注意事項</a></li>
 </ul>
@@ -20,7 +20,7 @@ const content = `
   <li>一月下旬審稿結束、隨後公佈完整議程</li>
   <li>2020/03/28（六）SITCON 2020</li>
 </ul>
-<h1 id="example" class="title font-black">投稿主題範例</h1>
+<h1 id="subject" class="title font-black">投稿主題範例</h1>
 <p class="paragraph">
   我們特別期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是探討學生相關議題等等；廣義而言，只要是與資訊技術、電腦相關的講題，都歡迎投稿！<br>
   以下的投稿範例可以提供一些靈感，或是您可以參與投稿者小聚，亦可前往 SITCON 前幾屆的網站（<a href="https://sitcon.org/2013" class="font-bold" target="_blank" rel="noopener noreferrer">2013</a>、 <a href="https://sitcon.org/2014" class="font-bold" target="_blank" rel="noopener noreferrer">2014</a>、 <a href="https://sitcon.org/2015" class="font-bold" target="_blank" rel="noopener noreferrer">2015</a>、 <a href="https://sitcon.org/2016" class="font-bold" target="_blank" rel="noopener noreferrer">2016</a>、 <a href="https://sitcon.org/2017" class="font-bold" target="_blank" rel="noopener noreferrer">2017</a>、<a href="https://sitcon.org/2018" class="font-bold" target="_blank" rel="noopener noreferrer">2018</a>、<a href="https://sitcon.org/2019" class="font-bold" target="_blank" rel="noopener noreferrer">2019</a>）查看過去的議程。
@@ -57,7 +57,7 @@ const content = `
 <p class="paragraph">Espresso 為包含問答時間僅有 10 分鐘的短講，挑戰講者提供最為濃縮與精華的議程。</p>
 <h2 class="subtitle font-bold">Lighting Talk</h2>
 <p class="paragraph">大會當天早上開放報名，每位講者有 3 分鐘，3 分鐘一到可是會被趕下臺喔！</p>
-<h1 id="paper-rule" class="title font-black">投稿方式</h1>
+<h1 id="submission" class="title font-black">投稿方式</h1>
 <p class="paragraph">
   稿件均經議程組形式審查，交予該領域之審稿委員審稿；審稿委員由業界人士、學界人士及 SITCON 議程組員組成。
 </p>
