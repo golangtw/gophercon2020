@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 
-// !WARNING! DO NOT EDIT THIS TEMPLATE EXCEPT YOU ARE UNDERSTAND WHAT YOU ACTUALLY DO.
+// !WARNING! DO NOT EDIT THIS TEMPLATE EXCEPT YOU UNDERSTAND WHAT ARE YOU ACTUALLY DO.
 // This is a "大鳴大放" template block, edit this and it will auto inject contents as popup-ready DOMElement.
 
 const content = `
