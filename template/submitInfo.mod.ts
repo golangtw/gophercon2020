@@ -89,6 +89,9 @@ const content = `
   <li>電話號碼 Phone：用於大會聯絡、確認資訊用的電話號碼。</li>
   <li>其他聯絡方式 Other contact information：其他任何我們能聯絡您的方式。</li>
 </ul>
+<h2 class="subtitle font-bold">投稿者 FAQ 問答影片</h2>
+<p class="paragraph">我們邀請了過往的投稿者親自現身說法，來分享他們的經驗以及投稿小 tips。</p>
+<iframe class="embed-video" src="https://www.youtube.com/embed/O10rX3naFTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h1 id="paper-trail" class="title font-black">審稿方式</h1>
 <p class="paragraph">審稿委員主要針對以下項目進行篩選：</p>
 <ul>
