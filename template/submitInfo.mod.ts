@@ -23,7 +23,7 @@ const content = `
 <h1 id="important-time" class="title font-black">重要時程</h1>
 <ul>
   <li>2019/10/18（五）投稿開始</li>
-  <li>2020/01/02（四）早上 06:41 投稿截止</li>
+  <li>2020/01/12（日）早上 06:41 投稿截止</li>
   <li>一月下旬審稿結束、隨後公佈完整議程</li>
   <li>2020/03/28（六）SITCON 2020</li>
 </ul>
