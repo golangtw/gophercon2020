@@ -10,7 +10,8 @@ module.exports = {
       renderRoutes: [
         '/2020/',
         '/2020/cfp',
-        '/2020/cfp/'
+        '/2020/cfp/',
+        '/2020/session'
       ],
       useRenderEvent: true,
       headless: true,
