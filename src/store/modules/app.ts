@@ -1,14 +1,14 @@
 import { ActionTree, GetterTree, MutationTree, Module } from 'vuex';
 
-import { AppState } from '../types/app';
+import { AppState, ThemeType, DeviceType, AppMode } from '../types/app';
 import { RootState } from '../types/root';
 import * as mutationTypes from '../mutation-types';
 
 const namespaced: boolean = true;
 
 const state: AppState = {
-  mode: 'WEB',
-  device: 'DESKTOP',
+  mode: AppMode.WEB,
+  device: DeviceType.DESKTOP,
   sight: {
     offset: 0,
     containerWidth: 0,
@@ -19,10 +19,10 @@ const state: AppState = {
     rows: 0,
     gap: 0
   },
-  theme: 'LIGHT',
+  theme: ThemeType.LIGHT,
   isPopup: false,
   popupContent: '',
-  validPopupTypes: ['submitInfo', 'openSubmit', 'loudly']
+  validPopupTypes: ['SUBMIT_INFO', 'OPEN_SUBMIT', 'LOUDLY']
 };
 
 const getters: GetterTree<AppState, RootState> = {

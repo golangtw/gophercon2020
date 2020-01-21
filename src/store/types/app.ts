@@ -10,25 +10,25 @@ export interface AppState {
   validPopupTypes: Array<keyof typeof PopupType>;
 }
 
-export type AppMode =
-  'WEB' |
-  'APP'
-;
+export enum AppMode {
+  WEB = 'web',
+  APP = 'app'
+}
 
-export type DeviceType =
-  'DESKTOP' |
-  'MOBILE'
-;
+export enum DeviceType {
+  DESKTOP = 'desktop',
+  MOBILE = 'mobile'
+}
 
-export type ThemeType =
-  'LIGHT' |
-  'DARK' |
-  'RAINBOW-LIGHT' |
-  'RAINBOW-DARK'
-;
+export enum ThemeType {
+  LIGHT = 'light',
+  DARK = 'dark',
+  RAINBOW_LIGHT = 'rainbow-light',
+  RAINBOW_DARK = 'rainbow-dark'
+}
 
 export enum PopupType {
-  submitInfo = 'submitInfo',
-  openSubmit = 'openSubmit',
-  loudly = 'loudly'
+  SUBMIT_INFO = 'submitInfo',
+  OPEN_SUBMIT = 'openSubmit',
+  LOUDLY = 'loudly'
 }
