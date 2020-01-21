@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// import Home from './pages/Home.vue';
+import Home from './pages/Home.vue';
+import Session from './pages/Session.vue';
 import CFP from './pages/CFP.vue';
 
 Vue.use(Router);
@@ -14,6 +15,11 @@ export default new Router({
     //   name: 'Home',
     //   component: Home
     // },
+    {
+      path: '/session',
+      name: 'Session',
+      component: Session
+    },
     {
       path: '/cfp',
       name: 'CFP',
