@@ -19,3 +19,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Auto-Generated OPass Session Json
+/public/json/session.json
