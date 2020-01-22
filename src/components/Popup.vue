@@ -34,8 +34,9 @@ export default class Popup extends Vue {
   @Action('togglePopup', { namespace: 'app' }) private togglePopup!: (status: boolean) => void;
   @Action('setPopupOffsetTop', { namespace: 'app' }) private setPopupOffsetTop!: (offset: number) => void;
   @Getter('popupOffsetTop', { namespace: 'app' }) private popupOffsetTop!: number;
+  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
 
-  @Watch('isOpen', { immediate: true, deep: true })
+  @Watch('isPopup')
   public onChangePopup (newVal: boolean) {
     if (newVal) {
       this.detectMetaContent();
@@ -48,7 +49,10 @@ export default class Popup extends Vue {
   }
 
   private closePopup (): void {
-    this.$router.push({ query: {} });
+    if (this.$route.name === 'CFP') {
+      this.$router.push({ query: {} });
+    }
+
     this.togglePopup(false);
     setTimeout(() => {
       window.scrollTo({ top: this.popupOffsetTop });

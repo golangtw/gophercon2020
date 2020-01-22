@@ -20,7 +20,7 @@ const content = (data: any): string => `
 <script id="meta-content" type="application/json">
 {
   "title": "${data.zh.title}",
-  "description": "${data.zh.description}",
+  "description": "${data.zh.description.replace(/\n/gm, '')}",
   "url": "https://sitcon.org/2020/session/${data.id}"
 }
 </script>
