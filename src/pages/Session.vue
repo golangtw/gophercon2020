@@ -4,6 +4,8 @@
       :sessionData="sessionData"
       :rooms="['R2', 'R0', 'R1', 'R3', 'S']"
       :isMobile="isMobile()"
+      :isPopup.sync="isPopup"
+      :popUpSession.sync="popUpSession"
     />
   </div>
 </template>
@@ -27,6 +29,8 @@ export default class Session extends Vue {
   private device!: DeviceType;
 
   private sessionData = sessionData;
+  private isPopup = false;
+  private popUpSession = {};
 
   private isMobile (): boolean {
     return this.device === DeviceType.MOBILE;

@@ -33,6 +33,10 @@
           border: 2px solid $black;
           border-radius: 10px;
           text-align: center;
+
+          &.clickable {
+            cursor: pointer;
+          }
         }
 
         &.time-block {
@@ -93,8 +97,17 @@
           padding: 8px;
           z-index: 0;
 
+          &.clickable {
+            cursor: pointer;
+          }
+
           &:last-child {
             border: 0;
+          }
+
+          .ccip-session-time {
+            margin-top: 10px;
+            color: rgba($black, .7);
           }
 
           .ccip-session-room {
