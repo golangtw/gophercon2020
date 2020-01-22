@@ -21,6 +21,7 @@ import Popup from '@/components/Popup.vue';
 import { TemplateState } from './store/types/template';
 
 import head from './util/head';
+import { DeviceType } from './store/types/app';
 head.reset();
 
 @Component({
@@ -73,9 +74,9 @@ export default class App extends Vue {
     const isDesktop: boolean = window.matchMedia('(min-width: 1024px)').matches;
 
     if (isDesktop) {
-      this.toggleDevice('DESKTOP');
+      this.toggleDevice(DeviceType.DESKTOP);
     } else {
-      this.toggleDevice('MOBILE');
+      this.toggleDevice(DeviceType.MOBILE);
     }
   }
 

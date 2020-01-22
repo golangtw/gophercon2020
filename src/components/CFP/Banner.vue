@@ -87,6 +87,7 @@ import { Action, Getter } from 'vuex-class';
 
 import { AppState } from '@/store/types/app';
 import Sight from './Sight.vue';
+import { DeviceType } from '../../store/types/app';
 
 @Component({
   components: {
@@ -123,9 +124,9 @@ export default class Banner extends Vue {
     const sightContainer: any = this.$refs.sightContainer;
 
     const sightOffset: number = sightContainer.offsetTop;
-    const boxCols: number = this.device === 'MOBILE' ? Math.floor((sightContainer.clientWidth + 12) / 100) : 8;
+    const boxCols: number = this.device === DeviceType.MOBILE ? Math.floor((sightContainer.clientWidth + 12) / 100) : 8;
     const boxRows: number = 3;
-    const boxGap = this.device === 'MOBILE' ? 27 : 40;
+    const boxGap = this.device === DeviceType.MOBILE ? 27 : 40;
     const boxWidth: number = (sightContainer.clientWidth - boxGap * (boxCols - 1)) / boxCols;
     const boxHeight: number = boxWidth;
     const containerWidth: number = boxWidth * boxCols + boxGap * (boxCols - 1);
