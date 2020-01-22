@@ -1,0 +1,59 @@
+#session {
+  .ccip-app {
+    &.ccip-session {
+      &-table {
+        margin: 32px;
+      }
+
+      &-block {
+        &.room-block {
+          font-size: 24px;
+          font-weight: 700;
+          text-align: center;
+        }
+
+        &.session-block {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 5px;
+          padding: 8px;
+          box-sizing: border-box;
+          border: 2px solid $black;
+          border-radius: 10px;
+          text-align: center;
+        }
+
+        &.time-block {
+          position: absolute;
+          font-size: 14px;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          margin: 0 7px;
+          margin-top: -10px;
+          background-color: $black;
+          color: $white;
+          padding: 4px 5px;
+          border-radius: 10px;
+        }
+      }
+
+      &-title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+      &-speakers {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

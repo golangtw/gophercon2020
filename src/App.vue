@@ -1,7 +1,7 @@
 <template>
   <div
     id="app"
-    :class="`theme-${ theme.toLowerCase() }`"
+    :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main']"
   >
     <Navbar/>
     <router-view/>
@@ -165,3 +165,7 @@ export default class App extends Vue {
   }
 }
 </script>
+
+<style lang="scss">
+@import '@/assets/scss/main.scss';
+</style>
