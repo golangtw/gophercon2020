@@ -3,6 +3,10 @@
     &.ccip-session {
       &-table {
         margin: 32px;
+
+        &.mobile {
+          margin: 0;
+        }
       }
 
       &-block {
@@ -61,6 +65,41 @@
 
         span {
           margin-top: 10px;
+        }
+      }
+
+      &-time-group {
+        &.head,
+        &.session-block {
+          padding: 5px 7px;
+        }
+        &.head {
+          position: sticky;
+          top: 0;
+          background-color: $black;
+          color: $white;
+          font-size: 16px;
+
+          p {
+            font-family: 'Fira Code', monospace;
+          }
+        }
+
+        &.session-block {
+          position: relative;
+          box-sizing: border-box;
+          border-bottom: 1px solid rgba($black, .4);
+          padding: 8px;
+
+          &:last-child {
+            border: 0;
+          }
+
+          .ccip-session-room {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+          }
         }
       }
     }
