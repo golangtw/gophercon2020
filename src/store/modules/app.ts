@@ -56,27 +56,27 @@ const getters: GetterTree<AppState, RootState> = {
 };
 
 const actions: ActionTree<AppState, RootState> = {
-  toggleMode ({ commit }, mode: AppState['mode']): any {
+  toggleMode ({ commit }, mode: AppState['mode']): void {
     commit(mutationTypes.APP_MODE, mode);
   },
 
-  toggleDevice ({ commit }, device: AppState['device']): any {
+  toggleDevice ({ commit }, device: AppState['device']): void {
     commit(mutationTypes.APP_DEVICE, device);
   },
 
-  toggleTheme ({ commit }, theme: AppState['theme']): any {
+  toggleTheme ({ commit }, theme: AppState['theme']): void {
     commit(mutationTypes.APP_THEME, theme);
   },
 
-  togglePopup ({ commit }, status: AppState['isPopup']): any {
+  togglePopup ({ commit }, status: AppState['isPopup']): void {
     commit(mutationTypes.APP_POPUP, status);
   },
 
-  togglePopupContent ({ commit }, data: AppState['popupContent']): any {
+  togglePopupContent ({ commit }, data: AppState['popupContent']): void {
     commit(mutationTypes.APP_POPUP_CONTENT, data);
   },
 
-  setSightMeasure ({ commit }, sight: AppState['sight']): any {
+  setSightMeasure ({ commit }, sight: AppState['sight']): void {
     commit(mutationTypes.APP_SIGHT, sight);
   }
 };
