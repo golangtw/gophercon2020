@@ -22,6 +22,7 @@ const state: AppState = {
   theme: ThemeType.LIGHT,
   isPopup: false,
   popupContent: '',
+  popupOffsetTop: 0,
   validPopupTypes: ['SUBMIT_INFO', 'OPEN_SUBMIT', 'LOUDLY']
 };
 
@@ -50,6 +51,10 @@ const getters: GetterTree<AppState, RootState> = {
     return state.popupContent;
   },
 
+  popupOffsetTop (state): AppState['popupOffsetTop'] {
+    return state.popupOffsetTop;
+  },
+
   validPopupTypes (state): AppState['validPopupTypes'] {
     return state.validPopupTypes;
   }
@@ -76,6 +81,10 @@ const actions: ActionTree<AppState, RootState> = {
     commit(mutationTypes.APP_POPUP_CONTENT, data);
   },
 
+  setPopupOffsetTop ({ commit }, offset: AppState['popupOffsetTop']): void {
+    commit(mutationTypes.APP_POPUP_OFFSET_TOP, offset);
+  },
+
   setSightMeasure ({ commit }, sight: AppState['sight']): void {
     commit(mutationTypes.APP_SIGHT, sight);
   }
@@ -100,6 +109,10 @@ const mutations: MutationTree<AppState> = {
 
   [mutationTypes.APP_POPUP_CONTENT] (state, data: AppState['popupContent']) {
     state.popupContent = data;
+  },
+
+  [mutationTypes.APP_POPUP_OFFSET_TOP] (state, offset: AppState['popupOffsetTop']) {
+    state.popupOffsetTop = offset;
   },
 
   [mutationTypes.APP_SIGHT] (state, sight: AppState['sight']) {

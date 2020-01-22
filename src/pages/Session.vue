@@ -3,6 +3,7 @@
     id="session"
     class="main-container"
     :class="{ 'popuped': isPopup }"
+    :style="{ top: `${popupOffsetTop * -1}px` }"
   >
     <CCIPSessionTable
       :sessionData="sessionData"
@@ -33,8 +34,10 @@ export default class Session extends Vue {
   @Action('toggleTheme', { namespace: 'app' }) private toggleTheme!: () => void;
   @Action('togglePopup', { namespace: 'app' }) private togglePopup!: (status: boolean) => void;
   @Action('togglePopupContent', { namespace: 'app' }) private togglePopupContent!: (content: string) => void;
+  @Action('setPopupOffsetTop', { namespace: 'app' }) private setPopupOffsetTop!: (offset: number) => void;
   @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
   @Getter('device', { namespace: 'app' }) private device!: DeviceType;
+  @Getter('popupOffsetTop', { namespace: 'app' }) private popupOffsetTop!: number;
 
   private sessionData = sessionData;
   private popUp = false;
@@ -62,6 +65,7 @@ export default class Session extends Vue {
       result.speakers = result.speakers.map((id: string) => (JSON.parse(JSON.stringify(this.getSpeaker(id)))));
 
       this.togglePopupContent(sessionDOMString(result));
+      this.setPopupOffsetTop(document.documentElement.scrollTop);
     } else {
       this.popUp = false;
       this.popUpSession = {};

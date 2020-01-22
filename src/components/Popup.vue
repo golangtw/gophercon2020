@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
-import { Action } from 'vuex-class';
+import { Action, Getter } from 'vuex-class';
 
 import head from '../util/head';
 
@@ -31,12 +31,15 @@ export default class Popup extends Vue {
   @Prop({ default: false }) private isOpen!: boolean;
   @Prop({ required: true }) private content!: string;
 
-  @Action('togglePopup', { namespace: 'app' }) private togglePopup: any;
+  @Action('togglePopup', { namespace: 'app' }) private togglePopup!: (status: boolean) => void;
+  @Action('setPopupOffsetTop', { namespace: 'app' }) private setPopupOffsetTop!: (offset: number) => void;
+  @Getter('popupOffsetTop', { namespace: 'app' }) private popupOffsetTop!: number;
 
   @Watch('isOpen', { immediate: true, deep: true })
   public onChangePopup (newVal: boolean) {
     if (newVal) {
       this.detectMetaContent();
+      window.scrollTo({ top: 0 });
     }
   }
 
@@ -47,6 +50,12 @@ export default class Popup extends Vue {
   private closePopup (): void {
     this.$router.push({ query: {} });
     this.togglePopup(false);
+    setTimeout(() => {
+      window.scrollTo({ top: this.popupOffsetTop });
+    }, 10);
+    setTimeout(() => {
+      this.setPopupOffsetTop(0);
+    }, 100);
   }
 
   private detectMetaContent (): void {

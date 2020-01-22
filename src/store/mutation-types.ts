@@ -10,4 +10,6 @@ export const APP_POPUP = 'APP_POPUP';
 
 export const APP_POPUP_CONTENT = 'APP_POPUP_CONTENT';
 
+export const APP_POPUP_OFFSET_TOP = 'APP_POPUP_OFFSET_TOP';
+
 export const SUNRISE_SUNSET = 'SUNRISE_SUNSET';

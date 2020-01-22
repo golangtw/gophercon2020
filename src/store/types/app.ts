@@ -7,6 +7,7 @@ export interface AppState {
   theme: ThemeType;
   isPopup: boolean;
   popupContent: string;
+  popupOffsetTop: number;
   validPopupTypes: Array<keyof typeof PopupType>;
 }
 
