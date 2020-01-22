@@ -21,6 +21,11 @@ export default new Router({
       component: Session
     },
     {
+      path: '/session/:sid',
+      name: 'SessionView',
+      component: Session
+    },
+    {
       path: '/cfp',
       name: 'CFP',
       component: CFP
