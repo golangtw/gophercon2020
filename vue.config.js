@@ -12,7 +12,9 @@ module.exports = {
         '/2020/cfp',
         '/2020/cfp/',
         '/2020/agenda',
-        '/2020/agenda/'
+        '/2020/agenda/',
+        '/2020/venue',
+        '/2020/venue/'
       ],
       useRenderEvent: true,
       headless: true,

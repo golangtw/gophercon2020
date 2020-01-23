@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from './pages/Home.vue';
 import Agenda from './pages/Agenda.vue';
 import CFP from './pages/CFP.vue';
+import Venue from './pages/Venue.vue';
 
 Vue.use(Router);
 
@@ -33,6 +34,11 @@ export default new Router({
     {
       path: '/',
       redirect: '/cfp'
+    },
+    {
+      path: '/venue',
+      name: 'Venue',
+      component: Venue
     }
   ],
   scrollBehavior (to, from, savedPosition) {
