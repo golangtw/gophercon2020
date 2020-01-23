@@ -11,7 +11,8 @@ module.exports = {
         '/2020/',
         '/2020/cfp',
         '/2020/cfp/',
-        '/2020/session'
+        '/2020/agenda',
+        '/2020/agenda/'
       ],
       useRenderEvent: true,
       headless: true,

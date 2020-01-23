@@ -30,7 +30,7 @@ import { DeviceType } from '@/store/types/app';
     CCIPSessionTable
   }
 })
-export default class Session extends Vue {
+export default class Agenda extends Vue {
   @Action('toggleTheme', { namespace: 'app' }) private toggleTheme!: () => void;
   @Action('togglePopup', { namespace: 'app' }) private togglePopup!: (status: boolean) => void;
   @Action('togglePopupContent', { namespace: 'app' }) private togglePopupContent!: (content: string) => void;
