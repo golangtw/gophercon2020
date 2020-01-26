@@ -7,24 +7,21 @@
         <span>動</span>
       </div>
       <div id="activity-bar-item-container">
-        <ActivityBarItem />
-        <ActivityBarItem />
-        <ActivityBarItem />
-        <ActivityBarItem />
-        <ActivityBarItem />
-        <ActivityBarItem />
+        <ActivityBarItem v-for="item in items" :key="item.id" :icon="item.icon" :text="item.text" />
       </div>
     </div>
   </div>
 </template>
 
-<script type="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import ActivityBarItem from '@/components/venue/ActivityBarItem';
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import ActivityBarItem from '@/components/venue/ActivityBarItem.vue';
 @Component({
   components: { ActivityBarItem }
 })
-export default class ActivityBar extends Vue {}
+export default class ActivityBar extends Vue {
+  @Prop({ type: Array, required: true }) private items!: object[];
+}
 </script>
 
 <style scoped>

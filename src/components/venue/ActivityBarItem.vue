@@ -1,17 +1,27 @@
 <template>
   <div class="activity-bar-item activity-bar-component">
     <div class="icon-top">
-      <img src="https://userpic.codeforces.com/1149973/avatar/131d7e20bf5b72d.jpg" alt="白羊豪可愛>///<" />
+      <img
+        :src="icon.url || 'https://userpic.codeforces.com/1149973/avatar/131d7e20bf5b72d.jpg'"
+        :alt="icon.alt || ''"
+      />
     </div>
     <div class="img-container">image</div>
-    <div class="text-bottom"><p>大地活動</p></div>
+    <div class="text-bottom">
+      <p>{{ text }}</p>
+    </div>
   </div>
 </template>
 
-<script type="ts">
-import { Component, Vue } from "vue-property-decorator";
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+
 @Component
-export default class ActivityBarItem extends Vue {}
+export default class extends Vue {
+  @Prop({ default: { url: '', alt: '' } }) private icon!: object;
+  // @Prop() private image!: Object;
+  @Prop({ default: '文字測試' }) private text!: string;
+}
 </script>
 
 <style scoped>
