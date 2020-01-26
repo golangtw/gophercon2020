@@ -43,8 +43,12 @@ h1, p {
   padding: 1em;
 }
 
+h1 {
+  font-size: 48px;
+}
+
 img {
   max-width: 100%;
-  margin: 5% 5% 5% 7%;
+  margin: 5% 4% 5% 10%;
 }
 </style>

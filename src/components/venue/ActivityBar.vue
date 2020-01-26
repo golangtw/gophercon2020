@@ -19,8 +19,8 @@
 </template>
 
 <script type="ts">
-import { Component, Vue } from "vue-property-decorator";
-import ActivityBarItem from "@/components/venue/ActivityBarItem";
+import { Component, Vue } from 'vue-property-decorator';
+import ActivityBarItem from '@/components/venue/ActivityBarItem';
 @Component({
   components: { ActivityBarItem }
 })
@@ -29,7 +29,7 @@ export default class ActivityBar extends Vue {}
 
 <style scoped>
 #activity-bar-container {
-  padding: 0 1.25em;
+  margin: 64px 20px;
 }
 
 #activity-bar {
