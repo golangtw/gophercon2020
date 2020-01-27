@@ -1,9 +1,14 @@
 #app.main {
   .main-container {
+    position: relative;
     width: calc(100% - 250px * 2);
     min-height: 100vh;
     margin: 0 250px;
     margin-top: $navbar-height;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
   
     &.popuped {
       position: fixed;
