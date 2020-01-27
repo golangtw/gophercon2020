@@ -1,6 +1,5 @@
 <template>
   <div id="activity" class="main-container">
-    <h1 class="title">活動</h1>
     <div class="activity-tabbar">
       <div class="activity-head">
         <p>活</p>
@@ -9,7 +8,9 @@
       <div
         v-for="activity in activities"
         :key="`activity-${activity.name}`"
+        :class="{ active: $route.params.aid === activity.name }"
         class="activity-tab"
+        @click="$router.push({ name: 'ActivityView', params: { aid: activity.name } })"
       >
         <div class="label icon">
           <img :src="activity.icon" :alt="activity.name"/>
@@ -20,6 +21,20 @@
         <div class="label name">
           <p>{{ activity.name }}</p>
         </div>
+      </div>
+    </div>
+    <div
+      v-for="activity in activities"
+      v-show="$route.params.aid === activity.name"
+      :key="`activity-showbox-${activity.name}`"
+      class="activity-showbox"
+    >
+      <h1 class="title">
+        <span class="font-black">{{ activity.name }}</span>
+      </h1>
+      <div class="content">
+        <p><img :src="activity.image" :alt="activity.name"></p>
+        <p v-html="activity.description.replace(/\[([^\[]+)\]\((.*)\)/gm, `<a href='$2' target='_blank' rel='noopener noreferrer'>$1</a>`)"/>
       </div>
     </div>
   </div>
@@ -40,5 +55,15 @@ interface ActivityPayload {
 @Component
 export default class Activity extends Vue {
   private activities: ActivityPayload[] = activityData;
+
+  public mounted () {
+    this.autoAttachFirstTab();
+  }
+
+  private autoAttachFirstTab (): void {
+    if (this.$route.name === 'Activity') {
+      this.$router.push({ name: 'ActivityView', params: { aid: activityData[0].name } });
+    }
+  }
 }
 </script>
