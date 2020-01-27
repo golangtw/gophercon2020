@@ -1,5 +1,9 @@
 #session {
   .ccip-app {
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
+
     &.ccip-session {
       &-table {
         margin: 32px;
@@ -114,6 +118,7 @@
             position: absolute;
             right: 8px;
             bottom: 8px;
+            width: auto;
           }
         }
       }
