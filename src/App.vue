@@ -3,12 +3,13 @@
     id="app"
     :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main']"
   >
-    <Navbar/>
+    <Navbar v-if="$route.name !== 'CFP'"/>
     <router-view/>
     <Popup
       :isOpen="isPopup"
       :content="popupContent"
     />
+    <Footer/>
   </div>
 </template>
 
@@ -18,6 +19,8 @@ import { Action, Getter } from 'vuex-class';
 
 import Navbar from '@/components/Navbar.vue';
 import Popup from '@/components/Popup.vue';
+import Footer from '@/components/Footer.vue';
+
 import { TemplateState } from './store/types/template';
 
 import head from './util/head';
@@ -27,7 +30,8 @@ head.reset();
 @Component({
   components: {
     Navbar,
-    Popup
+    Popup,
+    Footer
   }
 })
 export default class App extends Vue {

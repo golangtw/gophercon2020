@@ -1,0 +1,144 @@
+.activity {
+  &-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 60px;
+    height: calc(180px);
+    padding: 48px 0;
+    font-size: 36px;
+    background-color: $black;
+    color: $white;
+    border-radius: 10px;
+    transform: skewX(-15deg);
+    
+    p {
+      writing-mode: vertical-lr;
+      transform: skewX(15deg);
+    }
+  }
+
+  &-tab {
+    &bar {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 84px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    transform: skewX(-15deg);
+    cursor: pointer;
+
+    &.active {
+      >.label {
+        background-color: $white;
+        border: 5px solid $black;
+        color: $black;
+      }
+    }
+
+    > .label,
+    > .image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    > .label {
+      height: calc(64px - 8px * 2);
+      width: calc(200px - 8px * 2);
+      padding: 8px;
+      background-color: $black;
+      color: $white;
+      border: 5px solid transparent;
+
+      &.icon {
+        img {
+          height: 100%;
+          transform: skewX(15deg);
+        }
+      }
+
+      &.name {
+        font-size: 20px;
+
+        p {
+          transform: skewX(15deg);
+        }
+      }
+    }
+
+    > .image {
+      position: relative;
+      height: calc(180px - 20px * 2);
+      width: calc(200px - 8px * 2);
+      margin: 20px 0;
+      overflow: hidden;
+      background-color: $white;
+
+      img {
+        height: 100%;
+        transform: skewX(15deg);
+      }
+    }
+  }
+
+  &-showbox {
+    position: relative;
+    height: auto;
+    width: calc(100% - 84px * 2);
+    transform: skewX(-15deg);
+
+    h1.title,
+    .content {
+      border-radius: 12px;
+      
+      > span,
+      > p {
+        transform: skewX(15deg);
+      }
+    }
+  
+    h1.title {
+      display: inline-flex;
+      padding: 16px 72px;
+      font-size: 72px;
+      margin-left: -36px;
+      background-color: $black;
+      color: $white;
+    }
+
+    .content {
+      margin-top: -72px;
+      padding: 84px 56px;
+      padding-top: 112px;
+      border: 15px solid $black;
+      box-sizing: border-box;
+
+      p {
+        font-size: 28px;
+        white-space: pre-wrap;
+        line-height: 1.6;
+
+        img {
+          float: right;
+          height: 256px;
+          margin-top: -84px;
+        }
+      }
+
+      a {
+        color: $tone;
+        text-decoration: none;
+      }
+    }
+  }
+}

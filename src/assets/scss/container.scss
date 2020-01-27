@@ -1,0 +1,51 @@
+#app.main {
+  .main-container {
+    position: relative;
+    width: calc(100% - 250px * 2);
+    min-height: 100vh;
+    margin: 0 250px;
+    margin-top: $navbar-height;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 84px;
+
+    @media screen and (max-width: 1440px) {
+      margin: 0;
+      margin-top: $navbar-height;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 1024px) {
+      min-height: auto;
+    }
+
+    h1.title {
+      margin-bottom: 32px;
+    }
+
+    h1.title,
+    h2.subtitle,
+    p.content {
+      text-align: center;
+      line-height: 1.4;
+    }
+  
+    &.popuped {
+      position: fixed;
+      
+      // Only use CSS:Filter-Blur API on Mozilla Firefox.
+      @supports (-moz-appearance: none) {
+        & {
+          filter: blur(3px);
+        }
+      }
+    }
+
+    &#traffic {
+      width: 100%;
+      margin: 0;
+      margin-top: $navbar-height;
+    }
+  }
+}
