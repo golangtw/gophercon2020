@@ -1,0 +1,34 @@
+#app.main {
+  .spotlight {
+    background-color: $black;
+    color: $white;
+    padding: 64px;
+    clip-path: polygon(20px 20px, 100% 0%, 100% 100%, 0% 100%);
+    margin: 42px 0;
+    width: 100%;
+    min-height: 500px;
+
+    h1.title,
+    h2.subtitle,
+    p.content,
+    ul,
+    li,
+    a,
+    span{
+      color: $white;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    p.content,
+    ul {
+      margin: 32px 0;
+      font-size: 18px;
+    }
+
+    h1.title {
+      font-size: 26px;
+      line-height: 1.2;
+    }
+  }
+}

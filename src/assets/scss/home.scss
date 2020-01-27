@@ -1,0 +1,46 @@
+#app.main {
+  #home.main-container {
+    align-items: flex-start;
+    margin: 0 350px;
+    margin-top: $navbar-height;
+    padding-top: 170px;
+    width: calc(100% - 350px * 2);
+  
+    .header {
+      height: calc(350px - 40px * 2);
+      width: calc(910px - 350px);
+      padding: 40px;
+      padding-left: 350px;
+      background-color: $dark-3;
+      margin-left: -350px;
+      margin-bottom: 200px;
+  
+      h1.title,
+      h2.subtitle,
+      p {
+        text-align: left;
+        margin-bottom: 16px;
+        line-height: 1;
+      }
+  
+      h1.title {
+        font-size: 84px;
+      }
+  
+      h2.subtitle {
+        font-size: 42px;
+        margin-bottom: 42px;
+      }
+  
+      p {
+        &.date {
+          font-size: 32px;
+        }
+  
+        &.location {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
