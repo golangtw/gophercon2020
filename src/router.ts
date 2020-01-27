@@ -109,41 +109,7 @@ export const routes = [
 export default new Router({
   mode: 'history',
   base: '/2020/',
-<<<<<<< HEAD
-  routes: [
-    // {
-    //   path: '/',
-    //   name: 'Home',
-    //   component: Home
-    // },
-    {
-      path: '/agenda',
-      name: 'Agenda',
-      component: Agenda
-    },
-    {
-      path: '/agenda/:sid',
-      name: 'AgendaView',
-      component: Agenda
-    },
-    {
-      path: '/cfp',
-      name: 'CFP',
-      component: CFP
-    },
-    {
-      path: '/',
-      redirect: '/cfp'
-    },
-    {
-      path: '/venue',
-      name: 'Venue',
-      component: Venue
-    }
-  ],
-=======
   routes,
->>>>>>> dev
   scrollBehavior (to, from, savedPosition) {
     if (to.name === 'CFP' && to.query.popUp && to.hash) {
       const target = document.querySelector(`.popup-content>${to.hash}`) as HTMLElement;
