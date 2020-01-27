@@ -1,0 +1,16 @@
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: $navbar-height;
+
+  &.popuped {
+    position: fixed;
+    
+    // Only use CSS:Filter-Blur API on Mozilla Firefox.
+    @supports (-moz-appearance: none) {
+      & {
+        filter: blur(3px);
+      }
+    }
+  }
+}
