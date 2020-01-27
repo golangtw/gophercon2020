@@ -10,6 +10,12 @@
     align-items: center;
     padding-top: 84px;
 
+    @media screen and (max-width: 1440px) {
+      margin: 0;
+      margin-top: $navbar-height;
+      width: 100%;
+    }
+
     h1.title {
       margin-bottom: 32px;
     }
