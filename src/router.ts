@@ -1,7 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+
 import Home from './pages/Home.vue';
 import Agenda from './pages/Agenda.vue';
+import Activity from './pages/Activity.vue';
+import Traffic from './pages/Traffic.vue';
+import Venue from './pages/Venue.vue';
+import Team from './pages/Team.vue';
 import CFP from './pages/CFP.vue';
 
 Vue.use(Router);
@@ -10,11 +15,11 @@ export default new Router({
   mode: 'history',
   base: '/2020/',
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'Home',
-    //   component: Home
-    // },
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
     {
       path: '/agenda',
       name: 'Agenda',
@@ -26,13 +31,39 @@ export default new Router({
       component: Agenda
     },
     {
+      path: '/activity',
+      name: 'Activity',
+      component: Activity
+    },
+    {
+      path: '/activity/:aid',
+      name: 'ActivityView',
+      component: Activity
+    },
+    {
+      path: '/venue',
+      name: 'Venue',
+      component: Venue
+    },
+    {
+      path: '/traffic',
+      name: 'Traffic',
+      component: Traffic
+    },
+    {
+      path: '/team',
+      name: 'Team',
+      component: Team
+    },
+    {
+      path: '/team/:tid',
+      name: 'TeamView',
+      component: Team
+    },
+    {
       path: '/cfp',
       name: 'CFP',
       component: CFP
-    },
-    {
-      path: '/',
-      redirect: '/cfp'
     }
   ],
   scrollBehavior (to, from, savedPosition) {
