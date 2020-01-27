@@ -1,11 +1,13 @@
 <template>
   <div id="venue" class="main-container">
     <h1 class="title">會場地圖</h1>
-    <Map3F class="map"/>
-    <Map4F class="map"/>
-    <div class="floor-box">
-      <p @click="$router.push({ hash: '#map-3F' })">3F</p>
-      <p @click="$router.push({ hash: '#map-4F' })">4F</p>
+    <div class="map-container">
+      <Map3F class="map"/>
+      <Map4F class="map"/>
+      <div class="floor-box">
+        <p @click="$router.push({ hash: '#map-3F' })">3F</p>
+        <p @click="$router.push({ hash: '#map-4F' })">4F</p>
+      </div>
     </div>
   </div>
 </template>
