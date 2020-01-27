@@ -7,10 +7,12 @@
 
 @import 'container';
 @import 'popup';
+@import 'navbar';
 
 @import 'session';
 
 #app.main {
   width: 100%;
   display: flex;
+  flex-direction: column;
 }
