@@ -3,7 +3,7 @@
     id="app"
     :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main']"
   >
-    <Navbar/>
+    <Navbar v-if="$route.name !== 'CFP'"/>
     <router-view/>
     <Popup
       :isOpen="isPopup"
