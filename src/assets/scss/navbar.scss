@@ -6,6 +6,10 @@
   width: 100%;
   z-index: 10000;
 
+  &.popuped {        
+    filter: blur(3px);
+  }
+
   .menu {
     &,
     &-container {
