@@ -53,15 +53,16 @@
       &:before {
         content: '';
         position: absolute;
+        left: 0;
         bottom: -16px;
-        width: 100%;
+        width: 0%;
         border-bottom: 8px solid $black;
-        opacity: 0;
+        transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) .3s;
       }
 
       &.active {
         &:before {
-          opacity: 1;
+          width: 100%;
         }
       }
 
