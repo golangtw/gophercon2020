@@ -1,0 +1,39 @@
+#venue {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1.title {
+    margin-top: 120px;
+  }
+
+  .map {
+    width: 80%;
+    margin-bottom: 60px;
+  }
+
+  .floor-box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    right: 0;
+    top: calc(50% - 320px / 2);
+    height: 320px;
+    width: 180px;
+    overflow: hidden;
+    background-color: $black;
+    border-radius: 12px;
+    transform: skewX(-15deg);
+
+    p {
+      color: $white;
+      font-size: 60px;
+      margin: 48px;
+      transform: skewX(15deg);
+      cursor: pointer;
+    }
+  }
+}
