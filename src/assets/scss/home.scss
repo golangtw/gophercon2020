@@ -5,6 +5,12 @@
     margin-top: $navbar-height;
     padding-top: 170px;
     width: calc(100% - 350px * 2);
+
+    @media screen and (max-width: 1200px) {
+      margin: 0;
+      margin-top: $navbar-height;
+      width: 100%;
+    }
   
     .header {
       height: calc(350px - 40px * 2);
@@ -14,6 +20,16 @@
       background-color: $dark-3;
       margin-left: -350px;
       margin-bottom: 200px;
+
+      @media screen and (max-width: 1200px) {
+        margin-left: 0;
+      }
+
+      @media screen and (max-width: 960px) {
+        width: calc(100% - 40px * 2);
+        height: auto;
+        padding: 40px;
+      }
   
       h1.title,
       h2.subtitle,
@@ -25,11 +41,29 @@
   
       h1.title {
         font-size: 84px;
+
+        @media screen and (max-width: 414px) {
+          font-size: 72px;
+        }
+
+        @media screen and (max-width: 375px) {
+          font-size: 64px;
+        }
       }
   
       h2.subtitle {
         font-size: 42px;
         margin-bottom: 42px;
+
+        @media screen and (max-width: 414px) {
+          font-size: 36px;
+          margin-bottom: 36px;
+        }
+
+        @media screen and (max-width: 375px) {
+          font-size: 28px;
+          margin-bottom: 28px;
+        }
       }
   
       p {

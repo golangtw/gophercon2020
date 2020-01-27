@@ -16,6 +16,10 @@
       width: 100%;
     }
 
+    @media screen and (max-width: 1024px) {
+      min-height: auto;
+    }
+
     h1.title {
       margin-bottom: 32px;
     }

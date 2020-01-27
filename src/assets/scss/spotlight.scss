@@ -8,6 +8,19 @@
     width: 100%;
     min-height: 500px;
 
+    @media screen and (max-width: 1200px) {
+      width: calc(100% - 64px * 2);
+    }
+
+    @media screen and (max-width: 675px) {
+      min-height: auto;
+      width: calc(100% - 32px);
+      margin: 0;
+      margin-bottom: 32px;
+      padding: 32px;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
     h1.title,
     h2.subtitle,
     p.content,
@@ -24,11 +37,20 @@
     ul {
       margin: 32px 0;
       font-size: 18px;
+
+      @media screen and (max-width: 675px) {
+        margin: 16px 0;
+        font-size: 14px;
+      }
     }
 
     h1.title {
       font-size: 26px;
       line-height: 1.2;
+
+      @media screen and (max-width: 675px) {
+        font-size: 24px;
+      }
     }
   }
 }
