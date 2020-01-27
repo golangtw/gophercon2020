@@ -9,6 +9,17 @@
     flex-direction: column;
     align-items: center;
     padding-top: 84px;
+
+    h1.title {
+      margin-bottom: 32px;
+    }
+
+    h1.title,
+    h2.subtitle,
+    p.content {
+      text-align: center;
+      line-height: 1.4;
+    }
   
     &.popuped {
       position: fixed;
@@ -19,6 +30,12 @@
           filter: blur(3px);
         }
       }
+    }
+
+    &#traffic {
+      width: 100%;
+      margin: 0;
+      margin-top: $navbar-height;
     }
   }
 }
