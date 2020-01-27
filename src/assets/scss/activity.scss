@@ -23,7 +23,7 @@
     &bar {
       display: flex;
       flex-direction: row;
-      margin: 120px 0;
+      margin-bottom: 84px;
     }
 
     display: flex;
@@ -32,6 +32,15 @@
     align-items: center;
     margin-left: 20px;
     transform: skewX(-15deg);
+    cursor: pointer;
+
+    &.active {
+      >.label {
+        background-color: $white;
+        border: 5px solid $black;
+        color: $black;
+      }
+    }
 
     > .label,
     > .image {
@@ -49,6 +58,7 @@
       padding: 8px;
       background-color: $black;
       color: $white;
+      border: 5px solid transparent;
 
       &.icon {
         img {
@@ -58,7 +68,7 @@
       }
 
       &.name {
-        font-size: 22px;
+        font-size: 20px;
 
         p {
           transform: skewX(15deg);
@@ -77,6 +87,57 @@
       img {
         height: 100%;
         transform: skewX(15deg);
+      }
+    }
+  }
+
+  &-showbox {
+    position: relative;
+    height: auto;
+    width: calc(100% - 84px * 2);
+    transform: skewX(-15deg);
+
+    h1.title,
+    .content {
+      border-radius: 12px;
+      
+      > span,
+      > p {
+        transform: skewX(15deg);
+      }
+    }
+  
+    h1.title {
+      display: inline-flex;
+      padding: 16px 72px;
+      font-size: 72px;
+      margin-left: -36px;
+      background-color: $black;
+      color: $white;
+    }
+
+    .content {
+      margin-top: -72px;
+      padding: 84px 56px;
+      padding-top: 112px;
+      border: 15px solid $black;
+      box-sizing: border-box;
+
+      p {
+        font-size: 28px;
+        white-space: pre-wrap;
+        line-height: 1.6;
+
+        img {
+          float: right;
+          height: 256px;
+          margin-top: -84px;
+        }
+      }
+
+      a {
+        color: $tone;
+        text-decoration: none;
       }
     }
   }
