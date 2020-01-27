@@ -78,7 +78,6 @@
         </p>
       </div>
     </main>
-    <Footer/>
   </div>
 </template>
 
@@ -89,7 +88,6 @@ import { Action, Getter } from 'vuex-class';
 
 import Banner from '@/components/CFP/Banner.vue';
 import BulletScreen from '@/components/CFP/BulletScreen.vue';
-import Footer from '@/components/CFP/Footer.vue';
 
 import head from '../util/head';
 
@@ -98,8 +96,7 @@ const namespace: string = 'app';
 @Component({
   components: {
     Banner,
-    BulletScreen,
-    Footer
+    BulletScreen
   }
 })
 export default class CFP extends Vue {
