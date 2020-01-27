@@ -30,10 +30,10 @@ const head = {
     headPayload['og:site_name'].setAttribute('content', defaultValue.title);
   },
   title (text: string) {
-    headPayload.title.innerText = `${text} | ${defaultValue.title}`;
+    headPayload.title.innerText = `${text} - ${defaultValue.title}`;
   },
   ogTitle (text: string) {
-    headPayload['og:title'].setAttribute('content', `${text} | ${defaultValue.title}`);
+    headPayload['og:title'].setAttribute('content', `${text} - ${defaultValue.title}`);
   },
   ogDescription (text: string) {
     headPayload['og:description'].setAttribute('content', text);
