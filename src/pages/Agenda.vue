@@ -54,10 +54,18 @@ export default class Agenda extends Vue {
   public onChangePopup (newVal: boolean) {
     this.processPopup(newVal);
 
-    if (!newVal) { this.setMeta(); }
+    if (newVal) {
+      this.$router.push({ name: 'AgendaView', params: { sid: (this.popUpSession as any).id }});
+    }
+
+    if (!newVal) {
+      this.$router.push({ name: 'Agenda' });
+      this.setMeta();
+    }
   }
 
   public mounted () {
+    this.handleSessionPopup();
     this.setMeta();
   }
 
@@ -90,6 +98,14 @@ export default class Agenda extends Vue {
     head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
     head.ogUrl('https://sitcon.org/2020/cfp/');
     head.ogImage('https://sitcon.org/2020/img/og.png');
+  }
+
+  private handleSessionPopup (): void {
+    if (this.$route.params.sid) {
+      this.popUpSession = this.sessionData.sessions.filter((session) => (session.id === this.$route.params.sid))[0];
+      this.popUp = true;
+      this.processPopup(true);
+    }
   }
 }
 </script>
