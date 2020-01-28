@@ -3,6 +3,8 @@ const fs = require('fs');
 
 const gaTempHTML = fs.readFileSync(path.join(__dirname, './template/ga.html'));
 
+const sessionData = require(path.join(__dirname, './public/json/session.json'));
+
 module.exports = {
   pluginOptions: {
     prerenderSpa: {
@@ -12,7 +14,8 @@ module.exports = {
         '/2020/cfp',
         '/2020/cfp/',
         '/2020/agenda',
-        '/2020/agenda/'
+        '/2020/agenda/',
+        ...sessionData.sessions.map(session => (session.id))
       ],
       useRenderEvent: true,
       headless: true,
