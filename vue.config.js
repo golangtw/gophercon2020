@@ -15,7 +15,8 @@ module.exports = {
         '/2020/cfp/',
         '/2020/agenda',
         '/2020/agenda/',
-        ...sessionData.sessions.map(session => (session.id))
+        ...sessionData.sessions.map(session => (`/2020/agenda/${session.id}`)),
+        ...sessionData.sessions.map(session => (`/2020/agenda/${session.id}/`))
       ],
       useRenderEvent: true,
       headless: true,
