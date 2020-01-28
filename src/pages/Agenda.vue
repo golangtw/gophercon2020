@@ -64,9 +64,21 @@ export default class Agenda extends Vue {
     }
   }
 
+  @Watch('$route')
+  public onChangeRoute (route: any) {
+    if (route.name === 'Agenda') {
+      this.togglePopup(false);
+    }
+
+    if (route.name === 'AgendaView') {
+      this.togglePopup(true);
+    }
+  }
+
   public mounted () {
     this.handleSessionPopup();
     this.setMeta();
+    window.addEventListener('keyup', this.escHandler);
   }
 
   private isMobile (): boolean {
@@ -105,6 +117,12 @@ export default class Agenda extends Vue {
       this.popUpSession = this.sessionData.sessions.filter((session) => (session.id === this.$route.params.sid))[0];
       this.popUp = true;
       this.processPopup(true);
+    }
+  }
+
+  private escHandler (event: any): void {
+    if (event.keyCode === 27 && this.$route.name === 'AgendaView') {
+      this.$router.push({ name: 'Agenda' });
     }
   }
 }
