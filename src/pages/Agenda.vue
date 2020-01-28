@@ -96,7 +96,7 @@ export default class Agenda extends Vue {
     head.title('議程表 - SITCON 2020 學生計算機年會 | Students\' Information Technology Conference');
     head.ogTitle('議程表 - SITCON 2020 學生計算機年會 | Students\' Information Technology Conference');
     head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
-    head.ogUrl('https://sitcon.org/2020/cfp/');
+    head.ogUrl('https://sitcon.org/2020/agenda/');
     head.ogImage('https://sitcon.org/2020/img/og.png');
   }
 
