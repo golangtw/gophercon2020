@@ -15,7 +15,7 @@ const defaultValue = {
   title: `SITCON 2020 學生計算機年會 | Students' Information Technology Conference`,
   description: 'SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。',
   url: 'https://sitcon.org/2020',
-  image: 'https://sitcon.org/2020/cfp-og.png',
+  image: 'https://sitcon.org/2020/og.png',
   type: 'website'
 };
 
