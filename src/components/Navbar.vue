@@ -1,9 +1,5 @@
 <template>
-  <div
-    id="nav"
-    :class="{ 'popuped': isPopup }"
-    class="navbar"
-  >
+  <div id="nav" class="navbar">
     <nav class="menu-container">
       <div class="logo"></div>
       <div class="menu">
@@ -33,7 +29,7 @@ import { MenuItem } from '../store/types/menu';
 
 @Component
 export default class Navbar extends Vue {
-  @Getter('menu', { namespace: 'menu' }) private menu!: MenuItem[];
-  @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
+  @Getter('menu', { namespace: 'menu' })
+  private menu!: MenuItem[];
 }
 </script>
