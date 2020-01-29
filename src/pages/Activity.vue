@@ -10,13 +10,13 @@
         :key="`activity-${activity.name}`"
         :class="{ active: $route.params.aid === activity.name }"
         class="activity-tab"
-        @click="$router.push({ name: 'ActivityView', params: { aid: activity.name } })"
+        @click="switchTab(activity.name)"
       >
         <div class="label icon">
-          <img :src="activity.icon" :alt="activity.name"/>
+          <img :src="activity.icon" :alt="activity.name" />
         </div>
         <div class="image">
-          <img :src="activity.image" :alt="activity.name">
+          <img :src="activity.image" :alt="activity.name" />
         </div>
         <div class="label name">
           <p>{{ activity.name }}</p>
@@ -33,8 +33,12 @@
         <span class="font-black">{{ activity.name }}</span>
       </h1>
       <div class="content">
-        <p><img :src="activity.image" :alt="activity.name"></p>
-        <p v-html="activity.description.replace(/\[([^\[]+)\]\((.*)\)/gm, `<a href='$2' target='_blank' rel='noopener noreferrer'>$1</a>`)"/>
+        <p>
+          <img :src="activity.image" :alt="activity.name" />
+        </p>
+        <p
+          v-html="activity.description.replace(/\[([^\[]+)\]\((.*)\)/gm, `<a href='$2' target='_blank' rel='noopener noreferrer'>$1</a>`)"
+        />
       </div>
     </div>
   </div>
@@ -42,7 +46,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-
 import activityData from '@/../public/json/activity.json';
 
 interface ActivityPayload {
@@ -63,6 +66,12 @@ export default class Activity extends Vue {
   private autoAttachFirstTab (): void {
     if (this.$route.name === 'Activity') {
       this.$router.push({ name: 'ActivityView', params: { aid: activityData[0].name } });
+    }
+  }
+
+  private switchTab (destId: string): void {
+    if (this.$route.params.aid !== destId) {
+      this.$router.push({ name: 'ActivityView', params: { aid: destId } });
     }
   }
 }

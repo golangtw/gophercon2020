@@ -6,7 +6,7 @@
     align-items: center;
     width: 60px;
     height: calc(180px);
-    padding: 48px 0;
+    padding: 48px 8px;
     font-size: 36px;
     background-color: $black;
     color: $white;
@@ -26,6 +26,7 @@
       margin-bottom: 84px;
     }
 
+    width: calc(196px - 8px * 2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +55,7 @@
 
     > .label {
       height: calc(64px - 8px * 2);
-      width: calc(200px - 8px * 2);
+      width: 100%;
       padding: 8px;
       background-color: $black;
       color: $white;
@@ -79,7 +80,7 @@
     > .image {
       position: relative;
       height: calc(180px - 20px * 2);
-      width: calc(200px - 8px * 2);
+      width: 100%;
       margin: 20px 0;
       overflow: hidden;
       background-color: $white;
