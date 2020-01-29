@@ -65,7 +65,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
+import head from '@/util/head';
+
 @Component
 export default class Home extends Vue {
+  public mounted () {
+    head.reset();
+  }
 }
 </script>
