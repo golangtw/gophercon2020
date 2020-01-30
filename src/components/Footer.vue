@@ -1,5 +1,8 @@
 <template>
-  <footer class="footer-container">
+  <footer
+    :class="{ 'popuped': isPopup }" 
+    class="footer-container"
+  >
     <hr class="footer-line">
     <div id="brand" class="footer">
       <p>
@@ -49,9 +52,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
 
 @Component({})
 export default class Footer extends Vue {
+  @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
+
   private communityMedia = [
     {
       icon: [ 'fab', 'youtube' ],
