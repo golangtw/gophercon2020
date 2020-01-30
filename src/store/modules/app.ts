@@ -27,37 +27,14 @@ const state: AppState = {
 };
 
 const getters: GetterTree<AppState, RootState> = {
-  mode (state): AppState['mode'] {
-    return state.mode;
-  },
-
-  device (state): AppState['device'] {
-    return state.device;
-  },
-
-  sight (state): AppState['sight'] {
-    return state.sight;
-  },
-
-  theme (state): AppState['theme'] {
-    return state.theme;
-  },
-
-  isPopup (state): AppState['isPopup'] {
-    return state.isPopup;
-  },
-
-  popupContent (state): AppState['popupContent'] {
-    return state.popupContent;
-  },
-
-  popupOffsetTop (state): AppState['popupOffsetTop'] {
-    return state.popupOffsetTop;
-  },
-
-  validPopupTypes (state): AppState['validPopupTypes'] {
-    return state.validPopupTypes;
-  }
+  mode: (state): AppState['mode'] => state.mode,
+  device: (state): AppState['device'] => state.device,
+  sight: (state): AppState['sight'] => state.sight,
+  theme: (state): AppState['theme'] => state.theme,
+  isPopup: (state): AppState['isPopup'] => state.isPopup,
+  popupContent: (state): AppState['popupContent'] => state.popupContent,
+  popupOffsetTop: (state): AppState['popupOffsetTop'] => state.popupOffsetTop,
+  validPopupTypes: (state): AppState['validPopupTypes'] => state.validPopupTypes
 };
 
 const actions: ActionTree<AppState, RootState> = {

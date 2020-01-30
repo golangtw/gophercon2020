@@ -37,7 +37,7 @@ export default class Agenda extends Vue {
   @Action('togglePopup', { namespace: 'app' }) private togglePopup!: (status: boolean) => void;
   @Action('togglePopupContent', { namespace: 'app' }) private togglePopupContent!: (content: string) => void;
   @Action('setPopupOffsetTop', { namespace: 'app' }) private setPopupOffsetTop!: (offset: number) => void;
-  @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
+  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
   @Getter('device', { namespace: 'app' }) private device!: DeviceType;
   @Getter('popupOffsetTop', { namespace: 'app' }) private popupOffsetTop!: number;
 

@@ -13,13 +13,8 @@ export const state: SunRiseSunSetState = {
 };
 
 export const getters: GetterTree<SunRiseSunSetState, RootState> = {
-  sunrise (state): SunRiseSunSetState['sunrise'] {
-    return state.sunrise;
-  },
-
-  sunset (state): SunRiseSunSetState['sunset'] {
-    return state.sunset;
-  }
+  sunrise: (state): SunRiseSunSetState['sunrise'] => state.sunrise,
+  sunset: (state): SunRiseSunSetState['sunset'] => state.sunset
 };
 
 export const actions: ActionTree<SunRiseSunSetState, RootState> = {
