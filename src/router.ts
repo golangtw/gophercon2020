@@ -46,7 +46,7 @@ export const routes = [
     name: 'Activity',
     component: Activity,
     meta: {
-      index: 0,
+      index: 2,
       label: '活動',
       menuItem: true
     }
@@ -64,7 +64,7 @@ export const routes = [
     name: 'Venue',
     component: Venue,
     meta: {
-      index: 0,
+      index: 3,
       label: '會場地圖',
       menuItem: true
     }
@@ -74,8 +74,18 @@ export const routes = [
     name: 'Traffic',
     component: Traffic,
     meta: {
-      index: 0,
+      index: 4,
       label: '交通方式',
+      menuItem: true
+    }
+  },
+  {
+    path: '/sponsor',
+    name: 'Sponsor',
+    redirect: '/team/sponsor',
+    meta: {
+      index: 5,
+      label: '贊助',
       menuItem: true
     }
   },
@@ -84,7 +94,7 @@ export const routes = [
     name: 'Team',
     component: Team,
     meta: {
-      index: 0,
+      index: 6,
       label: 'SITCON 團隊',
       menuItem: true
     }
