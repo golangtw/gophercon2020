@@ -16,17 +16,9 @@ const state: TemplateState = {
 };
 
 const getters: GetterTree<TemplateState, RootState> = {
-  submitInfo (state): TemplateState['submitInfo'] {
-    return state.submitInfo;
-  },
-
-  openSubmit (state): TemplateState['openSubmit'] {
-    return state.openSubmit;
-  },
-
-  loudly (state): TemplateState['loudly'] {
-    return state.loudly;
-  }
+  submitInfo: (state): TemplateState['submitInfo'] => state.submitInfo,
+  openSubmit: (state): TemplateState['openSubmit'] => state.openSubmit,
+  loudly: (state): TemplateState['loudly'] => state.loudly
 };
 
 const actions: ActionTree<TemplateState, RootState> = {
