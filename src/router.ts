@@ -8,6 +8,7 @@ import Traffic from './pages/Traffic.vue';
 import Venue from './pages/Venue.vue';
 import Team from './pages/Team.vue';
 import CFP from './pages/CFP.vue';
+import { Route } from 'vue-router';
 
 Vue.use(Router);
 
@@ -106,7 +107,7 @@ export const routes = [
   }
 ];
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: '/2020/',
   routes,
@@ -135,3 +136,13 @@ export default new Router({
     }
   }
 });
+
+router.beforeEach((to: Route, from: Route, next: (...args: any[]) => any) => {
+  if (from.path.startsWith('/activity') && to.path === '/activity') {
+    next(false);
+  } else {
+    next();
+  }
+});
+
+export default router;
