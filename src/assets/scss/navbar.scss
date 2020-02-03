@@ -19,6 +19,10 @@
     box-sizing: border-box;
     padding: 12px 24px;
 
+    @media screen and (max-width: 900px) {
+      padding-top: 0;
+    }
+
     .logo-container {
       display: flex;
       align-items: center;
@@ -50,6 +54,7 @@
     width: 100%;
     margin: 0;
     padding-top: 12px;
+    padding-bottom: 12px;
 
     .logo {
       width: 400px;
@@ -219,8 +224,8 @@
   }
 
   @media screen and (max-width: 900px) {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
 
     &.icon--desktop {
       display: none;
@@ -235,7 +240,7 @@
 .sitcon20 {
   font-weight: bold;
   font-size: 8px;
-  margin-top: 2px;
+  margin-top: 6px;
 
   &,
   span {
@@ -252,5 +257,5 @@
 }
 
 .define {
-  height: 14px;
+  width: 68px;
 }
