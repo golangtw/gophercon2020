@@ -13,11 +13,11 @@
           <p class="title font-bold">SITCON</p>
           <p class="subtitle font-bold">2020</p>
         </div>
-        <div class="toggle-container" @click="isToggled = true">
+        <div class="toggle-container" @click="toggleMenu(!isToggleMenu)" >
           <img src="@/../public/img/sitcon-logo.png" />
         </div>
       </div>
-      <div class="menu" :class="{toggle: isToggled}">
+      <div class="menu" :class="{ toggle: isToggleMenu }">
         <div class="bar">
           <div class="logo-container">
             <img src="@/../public/img/sitcon-logo.png" />
@@ -28,7 +28,7 @@
               <span style="color: black">SITCON</span>20
             </p>
           </div>
-          <div class="toggle-container" @click="isToggled = false" >
+          <div class="toggle-container" @click="toggleMenu(!isToggleMenu)" >
             <img src="@/../public/img/sitcon-logo.png"/>
           </div>
         </div>
@@ -47,13 +47,15 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
+import { Action, Getter } from 'vuex-class';
 
 import { MenuItem } from '../store/types/menu';
 
 @Component
 export default class Navbar extends Vue {
+  @Action('toggleMenu', { namespace: 'menu' }) private toggleMenu!: () => void;
   @Getter('menu', { namespace: 'menu' }) private menu!: MenuItem[];
+  @Getter('toggle', { namespace: 'menu' }) private isToggleMenu!: boolean;
   @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
 }
 </script>
