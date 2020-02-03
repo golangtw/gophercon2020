@@ -1,79 +1,204 @@
+$mobile: 1280px;
+
 .navbar {
   position: fixed;
   display: flex;
   flex-direction: row;
-  height: $navbar-height;
+  // height: $navbar-height;
   width: 100%;
   z-index: 10000;
 
-  .menu {
-    &,
-    &-container {
-      position: relative;
+  .bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 12px 24px;
+
+    div {
       display: flex;
-      flex-direction: row;
-    }
-
-    &-container {
-      justify-content: space-between;
-      height: 100%;
-      width: 100%;
-      background-color: $white;
-
-      .logo {
-        height: 72px;
-        width: 72px;
-      }
-    }
-
-    & {
-      margin-right: 250px;
-    }
-
-    &-item {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
       align-items: center;
-      height: 96px;
-      width: 140px;
-      color: $black;
-      transform: skewX(15deg);
-      transform-origin: center;
+    }
 
-      >a {
-        transform: skewX(-15deg);
+    img {
+      height: 36px;
+      width: 36px;
+    }
+
+    .title-container,
+    .toggle-container {
+      display: none;
+
+      @media screen and (max-width: $mobile) {
+        display: flex;
+      }
+    }
+
+    .title-container {
+      margin-left: 16px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .subtitle {
+        color: #707070;
+      }
+    }
+
+    .toggle-container {
+      // Align right
+      margin-left: auto;
+    }
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .logo {
+      display: flex;
+      width: 400px;
+
+      .toggle-container {
+        display: none
       }
 
-      &:first-child,
-      &:last-child {
-        width: 200px;
-        // margin: 0 10px;
-        background-color: $black;
-        color: $white;
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -16px;
-        width: 0%;
-        border-bottom: 8px solid $black;
-        transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) .3s;
-      }
-
-      &.active {
-        &:before {
-          width: 100%;
+      .title-container {
+        .subtitle {
+          font-size: 0.75em;
+          margin-top: 0.5em;
+          color: $dark-1;
         }
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-        padding: 10px;
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+
+        .toggle-container {
+          display: flex;
+        }
+      }
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      margin-right: 140px;
+      justify-content: flex-end;
+
+      .bar {
+        display: none;
+      }
+
+      @media screen and (max-width: $mobile) {
+
+        display: none;
+
+        &.toggle {
+          display: flex;
+          position: absolute;
+          right: 0;
+          width: 275px;
+          height: 100vh;
+          z-index: 0;
+          margin: 0;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-end;
+        }
+
+        .bar {
+          display: flex;
+          width: 100%;
+
+          .title-container {
+            .title {
+              font-size: 1.33em;
+            }
+
+            .subtitle {
+              span {
+                letter-spacing: inherit;
+              }
+
+              font-size: 0.66em;
+              letter-spacing: 5px;
+              margin-top: 0.25em;
+            }
+          }
+        }
+      }
+
+
+
+      .menu-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        width: 160px;
+        color: $black;
+        transform: skewX(15deg);
+        transform-origin: center;
+
+        @media screen and (max-width: $mobile) {
+          transform: initial;
+          height: initial;
+          align-items: flex-end;
+        }
+
+        >a {
+          transform: skewX(-15deg);
+          margin-bottom: 4px;
+
+          @media screen and (max-width: $mobile) {
+            transform: initial;
+            margin: 1em 0;
+          }
+        }
+
+        &:first-child,
+        &:last-child {
+          // width: 200px;
+          // margin: 0 10px;
+          background-color: $black;
+          color: $white;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -16px;
+          width: 0%;
+          border-bottom: 8px solid $black;
+          transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) .3s;
+
+          @media (max-width: 900px) {
+            display: none;
+          }
+        }
+
+        &.active {
+          &:before {
+            width: 100%;
+          }
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          padding: 10px;
+        }
       }
     }
   }

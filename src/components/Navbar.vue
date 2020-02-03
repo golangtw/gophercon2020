@@ -1,20 +1,40 @@
 <template>
   <div id="nav" class="navbar">
     <nav class="menu-container">
-      <div class="logo"></div>
-      <div class="menu">
+      <div class="logo bar">
+        <div class="logo-container">
+          <img src="@/../public/img/sitcon-logo.png" />
+        </div>
+        <div class="title-container">
+          <p class="title font-bold">SITCON</p>
+          <p class="subtitle font-bold">2020</p>
+        </div>
+        <div class="toggle-container" @click="isToggled = true">
+          <img src="@/../public/img/sitcon-logo.png" />
+        </div>
+      </div>
+      <div class="menu" :class="{toggle: isToggled}">
+        <div class="bar">
+          <div class="logo-container">
+            <img src="@/../public/img/sitcon-logo.png" />
+          </div>
+          <div class="title-container">
+            <p class="title font-bold">define</p>
+            <p class="subtitle font-bold">
+              <span style="color: black">SITCON</span>20
+            </p>
+          </div>
+          <div class="toggle-container" @click="isToggled = false" >
+            <img src="@/../public/img/sitcon-logo.png"/>
+          </div>
+        </div>
         <div
           v-for="item in menu"
           :key="item.name"
           :class="{ active: $route.name.includes(item.name) }"
           class="menu-item"
         >
-          <router-link 
-            :to="item.path"
-            class="font-bold"
-          >
-            {{ item.meta.label }}
-          </router-link>
+          <router-link :to="item.path" class="font-bold">{{ item.meta.label }}</router-link>
         </div>
       </div>
     </nav>
@@ -31,5 +51,6 @@ import { MenuItem } from '../store/types/menu';
 export default class Navbar extends Vue {
   @Getter('menu', { namespace: 'menu' })
   private menu!: MenuItem[];
+  private isToggled: boolean = false;
 }
 </script>
