@@ -8,6 +8,11 @@ $mobile: 1280px;
   width: 100%;
   z-index: 10000;
 
+  &.popuped {
+    position: fixed;
+    filter: blur(3px);
+  }
+
   .bar {
     display: flex;
     flex-direction: row;
