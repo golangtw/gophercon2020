@@ -1,5 +1,9 @@
 <template>
-  <div id="nav" class="navbar">
+  <div
+    id="nav"
+    :class="{ 'popuped': isPopup }" 
+    class="navbar"
+  >
     <nav class="menu-container">
       <div class="logo bar">
         <div class="logo-container">
@@ -13,7 +17,7 @@
           <img src="@/assets/images/toggle-button.svg" />
         </div>
       </div>
-      <div class="menu" :class="{toggle: isToggled}">
+      <div class="menu" :class="{ toggle: isToggleMenu }">
         <div class="bar">
           <div class="logo-container">
             <img src="/favicon.png" />
@@ -43,14 +47,15 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
+import { Action, Getter } from 'vuex-class';
 
 import { MenuItem } from '../store/types/menu';
 
 @Component
 export default class Navbar extends Vue {
-  @Getter('menu', { namespace: 'menu' })
-  private menu!: MenuItem[];
-  private isToggled: boolean = false;
+  @Action('toggleMenu', { namespace: 'menu' }) private toggleMenu!: () => void;
+  @Getter('menu', { namespace: 'menu' }) private menu!: MenuItem[];
+  @Getter('toggle', { namespace: 'menu' }) private isToggleMenu!: boolean;
+  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
 }
 </script>

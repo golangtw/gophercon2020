@@ -2,6 +2,7 @@ import Vue, { VueConstructor } from 'vue';
 
 export interface MenuState {
   menu: MenuItem[];
+  toggle: boolean;
 }
 
 export interface MenuItem {

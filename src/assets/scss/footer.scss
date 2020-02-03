@@ -9,6 +9,12 @@
         "contact media";
       grid-gap: 42px;
       padding: 64px $main-padding;
+      margin-top: 64px;
+      width: calc(100% - #{$main-padding} * 2);
+      
+      &.popuped {
+        opacity: 0;
+      }
   
       @media screen and (max-width: 1024px) {
         grid-gap: 32px;

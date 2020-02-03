@@ -9,6 +9,11 @@ $mobile: 1280px;
   z-index: 10000;
   background: $white;
 
+  &.popuped {
+    position: fixed;
+    filter: blur(3px);
+  }
+
   .bar {
     display: flex;
     flex-direction: row;
@@ -167,13 +172,13 @@ $mobile: 1280px;
           }
         }
 
-        &:first-child,
-        &:last-child {
-          // width: 200px;
-          // margin: 0 10px;
-          background-color: $black;
-          color: $white;
-        }
+        // &:first-child,
+        // &:last-child {
+        //   // width: 200px;
+        //   // margin: 0 10px;
+        //   background-color: $black;
+        //   color: $white;
+        // }
 
         &:before {
           content: '';

@@ -54,9 +54,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
 
-@Component({})
+@Component
 export default class Footer extends Vue {
-  @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
+  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
 
   private communityMedia = [
     {
