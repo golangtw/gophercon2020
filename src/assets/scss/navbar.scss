@@ -17,11 +17,7 @@
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
-    padding: 12px 24px;
-
-    @media screen and (max-width: 900px) {
-      padding-top: 0;
-    }
+    padding: 0 24px;
 
     .logo-container {
       display: flex;
@@ -124,6 +120,7 @@
 
         .bar {
           display: flex;
+          padding-bottom: 12px;
         }
       }
 
@@ -145,6 +142,8 @@
           transform: initial;
           height: initial;
           align-items: flex-end;
+          padding: 0 24px;
+          width: 100%;
         }
 
         >a {
@@ -160,6 +159,12 @@
           text-decoration: none;
           color: $black;
 
+          @media screen and (max-width: 900px) {
+            transform: initial;
+            margin: 1em 0;
+            text-align: end;
+          }
+
           &:before {
             content: '';
             position: absolute;
@@ -172,11 +177,6 @@
             @media (max-width: 900px) {
               display: none;
             }
-          }
-
-          @media screen and (max-width: 900px) {
-            transform: initial;
-            margin: 1em 0;
           }
         }
 
