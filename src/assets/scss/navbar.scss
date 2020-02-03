@@ -49,6 +49,7 @@
     flex-direction: row;
     width: 100%;
     margin: 0;
+    padding-top: 12px;
 
     .logo {
       width: 400px;
@@ -86,7 +87,6 @@
       height: 100%;
       background-color: $white;
       margin-right: 140px;
-      margin-top: 12px;
       justify-content: flex-end;
 
       img {
