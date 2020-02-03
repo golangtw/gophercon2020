@@ -48,7 +48,7 @@ export const routes = [
     meta: {
       index: 2,
       label: '活動',
-      menuItem: true
+      menuItem: false
     }
   },
   {
@@ -86,7 +86,7 @@ export const routes = [
     meta: {
       index: 5,
       label: '贊助',
-      menuItem: true
+      menuItem: false
     }
   },
   {
@@ -96,7 +96,7 @@ export const routes = [
     meta: {
       index: 6,
       label: 'SITCON 團隊',
-      menuItem: true
+      menuItem: false
     }
   },
   {
