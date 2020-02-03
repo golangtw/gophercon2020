@@ -3,20 +3,20 @@
     <nav class="menu-container">
       <div class="logo bar">
         <div class="logo-container">
-          <img src="@/../public/img/sitcon-logo.png" />
+          <img src="/favicon.png" />
         </div>
         <div class="title-container">
           <p class="title font-bold">SITCON</p>
           <p class="subtitle font-bold">2020</p>
         </div>
         <div class="toggle-container" @click="isToggled = true">
-          <img src="@/../public/img/sitcon-logo.png" />
+          <img src="@/assets/images/toggle-button.svg" />
         </div>
       </div>
       <div class="menu" :class="{toggle: isToggled}">
         <div class="bar">
           <div class="logo-container">
-            <img src="@/../public/img/sitcon-logo.png" />
+            <img src="/favicon.png" />
           </div>
           <div class="title-container">
             <p class="title font-bold">define</p>
@@ -24,8 +24,8 @@
               <span style="color: black">SITCON</span>20
             </p>
           </div>
-          <div class="toggle-container" @click="isToggled = false" >
-            <img src="@/../public/img/sitcon-logo.png"/>
+          <div class="toggle-container" @click="isToggled = false">
+            <img src="@/assets/images/toggle-button.svg" />
           </div>
         </div>
         <div
