@@ -89,7 +89,7 @@
       margin-right: 140px;
       justify-content: flex-end;
 
-      img {
+      .icon {
         width: 32px;
         height: 32px;
       }
@@ -214,9 +214,21 @@
   width: 68px;
   height: 68px;
 
+  &.icon--mobile {
+    display: none;
+  }
+
   @media screen and (max-width: 900px) {
     width: 32px;
     height: 32px;
+
+    &.icon--desktop {
+      display: none;
+    }
+
+    &.icon--mobile {
+      display: inline;
+    }
   }
 }
 
@@ -240,6 +252,5 @@
 }
 
 .define {
-  font-weight: bold;
-  font-size: 15pt;
+  height: 14px;
 }
