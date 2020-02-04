@@ -31,7 +31,9 @@
       <h2 class="level">{{ sponsorLevelText[entry[0]] }}</h2>
       <div class="card-container org-container">
         <div v-for="sponsor in entry[1]" :key="sponsor.slug" class="card org">
-          <img :alt="sponsor.name" :src="sponsor.image" @click="clickSponsor(sponsor)" />
+          <div class="img-container">
+            <img :alt="sponsor.name" :src="sponsor.image" @click="clickSponsor(sponsor)" />
+          </div>
           <h3>{{ sponsor.name }}</h3>
           <p>{{ sponsor.description }}</p>
         </div>
@@ -202,14 +204,17 @@ export default class Team extends Vue {
       margin-bottom: 2em;
       min-height: 540px;
 
-      img {
+      .img-container {
         // icon
-        max-width: 100%;
-        max-height: 200px;
+        width: 100%;
+        height: 200px;
         margin-bottom: 3em;
 
-        &:hover {
-          cursor: pointer;
+        img {
+          max-width: 100%;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
       h3 {
