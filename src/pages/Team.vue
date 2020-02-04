@@ -212,7 +212,7 @@ export default class Team extends Vue {
 
   .host-container {
     width: 100%;
-    margin-bottom: 3em;
+    margin-bottom: 5em;
 
     .host {
       display: flex;
