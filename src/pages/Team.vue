@@ -160,7 +160,7 @@ export default class Team extends Vue {
       transform: skewX(-15deg);
       transform-origin: center;
       padding: 18px 24px;
-      margin-bottom: 2em;
+      margin-bottom: 5em;
 
       &.toggle {
         background: black;
