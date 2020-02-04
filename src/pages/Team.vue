@@ -100,10 +100,15 @@ export default class Team extends Vue {
   align-items: center;
   box-sizing: border-box;
 
+  .sponsor-container {
+    width: 100%;
+  }
+
   h2.level {
     font-size: 3em;
     font-weight: bold;
-    margin: 2em auto;
+    margin-bottom: 2em;
+    text-align: center;
   }
 
   .sitcon-group {
@@ -126,16 +131,21 @@ export default class Team extends Vue {
   .card-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
 
     .card {
       display: flex;
       flex-direction: column;
-      width: 370px;
+      width: 29%;
       padding: 24px;
       box-sizing: border-box;
+      margin-right: 6.5%;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -146,6 +156,7 @@ export default class Team extends Vue {
       transform: skewX(-15deg);
       transform-origin: center;
       padding: 18px 24px;
+      margin-bottom: 2em;
 
       &.toggle {
         background: black;
@@ -184,7 +195,7 @@ export default class Team extends Vue {
     .org {
       border: 6px solid black;
       border-radius: 18px;
-      margin-bottom: 10em;
+      margin-bottom: 2em;
       min-height: 540px;
 
       img {
@@ -198,11 +209,14 @@ export default class Team extends Vue {
         font-size: 1.5em;
         margin-bottom: 1em;
         font-weight: bold;
+        line-height: 1.66em;
       }
       p {
         // dad's info
         font-size: 1.2em;
         line-height: 1.66em;
+        word-wrap:break-word;
+        text-align: justify;
       }
     }
   }
