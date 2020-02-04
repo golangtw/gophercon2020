@@ -32,7 +32,6 @@ export default class Sponsor extends Vue {
   justify-content: center;
   align-content: center;
   padding: 80px 140px;
-  background: #EEE;
   width: 100%;
   flex-wrap: wrap;
   box-sizing: border-box;
