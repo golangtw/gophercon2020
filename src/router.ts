@@ -80,23 +80,23 @@ export const routes = [
     }
   },
   {
-    path: '/sponsor',
-    name: 'Sponsor',
-    redirect: '/team/sponsor',
-    meta: {
-      index: 5,
-      label: '贊助',
-      menuItem: false
-    }
-  },
-  {
     path: '/team',
     name: 'Team',
     component: Team,
     meta: {
-      index: 6,
+      index: 5,
       label: 'SITCON 團隊',
-      menuItem: false
+      menuItem: true
+    }
+  },
+  {
+    path: '/sponsor',
+    name: 'Sponsor',
+    redirect: '/team/sponsor',
+    meta: {
+      index: 6,
+      label: '贊助',
+      menuItem: true
     }
   },
   {
