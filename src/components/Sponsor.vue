@@ -1,24 +1,27 @@
 <template>
   <section class="sponsor-container" id="sponsor">
-    <a href="#"><img src="@/assets/images/sponsors/coscup.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
-    <a href="#"><img src="@/assets/images/sponsors/sitcon.png"></a>
+    <a v-for="sponsor in sponsors" :key="`sponsor-${sponsor.slug}`" :href="`#${sponsor.slug}`">
+      <img :alt="sponsor.name" :src="sponsor.image">
+    </a>
   </section>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import sponsorData from '@/../public/json/sponsor.json';
 
 @Component
 export default class Sponsor extends Vue {
+  get sponsors () {
+    return sponsorData.map((data) => {
+      const { name, slug, image } = data;
+      return {
+        name,
+        slug,
+        image: require(`@/assets/images/sponsors/${image}`)
+      };
+    });
+  }
 }
 </script>
 
