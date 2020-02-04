@@ -204,8 +204,8 @@ export default class Team extends Vue {
 
       img {
         // icon
-        width: 100%;
-        height: 200px;
+        max-width: 100%;
+        max-height: 200px;
         margin-bottom: 3em;
 
         &:hover {
@@ -224,7 +224,7 @@ export default class Team extends Vue {
         font-size: 1.2em;
         line-height: 1.66em;
         word-wrap: break-word;
-        text-align: justify;
+        // text-align: justify;
       }
     }
   }
