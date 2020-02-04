@@ -1,5 +1,5 @@
 <template>
-  <div class="sponsor-container main-container">
+  <div class="team-container main-container">
     <div class="sitcon-group">
       <p>SITCON團隊</p>
     </div>
@@ -23,27 +23,14 @@
         </p>
       </div>
     </div>
-    <h2 class="level">級別</h2>
-    <div class="card-container org-container">
-      <div class="card org">
-        <img />
-        <h3>乾爹名稱</h3>
-        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
-      </div>
-      <div class="card org">
-        <img />
-        <h3>乾爹名稱</h3>
-        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
-      </div>
-      <div class="card org">
-        <img />
-        <h3>乾爹名稱</h3>
-        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
-      </div>
-      <div class="card org">
-        <img />
-        <h3>乾爹名稱</h3>
-        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
+    <div v-for="entry in Object.entries(sponsorList)" :key="`sponsor-level-${entry[0]}`" class="sponsor-container">
+      <h2 class="level">{{ sponsorLevelText[entry[0]] }}</h2>
+      <div class="card-container org-container">
+        <div v-for="sponsor in entry[1]" :key="sponsor.slug" class="card org" @click="clickSponsor(sponsor)">
+          <img :alt="sponsor.name" :src="sponsor.image" />
+          <h3>{{ sponsor.name }}</h3>
+          <p>{{ sponsor.description }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -51,15 +38,61 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import sponsorData from '@/../public/json/sponsor.json';
+
+interface Sponsor {
+  name: string;
+  slug: string;
+  image: string;
+  description: string;
+  url?: string;
+}
+
+interface SponsorList {
+  [level: string]: Sponsor[];
+}
 
 @Component
 export default class Team extends Vue {
+  public sponsorLevelText = {
+    'holder': '主辦單位',
+    'co-holder': '共同主辦',
+    'co-organizer': '協辦單位',
+    'level-1': '深耕級',
+    'level-2': '前瞻級',
+    'level-3': '新芽級',
+    'thank': '特別感謝'
+  };
 
+  get sponsorList (): SponsorList {
+    const sponsorList: SponsorList = {};
+    sponsorData.forEach((data) => {
+      const { name, slug, image, level, description, url } = data;
+      if (!sponsorList[data.level]) {
+        sponsorList[data.level] = [];
+      }
+      sponsorList[data.level].push({
+        name,
+        slug,
+        image: require(`@/assets/images/sponsors/${image}`),
+        description,
+        url
+      });
+    });
+    return sponsorList;
+  }
+
+  public clickSponsor (sponsor: Sponsor) {
+    if (!sponsor.url) {
+      return;
+    }
+    window.open(sponsor.url);
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.sponsor-container {
+.team-container {
   // padding-left: 180px;
   // padding-right: 180px;
   display: flex;
