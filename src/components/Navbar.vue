@@ -3,7 +3,7 @@
     <nav class="menu-container">
       <div class="logo bar">
         <img src="@/assets/images/logo-dark.svg" class="navbar-icon icon--desktop" />
-        <img src="/favicon.png" class="navbar-icon icon--mobile" />
+        <img src="@/assets/images/favicon.png" class="navbar-icon icon--mobile" />
         <div class="title-container">
           <p class="title font-bold">SITCON</p>
           <p class="subtitle font-bold">2020</p>
@@ -15,7 +15,7 @@
       <div class="menu" :class="{ toggle: isMenuToggled }">
         <div class="bar">
           <div class="logo-container">
-            <img src="/favicon.png" class="icon" />
+            <img src="@/assets/images/favicon.png" class="icon" />
           </div>
           <div class="title-container">
             <img src="@/assets/images/define-dark.svg" class="define" />
