@@ -9,6 +9,7 @@
       :isOpen="isPopup"
       :content="popupContent"
     />
+    <Sponsor/>
     <Footer/>
   </div>
 </template>
@@ -16,13 +17,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
-
 import Navbar from '@/components/Navbar.vue';
 import Popup from '@/components/Popup.vue';
 import Footer from '@/components/Footer.vue';
-
+import Sponsor from '@/components/Sponsor.vue';
 import { TemplateState } from './store/types/template';
-
 import head from './util/head';
 import { DeviceType } from './store/types/app';
 head.reset();
@@ -31,7 +30,8 @@ head.reset();
   components: {
     Navbar,
     Popup,
-    Footer
+    Footer,
+    Sponsor
   }
 })
 export default class App extends Vue {
