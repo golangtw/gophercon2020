@@ -23,32 +23,21 @@
         </p>
       </div>
     </div>
-    <h2 class="level">主辦單位</h2>
-    <div class="host-container card-container">
-      <div class="card host-card">
-        <div class="img-container">
-          <img />
-          <!--SITCON LOGO-->
-        </div>
-        <div class="text-container">
-          <h3>SITCON</h3>
-          <p>SITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCON</p>
-        </div>
-      </div>
-    </div>
     <div
       v-for="entry in Object.entries(sponsorList)"
       :key="`sponsor-level-${entry[0]}`"
       class="sponsor-container"
     >
       <h2 class="level">{{ sponsorLevelText[entry[0]] }}</h2>
-      <div class="card-container org-container">
-        <div v-for="sponsor in entry[1]" :key="sponsor.slug" class="card org">
+      <div :class="`card-container ${entry[0] === 'holder' ? 'host-container' : 'org-container'}`">
+        <div v-for="sponsor in entry[1]" :key="sponsor.slug" :class="`card ${entry[0] === 'holder' ? 'host' : 'org'}`">
           <div class="img-container">
             <img :alt="sponsor.name" :src="sponsor.image" @click="clickSponsor(sponsor)" />
           </div>
-          <h3>{{ sponsor.name }}</h3>
-          <p>{{ sponsor.description }}</p>
+          <div class="text-container">
+            <h3>{{ sponsor.name }}</h3>
+            <p>{{ sponsor.description }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -223,9 +212,9 @@ export default class Team extends Vue {
 
   .host-container {
     width: 100%;
-    margin-bottom: 5em;
+    margin-bottom: 3em;
 
-    .host-card {
+    .host {
       display: flex;
       flex-direction: row;
       width: 100%;
