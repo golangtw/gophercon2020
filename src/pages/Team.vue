@@ -4,17 +4,23 @@
       <p>SITCON團隊</p>
     </div>
     <div class="tab-container card-container">
-      <div class="tab card">
-        <p>贊助</p>
-        <p>Sponsor</p>
+      <div class="tab card toggle">
+        <p>
+          <span>贊助</span>
+          <span>Sponsor</span>
+        </p>
       </div>
       <div class="tab card">
-        <p>工作人員</p>
-        <p>Staff</p>
+        <p>
+          <span>工作人員</span>
+          <span>Staff</span>
+        </p>
       </div>
       <div class="tab card">
-        <p>來參加的你</p>
-        <p>You</p>
+        <p>
+          <span>來參加的你！</span>
+          <span>You!</span>
+        </p>
       </div>
     </div>
     <h2 class="level">級別</h2>
@@ -22,22 +28,22 @@
       <div class="card org">
         <img />
         <h3>乾爹名稱</h3>
-        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
+        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
       </div>
       <div class="card org">
         <img />
         <h3>乾爹名稱</h3>
-        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
+        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
       </div>
       <div class="card org">
         <img />
         <h3>乾爹名稱</h3>
-        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
+        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
       </div>
       <div class="card org">
         <img />
         <h3>乾爹名稱</h3>
-        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
+        <p>我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹我是乾爹</p>
       </div>
     </div>
   </div>
@@ -54,8 +60,8 @@ export default class Team extends Vue {
 
 <style lang="scss" scoped>
 .sponsor-container {
-  padding-left: 180px;
-  padding-right: 180px;
+  // padding-left: 180px;
+  // padding-right: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +70,7 @@ export default class Team extends Vue {
   h2.level {
     font-size: 2em;
     font-weight: bold;
-    margin-bottom: 1em;
+    margin: 2em auto;
   }
 
   .sitcon-group {
@@ -74,6 +80,14 @@ export default class Team extends Vue {
     font-size: 2em;
     width: 100%;
     margin-bottom: 2em;
+
+    p {
+      font-weight: bold;
+      width: 11em;
+      padding-bottom: 0.66em;
+      border-bottom: 6px solid black;
+      border-radius: 8px;
+    }
   }
 
   .card-container {
@@ -82,51 +96,79 @@ export default class Team extends Vue {
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    
 
     .card {
       display: flex;
       flex-direction: column;
-      width: 25%;
-      padding: 18px 12px;
-      background: #eee;
-      border-radius: 8px;
+      width: 370px;
+      padding: 24px;
+      box-sizing: border-box;
     }
   }
 
   .tab-container {
-    margin-bottom: 2em;
-
     .tab {
       border: solid black 4px;
+      border-radius: 12px;
+      transform: skewX(-15deg);
+      transform-origin: center;
+
+      &.toggle {
+        background: black;
+        color: white;
+      }
+
       p {
+        transform-origin: center;
+        transform: skewX(15deg);
+        display: flex;
+        width: 100%;
+        flex-direction: column;
         text-align: center;
-        font-weight: bold;
-      }
-      p:first-child {
-        // title
-        font-size: 2em;
-        margin-bottom: 0.33em;
-      }
-      p:last-child {
-        // subtitle
+
+        span {
+          font-weight: bold;
+        }
+
+        span:first-child {
+          // title
+          font-size: 3em;
+          margin-bottom: 0.33em;
+        }
+
+        span:last-child {
+          font-size: 1.33em;
+        }
       }
     }
   }
 
   .org-container {
+    margin-bottom: 3em;
+    box-sizing: border-box;
+
     .org {
-      margin-bottom: 2em;
+      border: 6px solid black;
+      border-radius: 18px;
+      margin-bottom: 10em;
+      min-height: 540px;
 
       img {
         // icon
         width: 100%;
-        height: 100px;
-        margin-bottom: 1em;
+        height: 200px;
+        margin-bottom: 3em;
       }
       h3 {
+        // dad's name
         font-size: 1.5em;
         margin-bottom: 1em;
+        font-weight: bold;
+      }
+      p {
+        // dad's info
+        font-size: 1.2em;
+        line-height: 1.66em;
       }
     }
   }
