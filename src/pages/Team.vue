@@ -23,6 +23,19 @@
         </p>
       </div>
     </div>
+    <h2 class="level">主辦單位</h2>
+    <div class="host-container card-container">
+      <div class="card host-card">
+        <div class="img-container">
+          <img />
+          <!--SITCON LOGO-->
+        </div>
+        <div class="text-container">
+          <h3>SITCON</h3>
+          <p>SITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCONSITCON</p>
+        </div>
+      </div>
+    </div>
     <div
       v-for="entry in Object.entries(sponsorList)"
       :key="`sponsor-level-${entry[0]}`"
@@ -153,6 +166,20 @@ export default class Team extends Vue {
         margin-right: 0;
       }
     }
+
+    .img-container {
+      // icon
+      width: 100%;
+      max-height: 200px;
+      margin-bottom: 3em;
+
+      img {
+        max-width: 100%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   .tab-container {
@@ -194,6 +221,34 @@ export default class Team extends Vue {
     }
   }
 
+  .host-container {
+    width: 100%;
+    margin-bottom: 3em;
+
+    .host-card {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding: 24px;
+      box-sizing: border-box;
+      justify-content: flex-start;
+      margin-right: 0;
+      border-radius: 18px;
+      border: 6px solid black;
+
+      .img-container {
+        width: 29%;
+        min-height: 200px;
+        margin-right: 6.5%;
+      }
+
+      .text-container {
+        width: 0%;
+        flex-grow: 1;
+      }
+    }
+  }
+
   .org-container {
     margin-bottom: 3em;
     box-sizing: border-box;
@@ -203,34 +258,24 @@ export default class Team extends Vue {
       border-radius: 18px;
       margin-bottom: 2em;
       min-height: 540px;
+    }
+  }
 
-      .img-container {
-        // icon
-        width: 100%;
-        max-height: 200px;
-        margin-bottom: 3em;
-
-        img {
-          max-width: 100%;
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
-      h3 {
-        // dad's name
-        font-size: 1.5em;
-        margin-bottom: 1em;
-        font-weight: bold;
-        line-height: 1.66em;
-      }
-      p {
-        // dad's info
-        font-size: 1.2em;
-        line-height: 1.66em;
-        word-wrap: break-word;
-        // text-align: justify;
-      }
+  .host-container,
+  .org-container {
+    h3 {
+      // dad's name
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      font-weight: bold;
+      line-height: 1.66em;
+    }
+    p {
+      // dad's info
+      font-size: 1.2em;
+      line-height: 1.66em;
+      word-wrap: break-word;
+      // text-align: justify;
     }
   }
 }
