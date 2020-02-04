@@ -207,7 +207,7 @@ export default class Team extends Vue {
       .img-container {
         // icon
         width: 100%;
-        height: 200px;
+        max-height: 200px;
         margin-bottom: 3em;
 
         img {
