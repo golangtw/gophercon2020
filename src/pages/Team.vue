@@ -68,7 +68,7 @@ export default class Team extends Vue {
   box-sizing: border-box;
 
   h2.level {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
     margin: 2em auto;
   }
@@ -109,9 +109,10 @@ export default class Team extends Vue {
   .tab-container {
     .tab {
       border: solid black 4px;
-      border-radius: 12px;
+      border-radius: 16px;
       transform: skewX(-15deg);
       transform-origin: center;
+      padding: 18px 24px;
 
       &.toggle {
         background: black;
