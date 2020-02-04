@@ -23,11 +23,15 @@
         </p>
       </div>
     </div>
-    <div v-for="entry in Object.entries(sponsorList)" :key="`sponsor-level-${entry[0]}`" class="sponsor-container">
+    <div
+      v-for="entry in Object.entries(sponsorList)"
+      :key="`sponsor-level-${entry[0]}`"
+      class="sponsor-container"
+    >
       <h2 class="level">{{ sponsorLevelText[entry[0]] }}</h2>
       <div class="card-container org-container">
-        <div v-for="sponsor in entry[1]" :key="sponsor.slug" class="card org" @click="clickSponsor(sponsor)">
-          <img :alt="sponsor.name" :src="sponsor.image" />
+        <div v-for="sponsor in entry[1]" :key="sponsor.slug" class="card org">
+          <img :alt="sponsor.name" :src="sponsor.image" @click="clickSponsor(sponsor)" />
           <h3>{{ sponsor.name }}</h3>
           <p>{{ sponsor.description }}</p>
         </div>
@@ -203,6 +207,10 @@ export default class Team extends Vue {
         width: 100%;
         height: 200px;
         margin-bottom: 3em;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
       h3 {
         // dad's name
@@ -215,7 +223,7 @@ export default class Team extends Vue {
         // dad's info
         font-size: 1.2em;
         line-height: 1.66em;
-        word-wrap:break-word;
+        word-wrap: break-word;
         text-align: justify;
       }
     }
