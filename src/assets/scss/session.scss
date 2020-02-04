@@ -83,7 +83,8 @@
         }
         &.head {
           position: sticky;
-          top: 0;
+          width: calc(100% - 7px * 2);
+          top: 60px;
           background-color: $black;
           color: $white;
           font-size: 16px;
