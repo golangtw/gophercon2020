@@ -2,12 +2,8 @@
   <div id="venue" class="main-container">
     <h1 class="title">會場地圖</h1>
     <div class="map-container">
-      <Map3F class="map"/>
-      <Map4F class="map"/>
-      <div class="floor-box">
-        <p @click="$router.push({ hash: '#map-3F' })">3F</p>
-        <p @click="$router.push({ hash: '#map-4F' })">4F</p>
-      </div>
+      <img src="@/assets/images/3F.svg" alt="" class="map">
+      <img src="@/assets/images/4F.svg" alt="" class="map">
     </div>
   </div>
 </template>
