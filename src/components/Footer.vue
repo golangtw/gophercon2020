@@ -73,6 +73,8 @@ export default class Footer extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/color';
+
 .column-flex {
   display: flex;
   flex-direction: column;
@@ -87,8 +89,10 @@ a {
   text-decoration: none;
 }
 
-p, #past a {
+p,
+#past a {
   font-size: 18pt;
+  line-height: 1.33em;
   @media screen and (max-width: 1280px) {
     font-size: 14pt;
   }
@@ -101,6 +105,10 @@ p, #past a {
   a {
     height: 42px;
     margin-right: 36px;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      color: $tone;
+    }
     @media screen and (max-width: 1280px) {
       height: 32px;
       margin-right: 28px;
