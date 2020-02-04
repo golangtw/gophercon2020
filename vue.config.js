@@ -6,6 +6,9 @@ const gaTempHTML = fs.readFileSync(path.join(__dirname, './template/ga.html'));
 const sessionData = require(path.join(__dirname, './public/json/session.json'));
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/2020/'
+    : '/',
   pluginOptions: {
     prerenderSpa: {
       registry: undefined,
@@ -30,10 +33,6 @@ module.exports = {
       headless: true,
       onlyProduction: true,
       postProcess: route => {
-        // Auto rewrite assets with sub-path prefix
-        route.html = route.html
-          .replace(/<(script|link|img)(.*?) (src|href)="(.*?)">(.*?)/g, '<$1$2 $3="/2020$4">$5');
-
         // Auto inject GA template
         route.html = route.html
           .replace('<noscript>{{{ %GA_TEMPLATE% }}}</noscript>', gaTempHTML);
