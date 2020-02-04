@@ -42,16 +42,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
 import { MenuItem } from '../store/types/menu';
 
 @Component
 export default class Navbar extends Vue {
-  @Action('toggleMenu', { namespace: 'menu' }) private toggleMenu!: () => void;
+  @Action('toggleMenu', { namespace: 'menu' }) private toggleMenu!: (status: boolean) => void;
   @Getter('menu', { namespace: 'menu' }) private menu!: MenuItem[];
   @Getter('toggle', { namespace: 'menu' }) private isMenuToggled!: boolean;
   @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
+
+  @Watch('$route')
+  public onChangeRoute () {
+    this.toggleMenu(false);
+  }
 }
 </script>
