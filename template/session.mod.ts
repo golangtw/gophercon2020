@@ -37,7 +37,7 @@ const speakerContent = (speaker: ISpeaker): string => `
 
 const contentParser = (content: string): string => (
   content.replace(
-    /(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+/gm,
+    /(?:http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+/gm,
     `<a href='$&' target='_blank' rel='noopener noreferrer'>$&</a>`
   )
 );
