@@ -2,7 +2,13 @@
   <div id="venue" class="main-container">
     <h1 class="title">會場地圖</h1>
     <div class="map-container">
-      <img src="@/assets/images/3F.svg" alt class="map f3" />
+      <div style="width: 100%; position: relative">
+        <img src="@/assets/images/3F.svg" alt class="map f3" />
+        <div class="floor-container">
+          <div class="floor">3F</div>
+          <div class="floor">4F</div>
+        </div>
+      </div>
       <img src="@/assets/images/4F.svg" alt class="map f4" />
     </div>
   </div>
@@ -26,7 +32,7 @@ export default class Venue extends Vue { }
 #venue {
   .map-container {
     position: relative;
-    width: 80%;
+    width: 72%;
 
     .map {
       width: 100%;
@@ -43,6 +49,23 @@ export default class Venue extends Vue { }
       //margin-top: -10%;
       //margin-bottom: -8%;
       margin-left: 2.3%; // to EXACTLY align center
+    }
+
+    .floor-container {
+      background: $black;
+      position: absolute;
+      right: -20%;
+      bottom: -10%;
+      transform: skewX(-15deg);
+      transform-origin: center;
+      border-radius: 18px;
+
+      .floor {
+        color: $white;
+        transform: skewX(15deg);
+        padding: 28px;
+        font-size: 54px;
+      }
     }
   }
 
