@@ -60,11 +60,35 @@ export default class Venue extends Vue { }
       transform-origin: center;
       border-radius: 18px;
 
+      @media screen and (max-width: 900px) {
+        right: -10%;
+        bottom: -8%;
+      }
+
+      @media screen and (max-width: 720px) {
+        bottom: -5%;
+        border-radius: 10px;
+      }
+
       .floor {
         color: $white;
         transform: skewX(15deg);
         padding: 28px;
         font-size: 54px;
+
+        @media screen and (max-width: 900px) {
+          padding: 18px;
+          font-size: 40px;
+        }
+
+        @media screen and (max-width: 720px) {
+          padding: 14px;
+          font-size: 30px;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 20px;
+        }
       }
     }
   }
