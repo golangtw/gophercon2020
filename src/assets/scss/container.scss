@@ -1,25 +1,27 @@
 #app.main {
   .main-container {
     position: relative;
-    width: calc(100% - 250px * 2);
+    padding: 84px 250px 0 250px;
+    width: 100%;
+    box-sizing: border-box;
     min-height: 100vh;
-    margin: 0 250px;
-    margin-top: $navbar-height;
+
+    margin-top: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 84px;
+    // padding-top: 84px;
 
-    @media screen and (max-width: 1440px) {
-      margin: 0;
-      margin-top: $navbar-height;
-      width: 100%;
+    @media screen and (max-width: 1440px) {}
+
+    @media screen and (max-width: 1280px) {
+      margin-top: 60px;
+      padding: 24px 5% 0;
     }
 
-    @media screen and (max-width: 1024px) {
-      min-height: auto;
-      margin-top: 60px;
-      padding-top: 0;
+    @media screen and (max-width: 900px) {
+      // min-height: auto;
+      padding: 24px 0 0;
     }
 
     h1.title {
@@ -32,10 +34,10 @@
       text-align: center;
       line-height: 1.4;
     }
-  
+
     &.popuped {
       position: fixed;
-      
+
       // Only use CSS:Filter-Blur API on Mozilla Firefox.
       @supports (-moz-appearance: none) {
         & {
@@ -44,10 +46,10 @@
       }
     }
 
-    &#traffic {
-      width: 100%;
-      margin: 0;
-      margin-top: $navbar-height;
-    }
+   // &#traffic {
+   //   width: 100%;
+   ///   margin: 0;
+   //   // margin-top: $navbar-height;
+   // }
   }
 }
