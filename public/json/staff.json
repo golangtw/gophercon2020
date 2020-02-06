@@ -1,0 +1,577 @@
+[
+  {
+    "name": "總召組",
+    "description": "掌握協調年會籌備進度，主持核心討論及決策。",
+    "members": [
+      {
+        "name": "鯉魚",
+        "emailHash": "9dba8889c4e16e88fe200c58af063eeb"
+      },
+      {
+        "name": "黑楓",
+        "emailHash": "b3ee61c86fd3667062b9e121d9955936"
+      }
+    ]
+  },
+  {
+    "name": "行政組",
+    "description": "負責維持大會常務行政事務；工作分為人事、票務，負責工作人員登記、與會人員與報名事宜。",
+    "members": [
+      {
+        "name": "小知",
+        "emailHash": "a6b6898ed8d1c570e68b6629158f51fb"
+      },
+      {
+        "name": "葉子",
+        "emailHash": "602818418612b2ea7b2ea810cc60a900"
+      },
+      {
+        "name": "紅馬",
+        "emailHash": "3329cd97d0c3fff967bd44949f2d8937"
+      },
+      {
+        "name": "裸男",
+        "emailHash": "df1f1ee0d0ec7945862d5844fc4fadc5"
+      }
+    ]
+  },
+  {
+    "name": "議程組",
+    "description": "議程組負責一切與議程相關的事情，舉凡投稿與審稿、講者聯繫、Keynote 與論壇的安排，以及會議廳的主持等，都是議程組的工作範圍，此外，議程組也負責一部分的大會活動。",
+    "members": [
+      {
+        "name": "Allen Chou",
+        "emailHash": "64da6a02972eff6bc9a2c4bc007acec3"
+      },
+      {
+        "name": "小b",
+        "emailHash": "4044e5d13812a9535bc648e7c5a3ff84"
+      },
+      {
+        "name": "Lisa",
+        "emailHash": "df4b5ff1978921406d04b4a8a2461210"
+      },
+      {
+        "name": "ㄌㄈ",
+        "emailHash": "7f6d12fb5a5843a18889323e7f19d578"
+      },
+      {
+        "name": "雅筠",
+        "emailHash": "1d74229af9b2a1001c2ac1a9705366b3"
+      },
+      {
+        "name": "wei_e",
+        "emailHash": "d89bdfa9b99bead278b20e3605a69873"
+      },
+      {
+        "name": "PCC",
+        "emailHash": "638f2badc0159366d20c5ce0066d0cc1"
+      },
+      {
+        "name": "阿軒",
+        "emailHash": "f77b0175dde41899d58953b2a7c9bb5d"
+      },
+      {
+        "name": "dalun",
+        "emailHash": "ad087704368d982089128c1667a9554b"
+      },
+      {
+        "name": "柏凱",
+        "emailHash": "ae800816897f57f2e2a7f17acb2edab5"
+      },
+      {
+        "name": "Rice",
+        "emailHash": "155a6b1adb7b8acc08aa4da475cc43f3"
+      },
+      {
+        "name": "waisliaw",
+        "emailHash": "9c4fb425d099a2ce2f0f163e0df71f1a"
+      },
+      {
+        "name": "宏宏",
+        "emailHash": "27d0bfb6c35e170579b528c9bcf002b0"
+      },
+      {
+        "name": "Paul Peng",
+        "emailHash": "8d53560dfab161617060c8c87a140a08"
+      },
+      {
+        "name": "William Mou",
+        "emailHash": "9a51023daf8ec97748277899cf9683f7"
+      },
+      {
+        "name": "Katrina",
+        "emailHash": "d53191448fe6fdf367faf80c41642960"
+      },
+      {
+        "name": "子期",
+        "emailHash": "18c78ac2ffa5f0ea02a4da68154062a0"
+      }
+    ]
+  },
+  {
+    "name": "場務組",
+    "description": "SITCON 場務組主要負責年會的機動人力、動線、餐飲、報到、物流的規劃，是人數最多的一組，適合最有熱情、最有活力的朋友們！",
+    "members": [
+      {
+        "name": "秉虎",
+        "emailHash": "1972b1b1c60100cd4413179e61a45aca"
+      },
+      {
+        "name": "Sean",
+        "emailHash": "a0bf2ae346cb12358df577151ee29888"
+      },
+      {
+        "name": "小春",
+        "emailHash": "9a531c03e2d6f68504d5c59c21629eea"
+      },
+      {
+        "name": "RexWu",
+        "emailHash": "7e1d6e3b7642e42a162c9f5ab3e3c834"
+      },
+      {
+        "name": "肥貓",
+        "emailHash": "b6c4f61270250c61bc3cbd760cac8a1a"
+      },
+      {
+        "name": "腋毛",
+        "emailHash": "edb5bb78667fca6eec0e5ab83e71f71a"
+      },
+      {
+        "name": "Ohma",
+        "emailHash": "913e70e0bc08342c187643da82c684cd"
+      },
+      {
+        "name": "AN",
+        "emailHash": "0a0acb5dbe62a39388e9f8606c134cc9"
+      },
+      {
+        "name": "七彩(Color S.)",
+        "emailHash": "2d88b1bd71490473a7876501d63b9abf"
+      },
+      {
+        "name": "攤攤",
+        "emailHash": "c99b29c315cabad8ea450d45fcc4f4b8"
+      },
+      {
+        "name": "小小",
+        "emailHash": "eca5cc96aeb989b65d9a755c4d87df29"
+      },
+      {
+        "name": "小群",
+        "emailHash": "c87cbee0a4a96655bd7366b56be7a18a"
+      },
+      {
+        "name": "Winnie",
+        "emailHash": "05cfd21733add52dd6cfabec7fca5767"
+      },
+      {
+        "name": "柯品陞/yikk",
+        "emailHash": "b6c4a44ae13ee53db109587f5eca4240"
+      },
+      {
+        "name": "昱翔",
+        "emailHash": "431aad141ad2ef49228d99c62bdbbe30"
+      },
+      {
+        "name": "兔子",
+        "emailHash": "9799a01795b5e8baf313df6bf57bda76"
+      },
+      {
+        "name": "練練",
+        "emailHash": "1b24c32ed58f434165e5c3d8bfdcf3fd"
+      },
+      {
+        "name": "寶寶",
+        "emailHash": "4ce2a88197b5924f011c4dcb0b8152e5"
+      },
+      {
+        "name": "傻胖",
+        "emailHash": "9605347bc9e43ceb7ca429ab29cb67cd"
+      },
+      {
+        "name": "clooooode",
+        "emailHash": "4ace630dd893b9c678a67bd16f532ed6"
+      },
+      {
+        "name": "Rain",
+        "emailHash": "d9fe6afe5bc3f2f7c0899619782ad72b"
+      },
+      {
+        "name": "CSY",
+        "emailHash": "c379feb8a2073843af848ba6020d9805"
+      },
+      {
+        "name": "新海",
+        "emailHash": "70c3d6166dff1c5d65946a1b6e7de8f9"
+      },
+      {
+        "name": "卡爾",
+        "emailHash": "98d63bd3b944c19da8e5ec45c830554c"
+      },
+      {
+        "name": "阿泥",
+        "emailHash": "6794b584b0f713f2950f0976534bbdc1"
+      },
+      {
+        "name": "雪煾",
+        "emailHash": "7d5517056bcf3bbbc80ad0d416990070"
+      },
+      {
+        "name": "Sciuridae 松鼠",
+        "emailHash": "60ce6b00bae88e0ff15c9480a9ce92f5"
+      },
+      {
+        "name": "阿哲",
+        "emailHash": "f8677f739d4066023c83a28fe6d918c7"
+      },
+      {
+        "name": "嗡嗡",
+        "emailHash": "0127c7a2aa81f531d856640a3969c002"
+      },
+      {
+        "name": "A同學",
+        "emailHash": "e997e74cd1dfba44a11030f705ab3445"
+      },
+      {
+        "name": "秋葉",
+        "emailHash": "2f82f104898a6249f6b5a8d4f952b9c8"
+      },
+      {
+        "name": "6C",
+        "emailHash": "912289ea0e7343b3c543f524cdb6d48d"
+      },
+      {
+        "name": "nella17",
+        "emailHash": "6892a845f40ad6c10dc583963c4f303b"
+      },
+      {
+        "name": "發哥",
+        "emailHash": "b3b5103537a205b280847af2755d824f"
+      },
+      {
+        "name": "狸貓",
+        "emailHash": "e66962d04f4fa4354a26a4651f232166"
+      }
+    ]
+  },
+  {
+    "name": "財務組",
+    "description": "負責年會與金錢相關的業務。",
+    "members": [
+      {
+        "name": "任禎",
+        "emailHash": "674d176f921931a01908b15af339c591"
+      },
+      {
+        "name": "拉布",
+        "emailHash": "5d235a1d1899c96d2183fe7142ba6779"
+      },
+      {
+        "name": "欣岑",
+        "emailHash": "a7638a2e7d95ec712453440906797686"
+      },
+      {
+        "name": "魯蛋",
+        "emailHash": "d8f6c77ccde5ac209f7e17a8933347fc"
+      },
+      {
+        "name": "可晴",
+        "emailHash": "8d9d7b0aeeff7525199ec8e67f8ef0fa"
+      }
+    ]
+  },
+  {
+    "name": "行銷組",
+    "description": "行銷組是銜接 SITCON 與社會的橋樑，負責探詢潛在的合作單位，連結更多支持 SITCON 理念的社群夥伴、媒體與贊助商，讓 SITCON 能被更多人看見。",
+    "members": [
+      {
+        "name": "鯉魚",
+        "emailHash": "9dba8889c4e16e88fe200c58af063eeb"
+      },
+      {
+        "name": "Denny Huang",
+        "emailHash": "9c08215f31eb6005a25be6521bf47b0a"
+      },
+      {
+        "name": "JoeAngel",
+        "emailHash": "6cdc9da54582381d45cdfdc929937fb5"
+      },
+      {
+        "name": "Jason",
+        "emailHash": "92e458c08b57ea66ecd453dce77278cd"
+      },
+      {
+        "name": "小曹",
+        "emailHash": "ff1885aa61c9b2559f658a3f49ab472e"
+      },
+      {
+        "name": "四季紅",
+        "emailHash": "5b558c8821a9a1ccc445f5232a102f99"
+      },
+      {
+        "name": "David Su",
+        "emailHash": "0cd40d1d761942e7a694eeef9124bf6f"
+      },
+      {
+        "name": "雁雁",
+        "emailHash": "5712c31d5c288ea6159f18257b164d2f"
+      },
+      {
+        "name": "熊3z",
+        "emailHash": "da152b9297cb1bf98eb5a496da2d3c26"
+      },
+      {
+        "name": "可晴",
+        "emailHash": "8d9d7b0aeeff7525199ec8e67f8ef0fa"
+      },
+      {
+        "name": "葉子",
+        "emailHash": "602818418612b2ea7b2ea810cc60a900"
+      },
+      {
+        "name": "大助",
+        "emailHash": "fda98c6701cf60d6af2da9ae98f8c981"
+      }
+    ]
+  },
+  {
+    "name": "編輯組",
+    "description": "SITCON 編輯組負責年會的社群媒體經營與互動，包含：Facebook、Instagram、Plurk、Twitter、Telegram Channel。以及開源相關活動推廣與其他組別公告事項、大會公告等文案撰寫需求。適合對社群媒體經營有興趣，有新鮮腦汁可以榨的朋友們！",
+    "members": [
+      {
+        "name": "大助",
+        "emailHash": "fda98c6701cf60d6af2da9ae98f8c981"
+      },
+      {
+        "name": "Keira",
+        "emailHash": "68a1526f3a38872cd5a0385d858ed611"
+      },
+      {
+        "name": "阿特",
+        "emailHash": "0bbcabecb50e45ff0fab43a99eaa106c"
+      },
+      {
+        "name": "海豹",
+        "emailHash": "12b44b53ebe566f75e5be79cfd13f004"
+      },
+      {
+        "name": "啾啾",
+        "emailHash": "b260395ec03b1904a702dfe9f7a2a245"
+      },
+      {
+        "name": "22",
+        "emailHash": "dd4c94208f8958228ae86f228bf122fd"
+      },
+      {
+        "name": "球球",
+        "emailHash": "17ac88921cbc6514ccec024c35d485c0"
+      },
+      {
+        "name": "赤貓",
+        "emailHash": "47dc858ff3d1212b3cc5602b6257e11e"
+      },
+      {
+        "name": "腋毛",
+        "emailHash": "edb5bb78667fca6eec0e5ab83e71f71a"
+      }
+    ]
+  },
+  {
+    "name": "文創組",
+    "description": "負責年會主視覺設計、網站設計、相關紀念品發想<del>挖坑</del>等事宜，開場動畫與許多會場內的印刷品也都是由文創組設計。",
+    "members": [
+      {
+        "name": "tiwb",
+        "emailHash": "09e29b020b5a4c4bc254dfd9fa2d4dfd"
+      },
+      {
+        "name": "一一",
+        "emailHash": "0b665be4aed095b3babc51d4852035de"
+      },
+      {
+        "name": "火柴",
+        "emailHash": "d91e670b0fdf31647b555b66e08c9c91"
+      },
+      {
+        "name": "嘎蹦",
+        "emailHash": "5f9d500042b71886d4a637e830f615df"
+      },
+      {
+        "name": "帽帽",
+        "emailHash": "9114e522e5ee0f23cd529c55cc8ad0c5"
+      },
+      {
+        "name": "阿褚",
+        "emailHash": "f28a7a0ad9d7bd2ffe5c50650ed5847f"
+      },
+      {
+        "name": "Yue",
+        "emailHash": "55e5ea4b5c9408dad6c4cd231ade8f14"
+      },
+      {
+        "name": "雷孟",
+        "emailHash": "cb3faef3d6a8b0e7b28d4d770fc1d983"
+      },
+      {
+        "name": "Vana",
+        "emailHash": "3bdbf76d2170de7a8cf1a9d5f9f8df9b"
+      },
+      {
+        "name": "鄭策",
+        "emailHash": "5108c7b5f5c48742230a48c9641d8841"
+      }
+    ]
+  },
+  {
+    "name": "攝影組",
+    "description": "協助大會當天之靜態活動紀錄，及提供各組所需之影像素材。",
+    "members": [
+      {
+        "name": "小草",
+        "emailHash": "2d7fde0007909881bd509920398ea5b3"
+      },
+      {
+        "name": "Xanonymous",
+        "emailHash": "e10d7d1cecf2b1d8bf2bcb8cacacff57"
+      },
+      {
+        "name": "zhennnnnn",
+        "emailHash": "b57a6e1d532a8914307d7375e2d90a5a"
+      },
+      {
+        "name": "Rong",
+        "emailHash": "284313f3541e3f1cf248f9c06ed17368"
+      },
+      {
+        "name": "爛桃",
+        "emailHash": "1d904b8fa5d2e939c8669e4a4e7330be"
+      },
+      {
+        "name": "月太",
+        "emailHash": "4e9d08c3b268edcc82ccfa958eda5e66"
+      },
+      {
+        "name": "筠庭",
+        "emailHash": "6655670e58bf185ece05277c702c0684"
+      },
+      {
+        "name": "Vagabond",
+        "emailHash": "595b16518f46d4881b0844aa54590bac"
+      },
+      {
+        "name": "小默",
+        "emailHash": "cbc604823782f8a446029c6ca789f6d3"
+      },
+      {
+        "name": "13",
+        "emailHash": "df066acc2e412a1daf6a45dd63c54888"
+      },
+      {
+        "name": "雅淑",
+        "emailHash": "2e839998e0630ca2ff0965f305c9d0d0"
+      },
+      {
+        "name": "家維",
+        "emailHash": "6c9671ae54b2b490692a827fd1f2ae04"
+      },
+      {
+        "name": "小涼",
+        "emailHash": "494421bf92ed8ce9f8693cf532b1f3c7"
+      },
+      {
+        "name": "白白",
+        "emailHash": "128ddc19475f1d4ed3f2de356fd241a6"
+      },
+      {
+        "name": "博翰",
+        "emailHash": "3b188f87449a1b99607238c29b8618f0"
+      }
+    ]
+  },
+  {
+    "name": "製播組",
+    "description": "負責各廳議程影音紀錄、主廳畫面聯播，及會後剪輯。",
+    "members": [
+      {
+        "name": "Henry Wu",
+        "emailHash": "d5f26dec9ac67e4e237a1abf6d2f429a"
+      },
+      {
+        "name": "正康",
+        "emailHash": "6eb94b490066884fa5e3302f114a737e"
+      },
+      {
+        "name": "法鬥",
+        "emailHash": "507c75e068f754ef3087e764b5de3bff"
+      },
+      {
+        "name": "Felix",
+        "emailHash": "8bc0bde997602a9948d032b4fcfe4e75"
+      },
+      {
+        "name": "謝政燁",
+        "emailHash": "9f4185751bd061955dc0878ba50e884d"
+      },
+      {
+        "name": "Freeman",
+        "emailHash": "80fc5ffc0e4b578e79ef2e1e74626343"
+      },
+      {
+        "name": "家康",
+        "emailHash": "951fb6649a3587f85cdbe63277b6ac14"
+      }
+    ]
+  },
+  {
+    "name": "開發組",
+    "description": "SITCON 開發組主要負責年會的官網與通關 App 開發，適合對網頁開發有興趣、想法，有新鮮肝可以炸的朋友們！",
+    "members": [
+      {
+        "name": "白羊",
+        "emailHash": "8d31d2035b820ea05fa055166c03b823"
+      },
+      {
+        "name": "DevilTea",
+        "emailHash": "1ec31667ea9ff1e97b84344e9a25d8b6"
+      },
+      {
+        "name": "Kenn",
+        "emailHash": "edaedaed7491bbacf2953e18d42630e5"
+      },
+      {
+        "name": "柴犬",
+        "emailHash": "92f6690c2eddef38912b396c22370371"
+      },
+      {
+        "name": "雙曲線",
+        "emailHash": "1786bf2960bcb6f2a216b7ec87c7416a"
+      },
+      {
+        "name": "YC",
+        "emailHash": "9c41f44a87e4dd56ab5aeb11c1a9aa30"
+      },
+      {
+        "name": "Coin",
+        "emailHash": "695a54a432dec06097a8ee949e544cac"
+      },
+      {
+        "name": "腹黒い茶",
+        "emailHash": "e12bdfd4cc9f62d7728a973dbb854344"
+      },
+      {
+        "name": "ㄅㄌ",
+        "emailHash": "a52af793c6d51c70c15c520becf1e296"
+      },
+      {
+        "name": "Denny Huang",
+        "emailHash": "9c08215f31eb6005a25be6521bf47b0a"
+      }
+    ]
+  },
+  {
+    "name": "網路組",
+    "description": "負責大會當下的網路架設與維護。",
+    "members": []
+  }
+]
