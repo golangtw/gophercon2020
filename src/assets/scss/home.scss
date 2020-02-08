@@ -13,7 +13,6 @@
     }
   
     .header {
-      height: calc(350px - 40px * 2);
       width: calc(910px - 350px);
       padding: 40px;
       padding-left: 350px;
@@ -72,7 +71,41 @@
         }
   
         &.location {
+          margin-bottom: 42px;
           font-size: 28px;
+        }
+
+        &.kktix {
+          margin-bottom: 0;
+          text-align: end;
+          font-size: 24px;
+
+          a {
+            display: inline-block;
+            text-decoration: none;
+            margin-left: 16px;
+            padding: 8px 16px;
+            border: solid 2px $black;
+            color: $white;
+            background-color: $black;
+
+            &:hover {
+              color: $black;
+              background-color: $dark-3;
+            }
+          }
+
+
+
+          @media screen and (max-width: 414px) {
+            text-align: start;
+            font-size: 18px;
+
+            a {
+              margin-left: 0;
+              margin-right: 16px;
+            }
+          }
         }
       }
     }
