@@ -30,7 +30,11 @@
     >
       <h2 class="level">{{ sponsorLevelText[entry[0]] }}</h2>
       <div :class="`card-container ${entry[0] === 'holder' ? 'host-container' : 'org-container'}`">
-        <div v-for="sponsor in entry[1]" :key="sponsor.slug" :class="`card ${entry[0] === 'holder' ? 'host' : 'org'}`">
+        <div
+          v-for="sponsor in entry[1]"
+          :key="sponsor.slug"
+          :class="`card ${entry[0] === 'holder' ? 'host' : 'org'}`"
+        >
           <div class="img-container">
             <img :alt="sponsor.name" :src="sponsor.image" @click="clickSponsor(sponsor)" />
           </div>
@@ -177,7 +181,7 @@ export default class Team extends Vue {
       border-radius: 16px;
       transform: skewX(-15deg);
       transform-origin: center;
-      padding: 18px 24px;
+      padding: 18px 0;
       margin-bottom: 5em;
 
       &.toggle {
@@ -199,7 +203,10 @@ export default class Team extends Vue {
 
         span:first-child {
           // title
-          font-size: 3em;
+          font-size: 2.2em;
+          @media screen and (max-width: 1440px) {
+            font-size: 1.8em;
+          }
           margin-bottom: 0.33em;
         }
 
