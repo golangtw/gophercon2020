@@ -1,5 +1,5 @@
 <template>
-  <div class="team-container main-container">
+  <div class="main-container team-container">
     <div class="sitcon-group">
       <p>SITCON團隊</p>
     </div>
@@ -104,6 +104,8 @@ export default class Team extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$mobile: 768px;
+
 .team-container {
   // padding-left: 180px;
   // padding-right: 180px;
@@ -111,6 +113,11 @@ export default class Team extends Vue {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+
+  @media screen and (max-width: 900px) and (min-width: $mobile + 1) {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+  }
 
   .sponsor-container {
     width: 100%;
@@ -137,6 +144,9 @@ export default class Team extends Vue {
       padding-bottom: 0.66em;
       border-bottom: 6px solid black;
       border-radius: 8px;
+      @media screen and (max-width: $mobile) {
+        border-bottom: 0;
+      }
     }
   }
 
