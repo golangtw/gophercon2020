@@ -46,7 +46,7 @@
                 <h3>{{ sponsor.name }}</h3>
                 <p>{{ sponsor.description.length > 100 && !sponsor.readmore ? `${sponsor.description.substr(0, 100)}...` : sponsor.description }}</p>
                 <p v-show="sponsor.description.length > 100 && !sponsor.readmore" class="readmore">
-                  <a @click="sponsor.readmore = true">readmore</a>
+                  <a @click="sponsor.readmore = true">Read more</a>
                 </p>
               </div>
             </div>
@@ -279,10 +279,10 @@ $mobile: 900px;
         .tab {
           width: 100%;
           margin: 0;
-          padding: 1em 0.25em 1.5em 0.25em;
+          padding: 1em 0.4em 1.5em 0.4em;
           transform: initial;
           border-radius: 10px !important;
-          border-width: 3.5px;
+          border-width: 4px;
 
           &:not(:first-child) {
             border-top-width: 0;
@@ -304,12 +304,12 @@ $mobile: 900px;
             }
             span:first-child {
               // title
-              font-size: 1em;
+              font-size: 1.44em;
             }
             span:last-child {
               // subtitle
-              font-size: 0.33em;
-              margin-left: 0.33em;
+              font-size: 0.66em;
+              margin-left: 0.66em;
               margin-top: 3px;
             }
           }
@@ -412,6 +412,7 @@ $mobile: 900px;
       }
 
       .readmore {
+        margin-top: 0.5em;
         margin-bottom: 0;
         text-align: end;
 
@@ -461,7 +462,7 @@ $mobile: 900px;
         }
         p {
           // dad's info
-          font-size: 1.2em;
+          font-size: 1.35em;
           word-wrap: break-word;
           line-height: 1.66em;
         }
@@ -469,8 +470,16 @@ $mobile: 900px;
         @media screen and (max-width: $mobile) {
           h3,
           p {
+            font-size: 1.25em;
+            line-height: 1.5em;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          h3,
+          p {
             font-size: 1em;
-            line-height: 1.33em;
+            line-height: 1.5em;
           }
         }
       }
