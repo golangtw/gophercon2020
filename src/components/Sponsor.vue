@@ -31,20 +31,21 @@ export default class Sponsor extends Vue {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
-  
+  align-items: center;
+
   width: 100%;
   box-sizing: border-box;
   padding: 80px 140px;
   @media screen and (max-width: 900px) {
-    padding: 1em;
+    padding: 4em 1em;
   }
 
-  img {
-    max-height: 160px;
-
-    @media screen and (max-width: 900px) {
-      max-height: 54px;
+  a {
+    img {
+      max-width: 320px;
+      @media screen and (max-width: 900px) {
+        max-width: 25vw;
+      }
     }
   }
 }
