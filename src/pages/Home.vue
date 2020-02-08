@@ -5,6 +5,10 @@
       <h2 class="subtitle font-black">學生計算機年會</h2>
       <p class="date font-bold">3/28</p>
       <p class="location font-bold">中央研究院 — 人文社會科學館</p>
+      <p class="kktix font-bold">
+        <a href="https://sitcon.kktix.cc/events/sitcon2020">報名</a>
+        <a href="https://sitcon.kktix.cc/events/sitcon2020-individual-sponsor">個人贊助</a>
+      </p>
     </header>
     <div class="spotlight-container">
       <div class="spotlight">
