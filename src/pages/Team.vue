@@ -258,21 +258,22 @@ $mobile: 900px;
       top: 1em;
       left: 1em;
       flex-direction: column;
-      width: 80px;
+      width: 40px;
       justify-content: flex-start;
       align-items: center;
       transform: skewY(-15deg);
       transform-origin: center;
-      border-radius: 18px;
+      border-radius: 10px;
       background: black;
-      padding: 3px;
+      padding: 0;
 
       .tab {
         width: 100%;
         margin: 0;
         padding-bottom: 1.5em;
         transform: initial;
-        border-radius: 9px;
+        border-radius: 10px !important;
+        border-width: 3.5px;
 
         &:not(.toggle) {
           background: white;
@@ -288,11 +289,15 @@ $mobile: 900px;
           span {
             writing-mode: vertical-lr;
           }
+          span:first-child {
+            // title
+            font-size: 1em;
+          }
           span:last-child {
             // subtitle
-            font-size: 0.75em;
-            margin-left: 0.75em;
-            margin-top: 6px;
+            font-size: 0.33em;
+            margin-left: 0.33em;
+            margin-top: 3px;
           }
         }
       }
@@ -353,8 +358,8 @@ $mobile: 900px;
     h2.level,
     .host-container,
     .org-container {
-      margin-left: 116px;
-      width: calc(100% - 116px);
+      margin-left: 56px;
+      width: calc(100% - 56px);
     }
 
     .host-container,
@@ -365,9 +370,13 @@ $mobile: 900px;
         display: block;
         width: 100%;
         min-height: 50vw;
+        border-width: 2px;
+        padding: 1em;
+
         .img-container {
           width: 50%;
           float: right;
+          min-height: 33vw;
           margin: 0;
         }
         .text-container {
