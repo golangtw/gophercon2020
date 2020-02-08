@@ -104,7 +104,7 @@ export default class Team extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$mobile: 768px;
+$mobile: 900px;
 
 .team-container {
   // padding-left: 180px;
@@ -113,10 +113,15 @@ $mobile: 768px;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  position: relative;
 
-  @media screen and (max-width: 900px) and (min-width: $mobile + 1) {
+  @media screen and (max-width: 900px) {
     padding-left: 1em !important;
     padding-right: 1em !important;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding-left: 116px !important;
   }
 
   .sponsor-container {
@@ -128,6 +133,11 @@ $mobile: 768px;
     font-weight: bold;
     margin-bottom: 2em;
     text-align: center;
+    @media screen and (max-width: $mobile) {
+      font-size: 1.66em;
+      margin-bottom: 1em;
+      text-align: start;
+    }
   }
 
   .sitcon-group {
@@ -146,6 +156,13 @@ $mobile: 768px;
       border-radius: 8px;
       @media screen and (max-width: $mobile) {
         border-bottom: 0;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 1em;
+      p {
+        padding-bottom: initial;
       }
     }
   }
@@ -188,7 +205,7 @@ $mobile: 768px;
   .tab-container {
     .tab {
       border: solid black 4px;
-      border-radius: 16px;
+      border-radius: 16px !important;
       transform: skewX(-15deg);
       transform-origin: center;
       padding: 18px 0;
@@ -222,6 +239,51 @@ $mobile: 768px;
 
         span:last-child {
           font-size: 1.33em;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      flex-direction: column;
+      width: 80px;
+      justify-content: flex-start;
+      align-items: center;
+      transform: skewY(-15deg);
+      transform-origin: center;
+      border-radius: 18px;
+      background: black;
+      padding: 3px;
+
+      .tab {
+        width: 100%;
+        margin: 0;
+        padding-bottom: 1.5em;
+        transform: initial;
+        border-radius: 9px;
+
+        &:not(.toggle) {
+          background: white;
+        }
+
+        p {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          transform-origin: center;
+          transform: skewY(15deg);
+          align-items: flex-start;
+          span {
+            writing-mode: vertical-lr;
+          }
+          span:last-child {
+            // subtitle
+            font-size: 0.75em;
+            margin-left: 0.75em;
+            margin-top: 6px;
+          }
         }
       }
     }
@@ -267,8 +329,27 @@ $mobile: 768px;
     }
   }
 
-  .host-container,
-  .org-container {
+  @media screen and (max-width: $mobile) {
+    .host-container,
+    .org-container {
+      display: block;
+      .card {
+        display: block;
+        width: 100%;
+        min-height: 50vw;
+        .img-container {
+          width: 50%;
+          float: right;
+          margin: 0;
+        }
+        .text-container {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .card-container {
     h3 {
       // dad's name
       font-size: 1.5em;
@@ -282,6 +363,13 @@ $mobile: 768px;
       line-height: 1.66em;
       word-wrap: break-word;
       // text-align: justify;
+    }
+
+    @media screen and (max-width: $mobile) {
+      h3,
+      p {
+        font-size: 1em;
+      }
     }
   }
 }
