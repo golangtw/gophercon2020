@@ -230,7 +230,7 @@ $mobile: 900px;
 
         span:first-child {
           // title
-          font-size: 2.2em;
+          font-size: 2em;
           @media screen and (max-width: 1440px) {
             font-size: 1.8em;
           }
@@ -326,6 +326,13 @@ $mobile: 900px;
       border-radius: 18px;
       margin-bottom: 2em;
       min-height: 540px;
+    }
+
+    @media screen and (max-width: 1440px) {
+      .card {
+        margin-right: 5%;
+        width: 45%;
+      }
     }
   }
 
