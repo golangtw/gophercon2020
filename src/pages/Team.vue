@@ -44,7 +44,10 @@
               </div>
               <div class="text-container">
                 <h3>{{ sponsor.name }}</h3>
-                <p>{{ sponsor.description }}</p>
+                <p>{{ sponsor.description.length > 100 && !sponsor.readmore ? `${sponsor.description.substr(0, 100)}...` : sponsor.description }}</p>
+                <p v-show="sponsor.description.length > 100 && !sponsor.readmore" class="readmore">
+                  <a @click="sponsor.readmore = true">readmore</a>
+                </p>
               </div>
             </div>
           </div>
@@ -64,6 +67,7 @@ interface Sponsor {
   image: string;
   description: string;
   url?: string;
+  readmore: boolean;
 }
 
 interface SponsorList {
@@ -82,7 +86,16 @@ export default class Team extends Vue {
     'thank': '特別感謝'
   };
 
-  get sponsorList (): SponsorList {
+  public sponsorList: SponsorList = {};
+
+  public clickSponsor (sponsor: Sponsor) {
+    if (!sponsor.url) {
+      return;
+    }
+    window.open(sponsor.url);
+  }
+
+  public created () {
     const sponsorList: SponsorList = {};
     sponsorData.forEach((data) => {
       const { name, slug, image, level, description, url } = data;
@@ -94,22 +107,18 @@ export default class Team extends Vue {
         slug,
         image: require(`@/assets/images/sponsors/${image}`),
         description,
-        url
+        url,
+        readmore: false
       });
     });
-    return sponsorList;
-  }
-
-  public clickSponsor (sponsor: Sponsor) {
-    if (!sponsor.url) {
-      return;
-    }
-    window.open(sponsor.url);
+    this.sponsorList = sponsorList;
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/color";
+
 $mobile: 900px;
 
 .team-container {
@@ -398,6 +407,20 @@ $mobile: 900px;
             &:nth-child(2n) {
               margin-right: 0;
             }
+          }
+        }
+      }
+
+      .readmore {
+        margin-bottom: 0;
+        text-align: end;
+
+        a {
+          color: $tone;
+          cursor: pointer;
+
+          &:hover {
+            color: $light-tone;
           }
         }
       }
