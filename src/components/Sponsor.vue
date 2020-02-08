@@ -1,7 +1,7 @@
 <template>
   <section class="sponsor-container" id="sponsor">
     <a v-for="sponsor in sponsors" :key="`sponsor-${sponsor.slug}`" :href="`#${sponsor.slug}`">
-      <img :alt="sponsor.name" :src="sponsor.image">
+      <img :alt="sponsor.name" :src="sponsor.image" />
     </a>
   </section>
 </template>
@@ -29,15 +29,23 @@ export default class Sponsor extends Vue {
 .sponsor-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  padding: 80px 140px;
+  
   width: 100%;
-  flex-wrap: wrap;
   box-sizing: border-box;
+  padding: 80px 140px;
+  @media screen and (max-width: 900px) {
+    padding: 1em;
+  }
 
   img {
-      max-height: 160px;
+    max-height: 160px;
+
+    @media screen and (max-width: 900px) {
+      max-height: 54px;
+    }
   }
 }
 </style>
