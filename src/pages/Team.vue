@@ -114,6 +114,13 @@ $mobile: 900px;
   align-items: center;
   box-sizing: border-box;
   position: relative;
+  padding-left: 8em !important;
+  padding-right: 8em !important;
+
+  @media screen and (max-width: 1280px) {
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+  }
 
   @media screen and (max-width: 900px) {
     padding-left: 1em !important;
@@ -121,7 +128,7 @@ $mobile: 900px;
   }
 
   @media screen and (max-width: $mobile) {
-    padding-left: 116px !important;
+    // padding-left: 116px !important;
   }
 
   .sponsor-container {
@@ -190,8 +197,11 @@ $mobile: 900px;
     .img-container {
       // icon
       width: 100%;
-      max-height: 200px;
+      min-height: 180px;
       margin-bottom: 3em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       img {
         max-width: 100%;
@@ -306,7 +316,7 @@ $mobile: 900px;
 
       .img-container {
         width: 29%;
-        min-height: 200px;
+        // min-height: 200px;
         margin-right: 6.5%;
       }
 
@@ -328,18 +338,29 @@ $mobile: 900px;
       min-height: 540px;
     }
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1536px) {
       .card {
-        margin-right: 5%;
-        width: 45%;
+        margin-right: 6%;
+        width: 47%;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
       }
     }
   }
 
   @media screen and (max-width: $mobile) {
+    h2.level,
+    .host-container,
+    .org-container {
+      margin-left: 116px;
+      width: calc(100% - 116px);
+    }
+
     .host-container,
     .org-container {
       display: block;
+
       .card {
         display: block;
         width: 100%;
