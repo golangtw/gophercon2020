@@ -23,7 +23,22 @@
     "level": "co-holder",
     "image": "ocf.png"
   },
- 
+  {
+    "name": "KlickKlack",
+    "slug": "klickklack",
+    "url": "https://www.kkco.com.tw/",
+    "description": "KlickKlack Communications 提供專業的有線與無線網路服務，使人與人間的通訊落差降到最低。團隊已服務上百場活動，包含台灣地區最大的線上遊戲、網路直播、資訊社群、產品發表會、演唱會、會場展覽與電音派對等。整合網路監控、系統交叉備援、即時廣告互動，量身為客戶打造優質的網路服務體驗。",
+    "level": "level-1",
+    "image": "klickklack.png"
+  },
+  {
+    "name": "ZUSO Generation",
+    "slug": "zuso",
+    "url": "https://zuso.ai/",
+    "description": "",
+    "level": "level-3",
+    "image": "zuso.png"
+  },
   {
     "name": "HackMD",
     "slug": "hackmd",
