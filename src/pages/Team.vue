@@ -259,12 +259,12 @@ $mobile: 900px;
       }
 
       @media screen and (max-width: $mobile) {
-        width: auto;
         border-radius: 10px;
         background: black;
         padding: 0;
         min-height: 0;
         margin-right: 1em;
+        width: 76px;
 
         flex-direction: column;
         justify-content: flex-start;
@@ -380,6 +380,7 @@ $mobile: 900px;
             width: 29%;
             // min-height: 200px;
             margin-right: 6.5%;
+            margin-bottom: 0;
           }
 
           .text-container {
