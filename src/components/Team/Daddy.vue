@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="daddy">
     <div
       v-for="entry in Object.entries(sponsorList)"
       :key="`sponsor-level-${entry[0]}`"
@@ -89,19 +89,6 @@ export default class Daddy extends Vue {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/team';
-
-// Text style for sponsor level
-h2.level {
-  font-size: 3em;
-  font-weight: bold;
-  margin-bottom: 2em;
-  text-align: center;
-  @media screen and (max-width: $mobile) {
-    font-size: 1.66em;
-    margin-bottom: 1em;
-    text-align: start;
-  }
-}
 
 // Common layout for host and all sponsors
 .card-container {

@@ -24,8 +24,8 @@
           </p>
         </div>
       </div>
-      <Daddy class="content-container" />
-      <!-- <Staff class="content-container" /> -->
+      <!-- <Daddy class="content-container" /> -->
+      <Staff class="content-container" />
     </div>
   </div>
 </template>
@@ -33,9 +33,10 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import Daddy from '@/components/Team/Daddy.vue';
+import Staff from '@/components/Team/Staff.vue';
 
 @Component({
-  components: { Daddy }
+  components: { Daddy, Staff }
 })
 export default class Team extends Vue {
 }
