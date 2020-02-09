@@ -12,20 +12,16 @@
     </header>
     <div class="spotlight-container">
       <div class="spotlight">
-        <h1 class="title">
-          <span>什麼是 SITCON</span>
-          <span>About Students’ Information Technology Conference</span>
-        </h1>
+        <h1 class="title">什麼是 SITCON</h1>
+        <h1 class="title">About Students’ Information Technology Conference</h1>
         <p class="content">
           SITCON 學生計算機年會是一個由各校同學於網路串聯發起，鼓勵自發學習、切磋成長的學生社群。從 2013 年以來，籌備團隊便致力於連結對資訊相關領域有興趣的學生，
           在每年三月的年會分享彼此所學；各地參與者也透過定期聚、夏令營等不同面向的活動，推廣創新、教學相長、以及開源貢獻的社群理念與精神。
         </p>
       </div>
       <div class="spotlight">
-        <h1 class="title">
-          <span>行為準則</span>
-          <span>Code of Conduct</span>
-        </h1>
+        <h1 class="title">行為準則</h1>
+        <h1 class="title">Code of Conduct</h1>
         <p class="content">
           SITCON 冀望打造屬於學生自己的舞台，而我們也致力於為社群中的每位成員提供更友善、開放的環境。我們相信每位參與社群活動的夥伴都值得被尊重，而我們會盡力提供最安全的環境，讓參與 SITCON 盛會的每位朋友能夠認識個體間的差異、在社群中相互扶助、並鼓勵每個人揮灑屬於自己生命的色彩。<br/>
           因此，若有幸能在 SITCON 社群與您見面，無論您是以會眾、贊助商、工作人員、或是講者的身份參加活動，我們都希望您遵守以下的行為準則：
@@ -53,10 +49,8 @@
         </p>
       </div>
       <div class="spotlight">
-        <h1 class="title">
-          <span>活動</span>
-          <span>Activities</span>
-        </h1>
+        <h1 class="title">活動</h1>
+        <h1 class="title">Activities</h1>
         <p class="content">
           SITCON 冀望打造屬於學生自己的舞台，而我們也致力於為社群中的每位成員提供更友善、開放的環境。我們相信每位參與社群活動的夥伴都值得被尊重，而我們會盡力提供最安全的環境，讓參與 SITCON 盛會的每位朋友能夠認識個體間的差異、在社群中相互扶助、並鼓勵每個人揮灑屬於自己生命的色彩。<br/>
           因此，若有幸能在 SITCON 社群與您見面，無論您是以會眾、贊助商、工作人員、或是講者的身份參加活動，我們都希望您遵守以下的行為準則：
