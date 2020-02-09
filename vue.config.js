@@ -28,6 +28,8 @@ module.exports = {
         '/2020/traffic/',
         '/2020/team',
         '/2020/team/',
+        '/2020/team/sponsor',
+        '/2020/team/sponsor/',
       ],
       useRenderEvent: true,
       headless: true,
