@@ -108,7 +108,7 @@ a {
 
   display: flex;
   flex-direction: column;
-  padding: 3em 2em;
+  padding: 3em 2em 1.5em 2em;
   background-position-x: 100px;
 
   &:nth-child(even) {
@@ -151,6 +151,7 @@ a {
       flex-direction: column;
       align-items: center;
       margin-right: 80px;
+      margin-bottom: 1.5em;
 
       img {
         // Icon of staff
