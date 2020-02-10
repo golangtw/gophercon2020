@@ -10,7 +10,14 @@
           <br />歡迎您參與贊助，支持 SITCON、讓我們將每年的活動辦得盡善盡美！
         </p>
         <p>
-          <a href="#" class="tons-trans give-me-money">個人贊助辦法</a>
+          <a
+            href="https://bit.ly/donatesitcon2020"
+            class="tons-trans give-me-money"
+            target="_blank"
+            rel="noopener"
+          >
+            個人贊助辦法
+          </a>
         </p>
         <p>
           企業贊助亦歡迎來信
