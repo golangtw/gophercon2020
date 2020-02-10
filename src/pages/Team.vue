@@ -151,6 +151,7 @@ export default class Team extends Vue {
 
 .main-content {
   width: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   @media screen and (max-width: $mobile) {
