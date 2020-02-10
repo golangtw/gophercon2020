@@ -14,6 +14,7 @@
               :href="media.link"
               target="_blank"
               rel="noopener"
+              class="tone-trans"
             >
               <font-awesome-icon :icon="media.icon" />
             </a>
@@ -33,7 +34,7 @@
         :href="`https://sitcon.org/${ 2012 + i }/`"
         target="_blank"
         rel="noopener"
-        class="font-bold"
+        class="font-bold tone-trans"
       >{{ 2012 + i }}</a>
     </div>
   </footer>
@@ -102,27 +103,20 @@ p,
 }
 
 #media {
-  p {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    a {
-      height: 42px;
-      transition: all ease-in-out 0.3s;
-      &:hover {
-        color: $tone;
-      }
-      @media screen and (max-width: 1280px) {
-        height: 32px;
-      }
-      @media screen and (max-width: 900px) {
-        height: 28px;
-      }
-      @media screen and (max-width: 480px) {
-        height: 21px;
-      }
+  a {
+    height: 42px;
+    margin-right: 36px;
+    @media screen and (max-width: 1280px) {
+      height: 32px;
+      margin-right: 28px;
+    }
+    @media screen and (max-width: 900px) {
+      height: 28px;
+      margin-right: 22px;
+    }
+    @media screen and (max-width: 480px) {
+      height: 21px;
+      margin-right: 18px;
     }
   }
 }
