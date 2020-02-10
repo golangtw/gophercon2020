@@ -1,6 +1,12 @@
 <template>
   <section class="sponsor-container" id="sponsor">
-    <a v-for="sponsor in sponsors" :key="`sponsor-${sponsor.slug}`" :href="`#${sponsor.slug}`">
+    <a 
+      v-for="sponsor in sponsors"
+      :key="`sponsor-${sponsor.slug}`"
+      :href="`#${sponsor.slug}`"
+      target="_blank"
+      rel="noopener"
+    >
       <img :alt="sponsor.name" :src="sponsor.image" />
     </a>
   </section>
