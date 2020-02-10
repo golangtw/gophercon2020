@@ -1,6 +1,6 @@
 <template>
   <div id="staff">
-    <p>敬請期待 (owo)b</p>
+    <!-- <p>敬請期待 (owo)b</p> -->
   </div>
 </template>
 
