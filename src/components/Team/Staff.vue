@@ -9,70 +9,25 @@
     </div>
 
     <!-- repeating staff-group -->
-    <div class="staff-group">
-      <h2 class="level group-name">總召組</h2>
-      <p class="group-intro">掌握協調年會進度。我是總召組我是總召組我是總召組我是總召組我是總召組我是總召組。感恩社會主義鐵拳之 @DevilTea 打假除亂。</p>
+    <div v-for="group in staffData" :key="`staff-group-${group.name}`" class="staff-group">
+      <h2 class="level group-name">{{ group.name }}</h2>
+      <p class="group-intro">{{ group.description }}</p>
       <div class="staff-container">
-        <!-- repeating staff-intro -->
-        <div class="staff-intro">
-          <img />
-          <p>一顆蛋</p>
-        </div>
-        <div class="staff-intro">
-          <img />
-          <p>一顆蛋</p>
-        </div>
-        <div class="staff-intro">
-          <img />
-          <p>一顆蛋</p>
-        </div>
-        <div class="staff-intro">
-          <img />
-          <p>一顆蛋</p>
+        <div v-for="member in group.members" :key="`${group.name}-${member.name}`" class="staff-intro">
+          <img :src="`//www.gravatar.com/avatar/${member.emailHash}?s=320&d=https://sitcon.org/2019/static/img/default_avatar.png&r=g`" />
+          <p>{{ member.name }}</p>
         </div>
       </div>
     </div>
-    
-    <div class="staff-group">
-      <h2 class="level group-name">總召組</h2>
-      <p class="group-intro">掌握協調年會進度。我是總召組我是總召組我是總召組我是總召組我是總召組我是總召組。感恩社會主義鐵拳之 @DevilTea 打假除亂。</p>
-      <div class="staff-container">
-        <!-- repeating staff-intro -->
-        <div class="staff-intro">
-          <img />
-          <p>一顆蛋</p>
-        </div>
-        <div class="staff-intro">
-          <img />
-          <p>一顆蛋</p>
-        </div>
-        <div class="staff-intro">
-          <img />
-          <p>一顆蛋</p>
-        </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-        <div class="staff-intro"> <img /> <p>一顆蛋</p> </div>
-      </div>
-    </div>
-
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import staffData from '@/../public/json/staff.json';
 @Component
 export default class Staff extends Vue {
+  public staffData = staffData;
 }
 </script>
 
