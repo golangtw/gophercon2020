@@ -36,7 +36,13 @@
           :class="`card ${entry[0] === 'holder' ? 'host' : 'org'}`"
         >
           <div class="img-container">
-            <img :alt="sponsor.name" :src="sponsor.image" @click="clickSponsor(sponsor)" />
+            <a
+              :href="`#${sponsor.url}`"
+              target="_blank"
+              rel="noopener"
+            >
+              <img :alt="sponsor.name" :src="sponsor.image" />
+            </a>
           </div>
           <div class="text-container">
             <h3>{{ sponsor.name }}</h3>
@@ -81,13 +87,6 @@ export default class Sponsor extends Vue {
   };
 
   public sponsorList: SponsorList = {};
-
-  public clickSponsor (sponsor: SponsorData) {
-    if (!sponsor.url) {
-      return;
-    }
-    window.open(sponsor.url);
-  }
 
   public created () {
     const sponsorList: SponsorList = {};

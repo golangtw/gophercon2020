@@ -111,9 +111,6 @@ export default class Team extends Vue {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-
-  padding-left: 8em !important;
-  padding-right: 8em !important;
   @media screen and (max-width: 1280px) {
     padding-left: 4em !important;
     padding-right: 4em !important;

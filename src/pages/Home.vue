@@ -6,8 +6,8 @@
       <p class="date font-bold">3/28</p>
       <p class="location font-bold">中央研究院 — 人文社會科學館</p>
       <p class="kktix font-bold">
-        <a href="https://sitcon.kktix.cc/events/sitcon2020">免費報名</a>
-        <a href="https://sitcon.kktix.cc/events/sitcon2020-individual-sponsor">贊助取票</a>
+        <a href="https://sitcon.kktix.cc/events/sitcon2020" target="_blank" rel="noopener">免費報名</a>
+        <a href="https://sitcon.kktix.cc/events/sitcon2020-individual-sponsor" target="_blank" rel="noopener">贊助取票</a>
       </p>
     </header>
     <div class="spotlight-container">

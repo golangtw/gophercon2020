@@ -5,7 +5,7 @@
       <p>
         <a
           href="https://forms.gle/1J9fxQP2ux55PJXC9"
-          class="tone-trans"
+          class="tone-trans form-link"
           target="_blank"
           rel="noopener"
         >表單連結</a>
@@ -67,6 +67,10 @@ a {
   p {
     text-align: start;
     margin-bottom: 1em;
+  }
+
+  .form-link {
+    text-decoration: underline;
   }
 }
 
@@ -132,6 +136,7 @@ a {
 
       img {
         // Icon of staff
+        object-fit: contain;
         width: 92px;
         height: 92px;
         @media screen and (max-width: 900px) {
