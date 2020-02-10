@@ -1,5 +1,5 @@
 <template>
-  <div id="daddy">
+  <div id="sponsor">
     <div
       v-for="entry in Object.entries(sponsorList)"
       :key="`sponsor-level-${entry[0]}`"
@@ -32,7 +32,7 @@
 import { Vue, Component } from 'vue-property-decorator';
 import sponsorData from '@/../public/json/sponsor.json';
 
-interface Sponsor {
+interface SponsorData {
   name: string;
   slug: string;
   image: string;
@@ -42,11 +42,11 @@ interface Sponsor {
 }
 
 interface SponsorList {
-  [level: string]: Sponsor[];
+  [level: string]: SponsorData[];
 }
 
 @Component
-export default class Daddy extends Vue {
+export default class Sponsor extends Vue {
   public sponsorLevelText = {
     'holder': '主辦單位',
     'co-holder': '共同主辦',
@@ -59,7 +59,7 @@ export default class Daddy extends Vue {
 
   public sponsorList: SponsorList = {};
 
-  public clickSponsor (sponsor: Sponsor) {
+  public clickSponsor (sponsor: SponsorData) {
     if (!sponsor.url) {
       return;
     }

@@ -20,11 +20,11 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import Daddy from '@/components/Team/Daddy.vue';
+import Sponsor from '@/components/Team/Sponsor.vue';
 import Staff from '@/components/Team/Staff.vue';
 
 @Component({
-  components: { Daddy, Staff }
+  components: { Sponsor, Staff }
 })
 export default class Team extends Vue {
   public tabs = [
