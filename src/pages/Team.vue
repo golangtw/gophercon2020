@@ -1,271 +1,301 @@
 <template>
-  <div class="team-container main-container">
-    <div class="sitcon-group">
+  <div class="main-container team-container">
+    <div class="main-title">
       <p>SITCON團隊</p>
     </div>
-    <div class="tab-container card-container">
-      <div class="tab card toggle">
-        <p>
-          <span>贊助</span>
-          <span>Sponsor</span>
-        </p>
-      </div>
-      <div class="tab card">
-        <p>
-          <span>工作人員</span>
-          <span>Staff</span>
-        </p>
-      </div>
-      <div class="tab card">
-        <p>
-          <span>來參加的你！</span>
-          <span>You!</span>
-        </p>
-      </div>
-    </div>
-    <div
-      v-for="entry in Object.entries(sponsorList)"
-      :key="`sponsor-level-${entry[0]}`"
-      class="sponsor-container"
-    >
-      <h2 class="level">{{ sponsorLevelText[entry[0]] }}</h2>
-      <div :class="`card-container ${entry[0] === 'holder' ? 'host-container' : 'org-container'}`">
-        <div v-for="sponsor in entry[1]" :key="sponsor.slug" :class="`card ${entry[0] === 'holder' ? 'host' : 'org'}`">
-          <div class="img-container">
-            <img :alt="sponsor.name" :src="sponsor.image" @click="clickSponsor(sponsor)" />
-          </div>
-          <div class="text-container">
-            <h3>{{ sponsor.name }}</h3>
-            <p>{{ sponsor.description }}</p>
-          </div>
+    <div class="main-content">
+      <div class="tab-container">
+        <div
+          v-for="tab in tabs"
+          :key="`tab-${tab.name}`"
+          class="tab"
+          :class="{ toggle: tab.name === tid }"
+          @click="clickTab(tab.name)"
+        >
+          <p>
+            <span>{{ tab.text[0] }}</span>
+            <span>{{ tab.text[1] }}</span>
+          </p>
         </div>
       </div>
+      <component :is="component" class="content-container" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
-import sponsorData from '@/../public/json/sponsor.json';
+import { Vue, Component, Watch } from 'vue-property-decorator';
+import Sponsor from '@/components/Team/Sponsor.vue';
+import Staff from '@/components/Team/Staff.vue';
+import You from '@/components/Team/You.vue';
 
-interface Sponsor {
-  name: string;
-  slug: string;
-  image: string;
-  description: string;
-  url?: string;
-}
-
-interface SponsorList {
-  [level: string]: Sponsor[];
-}
-
-@Component
+@Component({
+  components: { Sponsor, Staff, You }
+})
 export default class Team extends Vue {
-  public sponsorLevelText = {
-    'holder': '主辦單位',
-    'co-holder': '共同主辦',
-    'co-organizer': '協辦單位',
-    'level-1': '深耕級',
-    'level-2': '前瞻級',
-    'level-3': '新芽級',
-    'thank': '特別感謝'
-  };
+  public tabs = [
+    {
+      name: 'sponsor',
+      text: ['贊助', 'Sponsor'],
+      component: Sponsor
+    },
+    {
+      name: 'staff',
+      text: ['工作人員', 'Staff'],
+      component: Staff
+    },
+    {
+      name: 'you',
+      text: ['來參加的你！', 'You'],
+      component: You
+    }
+  ];
 
-  get sponsorList (): SponsorList {
-    const sponsorList: SponsorList = {};
-    sponsorData.forEach((data) => {
-      const { name, slug, image, level, description, url } = data;
-      if (!sponsorList[data.level]) {
-        sponsorList[data.level] = [];
-      }
-      sponsorList[data.level].push({
-        name,
-        slug,
-        image: require(`@/assets/images/sponsors/${image}`),
-        description,
-        url
-      });
-    });
-    return sponsorList;
+  get tid () {
+    return this.$route.params.tid || 'sponsor';
   }
 
-  public clickSponsor (sponsor: Sponsor) {
-    if (!sponsor.url) {
-      return;
+  get currentTab () {
+    return this.tabs.find((tab) => tab.name === this.tid);
+  }
+
+  get component () {
+    if (!this.currentTab) {
+      return null;
     }
-    window.open(sponsor.url);
+    return this.currentTab.component;
+  }
+
+  public clickTab (tabName: string) {
+    this.$router
+      .push({
+        path: `/team/${tabName}`
+      })
+      .catch((_) => {
+        // ignore
+      });
+  }
+
+  @Watch('tid')
+  public onTidChanged (newTid: string) {
+    if (!this.tabs.find((tab) => tab.name === this.tid)) {
+      this.$router
+        .replace({
+          path: '/team'
+        })
+        .catch((_) => {
+          // ignore
+        });
+    }
+  }
+
+  public mounted () {
+    if (!this.tabs.find((tab) => tab.name === this.tid)) {
+      this.$router
+        .replace({
+          path: '/team'
+        })
+        .catch((_) => {
+          // ignore
+        });
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/team";
+
 .team-container {
-  // padding-left: 180px;
-  // padding-right: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
 
-  .sponsor-container {
-    width: 100%;
+  padding-left: 8em !important;
+  padding-right: 8em !important;
+  @media screen and (max-width: 1280px) {
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+  }
+  @media screen and (max-width: 900px) {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+  }
+}
+
+.main-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 2em;
+  width: 100%;
+
+  margin-bottom: 2em;
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 1em;
   }
 
-  h2.level {
-    font-size: 3em;
+  p {
     font-weight: bold;
-    margin-bottom: 2em;
-    text-align: center;
-  }
+    width: 11em;
 
-  .sitcon-group {
-    display: flex;
+    border-bottom: 4px solid black;
+    padding-bottom: 0.66em;
+    @media screen and (max-width: $mobile) {
+      border-width: 0;
+      padding-bottom: initial;
+    }
+  }
+}
+
+.main-content {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: $mobile) {
     flex-direction: row;
     justify-content: flex-start;
-    font-size: 2em;
-    width: 100%;
-    margin-bottom: 2em;
+    align-items: flex-start;
+  }
+}
+
+// Desktop layout for tab-bar
+.tab-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5em;
+
+  .tab {
+    width: 28%;
+    padding: 18px 1em;
+    box-sizing: border-box;
+    border: solid black 4px;
+    border-radius: 16px !important;
+    transform: skewX(-15deg);
+    transform-origin: center;
+    cursor: pointer;
+
+    &.toggle,
+    &:hover {
+      background: black;
+      color: white;
+    }
 
     p {
-      font-weight: bold;
-      width: 11em;
-      padding-bottom: 0.66em;
-      border-bottom: 6px solid black;
-      border-radius: 8px;
-    }
-  }
-
-  .card-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 100%;
-
-    .card {
+      transform-origin: center;
+      transform: skewX(15deg);
       display: flex;
-      flex-direction: column;
-      width: 29%;
-      padding: 24px;
-      box-sizing: border-box;
-      margin-right: 6.5%;
-
-      &:nth-child(3n) {
-        margin-right: 0;
-      }
-    }
-
-    .img-container {
-      // icon
       width: 100%;
-      max-height: 200px;
-      margin-bottom: 3em;
+      flex-direction: column;
+      text-align: center;
 
-      img {
-        max-width: 100%;
-        &:hover {
-          cursor: pointer;
+      span {
+        font-weight: bold;
+      }
+
+      span:first-child {
+        // Tab title (Chinese)
+        margin-bottom: 0.33em;
+
+        font-size: 2em;
+        @media screen and (max-width: 1440px) {
+          font-size: 1.8em;
+        }
+        @media screen and (max-width: 1050px) {
+          font-size: 1.33em;
+        }
+      }
+
+      span:last-child {
+        // Tab subtitle (English)
+        font-size: 1.33em;
+        @media screen and (max-width: 1440px) {
+          font-size: 1em;
+        }
+        @media screen and (max-width: 1280px) {
+          font-size: 0.75em;
         }
       }
     }
   }
+}
 
+// Mobile layout for tab-bar
+@media screen and (max-width: $mobile) {
   .tab-container {
-    .tab {
-      border: solid black 4px;
-      border-radius: 16px;
-      transform: skewX(-15deg);
-      transform-origin: center;
-      padding: 18px 24px;
-      margin-bottom: 5em;
+    border-radius: 10px;
+    background: black;
+    padding: 0;
+    min-height: 0;
+    margin-right: 1em;
+    width: 76px;
 
-      &.toggle {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    transform: skewY(-15deg);
+    transform-origin: center;
+
+    position: sticky;
+    top: 68px;
+
+    .tab {
+      width: 100%;
+      margin: 0;
+      padding: 1em 0.4em 1.5em 0.4em;
+      transform: initial;
+      border-radius: 10px !important;
+      border-width: 4px;
+      color: white;
+
+      &:not(:first-child) {
+        border-top-width: 0;
+      }
+
+      &:not(.toggle) {
+        background: white;
+        color: black;
+      }
+
+      &:hover {
         background: black;
         color: white;
       }
 
       p {
-        transform-origin: center;
-        transform: skewX(15deg);
         display: flex;
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-
+        flex-direction: row;
+        justify-content: center;
+        transform-origin: center;
+        transform: skewY(15deg);
+        align-items: flex-start;
         span {
-          font-weight: bold;
+          writing-mode: vertical-lr;
         }
-
         span:first-child {
-          // title
-          font-size: 3em;
-          margin-bottom: 0.33em;
+          // Tab title (Chinese)
+          font-size: 1.44em;
         }
-
         span:last-child {
-          font-size: 1.33em;
+          // Tab subtitle (English)
+          font-size: 0.66em;
+          margin-left: 0.66em;
+          margin-top: 3px;
         }
       }
     }
   }
+}
 
-  .host-container {
-    width: 100%;
-    margin-bottom: 5em;
-
-    .host {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      padding: 24px;
-      box-sizing: border-box;
-      justify-content: flex-start;
-      margin-right: 0;
-      border-radius: 18px;
-      border: 6px solid black;
-
-      .img-container {
-        width: 29%;
-        min-height: 200px;
-        margin-right: 6.5%;
-      }
-
-      .text-container {
-        width: 0%;
-        flex-grow: 1;
-      }
-    }
-  }
-
-  .org-container {
-    margin-bottom: 3em;
-    box-sizing: border-box;
-
-    .org {
-      border: 6px solid black;
-      border-radius: 18px;
-      margin-bottom: 2em;
-      min-height: 540px;
-    }
-  }
-
-  .host-container,
-  .org-container {
-    h3 {
-      // dad's name
-      font-size: 1.5em;
-      margin-bottom: 1em;
-      font-weight: bold;
-      line-height: 1.66em;
-    }
-    p {
-      // dad's info
-      font-size: 1.2em;
-      line-height: 1.66em;
-      word-wrap: break-word;
-      // text-align: justify;
-    }
-  }
+.content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 </style>

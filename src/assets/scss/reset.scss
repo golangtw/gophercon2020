@@ -25,6 +25,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	width: 100vw;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -40,4 +43,8 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+a, a:hover, a:visited {
+	text-decoration: none;
+	color: inherit;
 }

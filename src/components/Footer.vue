@@ -14,6 +14,7 @@
               :href="media.link"
               target="_blank"
               rel="noopener"
+              class="tone-trans"
             >
               <font-awesome-icon :icon="media.icon" />
             </a>
@@ -33,7 +34,7 @@
         :href="`https://sitcon.org/${ 2012 + i }/`"
         target="_blank"
         rel="noopener"
-        class="font-bold"
+        class="font-bold tone-trans"
       >{{ 2012 + i }}</a>
     </div>
   </footer>
@@ -105,10 +106,6 @@ p,
   a {
     height: 42px;
     margin-right: 36px;
-    transition: all ease-in-out 0.3s;
-    &:hover {
-      color: $tone;
-    }
     @media screen and (max-width: 1280px) {
       height: 32px;
       margin-right: 28px;
