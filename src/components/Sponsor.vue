@@ -3,7 +3,7 @@
     <a 
       v-for="sponsor in sponsors"
       :key="`sponsor-${sponsor.slug}`"
-      :href="`#${sponsor.slug}`"
+      :href="`${sponsor.url}`"
       target="_blank"
       rel="noopener"
     >
@@ -20,11 +20,9 @@ import sponsorData from '@/../public/json/sponsor.json';
 export default class Sponsor extends Vue {
   get sponsors () {
     return sponsorData.map((data) => {
-      const { name, slug, image } = data;
       return {
-        name,
-        slug,
-        image: require(`@/assets/images/sponsors/${image}`)
+        ...data,
+        image: require(`@/assets/images/sponsors/${data.image}`)
       };
     });
   }
