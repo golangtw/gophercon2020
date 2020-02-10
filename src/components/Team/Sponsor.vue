@@ -19,7 +19,7 @@
             個人贊助辦法
           </a>
         </p>
-        <p>
+        <p class="give-me-money">
           企業贊助亦歡迎來信
           <a
             href="mailto:contact@sitcon.org"
@@ -53,8 +53,8 @@
           </div>
           <div class="text-container">
             <h3>{{ sponsor.name }}</h3>
-            <p>{{ sponsor.description.length > 100 && !sponsor.readmore ? `${sponsor.description.substr(0, 100)}...` : sponsor.description }}</p>
-            <p v-show="sponsor.description.length > 100 && !sponsor.readmore" class="readmore">
+            <p>{{ sponsor.description.length > 60 && !sponsor.readmore ? `${sponsor.description.substr(0, 60)}...` : sponsor.description }}</p>
+            <p v-show="sponsor.description.length > 60 && !sponsor.readmore" class="readmore">
               <a @click="sponsor.readmore = true">Read more</a>
             </p>
           </div>
@@ -125,7 +125,7 @@ a,
 div {
   font-size: 13pt;
   @media screen and (max-width: 450px) {
-    font-size: 9pt;
+    font-size: 10pt;
   }
 }
 
@@ -141,6 +141,13 @@ p:not(:last-child) {
   display: block;
   .card {
     width: 100%;
+  }
+  p {
+    display: block;
+    width: 100%;
+  }
+  p.give-me-money {
+    text-align: center;
   }
 }
 
@@ -160,20 +167,10 @@ p:not(:last-child) {
     border-radius: 2em;
     border: 8px solid black;
 
-    .img-container {
-      // icon
-
-      width: 100%;
+    img {
       height: 180px;
-      margin-bottom: 1.5em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      img {
-        width: 100%;
-        object-fit: contain;
-      }
-      img:hover {
+
+      &:hover {
         cursor: pointer;
       }
     }
@@ -192,10 +189,8 @@ p:not(:last-child) {
     margin-right: 0;
     border-radius: 18px;
 
-    .img-container {
-      width: 31.33%;
-      margin-right: 3%;
-      margin-bottom: 0;
+    img {
+      margin-right: 1em;
     }
 
     .text-container {
@@ -211,7 +206,12 @@ p:not(:last-child) {
   font-size: 12pt;
 
   .org {
-    min-height: 540px;
+    min-height: calc((100vw - 500px - 66.5px) * 1.414 / 3);
+    align-items: center;
+
+    img {
+      margin-bottom: 1em;
+    }
 
     // Three cards per row
     @media screen and (min-width: $mid-screen + 1) {
@@ -243,6 +243,7 @@ p:not(:last-child) {
   }
 }
 
+// Mobile layout of cards
 @media screen and (max-width: $mobile) {
   .card-container {
     display: flex;
@@ -254,17 +255,18 @@ p:not(:last-child) {
       align-items: center;
       border-width: 5px;
       padding: 16px;
-      min-height: 300px;
-
+      // 1 : sqrt(2)
+      min-height: initial;
+      height: initial;
+      @media screen and (max-width: 480px) {
+        min-height: calc((100vw - 32px - 78px) * 1.414);
+      }
       .text-container {
         width: 100%;
       }
-      .img-container {
-        box-sizing: border-box;
-        padding: 1em 2em;
-        width: 100%;
-        max-width: 400px;
-        height: initial;
+      img {
+        height: 33vw;
+        margin: 0 0 1em 0;
       }
     }
   }
