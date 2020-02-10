@@ -14,6 +14,7 @@
               :href="media.link"
               target="_blank"
               rel="noopener"
+              class="tone-trans"
             >
               <font-awesome-icon :icon="media.icon" />
             </a>
@@ -33,7 +34,7 @@
         :href="`https://sitcon.org/${ 2012 + i }/`"
         target="_blank"
         rel="noopener"
-        class="font-bold"
+        class="font-bold tone-trans"
       >{{ 2012 + i }}</a>
     </div>
   </footer>
@@ -73,7 +74,7 @@ export default class Footer extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/color';
+@import "@/assets/scss/color";
 
 .column-flex {
   display: flex;
@@ -91,7 +92,7 @@ a {
 
 p,
 #past a {
-  font-size: 18pt;
+  font-size: 16pt;
   line-height: 1.33em;
   @media screen and (max-width: 1280px) {
     font-size: 14pt;
@@ -103,12 +104,8 @@ p,
 
 #media {
   a {
-    height: 42px;
+    height: 32px;
     margin-right: 36px;
-    transition: all ease-in-out 0.3s;
-    &:hover {
-      color: $tone;
-    }
     @media screen and (max-width: 1280px) {
       height: 32px;
       margin-right: 28px;
@@ -156,6 +153,10 @@ p,
       @media screen and (max-width: 900px) {
         width: 100%;
         padding-left: initial;
+      }
+
+      p {
+        font-size: 13pt;
       }
     }
 

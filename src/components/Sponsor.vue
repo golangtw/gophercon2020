@@ -1,6 +1,12 @@
 <template>
   <section class="sponsor-container" id="sponsor">
-    <a v-for="sponsor in sponsors" :key="`sponsor-${sponsor.slug}`" :href="`#${sponsor.slug}`">
+    <a 
+      v-for="sponsor in sponsors"
+      :key="`sponsor-${sponsor.slug}`"
+      :href="`${sponsor.url}`"
+      target="_blank"
+      rel="noopener"
+    >
       <img :alt="sponsor.name" :src="sponsor.image" />
     </a>
   </section>
@@ -14,11 +20,9 @@ import sponsorData from '@/../public/json/sponsor.json';
 export default class Sponsor extends Vue {
   get sponsors () {
     return sponsorData.map((data) => {
-      const { name, slug, image } = data;
       return {
-        name,
-        slug,
-        image: require(`@/assets/images/sponsors/${image}`)
+        ...data,
+        image: require(`@/assets/images/sponsors/${data.image}`)
       };
     });
   }
@@ -36,6 +40,9 @@ export default class Sponsor extends Vue {
   width: 100%;
   box-sizing: border-box;
   padding: 80px 140px;
+  @media screen and (max-width: 1280px) {
+    padding: 4em 2em;
+  }
   @media screen and (max-width: 900px) {
     padding: 4em 1em;
   }
@@ -43,6 +50,9 @@ export default class Sponsor extends Vue {
   a {
     img {
       max-width: 320px;
+      @media screen and (max-width: 1280px) {
+        max-width: 210px;
+      }
       @media screen and (max-width: 900px) {
         max-width: 25vw;
       }

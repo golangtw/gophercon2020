@@ -34,7 +34,9 @@
           :class="{ active: $route.name.includes(item.name) }"
           class="menu-item"
         >
-          <router-link :to="item.path" class="font-bold">{{ item.meta.label }}</router-link>
+          <router-link :to="item.path" class="font-bold">
+            <span>{{ item.meta.label }}</span>
+          </router-link>
         </div>
       </div>
     </nav>
@@ -49,7 +51,9 @@ import { MenuItem } from '../store/types/menu';
 
 @Component
 export default class Navbar extends Vue {
-  @Action('toggleMenu', { namespace: 'menu' }) private toggleMenu!: (status: boolean) => void;
+  @Action('toggleMenu', { namespace: 'menu' }) private toggleMenu!: (
+    status: boolean
+  ) => void;
   @Getter('menu', { namespace: 'menu' }) private menu!: MenuItem[];
   @Getter('toggle', { namespace: 'menu' }) private isMenuToggled!: boolean;
   @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
@@ -62,7 +66,8 @@ export default class Navbar extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/color';
+@import "@/assets/scss/color";
+$mobile: 900px;
 
 .navbar {
   width: 100%;
@@ -71,6 +76,10 @@ export default class Navbar extends Vue {
   z-index: 10000;
   display: flex;
   flex-direction: row;
+  height: 152px;
+  @media screen and (max-width: $mobile) {
+    height: initial;
+  }
 
   &.popuped {
     position: fixed;
@@ -121,12 +130,12 @@ export default class Navbar extends Vue {
     .logo {
       width: 400px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: $mobile) {
         width: 100%;
       }
 
       .logo-container .sitcon20 {
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: $mobile) {
           display: none;
         }
       }
@@ -141,7 +150,7 @@ export default class Navbar extends Vue {
 
       .title-container,
       .toggle-container {
-        @media screen and (min-width: 1281px) {
+        @media screen and (min-width: $mobile +1) {
           display: none;
         }
       }
@@ -166,7 +175,7 @@ export default class Navbar extends Vue {
         width: 100%;
       }
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: $mobile) {
         display: none;
 
         &.toggle {
@@ -190,21 +199,18 @@ export default class Navbar extends Vue {
         }
       }
 
-      .menu-item {
+      .menu-item > a {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
         height: 100%;
-        width: 190px;
         color: $black;
-        padding: 24px;
+        padding: 24px 12px;
         box-sizing: border-box;
-        // transform: skewX(15deg);
-        // transform-origin: center;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: $mobile) {
           transform: initial;
           height: initial;
           align-items: flex-end;
@@ -212,20 +218,20 @@ export default class Navbar extends Vue {
           width: 100%;
         }
 
-        > a {
-          // transform: skewX(-15deg);
+        span {
+          position: relative;
           display: block;
-          width: 100%;
-          margin-top: 21px;
-          margin-bottom: 50px;
+          width: 112px;
+          margin-top: 25px;
+          margin-bottom: 46px;
           position: relative;
           text-align: center;
-          font-size: 14pt;
+          font-size: 12pt;
           padding: 0;
           text-decoration: none;
           color: $black;
 
-          @media screen and (max-width: 1280px) {
+          @media screen and (max-width: $mobile) {
             transform: initial;
             margin: 1em 0;
             text-align: end;
@@ -235,47 +241,24 @@ export default class Navbar extends Vue {
             content: "";
             position: absolute;
             left: 0;
-            bottom: -32px;
+            bottom: -28px;
             width: 0%;
             border-bottom: 4px solid $black;
             transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.3s;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: $mobile) {
               display: none;
             }
           }
         }
 
-        // &:first-child,
-        // &:last-child {
-        //   // width: 200px;
-        //   // margin: 0 10px;
-        //   background-color: $black;
-        //   color: $white;
-        // }
-        /*
-        &:before {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -16px;
-          width: 0%;
-          border-bottom: 8px solid $black;
-          transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) .3s;
-
-          @media (max-width: 900px) {
-            display: none;
-          }
-        }
-        */
-
-        &.active {
+        &:hover {
           background: #f1f1f1;
-
-          > a:before {
-            width: 100%;
-          }
         }
+      }
+
+      .menu-item.active span:before {
+        width: 100%;
       }
     }
   }
@@ -289,7 +272,7 @@ export default class Navbar extends Vue {
     display: none;
   }
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: $mobile) {
     width: 36px;
     height: 36px;
 
