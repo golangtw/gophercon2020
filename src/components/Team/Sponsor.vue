@@ -1,5 +1,27 @@
 <template>
   <div id="sponsor">
+    <div class="card-container individual-sponsor">
+      <div class="card">
+        <h3>我們歡迎個人贊助</h3>
+        <p>SITCON 學生計算機年會為學生自發組成籌辦的研討會，秉持著以學生為主軸的核心價值，提供一個經驗交流與資訊技術實務分享的平台，進而達到「學以致用、教學相長」的目標。</p>
+        <p>
+          維繫這樣的交流平台，需要多人的努力及貢獻，亦十分需要在資金上的支持。
+          <br />希望能藉由您的一份力量，來促成活動的舉行，讓更多學生能在舞台上展現自我成長。
+          <br />歡迎您參與贊助，支持 SITCON、讓我們將每年的活動辦得盡善盡美！
+        </p>
+        <p>
+          <a href="#" class="tons-trans">個人贊助辦法</a>
+        </p>
+        <p>
+          企業贊助亦歡迎來信
+          <a
+            href="mailto:contact@sitcon.org"
+            target="_blank"
+            rel="noopener"
+          >contact@sitcon.org</a>
+        </p>
+      </div>
+    </div>
     <div
       v-for="entry in Object.entries(sponsorList)"
       :key="`sponsor-level-${entry[0]}`"
@@ -88,7 +110,25 @@ export default class Sponsor extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/team';
+@import "@/assets/scss/team";
+$mid-screen: 1440px; // Threshold of two-card-per-column layout
+
+p,
+a,
+div {
+  font-size: 13pt;
+}
+
+p:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.individual-sponsor {
+  display: block;
+  .card {
+    width: 100%;
+  }
+}
 
 // Common layout for host and all sponsors
 .card-container {
@@ -101,28 +141,25 @@ export default class Sponsor extends Vue {
   .card {
     display: flex;
     flex-direction: column;
-    width: 29%;
     padding: 24px;
     box-sizing: border-box;
-    margin-right: 6.5%;
+    border-radius: 2em;
+    border: 8px solid black;
 
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
-  }
+    .img-container {
+      // icon
 
-  .img-container {
-    // icon
-    width: 100%;
-    min-height: 180px;
-    margin-bottom: 3em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    img {
-      max-width: 100%;
-      &:hover {
+      width: 100%;
+      height: 180px;
+      margin-bottom: 1.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+      img:hover {
         cursor: pointer;
       }
     }
@@ -131,9 +168,6 @@ export default class Sponsor extends Vue {
 
 // Layout for host (i.e. SITCON)
 .host-container {
-  width: 100%;
-  margin-bottom: 5em;
-
   .host {
     display: flex;
     flex-direction: row;
@@ -141,19 +175,18 @@ export default class Sponsor extends Vue {
     padding: 24px;
     box-sizing: border-box;
     justify-content: flex-start;
+    align-items: center;
     margin-right: 0;
     border-radius: 18px;
-    border: 6px solid black;
 
     .img-container {
-      width: 29%;
-      // min-height: 200px;
-      margin-right: 6.5%;
+      width: 31.33%;
+      margin-right: 3%;
       margin-bottom: 0;
     }
 
     .text-container {
-      width: 0%;
+      width: 0;
       flex-grow: 1;
     }
   }
@@ -161,22 +194,31 @@ export default class Sponsor extends Vue {
 
 // Layout for organizations other than the host (i.e. sponsor)
 .org-container {
-  margin-bottom: 3em;
   box-sizing: border-box;
+  font-size: 12pt;
 
   .org {
-    border: 6px solid black;
-    border-radius: 18px;
     margin-bottom: 2em;
     min-height: 540px;
-  }
 
-  @media screen and (max-width: 1536px) {
-    .card {
-      margin-right: 6%;
-      width: 47%;
-      &:nth-child(2n) {
-        margin-right: 0;
+    // Three cards per row
+    @media screen and (min-width: $mid-screen + 1) {
+      width: 31.33%;
+      &:not(:nth-child(3n)) {
+        margin-right: 3%;
+      }
+      &:nth-last-child(-n + 3) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media screen and (max-width: $mid-screen) {
+      width: 48.5%;
+      &:nth-child(odd) {
+        margin-right: 3%;
+      }
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
       }
     }
   }
@@ -215,29 +257,12 @@ export default class Sponsor extends Vue {
     font-size: 1.5em;
     margin-bottom: 1em;
     font-weight: bold;
-    line-height: 1.66em;
+    line-height: 1.5em;
   }
   p {
     // Daddy's info
-    font-size: 1.35em;
     word-wrap: break-word;
-    line-height: 1.66em;
-  }
-
-  @media screen and (max-width: $mobile) {
-    h3,
-    p {
-      font-size: 1.25em;
-      line-height: 1.5em;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    h3,
-    p {
-      font-size: 1em;
-      line-height: 1.5em;
-    }
+    line-height: 1.5em;
   }
 }
 
