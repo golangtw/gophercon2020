@@ -44,7 +44,7 @@
         >
           <div class="img-container">
             <a
-              :href="`#${sponsor.url}`"
+              :href="`${sponsor.url}`"
               target="_blank"
               rel="noopener"
             >
