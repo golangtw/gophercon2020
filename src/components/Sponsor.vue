@@ -36,6 +36,9 @@ export default class Sponsor extends Vue {
   width: 100%;
   box-sizing: border-box;
   padding: 80px 140px;
+  @media screen and (max-width: 1280px) {
+    padding: 4em 2em;
+  }
   @media screen and (max-width: 900px) {
     padding: 4em 1em;
   }
@@ -43,6 +46,9 @@ export default class Sponsor extends Vue {
   a {
     img {
       max-width: 320px;
+      @media screen and (max-width: 1280px) {
+        max-width: 210px;
+      }
       @media screen and (max-width: 900px) {
         max-width: 25vw;
       }
