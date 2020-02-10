@@ -52,7 +52,7 @@ export default class Team extends Vue {
   ];
 
   get tid () {
-    return this.$route.params.tid || 'sponsor';
+    return this.$route.params.tid || 'staff';
   }
 
   get currentTab () {
