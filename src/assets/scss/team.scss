@@ -5,9 +5,9 @@ $mobile: 900px;
 
 // Text style for sponsor level
 h2.level {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
-    margin-bottom: 2em;
+    margin: 1.75em 0;
     text-align: center;
 
     @media screen and (max-width: $mobile) {
