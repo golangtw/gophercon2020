@@ -19,12 +19,9 @@
 import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 import CCIPSessionTable from '@ccip-app/session-table';
-
 import sessionData from '@/../public/json/session.json';
 import sessionDOMString from '@/../template/session.mod';
-
 import { DeviceType } from '@/store/types/app';
-
 import head from '@/util/head';
 
 @Component({
