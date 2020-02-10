@@ -136,6 +136,7 @@ a {
 
       img {
         // Icon of staff
+        object-fit: contain;
         width: 92px;
         height: 92px;
         @media screen and (max-width: 900px) {
