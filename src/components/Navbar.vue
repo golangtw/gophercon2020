@@ -34,7 +34,9 @@
           :class="{ active: $route.name.includes(item.name) }"
           class="menu-item"
         >
-          <router-link :to="item.path" class="font-bold">{{ item.meta.label }}</router-link>
+          <router-link :to="item.path" class="font-bold">
+            <span>{{ item.meta.label }}</span>
+          </router-link>
         </div>
       </div>
     </nav>
@@ -197,7 +199,7 @@ $mobile: 900px;
         }
       }
 
-      .menu-item {
+      .menu-item > a {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -216,7 +218,7 @@ $mobile: 900px;
           width: 100%;
         }
 
-        a {
+        span {
           position: relative;
           display: block;
           width: 112px;
@@ -250,13 +252,13 @@ $mobile: 900px;
           }
         }
 
-        &.active a:before {
-          width: 100%;
-        }
-
         &:hover {
           background: #f1f1f1;
         }
+      }
+
+      .menu-item.active span:before {
+        width: 100%;
       }
     }
   }
