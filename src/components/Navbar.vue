@@ -71,6 +71,7 @@ export default class Navbar extends Vue {
   z-index: 10000;
   display: flex;
   flex-direction: row;
+  height: 152px;
 
   &.popuped {
     position: fixed;
@@ -197,12 +198,9 @@ export default class Navbar extends Vue {
         justify-content: flex-end;
         align-items: center;
         height: 100%;
-        width: 190px;
         color: $black;
-        padding: 24px;
+        padding: 24px 12px;
         box-sizing: border-box;
-        // transform: skewX(15deg);
-        // transform-origin: center;
 
         @media screen and (max-width: 1280px) {
           transform: initial;
@@ -213,14 +211,13 @@ export default class Navbar extends Vue {
         }
 
         > a {
-          // transform: skewX(-15deg);
           display: block;
-          width: 100%;
+          width: 112px;
           margin-top: 21px;
           margin-bottom: 50px;
           position: relative;
           text-align: center;
-          font-size: 14pt;
+          font-size: 12pt;
           padding: 0;
           text-decoration: none;
           color: $black;
@@ -245,29 +242,6 @@ export default class Navbar extends Vue {
             }
           }
         }
-
-        // &:first-child,
-        // &:last-child {
-        //   // width: 200px;
-        //   // margin: 0 10px;
-        //   background-color: $black;
-        //   color: $white;
-        // }
-        /*
-        &:before {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -16px;
-          width: 0%;
-          border-bottom: 8px solid $black;
-          transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) .3s;
-
-          @media (max-width: 900px) {
-            display: none;
-          }
-        }
-        */
 
         &.active {
           background: #f1f1f1;

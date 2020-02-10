@@ -73,7 +73,7 @@ export default class Footer extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/color';
+@import "@/assets/scss/color";
 
 .column-flex {
   display: flex;
