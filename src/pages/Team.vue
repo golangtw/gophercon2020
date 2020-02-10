@@ -5,7 +5,13 @@
     </div>
     <div class="main-content">
       <div class="tab-container">
-        <div v-for="tab in tabs" :key="`tab-${tab.name}`" class="tab" :class="{ toggle: tab.name === tid }" @click="clickTab(tab.name)">
+        <div
+          v-for="tab in tabs"
+          :key="`tab-${tab.name}`"
+          class="tab"
+          :class="{ toggle: tab.name === tid }"
+          @click="clickTab(tab.name)"
+        >
           <p>
             <span>{{ tab.text[0] }}</span>
             <span>{{ tab.text[1] }}</span>
@@ -61,38 +67,44 @@ export default class Team extends Vue {
   }
 
   public clickTab (tabName: string) {
-    this.$router.push({
-      path: `/team/${tabName}`
-    }).catch((_) => {
-      // ignore
-    });
+    this.$router
+      .push({
+        path: `/team/${tabName}`
+      })
+      .catch((_) => {
+        // ignore
+      });
   }
 
   @Watch('tid')
   public onTidChanged (newTid: string) {
     if (!this.tabs.find((tab) => tab.name === this.tid)) {
-      this.$router.replace({
-        path: '/team'
-      }).catch((_) => {
-        // ignore
-      });
+      this.$router
+        .replace({
+          path: '/team'
+        })
+        .catch((_) => {
+          // ignore
+        });
     }
   }
 
   public mounted () {
     if (!this.tabs.find((tab) => tab.name === this.tid)) {
-      this.$router.replace({
-        path: '/team'
-      }).catch((_) => {
-        // ignore
-      });
+      this.$router
+        .replace({
+          path: '/team'
+        })
+        .catch((_) => {
+          // ignore
+        });
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/team';
+@import "@/assets/scss/team";
 
 .team-container {
   display: flex;
@@ -185,7 +197,7 @@ export default class Team extends Vue {
       }
 
       span:first-child {
-        // tab title (chinese)
+        // Tab title (Chinese)
         margin-bottom: 0.33em;
 
         font-size: 2em;
@@ -198,7 +210,7 @@ export default class Team extends Vue {
       }
 
       span:last-child {
-        // tab subtitle (english)
+        // Tab subtitle (English)
         font-size: 1.33em;
         @media screen and (max-width: 1440px) {
           font-size: 1em;
@@ -238,6 +250,7 @@ export default class Team extends Vue {
       transform: initial;
       border-radius: 10px !important;
       border-width: 4px;
+      color: white;
 
       &:not(:first-child) {
         border-top-width: 0;
@@ -245,6 +258,12 @@ export default class Team extends Vue {
 
       &:not(.toggle) {
         background: white;
+        color: black;
+      }
+
+      &:hover {
+        background: black;
+        color: white;
       }
 
       p {
