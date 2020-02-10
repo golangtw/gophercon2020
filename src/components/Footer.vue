@@ -129,6 +129,11 @@ p,
   background: black;
   color: white;
   padding: 65px 5%;
+
+  &.popuped {
+    opacity: 0;
+  }
+
   @media screen and (max-width: 900px) {
     padding: 30px 16% 0 16px;
   }
