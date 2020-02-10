@@ -5,45 +5,88 @@
     </div>
     <div class="main-content">
       <div class="tab-container">
-        <div v-for="tab in tabs" :key="`tab-${tab.name}`" class="tab" :class="{ toggle: tab.name === tid }">
+        <div v-for="tab in tabs" :key="`tab-${tab.name}`" class="tab" :class="{ toggle: tab.name === tid }" @click="clickTab(tab.name)">
           <p>
             <span>{{ tab.text[0] }}</span>
             <span>{{ tab.text[1] }}</span>
           </p>
         </div>
       </div>
-      <!-- <Daddy class="content-container" /> -->
-      <Staff class="content-container" />
+      <component :is="component" class="content-container" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Watch } from 'vue-property-decorator';
 import Sponsor from '@/components/Team/Sponsor.vue';
 import Staff from '@/components/Team/Staff.vue';
+import You from '@/components/Team/You.vue';
 
 @Component({
-  components: { Sponsor, Staff }
+  components: { Sponsor, Staff, You }
 })
 export default class Team extends Vue {
   public tabs = [
     {
       name: 'sponsor',
-      text: ['贊助', 'Sponsor']
+      text: ['贊助', 'Sponsor'],
+      component: Sponsor
     },
     {
       name: 'staff',
-      text: ['工作人員', 'Staff']
+      text: ['工作人員', 'Staff'],
+      component: Staff
     },
     {
       name: 'you',
-      text: ['來參加的你！', 'You']
+      text: ['來參加的你！', 'You'],
+      component: You
     }
   ];
 
   get tid () {
     return this.$route.params.tid || 'sponsor';
+  }
+
+  get currentTab () {
+    return this.tabs.find((tab) => tab.name === this.tid);
+  }
+
+  get component () {
+    if (!this.currentTab) {
+      return null;
+    }
+    return this.currentTab.component;
+  }
+
+  public clickTab (tabName: string) {
+    this.$router.push({
+      path: `/team/${tabName}`
+    }).catch((_) => {
+      // ignore
+    });
+  }
+
+  @Watch('tid')
+  public onTidChanged (newTid: string) {
+    if (!this.tabs.find((tab) => tab.name === this.tid)) {
+      this.$router.replace({
+        path: '/team'
+      }).catch((_) => {
+        // ignore
+      });
+    }
+  }
+
+  public mounted () {
+    if (!this.tabs.find((tab) => tab.name === this.tid)) {
+      this.$router.replace({
+        path: '/team'
+      }).catch((_) => {
+        // ignore
+      });
+    }
   }
 }
 </script>
@@ -121,8 +164,10 @@ export default class Team extends Vue {
     border-radius: 16px !important;
     transform: skewX(-15deg);
     transform-origin: center;
+    cursor: pointer;
 
-    &.toggle {
+    &.toggle,
+    &:hover {
       background: black;
       color: white;
     }
