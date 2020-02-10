@@ -13,8 +13,14 @@
       <h2 class="level group-name">{{ group.name }}</h2>
       <p class="group-intro">{{ group.description }}</p>
       <div class="staff-container">
-        <div v-for="member in group.members" :key="`${group.name}-${member.name}`" class="staff-intro">
-          <img :src="`//www.gravatar.com/avatar/${member.emailHash}?s=320&d=https://sitcon.org/2019/static/img/default_avatar.png&r=g`" />
+        <div
+          v-for="member in group.members"
+          :key="`${group.name}-${member.name}`"
+          class="staff-intro"
+        >
+          <img
+            :src="`//www.gravatar.com/avatar/${member.emailHash}?s=320&d=https://sitcon.org/2019/static/img/default_avatar.png&r=g`"
+          />
           <p>{{ member.name }}</p>
         </div>
       </div>
@@ -60,11 +66,11 @@ a {
 }
 
 .staff-group {
-
   display: flex;
   flex-direction: column;
   padding: 3em 2em 1.5em 2em;
   background-position-x: 100px;
+  overflow-x: visible;
 
   &:nth-child(even) {
     background: #e3e3e3;
@@ -99,14 +105,14 @@ a {
     justify-content: flex-start;
     flex-wrap: wrap;
 
-    
     .staff-intro {
       // Single staff
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-right: 80px;
+      // margin-right: 80px;
       margin-bottom: 1.5em;
+      width: 180px;
 
       img {
         // Icon of staff
@@ -118,8 +124,10 @@ a {
       }
       p {
         // Name of staff
-        font-size: 1.44em;
+        font-size: 1.25em;
         margin-top: 0.9em;
+        word-wrap: break-word;
+        text-align: center;
       }
     }
   }
