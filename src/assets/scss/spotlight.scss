@@ -14,7 +14,7 @@
 
     @media screen and (max-width: 675px) {
       min-height: auto;
-      width: calc(100% - 32px);
+      width: calc(100% - 32px * 2);
       margin: 0;
       margin-bottom: 32px;
       padding: 32px;
