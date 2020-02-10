@@ -125,7 +125,10 @@ p,
   box-sizing: border-box;
   background: black;
   color: white;
-  padding: 65px 5%;
+  padding: 65px 18%;
+  @media screen and (max-width: 1280px) {
+    padding: 65px 10%;
+  }
   @media screen and (max-width: 900px) {
     padding: 30px 16% 0 16px;
   }
