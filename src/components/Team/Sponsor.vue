@@ -10,7 +10,7 @@
           <br />歡迎您參與贊助，支持 SITCON、讓我們將每年的活動辦得盡善盡美！
         </p>
         <p>
-          <a href="#" class="tons-trans">個人贊助辦法</a>
+          <a href="#" class="tons-trans give-me-money">個人贊助辦法</a>
         </p>
         <p>
           企業贊助亦歡迎來信
@@ -18,6 +18,7 @@
             href="mailto:contact@sitcon.org"
             target="_blank"
             rel="noopener"
+            class="give-me-money"
           >contact@sitcon.org</a>
         </p>
       </div>
@@ -117,6 +118,13 @@ p,
 a,
 div {
   font-size: 13pt;
+  @media screen and (max-width: 450px) {
+    font-size: 9pt;
+  }
+}
+
+a.give-me-money {
+  text-decoration: underline;
 }
 
 p:not(:last-child) {
@@ -141,8 +149,8 @@ p:not(:last-child) {
   .card {
     display: flex;
     flex-direction: column;
-    padding: 24px;
     box-sizing: border-box;
+    padding: 24px;
     border-radius: 2em;
     border: 8px solid black;
 
@@ -156,7 +164,7 @@ p:not(:last-child) {
       flex-direction: column;
       justify-content: center;
       img {
-        height: 100%;
+        width: 100%;
         object-fit: contain;
       }
       img:hover {
@@ -172,7 +180,6 @@ p:not(:last-child) {
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 24px;
     box-sizing: border-box;
     justify-content: flex-start;
     align-items: center;
@@ -198,7 +205,6 @@ p:not(:last-child) {
   font-size: 12pt;
 
   .org {
-    margin-bottom: 2em;
     min-height: 540px;
 
     // Three cards per row
@@ -212,7 +218,7 @@ p:not(:last-child) {
       }
     }
 
-    @media screen and (max-width: $mid-screen) {
+    @media screen and (max-width: $mid-screen) and (min-width: $mobile + 1) {
       width: 48.5%;
       &:nth-child(odd) {
         margin-right: 3%;
@@ -221,30 +227,38 @@ p:not(:last-child) {
         margin-bottom: 0;
       }
     }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 2em;
+      }
+    }
   }
 }
 
-// Mobile layout for host/organization container and cards
 @media screen and (max-width: $mobile) {
-  .host-container,
-  .org-container {
-    display: block;
-
+  .card-container {
+    display: flex;
+    flex-direction: column;
     .card {
-      display: block;
       width: 100%;
-      min-height: 50vw;
-      border-width: 2px;
-      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-width: 5px;
+      padding: 16px;
+      min-height: 300px;
 
-      .img-container {
-        width: 50%;
-        float: right;
-        min-height: 33vw;
-        margin: 0;
-      }
       .text-container {
         width: 100%;
+      }
+      .img-container {
+        box-sizing: border-box;
+        padding: 1em 2em;
+        width: 100%;
+        max-width: 400px;
+        height: initial;
       }
     }
   }
@@ -258,6 +272,10 @@ p:not(:last-child) {
     margin-bottom: 1em;
     font-weight: bold;
     line-height: 1.5em;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1.25em;
+    }
   }
   p {
     // Daddy's info
