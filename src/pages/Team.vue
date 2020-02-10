@@ -5,22 +5,10 @@
     </div>
     <div class="main-content">
       <div class="tab-container">
-        <div class="tab toggle">
+        <div v-for="tab in tabs" :key="`tab-${tab.name}`" class="tab" :class="{ toggle: tab.name === tid }">
           <p>
-            <span>贊助</span>
-            <span>Sponsor</span>
-          </p>
-        </div>
-        <div class="tab">
-          <p>
-            <span>工作人員</span>
-            <span>Staff</span>
-          </p>
-        </div>
-        <div class="tab">
-          <p>
-            <span>來參加的你！</span>
-            <span>You!</span>
+            <span>{{ tab.text[0] }}</span>
+            <span>{{ tab.text[1] }}</span>
           </p>
         </div>
       </div>
@@ -39,6 +27,24 @@ import Staff from '@/components/Team/Staff.vue';
   components: { Daddy, Staff }
 })
 export default class Team extends Vue {
+  public tabs = [
+    {
+      name: 'sponsor',
+      text: ['贊助', 'Sponsor']
+    },
+    {
+      name: 'staff',
+      text: ['工作人員', 'Staff']
+    },
+    {
+      name: 'you',
+      text: ['來參加的你！', 'You']
+    }
+  ];
+
+  get tid () {
+    return this.$route.params.tid || 'sponsor';
+  }
 }
 </script>
 
