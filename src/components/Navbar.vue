@@ -1,46 +1,48 @@
 <template>
-  <div id="nav" :class="{ 'popuped': isPopup }" class="navbar">
-    <nav class="menu-container">
-      <div class="logo bar">
-        <img src="@/assets/images/logo-dark.svg" class="navbar-icon icon--desktop" />
-        <img src="@/assets/images/favicon.png" class="navbar-icon icon--mobile" />
-        <div class="title-container">
-          <p class="title font-bold">SITCON</p>
-          <p class="subtitle font-bold">2020</p>
-        </div>
-        <div class="toggle-container" @click="toggleMenu(!isMenuToggled)">
-          <img src="@/assets/images/toggle-button.svg" class="navbar-icon" />
+  <nav id="nav">
+    <div class="nav-inner-container">
+      <div class="logo">
+        <img class="logo__icon--normal" src="@/assets/images/logo-dark.svg">
+        <img class="logo__icon--mobile" src="@/assets/images/favicon.png">
+        <div class="logo__text">
+          <div class="text__sitcon font-bold">SITCON</div>
+          <div class="text__2020 font-bold">2020</div>
         </div>
       </div>
-      <div class="menu" :class="{ toggle: isMenuToggled }">
-        <div class="bar">
-          <div class="logo-container">
-            <img src="@/assets/images/favicon.png" class="icon" />
+      <img src="@/assets/images/toggle-button.svg" class="toggle-button" @click="toggleMenu(!isMenuToggled)" />
+      <div class="menu" :class="{ toggled: isMenuToggled }">
+        <div class="menu__mask" @click.self="toggleMenu(false)">
+          <div class="menu-inner-container">
+            <header>
+              <div class="define-logo">
+                <img class="define-icon" src="@/assets/images/favicon.png">
+                <div class="define-text">
+                  <img src="@/assets/images/define-dark.svg" />
+                  <div class="text-container">
+                    <span class="text__sitcon">SITCON</span>
+                    <span class="text__2020">2020</span>
+                  </div>
+                </div>
+              </div>
+              <!-- <img src="@/assets/images/toggle-button.svg" class="close-button" @click.self="toggleMenu(false)" /> -->
+              <div class="close-button-container">
+                <span class="close-button" @click.self="toggleMenu(false)">+</span>
+              </div>
+            </header>
+            <router-link
+              v-for="item in menu"
+              :key="item.name"
+              :to="item.path"
+              class="menu__item font-bold"
+              :class="{ active: $route.name.includes(item.name) }"
+            >
+              <span>{{ item.meta.label }}</span>
+            </router-link>
           </div>
-          <div class="title-container">
-            <img src="@/assets/images/define-dark.svg" class="define" />
-            <p class="sitcon20">
-              <span class="title">SITCON</span>
-              <span class="subtitle">20</span>
-            </p>
-          </div>
-          <div class="toggle-container" @click="toggleMenu(!isMenuToggled)">
-            <img src="@/assets/images/toggle-button.svg" class="navbar-icon" />
-          </div>
-        </div>
-        <div
-          v-for="item in menu"
-          :key="item.name"
-          :class="{ active: $route.name.includes(item.name) }"
-          class="menu-item"
-        >
-          <router-link :to="item.path" class="font-bold">
-            <span>{{ item.meta.label }}</span>
-          </router-link>
         </div>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -56,7 +58,6 @@ export default class Navbar extends Vue {
   ) => void;
   @Getter('menu', { namespace: 'menu' }) private menu!: MenuItem[];
   @Getter('toggle', { namespace: 'menu' }) private isMenuToggled!: boolean;
-  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
 
   @Watch('$route')
   public onChangeRoute () {
@@ -65,247 +66,232 @@ export default class Navbar extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/color";
+@import "@/assets/scss/variables";
 $mobile: 900px;
 
-.navbar {
-  width: 100%;
-  background: $white;
+#nav {
   position: fixed;
-  z-index: 10000;
-  display: flex;
-  flex-direction: row;
-  height: 152px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navbar-height;
+  z-index: 999;
+  background-color: $white;
+
   @media screen and (max-width: $mobile) {
-    height: initial;
+    height: $navbar-height-mobile;
   }
 
-  &.popuped {
-    position: fixed;
-    filter: blur(3px);
-  }
-
-  .bar {
+  .nav-inner-container {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0 24px;
+    height: 100%;
+    padding: 0 5%;
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    @media screen and (max-width: $mobile) {
+      padding: 0 16px;
     }
-
-    .title-container {
-      display: flex;
-      align-items: center;
-      margin-left: 16px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .toggle-container {
-      display: flex;
-      align-items: center;
-      // Align right
-      margin-left: auto;
-    }
-  }
-
-  .menu-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
 
     .logo {
-      width: 400px;
+      display: flex;
+      align-items: center;
 
-      @media screen and (max-width: $mobile) {
-        width: 100%;
-      }
+      img.logo__icon--normal {
+        width: 48px;
+        height: 48px;
 
-      .logo-container .sitcon20 {
         @media screen and (max-width: $mobile) {
           display: none;
         }
       }
 
-      .title-container {
-        .subtitle {
-          font-size: 0.75em;
-          margin-top: 0.5em;
+      img.logo__icon--mobile {
+        display: none;
+        width: 32px;
+        height: 32px;
+
+        @media screen and (max-width: $mobile) {
+          display: inline-block;
+        }
+      }
+
+      .logo__text {
+        display: none;
+        margin-left: 8px;
+
+        @media screen and (max-width: $mobile) {
+          display: block;
+        }
+
+        & .text__sitcon {
+          font-weight: 700;
+        }
+
+        & .text__2020 {
+          font-size: 12px;
           color: $dark-1;
         }
       }
-
-      .title-container,
-      .toggle-container {
-        @media screen and (min-width: $mobile +1) {
-          display: none;
-        }
-      }
     }
 
+    .toggle-button,
     .menu {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: 100%;
-      background-color: $white;
-      margin-right: 140px;
-      justify-content: flex-end;
+      margin-left: auto;
+    }
 
-      .icon {
-        width: 32px;
-        height: 32px;
-      }
-
-      .bar {
-        display: none;
-        width: 100%;
-      }
+    .toggle-button {
+      display: none;
 
       @media screen and (max-width: $mobile) {
-        display: none;
-
-        &.toggle {
-          display: flex;
-          position: absolute;
-          right: 0;
-          width: 275px;
-          height: 100vh;
-          z-index: 0;
-          margin: 0;
-
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-end;
-        }
-
-        .bar {
-          display: flex;
-          padding-bottom: 12px;
-        }
+        display: inline-block;
       }
+    }
+  
+    @media screen and (min-width: $mobile + 1) {
+      .menu {
+        .menu__mask {
+          height: 100%;
+          .menu-inner-container {
+            height: 100%;
+            display: flex;
 
-      .menu-item > a {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        height: 100%;
-        color: $black;
-        padding: 24px 12px;
-        box-sizing: border-box;
-
-        @media screen and (max-width: $mobile) {
-          transform: initial;
-          height: initial;
-          align-items: flex-end;
-          padding: 0 24px;
-          width: 100%;
-        }
-
-        span {
-          position: relative;
-          display: block;
-          width: 112px;
-          margin-top: 25px;
-          margin-bottom: 46px;
-          position: relative;
-          text-align: center;
-          font-size: 12pt;
-          padding: 0;
-          text-decoration: none;
-          color: $black;
-
-          @media screen and (max-width: $mobile) {
-            transform: initial;
-            margin: 1em 0;
-            text-align: end;
-          }
-
-          &:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -28px;
-            width: 0%;
-            border-bottom: 4px solid $black;
-            transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.3s;
-
-            @media screen and (max-width: $mobile) {
+            header {
               display: none;
+            }
+
+            .menu__item {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-width: 100px;
+              height: 100%;
+              padding: 0 12px;
+
+              span {
+                position: relative;
+                display: block;
+
+                &:before {
+                  content: "";
+                  position: absolute;
+                  left: 50%;
+                  bottom: -28px;
+                  transform: translateX(-50%);
+                  border-bottom: 4px solid $black;
+                  width: 0;
+                  transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.3s;
+                }
+              }
+
+              &.active span:before {
+                width: 100%;
+              }
+
+              &:hover {
+                background: #f1f1f1;
+              }
             }
           }
         }
+      }
+    }
 
-        &:hover {
-          background: #f1f1f1;
+
+    @media screen and (max-width: $mobile) {
+      .menu {
+        display: none;
+      }
+
+      .menu.toggled {
+        display: block;
+        .menu__mask {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba($color: #000000, $alpha: 0.6);
+          z-index: 9999;
+          
+          .menu-inner-container {
+            width: 80%;
+            height: 100%;
+            margin-left: auto;
+            background-color: $white;
+            display: flex;
+            flex-direction: column;
+            z-index: 99999;
+
+            header {
+              display: flex;
+              height: $navbar-height-mobile;
+              padding: 0 16px 32px 16px;
+
+              .define-logo {
+                display: flex;
+                align-items: center;
+
+                img.define-icon {
+                  width: 32px;
+                  height: 32px;
+                }
+
+                .define-text {
+                  transform: scale(0.8);
+
+                  img {
+                    height: 22px;
+                  }
+
+                  .text__sitcon,
+                  .text__2020 {
+                    font-size: 12px;
+                  }
+                }
+              }
+
+              .close-button-container {
+                margin-left: auto;
+                height: 48px;
+
+                span {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 48px;
+                  height: 48px;
+                  font-size: 56px;
+                  transform: rotate(45deg) translate(12px, -6px);
+                }
+              }
+            }
+
+            .menu__item {
+              display: flex;
+              align-items: center;
+              width: 60%;
+              margin-left: auto;
+              padding: 16px;
+              border-radius: 10px;
+              transform: skewX(-10deg) translateX(32px);
+
+              span {
+                margin-left: auto;
+                transform: skewX(10deg) translateX(-40px);
+              }
+
+              &.active,
+              &:hover {
+                background: $black;
+                color: $white;
+              }
+            }
+          }
         }
       }
-
-      .menu-item.active span:before {
-        width: 100%;
-      }
     }
   }
 }
 
-.navbar-icon {
-  width: 68px;
-  height: 68px;
-
-  &.icon--mobile {
-    display: none;
-  }
-
-  @media screen and (max-width: $mobile) {
-    width: 36px;
-    height: 36px;
-
-    &.icon--desktop {
-      display: none;
-    }
-
-    &.icon--mobile {
-      display: inline;
-    }
-  }
-}
-
-.sitcon20 {
-  font-weight: bold;
-  font-size: 8px;
-  margin-top: 6px;
-
-  &,
-  span {
-    letter-spacing: 4px;
-  }
-
-  .title {
-    color: $black;
-  }
-
-  .subtitle {
-    color: #8e8e8e;
-  }
-}
-
-.define {
-  width: 68px;
-}
 </style>
