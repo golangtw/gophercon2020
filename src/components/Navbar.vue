@@ -212,6 +212,7 @@ $mobile: 900px;
           position: fixed;
           top: 0;
           right: max(-80vw, -300px);
+          right: -80vw;
           max-width: 300px;
           width: 80vw;
           height: 100vh;
