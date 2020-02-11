@@ -142,7 +142,7 @@ export default class Team extends Vue {
   margin-bottom: 5em;
 
   .tab {
-    width: 250px;
+    width: 29%;
     padding: 18px 1em;
     box-sizing: border-box;
     border: solid black 4px;
@@ -150,11 +150,6 @@ export default class Team extends Vue {
     transform: skewX(-15deg);
     transform-origin: center;
     cursor: pointer;
-
-    @media screen and (max-width: 1050px) {
-      width: 200px;
-      padding: 18px 1em;
-    }
 
     &.toggle,
     &:hover {
