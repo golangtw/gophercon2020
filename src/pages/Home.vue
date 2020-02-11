@@ -8,12 +8,24 @@
       </div>
     </header>
     <div class="info">
-      <p class="date font-bold">3/28</p>
-      <p class="location font-bold">中央研究院 — 人文社會科學館</p>
-      <p class="kktix font-bold">
-        <a href="https://sitcon.kktix.cc/events/sitcon2020" target="_blank" rel="noopener">免費報名</a>
-        <a href="https://bit.ly/donatesitcon2020" target="_blank" rel="noopener">贊助取票</a>
-      </p>
+      <div class="left-container">
+        <div>
+          <div>
+            <p class="date font-bold">3/28</p>
+            <p class="location font-bold">中央研究院 — 人文社會科學館</p>
+          </div>
+        </div>
+      </div>
+      <div class="right-container">
+        <p class="kktix">
+          <a href="https://sitcon.kktix.cc/events/sitcon2020" target="_blank" rel="noopener">
+            <span>免費報名</span>
+          </a>
+          <a href="https://bit.ly/donatesitcon2020" target="_blank" rel="noopener">
+            <span>贊助取票</span>
+          </a>
+        </p>
+      </div>
     </div>
     <div class="spotlight-container">
       <div class="spotlight">
