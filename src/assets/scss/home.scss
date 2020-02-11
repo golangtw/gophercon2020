@@ -1,33 +1,30 @@
 #app.main {
   #home.main-container {
-    align-items: flex-start;
-    margin: 0 350px;
     margin-top: $navbar-height;
     padding-top: 170px;
-    width: calc(100% - 350px * 2);
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1280px) {
       margin: 0;
       margin-top: $navbar-height;
       width: 100%;
     }
   
     .header {
-      width: calc(910px - 350px);
-      padding: 40px;
-      padding-left: 350px;
+      display: flex;
+      width: 50%;
+      padding: 30px 40px;
       background-color: $dark-3;
-      margin-left: -350px;
-      margin-bottom: 200px;
+      margin-left: calc(-50% + 40px);
+      margin-bottom: 40px;
 
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 900px) {
+        width: calc(100% - 40px * 2);
         margin-left: 0;
       }
 
-      @media screen and (max-width: 960px) {
-        width: calc(100% - 40px * 2);
-        height: auto;
-        padding: 40px;
+      .inner-container {
+        margin-left: auto;
+        margin-right: 0;
       }
   
       h1.title,
@@ -39,7 +36,11 @@
       }
   
       h1.title {
-        font-size: 84px;
+        font-size: 56px;
+
+        @media screen and (max-width: 900px) {
+          font-size: 84px;
+        }
 
         @media screen and (max-width: 414px) {
           font-size: 72px;
@@ -51,8 +52,13 @@
       }
   
       h2.subtitle {
-        font-size: 42px;
-        margin-bottom: 42px;
+        font-size: 24px;
+        margin-bottom: 48px;
+
+        @media screen and (max-width: 900px) {
+          font-size: 42px;
+          margin-bottom: 42px;
+        }
 
         @media screen and (max-width: 414px) {
           font-size: 36px;
@@ -64,7 +70,11 @@
           margin-bottom: 28px;
         }
       }
-  
+    }
+
+    .info {
+      margin-bottom: 100px;
+      
       p {
         &.date {
           font-size: 32px;
@@ -95,8 +105,6 @@
             }
           }
 
-
-
           @media screen and (max-width: 414px) {
             text-align: start;
             font-size: 18px;
@@ -108,12 +116,6 @@
           }
         }
       }
-    }
-  }
-
-  .spotlight {
-    h1:first-child {
-      margin-bottom: 0.5em;
     }
   }
 }

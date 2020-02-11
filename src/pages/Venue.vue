@@ -29,6 +29,20 @@ export default class Venue extends Vue { }
 <style lang="scss" scoped>
 @import "@/assets/scss/color";
 
+#venue.main-container {
+  padding-left: 200px;
+  padding-right: 200px;
+
+  @media screen and (max-width: 1280px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media screen and (max-width: 900px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 #venue {
   .map-container {
     position: relative;
@@ -73,20 +87,26 @@ export default class Venue extends Vue { }
       .floor {
         color: $white;
         transform: skewX(15deg);
-        padding: 28px;
-        font-size: 54px;
+        padding: 18px;
+        font-size: 40px;
 
         @media screen and (max-width: 900px) {
-          padding: 18px;
-          font-size: 40px;
-        }
-
-        @media screen and (max-width: 720px) {
-          padding: 14px;
+          padding: 16px;
           font-size: 30px;
         }
 
+        @media screen and (max-width: 720px) {
+          padding: 12px;
+          font-size: 24px;
+        }
+
         @media screen and (max-width: 480px) {
+          padding: 8px;
+          font-size: 20px;
+        }
+
+        @media screen and (max-width: 375px) {
+          padding: 8px;
           font-size: 20px;
         }
       }

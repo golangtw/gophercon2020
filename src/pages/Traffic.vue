@@ -22,3 +22,19 @@ import SitconMap from '@/components/SitconMap.vue';
 export default class Traffic extends Vue {
 }
 </script>
+
+<style lang="scss" scoped>
+#traffic.main-container {
+  padding-left: 200px;
+  padding-right: 200px;
+
+  @media screen and (max-width: 1280px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media screen and (max-width: 900px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+</style>

@@ -1,7 +1,6 @@
 #app.main {
   .main-container {
     position: relative;
-    padding: 84px 250px 0 250px;
     width: 100%;
     box-sizing: border-box;
     // min-height: 100vh;
@@ -11,18 +10,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // padding-top: 84px;
+    padding-top: 84px;
 
     @media screen and (max-width: 1440px) {}
 
     @media screen and (max-width: 1280px) {
       margin-top: 60px;
-      padding: 24px 5% 0;
     }
 
     @media screen and (max-width: 900px) {
       // min-height: auto;
-      padding: 24px 0 0;
     }
 
     h1.title {

@@ -77,32 +77,26 @@ a {
 .staff-group {
   display: flex;
   flex-direction: column;
-  padding: 3em 2em 1.5em 2em;
-  @media screen and (max-width: 900px) {
-    padding: 3em 0.75em 1.5em 0.75em;
+  margin-left: -200px;
+  margin-right: -200px;
+  padding: 0 200px;
+
+  @media screen and (max-width: 1280px) {
+    margin-left: -50px;
+    margin-right: -50px;
+    padding: 0 50px;
   }
-  background-position-x: 100px;
+
+  @media screen and (max-width: 900px) {
+    margin-left: -100px;
+    margin-right: -16px;
+    padding: 0 16px 0 100px;
+  }
 
   &:nth-child(even) {
     background: #e3e3e3;
     img {
       border-color: white !important;
-    }
-  }
-
-  position: relative;
-  &::before {
-    content: "";
-    background: inherit;
-    z-index: -1;
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -128px;
-    right: -128px;
-    @media screen and (max-width: 900px) {
-      right: -16px;
     }
   }
 

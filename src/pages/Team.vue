@@ -1,8 +1,5 @@
 <template>
-  <div class="main-container team-container">
-    <div class="main-title">
-      <p>SITCON團隊</p>
-    </div>
+  <div id="team" class="main-container">
     <div class="main-content">
       <div class="tab-container">
         <div
@@ -106,43 +103,21 @@ export default class Team extends Vue {
 <style lang="scss" scoped>
 @import "@/assets/scss/team";
 
-.team-container {
+#team.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  padding-left: 200px;
+  padding-right: 200px;
+
   @media screen and (max-width: 1280px) {
-    padding-left: 4em !important;
-    padding-right: 4em !important;
+    padding-left: 50px;
+    padding-right: 50px;
   }
   @media screen and (max-width: 900px) {
-    padding-left: 1em !important;
-    padding-right: 1em !important;
-  }
-}
-
-.main-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  font-size: 2em;
-  width: 100%;
-
-  margin-bottom: 2em;
-  @media screen and (max-width: $mobile) {
-    margin-bottom: 1em;
-  }
-
-  p {
-    font-weight: bold;
-    width: 11em;
-
-    border-bottom: 4px solid black;
-    padding-bottom: 0.66em;
-    @media screen and (max-width: $mobile) {
-      border-width: 0;
-      padding-bottom: initial;
-    }
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -167,7 +142,7 @@ export default class Team extends Vue {
   margin-bottom: 5em;
 
   .tab {
-    width: 28%;
+    width: 250px;
     padding: 18px 1em;
     box-sizing: border-box;
     border: solid black 4px;
