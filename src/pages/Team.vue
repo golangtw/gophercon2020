@@ -112,8 +112,8 @@ export default class Team extends Vue {
   padding-right: 200px;
 
   @media screen and (max-width: 1280px) {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
   @media screen and (max-width: 900px) {
     padding-left: 16px;
@@ -150,6 +150,11 @@ export default class Team extends Vue {
     transform: skewX(-15deg);
     transform-origin: center;
     cursor: pointer;
+
+    @media screen and (max-width: 1050px) {
+      width: 200px;
+      padding: 18px 1em;
+    }
 
     &.toggle,
     &:hover {
