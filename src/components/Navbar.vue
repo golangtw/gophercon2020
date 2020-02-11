@@ -215,6 +215,7 @@ $mobile: 900px;
           z-index: 9999;
           
           .menu-inner-container {
+            max-width: 300px;
             width: 80%;
             height: 100%;
             margin-left: auto;
