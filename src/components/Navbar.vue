@@ -9,38 +9,38 @@
           <div class="text__2020 font-bold">2020</div>
         </div>
       </div>
-      <img src="@/assets/images/toggle-button.svg" class="toggle-button" @click="toggleMenu(!isMenuToggled)" />
       <div class="menu" :class="{ toggled: isMenuToggled }">
         <div class="menu__mask" @click.self="toggleMenu(false)">
-          <div class="menu-inner-container">
-            <header>
-              <div class="define-logo">
-                <img class="define-icon" src="@/assets/images/favicon.png">
-                <div class="define-text">
-                  <img src="@/assets/images/define-dark.svg" />
-                  <div class="text-container">
-                    <span class="text__sitcon">SITCON</span>
-                    <span class="text__2020">2020</span>
-                  </div>
+        </div>
+        <div class="menu-inner-container">
+          <header>
+            <div class="define-logo">
+              <img class="define-icon" src="@/assets/images/favicon.png">
+              <div class="define-text">
+                <img src="@/assets/images/define-dark.svg" />
+                <div class="text-container">
+                  <span class="text__sitcon">SITCON</span>
+                  <span class="text__2020">2020</span>
                 </div>
               </div>
-              <!-- <img src="@/assets/images/toggle-button.svg" class="close-button" @click.self="toggleMenu(false)" /> -->
-              <div class="close-button-container">
-                <span class="close-button" @click.self="toggleMenu(false)">+</span>
-              </div>
-            </header>
-            <router-link
-              v-for="item in menu"
-              :key="item.name"
-              :to="item.path"
-              class="menu__item font-bold"
-              :class="{ active: $route.name.includes(item.name) }"
-            >
-              <span>{{ item.meta.label }}</span>
-            </router-link>
-          </div>
+            </div>
+            <!-- <img src="@/assets/images/toggle-button.svg" class="close-button" @click.self="toggleMenu(false)" /> -->
+            <div class="close-button-container">
+              <span class="close-button" @click.self="toggleMenu(false)">+</span>
+            </div>
+          </header>
+          <router-link
+            v-for="item in menu"
+            :key="item.name"
+            :to="item.path"
+            class="menu__item font-bold"
+            :class="{ active: $route.name.includes(item.name) }"
+          >
+            <span>{{ item.meta.label }}</span>
+          </router-link>
         </div>
       </div>
+      <img src="@/assets/images/toggle-button.svg" class="toggle-button" @click="toggleMenu(!isMenuToggled)" />
     </div>
   </nav>
 </template>
@@ -150,47 +150,44 @@ $mobile: 900px;
   
     @media screen and (min-width: $mobile + 1) {
       .menu {
-        .menu__mask {
+        .menu-inner-container {
           height: 100%;
-          .menu-inner-container {
-            height: 100%;
-            display: flex;
+          display: flex;
 
-            header {
-              display: none;
+          header {
+            display: none;
+          }
+
+          .menu__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100px;
+            height: 100%;
+            padding: 0 12px;
+
+            span {
+              position: relative;
+              display: block;
+
+              &:before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: -28px;
+                transform: translateX(-50%);
+                border-bottom: 4px solid $black;
+                min-width: 0;
+                transition: min-width cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.3s;
+              }
             }
 
-            .menu__item {
-              display: flex;
-              justify-content: center;
-              align-items: center;
+            &.active span:before {
               min-width: 100px;
-              height: 100%;
-              padding: 0 12px;
+            }
 
-              span {
-                position: relative;
-                display: block;
-
-                &:before {
-                  content: "";
-                  position: absolute;
-                  left: 50%;
-                  bottom: -28px;
-                  transform: translateX(-50%);
-                  border-bottom: 4px solid $black;
-                  width: 0;
-                  transition: width cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.3s;
-                }
-              }
-
-              &.active span:before {
-                width: 100%;
-              }
-
-              &:hover {
-                background: #f1f1f1;
-              }
+            &:hover {
+              background: #f1f1f1;
             }
           }
         }
@@ -200,12 +197,8 @@ $mobile: 900px;
 
     @media screen and (max-width: $mobile) {
       .menu {
-        display: none;
-      }
-
-      .menu.toggled {
-        display: block;
         .menu__mask {
+          display: none;
           position: fixed;
           top: 0;
           left: 0;
@@ -213,81 +206,93 @@ $mobile: 900px;
           height: 100vh;
           background-color: rgba($color: #000000, $alpha: 0.6);
           z-index: 9999;
+        }
           
-          .menu-inner-container {
-            max-width: 300px;
-            width: 80%;
-            height: 100%;
-            margin-left: auto;
-            background-color: $white;
+        .menu-inner-container {
+          position: fixed;
+          top: 0;
+          right: max(-80vw, -300px);
+          max-width: 300px;
+          width: 80vw;
+          height: 100vh;
+          background-color: $white;
+          display: flex;
+          flex-direction: column;
+          z-index: 99999;
+          transition: right 0.3s;
+
+          header {
             display: flex;
-            flex-direction: column;
-            z-index: 99999;
+            height: $navbar-height-mobile;
+            padding: 0 16px 32px 16px;
 
-            header {
-              display: flex;
-              height: $navbar-height-mobile;
-              padding: 0 16px 32px 16px;
-
-              .define-logo {
-                display: flex;
-                align-items: center;
-
-                img.define-icon {
-                  width: 32px;
-                  height: 32px;
-                }
-
-                .define-text {
-                  transform: scale(0.8);
-
-                  img {
-                    height: 22px;
-                  }
-
-                  .text__sitcon,
-                  .text__2020 {
-                    font-size: 12px;
-                  }
-                }
-              }
-
-              .close-button-container {
-                margin-left: auto;
-                height: 48px;
-
-                span {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  width: 48px;
-                  height: 48px;
-                  font-size: 56px;
-                  transform: rotate(45deg) translate(12px, -6px);
-                }
-              }
-            }
-
-            .menu__item {
+            .define-logo {
               display: flex;
               align-items: center;
-              width: 60%;
-              margin-left: auto;
-              padding: 16px;
-              border-radius: 10px;
-              transform: skewX(-10deg) translateX(32px);
 
-              span {
-                margin-left: auto;
-                transform: skewX(10deg) translateX(-40px);
+              img.define-icon {
+                width: 32px;
+                height: 32px;
               }
 
-              &.active,
-              &:hover {
-                background: $black;
-                color: $white;
+              .define-text {
+                transform: scale(0.8);
+
+                img {
+                  height: 22px;
+                }
+
+                .text__sitcon,
+                .text__2020 {
+                  font-size: 12px;
+                }
               }
             }
+
+            .close-button-container {
+              margin-left: auto;
+              height: 48px;
+
+              span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 48px;
+                height: 48px;
+                font-size: 56px;
+                transform: rotate(45deg) translate(12px, -6px);
+              }
+            }
+          }
+
+          .menu__item {
+            display: flex;
+            align-items: center;
+            width: 60%;
+            margin-left: auto;
+            padding: 16px;
+            border-radius: 10px;
+            transform: skewX(-10deg) translateX(32px);
+
+            span {
+              margin-left: auto;
+              transform: skewX(10deg) translateX(-40px);
+            }
+
+            &.active,
+            &:hover {
+              background: $black;
+              color: $white;
+            }
+          }
+        }
+
+        &.toggled {
+          .menu__mask {
+            display: block;
+          }
+          .menu-inner-container {
+            right: 0;
           }
         }
       }
