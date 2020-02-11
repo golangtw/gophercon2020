@@ -82,9 +82,9 @@ a {
   padding: 0 200px;
 
   @media screen and (max-width: 1280px) {
-    margin-left: -50px;
-    margin-right: -50px;
-    padding: 0 50px;
+    margin-left: -100px;
+    margin-right: -100px;
+    padding: 0 100px;
   }
 
   @media screen and (max-width: 900px) {
