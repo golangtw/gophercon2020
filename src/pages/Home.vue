@@ -4,7 +4,7 @@
       <div class="inner-container">
         <h1 class="title font-black">SITCON 2020</h1>
         <h2 class="subtitle font-black">學生計算機年會</h2>
-        <h3 class="keywords font-black">opensource | student | community</h3>
+        <h3 class="keywords font-black">#define student</h3>
       </div>
     </header>
     <div class="info">
