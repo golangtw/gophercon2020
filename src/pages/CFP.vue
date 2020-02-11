@@ -162,6 +162,7 @@ export default class CFP extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+// do not place scoped here
 @import '../assets/scss/CFP/main.scss';
 </style>
