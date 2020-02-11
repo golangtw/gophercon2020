@@ -1,89 +1,91 @@
-.spotlight {
-  &-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  width: $spotlight-width;
-  padding: 40px $spotlight-padding;
-
-  @media screen and (max-width: 1200px) {
-    width: calc(100% - #{$m-i8-banner-inner-gap * 2});
-    padding: $m-i8-banner-inner-gap * 3 $m-i8-banner-inner-gap;
-  }
-  
-  h1,
-  h2,
-  h3,
-  p,
-  span {
-    color: $black;
-    text-align: center;
-    line-height: 1.4;
-  }
-
-  h1 {
-    margin-bottom: 32px;
-    display: flex;
-    flex-direction: column;
-    font-size: 36px;
-
-    .sub {
-      font-size: 18px;
+#cfp {
+  .spotlight {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
-  }
 
-  p.paragraph {
-    margin-bottom: 1rem;
+    width: $spotlight-width;
+    padding: 40px $spotlight-padding;
 
-    .fix-center {
-      margin-left: 18px * 3;
+    @media screen and (max-width: 1200px) {
+      width: calc(100% - #{$m-i8-banner-inner-gap * 2});
+      padding: $m-i8-banner-inner-gap * 3 $m-i8-banner-inner-gap;
+    }
+    
+    h1,
+    h2,
+    h3,
+    p,
+    span {
+      color: $black;
+      text-align: center;
+      line-height: 1.4;
+    }
 
-      @media screen and (max-width: 410px) {
-        margin-left: 0;
+    h1 {
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      font-size: 36px;
+
+      .sub {
+        font-size: 18px;
       }
     }
-  }
 
-  a {
-    color: $tone;
-    text-decoration: none;
-    transition: all ease-in-out .3s;
+    p.paragraph {
+      margin-bottom: 1rem;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+      .fix-center {
+        margin-left: 18px * 3;
 
-  &:nth-child(2n) {
-    background-color: $gray;
-    
-    h1.title,
-    h2.subtitle,
-    p.paragraph,
-    span {
-      color: $white;
+        @media screen and (max-width: 410px) {
+          margin-left: 0;
+        }
+      }
     }
 
     a {
-      color: $light-tone;
-    }
-  }
+      color: $tone;
+      text-decoration: none;
+      transition: all ease-in-out .3s;
 
-  &:nth-child(3n) {
-    background-color: $dark-tone;
-    
-    h1.title,
-    h2.subtitle,
-    p.paragraph,
-    span {
-      color: $white;
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
-    a {
-      color: $light-tone;
+    &:nth-child(2n) {
+      background-color: $gray;
+      
+      h1.title,
+      h2.subtitle,
+      p.paragraph,
+      span {
+        color: $white;
+      }
+
+      a {
+        color: $light-tone;
+      }
+    }
+
+    &:nth-child(3n) {
+      background-color: $dark-tone;
+      
+      h1.title,
+      h2.subtitle,
+      p.paragraph,
+      span {
+        color: $white;
+      }
+
+      a {
+        color: $light-tone;
+      }
     }
   }
 }
