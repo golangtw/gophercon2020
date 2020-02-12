@@ -79,18 +79,20 @@ a {
   flex-direction: column;
   margin-left: -200px;
   margin-right: -200px;
-  padding: 0 200px;
+  padding: 0 200px 3em 200px;
 
   @media screen and (max-width: 1280px) {
     margin-left: -100px;
     margin-right: -100px;
-    padding: 0 100px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   @media screen and (max-width: 900px) {
     margin-left: -100px;
     margin-right: -16px;
-    padding: 0 16px 0 100px;
+    padding-left: 100px;
+    padding-right: 16px;
   }
 
   &:nth-child(even) {
@@ -102,7 +104,7 @@ a {
 
   .group-name {
     text-align: left;
-    margin-bottom: 0.85em;
+    // margin-bottom: 0.85em;
   }
   .group-intro {
     margin-bottom: 2.5em;
