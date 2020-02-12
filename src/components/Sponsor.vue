@@ -22,7 +22,7 @@ export default class Sponsor extends Vue {
     return sponsorData.map((data) => {
       return {
         ...data,
-        image: require(`@/assets/images/sponsors/${data.image}`)
+        image: `/img/sponsors/${data.image}`
       };
     });
   }
