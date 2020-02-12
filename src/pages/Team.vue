@@ -214,7 +214,7 @@ export default class Team extends Vue {
     transform-origin: center;
 
     position: sticky;
-    top: 68px;
+    top: 80px;
 
     .tab {
       width: 100%;
