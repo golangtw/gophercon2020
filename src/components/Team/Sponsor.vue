@@ -266,6 +266,7 @@ p:not(:last-child) {
       }
       img {
         height: 33vw;
+        max-height: 180px;
         margin: 0 0 1em 0;
       }
     }
