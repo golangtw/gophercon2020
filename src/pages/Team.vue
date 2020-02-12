@@ -1,7 +1,7 @@
 <template>
   <div id="team" class="main-container">
     <div class="main-content">
-      <div class="tab-container">
+      <div v-if="!isInApp" class="tab-container">
         <div
           v-for="tab in tabs"
           :key="`tab-${tab.name}`"
@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import { Vue, Component, Watch } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
 import Sponsor from '@/components/Team/Sponsor.vue';
 import Staff from '@/components/Team/Staff.vue';
 import You from '@/components/Team/You.vue';
@@ -47,6 +48,8 @@ export default class Team extends Vue {
       component: You
     }
   ];
+
+  @Getter('isInApp', { namespace: 'app' }) private isInApp: any;
 
   get tid () {
     return this.$route.params.tid || 'staff';
