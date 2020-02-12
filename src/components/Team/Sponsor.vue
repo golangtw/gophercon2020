@@ -47,9 +47,9 @@
           </div>
           <div class="text-container">
             <h3>{{ sponsor.name }}</h3>
-            <p>{{ sponsor.description.length > 60 && !sponsor.readmore ? `${sponsor.description.substr(0, 60)}...` : sponsor.description }}</p>
-            <p v-show="sponsor.description.length > 60 && !sponsor.readmore" class="readmore">
-              <a @click="sponsor.readmore = true">Read more</a>
+            <p>{{ showReadmoreButton(sponsor) ? `${sponsor.description.substr(0, 60)}...` : sponsor.description }}</p>
+            <p v-show="showReadmoreButton(sponsor)" class="readmore">
+              <a @click="clickReadmore">Read more</a>
             </p>
           </div>
         </div>
@@ -61,6 +61,8 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import sponsorData from '@/../public/json/sponsor.json';
+import { Getter } from 'vuex-class';
+import { DeviceType } from '@/store/types/app';
 
 interface SponsorData {
   name: string;
@@ -89,6 +91,8 @@ export default class Sponsor extends Vue {
 
   public sponsorList: SponsorList = {};
 
+  @Getter('device', { namespace: 'app' }) private device: any;
+
   public created () {
     const sponsorList: SponsorList = {};
     sponsorData.forEach((data) => {
@@ -106,6 +110,19 @@ export default class Sponsor extends Vue {
       });
     });
     this.sponsorList = sponsorList;
+  }
+
+  public showReadmoreButton (sponsor: SponsorData) {
+    return this.device === DeviceType.DESKTOP && sponsor.description.length > 60 && !sponsor.readmore;
+  }
+
+  public clickReadmore () {
+    Object.values(this.sponsorList)
+      .forEach((sponsors: SponsorData[]) => {
+        sponsors.forEach((sponsor) => {
+          sponsor.readmore = true;
+        });
+      });
   }
 }
 </script>
