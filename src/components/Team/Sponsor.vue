@@ -99,7 +99,7 @@ export default class Sponsor extends Vue {
       sponsorList[data.level].push({
         name,
         slug,
-        image: `/img/sponsors/${image}`,
+        image: `${process.env.BASE_URL}img/sponsors/${image}`,
         description,
         url,
         readmore: false
