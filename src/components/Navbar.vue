@@ -2,20 +2,19 @@
   <nav id="nav">
     <div class="nav-inner-container">
       <div class="logo">
-        <img class="logo__icon--normal" src="@/assets/images/logo-dark.svg">
-        <img class="logo__icon--mobile" src="@/assets/images/favicon.png">
+        <img class="logo__icon--normal" src="@/assets/images/logo-dark.svg" />
+        <img class="logo__icon--mobile" src="@/assets/images/favicon.png" />
         <div class="logo__text">
           <div class="text__sitcon font-bold">SITCON</div>
           <div class="text__2020 font-bold">2020</div>
         </div>
       </div>
       <div class="menu" :class="{ toggled: isMenuToggled }">
-        <div class="menu__mask" @click.self="toggleMenu(false)">
-        </div>
+        <div class="menu__mask" @click.self="toggleMenu(false)"></div>
         <div class="menu-inner-container">
           <header>
             <div class="define-logo">
-              <img class="define-icon" src="@/assets/images/favicon.png">
+              <img class="define-icon" src="@/assets/images/favicon.png" />
               <div class="define-text">
                 <img src="@/assets/images/define-dark.svg" />
                 <div class="text-container">
@@ -40,7 +39,11 @@
           </router-link>
         </div>
       </div>
-      <img src="@/assets/images/toggle-button.svg" class="toggle-button" @click="toggleMenu(!isMenuToggled)" />
+      <img
+        src="@/assets/images/toggle-button.svg"
+        class="toggle-button"
+        @click="toggleMenu(!isMenuToggled)"
+      />
     </div>
   </nav>
 </template>
@@ -147,7 +150,7 @@ $mobile: 900px;
         display: inline-block;
       }
     }
-  
+
     @media screen and (min-width: $mobile + 1) {
       .menu {
         .menu-inner-container {
@@ -178,7 +181,8 @@ $mobile: 900px;
                 transform: translateX(-50%);
                 border-bottom: 4px solid $black;
                 min-width: 0;
-                transition: min-width cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.3s;
+                transition: min-width cubic-bezier(0.6, -0.28, 0.735, 0.045)
+                  0.3s;
               }
             }
 
@@ -194,7 +198,6 @@ $mobile: 900px;
       }
     }
 
-
     @media screen and (max-width: $mobile) {
       .menu {
         .menu__mask {
@@ -207,7 +210,7 @@ $mobile: 900px;
           background-color: rgba($color: #000000, $alpha: 0.6);
           z-index: 9999;
         }
-          
+
         .menu-inner-container {
           position: fixed;
           top: 0;
@@ -274,14 +277,19 @@ $mobile: 900px;
             padding: 16px;
             border-radius: 10px;
             transform: skewX(-10deg) translateX(32px);
+            margin-bottom: 0.5em;
 
             span {
               margin-left: auto;
               transform: skewX(10deg) translateX(-40px);
             }
 
-            &.active,
             &:hover {
+              background: #f1f1f1;
+              // color: $white;
+            }
+
+            &.active {
               background: $black;
               color: $white;
             }
@@ -300,5 +308,4 @@ $mobile: 900px;
     }
   }
 }
-
 </style>
