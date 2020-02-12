@@ -26,7 +26,7 @@ const content = (data: any): string => `
 </script>
 <h1 class="title font-black">${data.zh.title}</h1>
 <p class="paragraph">${contentParser(data.zh.description)}</p>
-${data.speakers.map(((speaker: ISpeaker) => (speakerContent(speaker))))}
+${data.speakers.map(((speaker: ISpeaker) => (speakerContent(speaker)))).join('')}
 `;
 
 const speakerContent = (speaker: ISpeaker): string => `
