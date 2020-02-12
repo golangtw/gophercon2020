@@ -9,15 +9,13 @@
           <br />希望能藉由您的一份力量，來促成活動的舉行，讓更多學生能在舞台上展現自我成長。
           <br />歡迎您參與贊助，支持 SITCON、讓我們將每年的活動辦得盡善盡美！
         </p>
-        <p>
+        <p class="give-me-money">
           <a
             href="https://bit.ly/donatesitcon2020"
             class="tons-trans give-me-money"
             target="_blank"
             rel="noopener"
-          >
-            個人贊助辦法
-          </a>
+          >個人贊助辦法</a>
         </p>
         <p class="give-me-money">
           企業贊助亦歡迎來信
@@ -43,11 +41,7 @@
           :class="`card ${entry[0] === 'holder' ? 'host' : 'org'}`"
         >
           <div class="img-container">
-            <a
-              :href="`${sponsor.url}`"
-              target="_blank"
-              rel="noopener"
-            >
+            <a :href="`${sponsor.url}`" target="_blank" rel="noopener">
               <img :alt="sponsor.name" :src="sponsor.image" />
             </a>
           </div>
@@ -275,12 +269,17 @@ p:not(:last-child) {
 
 // Text style and size of cards
 .card-container {
+  .text-container {
+    width: 100%;
+  }
   h3 {
     // Daddy's name
     font-size: 1.5em;
     margin-bottom: 1em;
     font-weight: bold;
     line-height: 1.5em;
+    width: 100%;
+    text-align: start;
 
     @media screen and (max-width: $mobile) {
       font-size: 1.25em;
@@ -290,6 +289,8 @@ p:not(:last-child) {
     // Daddy's info
     word-wrap: break-word;
     line-height: 1.5em;
+    text-align: start;
+    width: 100%;
   }
 }
 
