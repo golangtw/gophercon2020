@@ -22,7 +22,7 @@
         </div>
         <div id="contact" class="column-flex extend">
           <p>
-            <a href="mailto:contact@sitcon.org" class="font-bold">contact@sitcon.org</a>
+            <a href="mailto:contact@sitcon.org" class="font-bold tone-trans">contact@sitcon.org</a>
           </p>
         </div>
       </div>
