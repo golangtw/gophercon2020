@@ -1,16 +1,11 @@
 <template>
-  <div
-    id="app"
-    :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main']"
-  >
-    <Navbar v-if="$route.name !== 'CFP'"/>
-    <router-view/>
-    <Popup
-      :isOpen="isPopup"
-      :content="popupContent"
-    />
-    <SponsorSection/>
-    <Footer/>
+  <div id="app" :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main']">
+    <Navbar v-if="$route.name !== 'CFP' && $route.query.mode !== 'app'" />
+    <div class="nav-bar-height" v-if="$route.name !== 'CFP' && $route.query.mode !== 'app'"></div>
+    <router-view />
+    <Popup :isOpen="isPopup" :content="popupContent" />
+    <SponsorSection />
+    <Footer />
   </div>
 </template>
 
@@ -38,8 +33,10 @@ export default class App extends Vue {
   @Action('toggleTheme', { namespace: 'app' }) private toggleTheme: any;
   @Action('toggleDevice', { namespace: 'app' }) private toggleDevice: any;
   @Action('togglePopup', { namespace: 'app' }) private togglePopup: any;
-  @Action('togglePopupContent', { namespace: 'app' }) private togglePopupContent: any;
-  @Action('getSunRiseSunSetData', { namespace: 'sunRiseSunSet' }) private getSunRiseSunSetData: any;
+  @Action('togglePopupContent', { namespace: 'app' })
+  private togglePopupContent: any;
+  @Action('getSunRiseSunSetData', { namespace: 'sunRiseSunSet' })
+  private getSunRiseSunSetData: any;
   @Getter('device', { namespace: 'app' }) private device: any;
   @Getter('theme', { namespace: 'app' }) private theme: any;
   @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
@@ -71,7 +68,10 @@ export default class App extends Vue {
   private detectedEgg (): boolean {
     const now: Date = new Date();
 
-    return now.getTime() > new Date('2019-10-26').getTime() && now.getTime() < new Date('2019-11-27').getTime();
+    return (
+      now.getTime() > new Date('2019-10-26').getTime() &&
+      now.getTime() < new Date('2019-11-27').getTime()
+    );
   }
 
   private detectDeviceType (): void {
@@ -85,13 +85,21 @@ export default class App extends Vue {
   }
 
   private async detectSystemPrefersColorSchema (): Promise<void> {
-    const isDarkMode: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isLightMode: boolean = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const isDarkMode: boolean = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+    const isLightMode: boolean = window.matchMedia(
+      '(prefers-color-scheme: light)'
+    ).matches;
 
     if (isLightMode) {
-      this.detectedEgg() ? this.toggleTheme('RAINBOW-LIGHT') : this.toggleTheme('LIGHT');
+      this.detectedEgg()
+        ? this.toggleTheme('RAINBOW-LIGHT')
+        : this.toggleTheme('LIGHT');
     } else if (isDarkMode) {
-      this.detectedEgg() ? this.toggleTheme('RAINBOW-DARK') : this.toggleTheme('DARK');
+      this.detectedEgg()
+        ? this.toggleTheme('RAINBOW-DARK')
+        : this.toggleTheme('DARK');
     } else {
       await this.getSunRiseSunSetData();
       this.toggleThemeViaSunRiseSunSet();
@@ -105,7 +113,9 @@ export default class App extends Vue {
   private toggleThemeViaSunRiseSunSet (): void {
     const now = new Date();
     const isEgg: boolean = this.detectedEgg();
-    const isDay: boolean = now.getTime() > this.sunrise.getTime() && now.getTime() < this.sunset.getTime();
+    const isDay: boolean =
+      now.getTime() > this.sunrise.getTime() &&
+      now.getTime() < this.sunset.getTime();
 
     let themePrefix: string = '';
 
@@ -130,7 +140,10 @@ export default class App extends Vue {
   }
 
   private detectedPopUp (): void {
-    if (this.$route.query.popUp && this.validPopupTypes.includes(this.$route.query.popUp)) {
+    if (
+      this.$route.query.popUp &&
+      this.validPopupTypes.includes(this.$route.query.popUp)
+    ) {
       const popupToken = this.$route.query.popUp as keyof TemplateState;
       const template: TemplateState = {
         submitInfo: this.submitInfo as string,
@@ -158,7 +171,9 @@ export default class App extends Vue {
 
   private detectedPopupHashHook (): void {
     if (this.$route.hash) {
-      const target = document.querySelector(`.popup-content>${this.$route.hash}`) as HTMLElement;
+      const target = document.querySelector(
+        `.popup-content>${this.$route.hash}`
+      ) as HTMLElement;
       const popUp = document.querySelector(`.popup-content`) as HTMLElement;
       const popupPadding = 24;
 
@@ -172,5 +187,14 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/main.scss';
+@import "@/assets/scss/main.scss";
+</style>
+
+<style lang="scss" scoped>
+.nav-bar-height {
+  height: 112px;
+  @media screen and (max-width: 900px) {
+    height: 60px;
+  }
+}
 </style>
