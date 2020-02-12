@@ -1,11 +1,16 @@
 <template>
-  <div id="app" :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main']">
-    <Navbar v-if="$route.name !== 'CFP' && $route.query.mode !== 'app'" />
-    <div class="nav-bar-height" v-if="$route.name !== 'CFP' && $route.query.mode !== 'app'"></div>
-    <router-view />
-    <Popup :isOpen="isPopup" :content="popupContent" />
-    <SponsorSection />
-    <Footer />
+  <div
+    id="app"
+    :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main', isInApp ? 'in-app' : '']"
+  >
+    <Navbar v-if="$route.name !== 'CFP' && !isInApp"/>
+    <router-view/>
+    <Popup
+      :isOpen="isPopup"
+      :content="popupContent"
+    />
+    <SponsorSection/>
+    <Footer/>
   </div>
 </template>
 
@@ -18,7 +23,7 @@ import Footer from '@/components/Footer.vue';
 import SponsorSection from '@/components/Sponsor.vue';
 import { TemplateState } from './store/types/template';
 import head from './util/head';
-import { DeviceType } from './store/types/app';
+import { DeviceType, AppMode } from './store/types/app';
 head.reset();
 
 @Component({
@@ -31,6 +36,7 @@ head.reset();
 })
 export default class App extends Vue {
   @Action('toggleTheme', { namespace: 'app' }) private toggleTheme: any;
+  @Action('toggleMode', { namespace: 'app' }) private toggleMode: any;
   @Action('toggleDevice', { namespace: 'app' }) private toggleDevice: any;
   @Action('togglePopup', { namespace: 'app' }) private togglePopup: any;
   @Action('togglePopupContent', { namespace: 'app' })
@@ -40,6 +46,7 @@ export default class App extends Vue {
   @Getter('device', { namespace: 'app' }) private device: any;
   @Getter('theme', { namespace: 'app' }) private theme: any;
   @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
+  @Getter('isInApp', { namespace: 'app' }) private isInApp: any;
   @Getter('popupContent', { namespace: 'app' }) private popupContent: any;
   @Getter('validPopupTypes', { namespace: 'app' }) private validPopupTypes: any;
   @Getter('sunrise', { namespace: 'sunRiseSunSet' }) private sunrise: any;
@@ -49,6 +56,7 @@ export default class App extends Vue {
   @Getter('loudly', { namespace: 'template' }) private loudly: any;
 
   public async mounted () {
+    this.detectAppMode();
     this.detectDeviceType();
     window.addEventListener('resize', this.detectDeviceType);
 
@@ -72,6 +80,16 @@ export default class App extends Vue {
       now.getTime() > new Date('2019-10-26').getTime() &&
       now.getTime() < new Date('2019-11-27').getTime()
     );
+  }
+
+  private detectAppMode (): void {
+    const isApp: boolean = this.$route.query.mode === 'app';
+
+    if (isApp) {
+      this.toggleMode(AppMode.APP);
+    } else {
+      this.toggleDevice(AppMode.WEB);
+    }
   }
 
   private detectDeviceType (): void {
