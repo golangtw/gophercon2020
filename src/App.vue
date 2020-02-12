@@ -9,7 +9,7 @@
       :isOpen="isPopup"
       :content="popupContent"
     />
-    <SponsorSection/>
+    <SponsorSection v-show="!isPopup"/>
     <Footer/>
   </div>
 </template>
