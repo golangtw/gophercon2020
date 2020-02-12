@@ -51,7 +51,6 @@
 <script lang="ts">
 import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
-
 import { MenuItem } from '../store/types/menu';
 
 @Component
@@ -82,6 +81,7 @@ $mobile: 900px;
   height: $navbar-height;
   z-index: 999;
   background-color: $white;
+  box-shadow: 0 2px 4px rgba(0,0,0,.25);
 
   @media screen and (max-width: $mobile) {
     height: $navbar-height-mobile;
