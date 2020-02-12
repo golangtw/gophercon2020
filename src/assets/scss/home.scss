@@ -1,12 +1,5 @@
 #app.main {
   #home.main-container {
-    // margin-top: $navbar-height;
-
-    @media screen and (max-width: 900px) {
-      margin-top: $navbar-height-mobile;
-      width: 100%;
-    }
-  
     .header {
       display: flex;
       width: 50%;
