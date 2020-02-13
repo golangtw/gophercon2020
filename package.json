@@ -30,6 +30,7 @@
     "@vue/cli-plugin-typescript": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "axios": "^0.19.0",
+    "markdown": "^0.5.0",
     "ol": "^6.1.1",
     "prerender-spa-plugin": "^3.4.0",
     "sass": "^1.18.0",
