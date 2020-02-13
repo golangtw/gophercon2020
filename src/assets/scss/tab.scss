@@ -132,6 +132,7 @@
           &:first-child {
             // Tab title (Chinese)
             font-size: 24px;
+            white-space: nowrap;
           }
 
           &:last-child {
