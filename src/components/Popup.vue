@@ -52,7 +52,11 @@ export default class Popup extends Vue {
   }
 
   private closePopup (): void {
-    this.$router.go(-1);
+    if (this.$route.name === 'CFP') {
+      this.$router.push({ name: 'CFP', query: {} });
+    } else if (this.$route.name === 'AgendaView') {
+      this.$router.push({ name: 'Agenda' });
+    }
   }
 
   private detectMetaContent (): void {
