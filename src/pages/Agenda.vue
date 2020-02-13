@@ -75,7 +75,6 @@ export default class Agenda extends Vue {
   public mounted () {
     this.handleSessionPopup();
     this.setMeta();
-    window.addEventListener('keyup', this.escHandler);
   }
 
   private isMobile (): boolean {
@@ -107,12 +106,6 @@ export default class Agenda extends Vue {
     if (this.$route.params.sid) {
       this.popUpSession = this.sessionData.sessions.filter((session) => (session.id === this.$route.params.sid))[0];
       this.processPopup();
-    }
-  }
-
-  private escHandler (event: any): void {
-    if (event.keyCode === 27 && this.$route.name === 'AgendaView') {
-      this.$router.push({ name: 'Agenda' });
     }
   }
 

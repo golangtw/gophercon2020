@@ -2,7 +2,6 @@
   <div
     id="cfp"
     class="main-container"
-    :class="{ 'popuped': isPopup }"
   >
     <Banner/>
     <main class="spotlight-container">

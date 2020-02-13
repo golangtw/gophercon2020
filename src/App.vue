@@ -78,6 +78,8 @@ export default class App extends Vue {
     this.detectDeviceType();
     window.addEventListener('resize', this.detectDeviceType);
 
+    window.addEventListener('keyup', this.escHandler);
+
     await this.detectSystemPrefersColorSchema();
 
     window.matchMedia('(prefers-color-scheme: dark)').addListener(async () => {
@@ -200,6 +202,8 @@ export default class App extends Vue {
           break;
         default: break;
       }
+    } else if (!this.$route.name!.includes('Agenda')) {
+      this.togglePopup(false);
     }
   }
 
@@ -216,6 +220,12 @@ export default class App extends Vue {
       (document.querySelector('body') as HTMLElement).classList.add('popup-scrolling-lock');
     } else {
       (document.querySelector('body') as HTMLElement).classList.remove('popup-scrolling-lock');
+    }
+  }
+
+  private escHandler (event: any): void {
+    if (event.keyCode === 27 && this.isPopup) {
+      this.togglePopup(false);
     }
   }
 }
