@@ -137,7 +137,7 @@ const router = new Router({
         top: target.offsetTop,
         behavior: 'smooth'
       });
-    } else {
+    } else if (!(to.name === 'Agenda' && from.name === 'AgendaView') && !(to.name === 'AgendaView' && from.name === 'Agenda')) {
       return {
         x: 0,
         y: 0

@@ -23,7 +23,6 @@
                 </div>
               </div>
             </div>
-            <!-- <img src="@/assets/images/toggle-button.svg" class="close-button" @click.self="toggleMenu(false)" /> -->
             <div class="close-button-container">
               <span class="close-button" @click.self="toggleMenu(false)">+</span>
             </div>

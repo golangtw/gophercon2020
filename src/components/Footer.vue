@@ -1,8 +1,5 @@
 <template>
-  <footer
-    :class="{ 'popuped': isPopup }"
-    class="footer-container column-flex extend"
-  >
+  <footer id="footer" class="footer-container column-flex extend">
     <div class="top-box extend column-flex">
       <div id="brand" class="column-flex">
         <p class="font-bold">學生計算機年會</p>
@@ -45,12 +42,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
 
 @Component
 export default class Footer extends Vue {
-  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
-
   private communityMedia = [
     {
       icon: ['fab', 'youtube'],
@@ -75,148 +69,3 @@ export default class Footer extends Vue {
   ];
 }
 </script>
-
-<style lang="scss" scoped>
-@import "@/assets/scss/color";
-
-.column-flex {
-  display: flex;
-  flex-direction: column;
-}
-
-.extend {
-  width: 100%;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-p,
-#past a {
-  font-size: 16pt;
-  line-height: 1.33em;
-  @media screen and (max-width: 1280px) {
-    font-size: 14pt;
-  }
-  @media screen and (max-width: 480px) {
-    font-size: 9pt;
-  }
-}
-
-#media {
-  a {
-    height: 32px;
-    margin-right: 36px;
-    @media screen and (max-width: 1280px) {
-      height: 32px;
-      margin-right: 28px;
-    }
-    @media screen and (max-width: 900px) {
-      height: 28px;
-      margin-right: 22px;
-    }
-    @media screen and (max-width: 480px) {
-      height: 21px;
-      margin-right: 18px;
-    }
-  }
-}
-
-.footer-container {
-  box-sizing: border-box;
-  background: black;
-  color: white;
-  padding: 65px 5%;
-
-  &.popuped {
-    opacity: 0;
-  }
-
-  @media screen and (max-width: 900px) {
-    padding: 30px 16% 0 16px;
-  }
-
-  .top-box {
-    display: flex;
-    flex-direction: row;
-    min-height: 10em;
-    @media screen and (max-width: 900px) {
-      flex-direction: column;
-      min-height: initial;
-    }
-
-    #brand,
-    .contact-and-media-container {
-      width: 50%;
-      box-sizing: border-box;
-      padding-left: 5%;
-      padding-right: 5%;
-      @media screen and (max-width: 900px) {
-        width: 100%;
-        padding-left: initial;
-      }
-
-      p {
-        font-size: 13pt;
-      }
-    }
-
-    .contact-and-media-container {
-      @media screen and (max-width: 900px) {
-        flex-direction: column-reverse;
-      }
-    }
-
-    #brand {
-      border-right: 3px white solid;
-      @media screen and (max-width: 900px) {
-        border-right: initial;
-        border-bottom: 1px solid white;
-        padding-bottom: 1.5em;
-        margin-bottom: 1.5em;
-      }
-
-      p:first-child {
-        margin-bottom: 0.8em;
-      }
-    }
-
-    .contact-and-media-container {
-      #media {
-        margin-bottom: 36px;
-
-        @media screen and (max-width: 900px) {
-          margin-top: 1.5em;
-          margin-bottom: 1.5em;
-        }
-
-        a {
-          // icon buttons
-          display: inline-block;
-          width: auto;
-
-          svg {
-            height: 100%;
-            width: auto;
-          }
-        }
-      }
-    }
-  }
-
-  #past {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 36px;
-    padding: 0 7%;
-    box-sizing: border-box;
-    @media screen and (max-width: 900px) {
-      display: none;
-    }
-  }
-}
-</style>

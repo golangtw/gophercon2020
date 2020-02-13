@@ -31,8 +31,7 @@ ${data.speakers.map(((speaker: ISpeaker) => (speakerContent(speaker)))).join('')
 
 const speakerContent = (speaker: ISpeaker): string => `
 <h1 class="title font-black">About ${speaker.zh.name}</h1>
-<p class="paragraph"><img src="${speaker.avatar}" alt="Speaker ${speaker.zh.name}'s avatar" /></p>
-<p class="paragraph">${ speaker.zh.bio ? contentParser(speaker.zh.bio) : '' }</p>
+<p class="paragraph"><img src="${speaker.avatar}" alt="Speaker ${speaker.zh.name}'s avatar" />${ speaker.zh.bio ? contentParser(speaker.zh.bio) : '' }</p>
 `;
 
 const contentParser = (content: string): string => (

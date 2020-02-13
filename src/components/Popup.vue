@@ -1,23 +1,27 @@
 <template>
-  <main
+  <div
     v-if="isOpen"
     class="popup-container"
   >
-    <div
-      class="popup-close" 
-      @click="closePopup()"
-    />
-    <div
-      class="popup-close"
-      @click="closePopup()"
-    >
-      <font-awesome-icon :icon="['fas', 'times']"/>
-    </div>
-    <article
-      v-html="content"
-      class="popup-content"
-    />
-  </main>
+    <main class="popup-placeholder">
+      <div
+        class="popup-close" 
+        @click="closePopup()"
+      />
+      <div
+        class="popup-close"
+        @click="closePopup()"
+      >
+        <font-awesome-icon :icon="['fas', 'times']"/>
+      </div>
+      <div class="popup-content-box">
+        <article
+          v-html="content"
+          class="popup-content"
+        />
+      </div>
+    </main>
+  </div>
 </template>
 
 <script lang="ts">
@@ -40,7 +44,6 @@ export default class Popup extends Vue {
   public onChangePopup (newVal: boolean) {
     if (newVal) {
       this.detectMetaContent();
-      window.scrollTo({ top: 0 });
     }
   }
 
@@ -49,17 +52,7 @@ export default class Popup extends Vue {
   }
 
   private closePopup (): void {
-    if (this.$route.name === 'CFP') {
-      this.$router.push({ query: {} });
-    }
-
-    this.togglePopup(false);
-    setTimeout(() => {
-      window.scrollTo({ top: this.popupOffsetTop });
-    }, 10);
-    setTimeout(() => {
-      this.setPopupOffsetTop(0);
-    }, 100);
+    this.$router.go(-1);
   }
 
   private detectMetaContent (): void {

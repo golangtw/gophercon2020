@@ -19,6 +19,22 @@
 
 #app.main {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+
+  &.popuped {
+    overflow: hidden;
+
+    > *:not(.popup-container) {
+      filter: blur(5px);
+    }
+  }
+}
+
+body {
+  background-color: $white;
+
+  &.popup-scrolling-lock {
+    overflow: hidden;
+  }
 }

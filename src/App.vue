@@ -1,7 +1,12 @@
 <template>
   <div
     id="app"
-    :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main', isInApp() ? 'in-app' : '']"
+    :class="[
+      `theme-${ theme.toLowerCase() }`,
+      $route.name === 'CFP' ? 'cfp' : 'main',
+      isInApp() ? 'in-app' : '',
+      isPopup ? 'popuped' : ''
+    ]"
   >
     <Navbar v-if="$route.name !== 'CFP' && !isInApp()"/>
     <transition :name="transitionDirect.toLowerCase()">
@@ -84,6 +89,11 @@ export default class App extends Vue {
   public onChangeRoute (to: Route, from: Route) {
     this.detectPopupFromLoadURL();
     this.detectTransitionDirect(to, from);
+  }
+
+  @Watch('isPopup')
+  public onChangePopup (value: boolean) {
+    this.toggleBodyLock(value);
   }
 
   public destroyed () {
@@ -198,6 +208,14 @@ export default class App extends Vue {
       this.transitionDirect = TransitionDirect.SLIDE_RIGHT;
     } else {
       this.transitionDirect = TransitionDirect.SLIDE_LEFT;
+    }
+  }
+
+  private toggleBodyLock (isLock: boolean): void {
+    if (isLock) {
+      (document.querySelector('body') as HTMLElement).classList.add('popup-scrolling-lock');
+    } else {
+      (document.querySelector('body') as HTMLElement).classList.remove('popup-scrolling-lock');
     }
   }
 }

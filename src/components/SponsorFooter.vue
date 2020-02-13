@@ -1,9 +1,5 @@
 <template>
-  <section
-    id="sponsor"
-    class="sponsor-footer-container"
-    :class="{ 'popuped': isPopup }"
-  >
+  <section id="sponsor" class="sponsor-footer-container">
     <div 
       v-for="sponsor in sponsors"
       :key="`sponsor-${sponsor.slug}`"
@@ -21,14 +17,11 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
 
 import sponsorData from '@/../public/json/sponsor.json';
 
 @Component
 export default class SponsorFooter extends Vue {
-  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
-
   private sponsors: any = {};
 
   public mounted () {
