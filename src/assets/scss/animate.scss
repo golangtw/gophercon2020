@@ -1,11 +1,3 @@
-a.tone-trans {
-  transition: all ease-in-out 0.3s;
-
-  &:hover {
-    color: $tone;
-  }
-}
-
 .transition-group {
   min-height: 100vh;
   transition-property: transform, opacity;

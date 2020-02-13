@@ -1,0 +1,147 @@
+@mixin Tab {
+  .tab {
+    &-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      padding: 0 200px;
+      margin-bottom: 5em;
+      box-sizing: border-box;
+      transform-origin: center;
+      transform: skewX(-15deg);
+      z-index: 100;
+
+      @media screen and (max-width: 1280px) {
+        padding: 0;
+      }
+
+      @media screen and (max-width: 960px) {
+        top: 64px + 32px;
+        left:16px;
+        position: fixed;
+        min-height: 0;
+        width: 76px;
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 1em;
+        padding: 0;
+        border-radius: 10px;
+        background-color: $black;
+        transform: skewY(-15deg);
+      }
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: calc(100px - 5px * 2);
+    box-sizing: border-box;
+    border: 5px solid $black;
+    border-radius: 18px;
+    transform-origin: center;
+    cursor: pointer;
+
+    &.active,
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+
+    p {
+      transform-origin: center;
+      transform: skewX(15deg);
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+
+      span {
+        font-weight: bold;
+
+        &:first-child {
+          // Tab title (Chinese)
+          margin-bottom: 0.33em;
+          font-size: 2em;
+
+          @media screen and (max-width: 1440px) {
+            font-size: 1.8em;
+          }
+          @media screen and (max-width: 1050px) {
+            font-size: 1.33em;
+          }
+        }
+
+        &:last-child {
+          // Tab subtitle (English)
+          font-size: 1.33em;
+
+          @media screen and (max-width: 1440px) {
+            font-size: 1em;
+          }
+          @media screen and (max-width: 1280px) {
+            font-size: 0.75em;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 960px) {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 1em 0.4em 1.5em 0.4em;
+      transform: initial;
+      border-radius: 10px;
+      border-width: 4px;
+      color: $white;
+
+      &.active,
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+
+      &:not(:first-child) {
+        border-top-width: 0;
+      }
+
+      &:not(.active) {
+        background-color: $black;
+        color: $white;
+      }
+
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+
+      p {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        transform: skewY(15deg);
+
+        span {
+          writing-mode: vertical-lr;
+
+          &:first-child {
+            // Tab title (Chinese)
+            font-size: 24px;
+          }
+
+          &:last-child {
+            // Tab subtitle (English)
+            margin-left: 6px;
+            font-size: 12px;
+            text-indent: 2px;
+          }
+        }
+      }
+    }
+  }
+}

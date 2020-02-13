@@ -1,0 +1,131 @@
+@mixin Staff {
+  .staff {
+    &-container {
+      width: 100%;
+    }
+
+    &-spotlight {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 3em 200px;
+      box-sizing: border-box;
+
+      @media screen and (max-width: 960px) {
+        padding: 2rem;
+        padding-left: calc(2rem + 84px);
+      }
+
+      @media screen and (max-width: 475px) {
+        padding: 1.5rem 1rem;
+        padding-left: calc(1rem + 96px);
+      }
+
+      &:nth-child(odd) {
+        background-color: $white;
+
+        .staff img {
+          border-color: $dark-2;
+        }
+      }
+
+      &:nth-child(even) {
+        background-color: $dark-3;
+
+        .staff img {
+          border-color: $dark-1;
+        }
+      }
+
+      p.paragraph {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 16px;
+
+        a {
+          transition: all ease-in-out 0.3s;
+
+          &:hover {
+            color: $tone;
+            text-decoration: underline;
+          }
+        }
+
+        @media screen and (max-width: 675px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-group {
+      &-name {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      &-intro {
+        font-size: 18px;
+        margin-bottom: 32px !important;
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5em;
+    width: 180px;
+
+    @media screen and (max-width: 960px) {
+      width: 120px;
+    }
+
+    @media screen and (max-width: 675px) {
+      width: 100px;
+    }
+
+    img {
+      object-fit: contain;
+      width: 100px;
+      height: 100px;
+      
+      @media screen and (max-width: 960px) {
+        width: 90px;
+        height: 90px;
+      }
+      
+      @media screen and (max-width: 475px) {
+        width: 70px;
+        height: 70px;
+      }
+
+      border-radius: 12px;
+      background-color: $dark-3;
+      border: transparent 3px solid;
+    }
+
+    p {
+      word-wrap: break-word;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.25rem;
+
+      @media screen and (max-width: 960px) {
+        font-size: 1rem;
+        margin-top: 0.75rem;
+      }
+
+      @media screen and (max-width: 320px) {
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

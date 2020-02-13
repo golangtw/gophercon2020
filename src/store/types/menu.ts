@@ -8,6 +8,7 @@ export interface MenuState {
 export interface MenuItem {
   name: string;
   path: string;
+  redirect?: string;
   component?: VueConstructor<Vue>;
   children?: MenuItem[];
   meta: {

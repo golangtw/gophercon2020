@@ -4,166 +4,37 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding: 0;
 
     @media screen and (max-width: 1280px) {
-      padding-left: 100px;
-      padding-right: 100px;
+      padding: 100px 0;
     }
-    @media screen and (max-width: 900px) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-  }
 
-  .main-content {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
     @media screen and (max-width: 960px) {
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
-  }
-
-  // Desktop layout for tab-bar
-  .tab-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 5em;
-
-    .tab {
-      width: 29%;
-      padding: 18px 1em;
-      box-sizing: border-box;
-      border: solid black 4px;
-      border-radius: 16px !important;
-      transform: skewX(-15deg);
-      transform-origin: center;
-      cursor: pointer;
-
-      &.toggle,
-      &:hover {
-        background: black;
-        color: white;
-      }
-
-      p {
-        transform-origin: center;
-        transform: skewX(15deg);
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-
-        span {
-          font-weight: bold;
-        }
-
-        span:first-child {
-          // Tab title (Chinese)
-          margin-bottom: 0.33em;
-
-          font-size: 2em;
-          @media screen and (max-width: 1440px) {
-            font-size: 1.8em;
-          }
-          @media screen and (max-width: 1050px) {
-            font-size: 1.33em;
-          }
-        }
-
-        span:last-child {
-          // Tab subtitle (English)
-          font-size: 1.33em;
-          @media screen and (max-width: 1440px) {
-            font-size: 1em;
-          }
-          @media screen and (max-width: 1280px) {
-            font-size: 0.75em;
-          }
-        }
-      }
-    }
-  }
-
-  // Mobile layout for tab-bar
-  @media screen and (max-width: 960px) {
-    .tab-container {
-      border-radius: 10px;
-      background: black;
       padding: 0;
-      min-height: 0;
-      margin-right: 1em;
-      width: 76px;
+    }
+  }
 
+  .team {
+    &-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
 
-      transform: skewY(-15deg);
-      transform-origin: center;
+      @media screen and (max-width: 960px) {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
 
-      position: sticky;
-      top: 80px;
-
-      .tab {
+      > .team-subview {
         width: 100%;
-        margin: 0;
-        padding: 1em 0.4em 1.5em 0.4em;
-        transform: initial;
-        border-radius: 10px !important;
-        border-width: 4px;
-        color: white;
-
-        &:not(:first-child) {
-          border-top-width: 0;
-        }
-
-        &:not(.toggle) {
-          background: white;
-          color: black;
-        }
-
-        &:hover {
-          background: black;
-          color: white;
-        }
-
-        p {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          transform-origin: center;
-          transform: skewY(15deg);
-          align-items: flex-start;
-          span {
-            writing-mode: vertical-lr;
-          }
-          span:first-child {
-            // Tab title (Chinese)
-            font-size: 1.44em;
-          }
-          span:last-child {
-            // Tab subtitle (English)
-            font-size: 0.66em;
-            margin-left: 0.66em;
-            margin-top: 3px;
-          }
-        }
       }
     }
   }
 
-  .content-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
+  @include Tab;
+  @include Staff;
 }

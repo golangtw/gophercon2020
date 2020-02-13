@@ -9,7 +9,7 @@ import { routes } from '../../router';
 const namespaced: boolean = true;
 
 const state: MenuState = {
-  menu: routes.filter((route) => (route.meta.menuItem === true)),
+  menu: routes.filter((route) => route.meta.menuItem === true) as any,
   toggle: false
 };
 

@@ -125,6 +125,7 @@ export const routes = [
   },
   {
     path: '/sponsor',
+    name: 'SponsorRedirect',
     redirect: '/team/sponsor',
     meta: {
       label: '贊助',

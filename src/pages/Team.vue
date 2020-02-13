@@ -1,6 +1,6 @@
 <template>
   <div id="team" class="main-container">
-    <div class="main-content">
+    <div class="team-wrapper">
       <div
         v-if="!isInApp()"
         class="tab-container"
@@ -9,7 +9,7 @@
           v-for="tab in tabs"
           :key="`tab-${tab.name}`"
           class="tab"
-          :class="{ toggle: tab.name === $route.name }"
+          :class="{ active: tab.name === $route.name }"
           @click="$router.push({ name: tab.name })"
         >
           <p>
@@ -20,7 +20,7 @@
       </div>
       <transition :name="transitionDirect.toLowerCase()">
         <keep-alive>
-          <router-view class="teams-subview transition-group"/>
+          <router-view class="team-subview transition-group"/>
         </keep-alive>
       </transition>
     </div>

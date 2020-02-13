@@ -10,13 +10,18 @@
 @import 'navbar';
 @import 'footer';
 @import 'spotlight';
+@import 'tab';
+
+@import 'sponsor';
+@import 'staff';
 
 @import 'home';
 @import 'session';
 @import 'venue';
 @import 'activity';
-@import 'sponsor';
 @import 'traffic';
+@import 'team';
+
 
 #app.main {
   width: 100%;
