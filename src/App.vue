@@ -233,25 +233,4 @@ export default class App extends Vue {
 
 <style lang="scss">
 @import "@/assets/scss/main.scss";
-
-.transition-group {
-  min-height: 100vh;
-  transition-property: transform,opacity;
-  transition-duration: .5s;
-  transition-timing-function: cubic-bezier(.55, 0, .1, 1);
-}
-
-.slide-left-enter,
-.slide-right-leave-active {
-  position: absolute;
-  opacity: 0;
-  transform: translateX(50%);
-}
-
-.slide-left-leave-active,
-.slide-right-enter {
-  position: absolute;
-  opacity: 0;
-  transform: translateX(-50%);
-}
 </style>

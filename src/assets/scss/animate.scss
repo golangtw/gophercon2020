@@ -1,7 +1,36 @@
 a.tone-trans {
-    transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
 
-    &:hover {
-        color: $tone;
-    }
+  &:hover {
+    color: $tone;
+  }
+}
+
+.transition-group {
+  min-height: 100vh;
+  transition-property: transform, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(50%);
+
+  &.teams-subview {
+    top: 240px;
+  }
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-50%);
+
+  &.teams-subview {
+    top: 240px;
+  }
 }
