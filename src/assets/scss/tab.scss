@@ -10,7 +10,7 @@
       box-sizing: border-box;
       transform-origin: center;
       transform: skewX(-15deg);
-      z-index: 100;
+      z-index: 1;
 
       @media screen and (max-width: 1280px) {
         padding: 0;
@@ -18,7 +18,7 @@
 
       @media screen and (max-width: 960px) {
         top: 64px + 32px;
-        left:16px;
+        left: 16px;
         position: fixed;
         min-height: 0;
         width: 76px;

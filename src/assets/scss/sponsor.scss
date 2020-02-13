@@ -13,7 +13,7 @@
     @media screen and (max-width: 1280px) {
       padding: 4em 2em;
     }
-    
+
     @media screen and (max-width: 900px) {
       padding: 4em 1em;
     }
@@ -26,13 +26,13 @@
   margin: 1rem;
 
   @media screen and (max-width: 475px) {
-    margin: .5rem;
+    margin: 0.5rem;
   }
 
   a {
     img {
       max-width: 280px;
-      
+
       @media screen and (max-width: 1280px) {
         max-width: 200px;
       }
@@ -43,6 +43,239 @@
 
       @media screen and (max-width: 475px) {
         max-width: 80px;
+      }
+    }
+  }
+}
+
+@mixin Sponsor {
+  .sponsor {
+    &-container {
+      padding: 0 200px;
+
+      @media screen and (max-width: 1280px) {
+        padding: 0 32px;
+      }
+
+      @media screen and (max-width: 960px) {
+        padding: 0 32px;
+        padding-left: 120px;
+      }
+
+      @media screen and (max-width: 675px) {
+        padding: 0 16px;
+        padding-left: 108px;
+      }
+    }
+
+    &-wrapper {
+      h2 {
+        font-size: 32px;
+        margin: 32px 16px;
+      }
+    }
+  }
+
+  .individual-sponsor {
+    display: block;
+    .card {
+      width: 100%;
+    }
+    p {
+      display: block;
+      width: 100%;
+    }
+    p.give-me-money {
+      text-align: center;
+    }
+  }
+
+  // Common layout for host and all sponsors
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 32px;
+      border-radius: 2rem;
+      border: 8px solid $black;
+
+      h2.subtitle {
+        text-align: left;
+        font-size: 24px;
+      }
+
+      p.paragraph {
+        a {
+          transition: all ease-in-out 0.3s;
+
+          &:hover {
+            color: $tone;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      img {
+        height: 180px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &.horizen {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 0;
+        border-radius: 18px;
+
+        img {
+          margin-right: 1em;
+        }
+
+        .text-container {
+          width: 0;
+          flex-grow: 1;
+        }
+
+        @media screen and (max-width: 960px) {
+          flex-direction: column;
+          border-radius: 2rem;
+
+          .text-container {
+            width: auto;
+            flex-grow: auto;
+          }
+        }
+      }
+    }
+  }
+
+  // Layout for organizations other than the host (i.e. sponsor)
+  .org-container {
+    box-sizing: border-box;
+    font-size: 12pt;
+
+    .org {
+      // min-height: calc((100vw - 500px - 66.5px) * 1.414 / 3);
+      align-items: center;
+
+      img {
+        margin-bottom: 1em;
+      }
+
+      // Three cards per row
+      @media screen and (min-width: 1440px + 1) {
+        width: 31.33%;
+        &:not(:nth-child(3n)) {
+          margin-right: 3%;
+        }
+        &:nth-last-child(-n + 3) {
+          margin-bottom: 0;
+        }
+      }
+
+      @media screen and (max-width: 1440px) and (min-width: 960px + 0.001px) {
+        width: 48.5%;
+        &:nth-child(odd) {
+          margin-right: 3%;
+        }
+        &:nth-last-child(-n + 2) {
+          margin-bottom: 0;
+        }
+      }
+
+      @media screen and (max-width: 960px) {
+        width: 100%;
+        &:not(:last-child) {
+          margin-bottom: 2em;
+        }
+      }
+    }
+  }
+
+  // Mobile layout of cards
+  @media screen and (max-width: 960px) {
+    .card-container {
+      display: flex;
+      flex-direction: column;
+
+      .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-width: 5px;
+        padding: 16px;
+        min-height: initial;
+        height: initial;
+        @media screen and (max-width: 480px) {
+          min-height: calc((100vw - 32px - 78px) * 1.414);
+        }
+        .text-container {
+          width: 100%;
+        }
+        img {
+          height: 33vw;
+          max-height: 180px;
+          margin: 0 0 1em 0;
+        }
+      }
+    }
+  }
+
+  // Text style and size of cards
+  .card-container {
+    .text-container {
+      width: 100%;
+    }
+
+    h3 {
+      // Daddy's name
+      width: 100%;
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1.5em;
+      text-align: start;
+
+      @media screen and (max-width: 960px) {
+        font-size: 1.25em;
+      }
+    }
+
+    p {
+      // Daddy's info
+      margin-top: 1em;
+      word-wrap: break-word;
+      line-height: 1.5em;
+      text-align: start;
+      width: 100%;
+    }
+  }
+
+  // Style of the read-more text
+  .readmore {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    text-align: end;
+
+    a {
+      color: $tone;
+      cursor: pointer;
+
+      &:hover {
+        color: $light-tone;
       }
     }
   }

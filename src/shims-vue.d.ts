@@ -6,3 +6,5 @@ declare module '*.vue' {
 declare module '@ccip-app/session-table';
 
 declare module 'spreadsheet-to-json';
+
+declare module 'markdown';

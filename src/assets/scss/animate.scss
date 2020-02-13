@@ -11,8 +11,8 @@
   opacity: 0;
   transform: translateX(50%);
 
-  &.teams-subview {
-    top: 240px;
+  &.team-subview {
+    top: 180px;
   }
 }
 
@@ -22,7 +22,7 @@
   opacity: 0;
   transform: translateX(-50%);
 
-  &.teams-subview {
-    top: 240px;
+  &.team-subview {
+    top: 180px;
   }
 }
