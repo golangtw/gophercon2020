@@ -24,6 +24,14 @@
     "image": "ocf.png"
   },
   {
+    "name": "智慧創新跨域人才培育計畫",
+    "slug": "itsa",
+    "url": "https://www.itsa.org.tw/",
+    "description": "主要推動重點在協助國內大專校院建立多元培育管道，以解決產業界對軟體與服務人才質與量需求日益殷切的問題。\n\n各大專校院⋯⋯透過教育部推廣計畫的補助機制，導入本計畫推動團隊所發展的創作社群服務平臺、線上協同學習平臺(e-tutor)及學習資源服務平臺，已逐步建立創新的培育模式，為國內軟體專業人才培育系所注入向上提升的助力，是國內目前培養軟體人才的主力之一。",
+    "level": "co-organizer",
+    "image": "itsa.png"
+  },
+  {
     "name": "KlickKlack",
     "slug": "klickklack",
     "url": "https://www.kkco.com.tw/",
