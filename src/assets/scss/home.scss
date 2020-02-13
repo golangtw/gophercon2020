@@ -86,11 +86,6 @@
       left: 0;
       z-index: -1;
 
-      .blur-mask {
-        top: calc(-100vw / 16 * 9);
-        filter: blur(20px);
-      }
-
       .video {
         &-container {
           position: relative;
