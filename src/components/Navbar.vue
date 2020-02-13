@@ -1,25 +1,25 @@
 <template>
-  <nav id="nav">
-    <div class="nav-inner-container">
+  <nav id="nav" class="navbar">
+    <div class="navbar-container">
       <div class="logo">
-        <img class="logo__icon--normal" src="@/assets/images/logo-dark.svg" />
-        <img class="logo__icon--mobile" src="@/assets/images/favicon.png" />
-        <div class="logo__text">
-          <div class="text__sitcon font-bold">SITCON</div>
-          <div class="text__2020 font-bold">2020</div>
+        <img class="logo-icon__normal" src="@/assets/images/logo-dark.svg" />
+        <img class="logo-icon__mobile" src="@/assets/images/favicon.png" />
+        <div class="logo-text">
+          <div class="logo-text__sitcon font-bold">SITCON</div>
+          <div class="logo-text__2020 font-bold">2020</div>
         </div>
       </div>
       <div class="menu" :class="{ toggled: isMenuToggled }">
-        <div class="menu__mask" @click.self="toggleMenu(false)"></div>
-        <div class="menu-inner-container">
+        <div class="menu-mask" @click.self="toggleMenu(false)"></div>
+        <div class="menu-container">
           <header>
             <div class="define-logo">
               <img class="define-icon" src="@/assets/images/favicon.png" />
               <div class="define-text">
                 <img src="@/assets/images/define-dark.svg" />
-                <div class="text-container">
-                  <span class="text__sitcon">SITCON</span>
-                  <span class="text__2020">2020</span>
+                <div class="logo-text-container">
+                  <span class="logo-text__sitcon">SITCON</span>
+                  <span class="logo-text__2020">2020</span>
                 </div>
               </div>
             </div>
@@ -32,7 +32,7 @@
             v-for="item in menu"
             :key="item.name"
             :to="item.path"
-            class="menu__item font-bold"
+            class="menu-item font-bold"
             :class="{ active: $route.name.includes(item.name) }"
           >
             <span>{{ item.meta.label }}</span>
@@ -67,245 +67,3 @@ export default class Navbar extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-@import "@/assets/scss/color";
-@import "@/assets/scss/variables";
-$mobile: 900px;
-
-#nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: $navbar-height;
-  z-index: 999;
-  background-color: $white;
-  box-shadow: 0 2px 4px rgba(0,0,0,.25);
-
-  @media screen and (max-width: $mobile) {
-    height: $navbar-height-mobile;
-  }
-
-  .nav-inner-container {
-    display: flex;
-    height: 100%;
-    padding: 0 5%;
-
-    @media screen and (max-width: $mobile) {
-      padding: 0 16px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-
-      img.logo__icon--normal {
-        width: 48px;
-        height: 48px;
-
-        @media screen and (max-width: $mobile) {
-          display: none;
-        }
-      }
-
-      img.logo__icon--mobile {
-        display: none;
-        width: 32px;
-        height: 32px;
-
-        @media screen and (max-width: $mobile) {
-          display: inline-block;
-        }
-      }
-
-      .logo__text {
-        display: none;
-        margin-left: 8px;
-
-        @media screen and (max-width: $mobile) {
-          display: block;
-        }
-
-        & .text__sitcon {
-          font-weight: 700;
-        }
-
-        & .text__2020 {
-          font-size: 12px;
-          color: $dark-1;
-        }
-      }
-    }
-
-    .toggle-button,
-    .menu {
-      margin-left: auto;
-    }
-
-    .toggle-button {
-      display: none;
-
-      @media screen and (max-width: $mobile) {
-        display: inline-block;
-      }
-    }
-
-    @media screen and (min-width: $mobile + 1) {
-      .menu {
-        .menu-inner-container {
-          height: 100%;
-          display: flex;
-
-          header {
-            display: none;
-          }
-
-          .menu__item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 100px;
-            height: 100%;
-            padding: 0 12px;
-
-            span {
-              position: relative;
-              display: block;
-
-              &:before {
-                content: "";
-                position: absolute;
-                left: 50%;
-                bottom: -28px;
-                transform: translateX(-50%);
-                border-bottom: 4px solid $black;
-                min-width: 0;
-                transition: min-width cubic-bezier(0.6, -0.28, 0.735, 0.045)
-                  0.3s;
-              }
-            }
-
-            &.active span:before {
-              min-width: 100px;
-            }
-
-            &:hover {
-              background: #f1f1f1;
-            }
-          }
-        }
-      }
-    }
-
-    @media screen and (max-width: $mobile) {
-      .menu {
-        .menu__mask {
-          display: none;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100vh;
-          background-color: rgba($color: #000000, $alpha: 0.6);
-          z-index: 9999;
-        }
-
-        .menu-inner-container {
-          position: fixed;
-          top: 0;
-          right: max(-80vw, -300px);
-          right: -80vw;
-          max-width: 300px;
-          width: 80vw;
-          height: 100vh;
-          background-color: $white;
-          display: flex;
-          flex-direction: column;
-          z-index: 99999;
-          transition: right 0.3s;
-
-          header {
-            display: flex;
-            height: $navbar-height-mobile;
-            padding: 0 16px 32px 16px;
-
-            .define-logo {
-              display: flex;
-              align-items: center;
-
-              img.define-icon {
-                width: 32px;
-                height: 32px;
-              }
-
-              .define-text {
-                transform: scale(0.8);
-
-                img {
-                  height: 22px;
-                }
-
-                .text__sitcon,
-                .text__2020 {
-                  font-size: 12px;
-                }
-              }
-            }
-
-            .close-button-container {
-              margin-left: auto;
-              height: 48px;
-
-              span {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 48px;
-                height: 48px;
-                font-size: 56px;
-                transform: rotate(45deg) translate(12px, -6px);
-              }
-            }
-          }
-
-          .menu__item {
-            display: flex;
-            align-items: center;
-            width: 60%;
-            margin-left: auto;
-            padding: 16px;
-            border-radius: 10px;
-            transform: skewX(-10deg) translateX(32px);
-            margin-bottom: 0.5em;
-
-            span {
-              margin-left: auto;
-              transform: skewX(10deg) translateX(-40px);
-            }
-
-            &:hover {
-              background: #f1f1f1;
-              // color: $white;
-            }
-
-            &.active {
-              background: $black;
-              color: $white;
-            }
-          }
-        }
-
-        &.toggled {
-          .menu__mask {
-            display: block;
-          }
-          .menu-inner-container {
-            right: 0;
-          }
-        }
-      }
-    }
-  }
-}
-</style>
