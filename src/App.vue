@@ -9,22 +9,23 @@
       :isOpen="isPopup"
       :content="popupContent"
     />
-    <SponsorSection v-show="!isPopup"/>
+    <SponsorSection/>
     <Footer/>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
+
 import Navbar from '@/components/Navbar.vue';
 import Popup from '@/components/Popup.vue';
 import Footer from '@/components/Footer.vue';
 import SponsorSection from '@/components/Sponsor.vue';
-import { TemplateState } from './store/types/template';
-import head from './util/head';
-import { DeviceType, AppMode } from './store/types/app';
-head.reset();
+
+import { TemplateState } from '@/store/types/template';
+import { DeviceType, AppMode, ThemeType } from '@/store/types/app';
+import head from '@/util/head';
 
 @Component({
   components: {
@@ -35,14 +36,12 @@ head.reset();
   }
 })
 export default class App extends Vue {
-  @Action('toggleTheme', { namespace: 'app' }) private toggleTheme: any;
-  @Action('toggleMode', { namespace: 'app' }) private toggleMode: any;
-  @Action('toggleDevice', { namespace: 'app' }) private toggleDevice: any;
-  @Action('togglePopup', { namespace: 'app' }) private togglePopup: any;
-  @Action('togglePopupContent', { namespace: 'app' })
-  private togglePopupContent: any;
-  @Action('getSunRiseSunSetData', { namespace: 'sunRiseSunSet' })
-  private getSunRiseSunSetData: any;
+  @Action('toggleTheme', { namespace: 'app' }) private toggleTheme!: (theme: ThemeType) => void;
+  @Action('toggleMode', { namespace: 'app' }) private toggleMode!: (mode: AppMode) => void;
+  @Action('toggleDevice', { namespace: 'app' }) private toggleDevice!: (device: DeviceType) => void;
+  @Action('togglePopup', { namespace: 'app' }) private togglePopup!: (status: boolean) => void;
+  @Action('togglePopupContent', { namespace: 'app' }) private togglePopupContent!: (content: string) => void;
+  @Action('getSunRiseSunSetData', { namespace: 'sunRiseSunSet' }) private getSunRiseSunSetData: any;
   @Getter('device', { namespace: 'app' }) private device: any;
   @Getter('theme', { namespace: 'app' }) private theme: any;
   @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
@@ -56,6 +55,7 @@ export default class App extends Vue {
   @Getter('loudly', { namespace: 'template' }) private loudly: any;
 
   public async mounted () {
+    this.detectPopupFromLoadURL();
     this.detectAppMode();
     this.detectDeviceType();
     window.addEventListener('resize', this.detectDeviceType);
@@ -65,9 +65,12 @@ export default class App extends Vue {
     window.matchMedia('(prefers-color-scheme: dark)').addListener(async () => {
       await this.detectSystemPrefersColorSchema();
     });
-
-    this.detectedPageBehaviorWithinUrlFallback();
   }
+
+    @Watch('$route')
+    public onChangeRoute () {
+      this.detectPopupFromLoadURL();
+    }
 
   public destroyed () {
     window.removeEventListener('resize', this.detectDeviceType);
@@ -88,7 +91,7 @@ export default class App extends Vue {
     if (isApp) {
       this.toggleMode(AppMode.APP);
     } else {
-      this.toggleDevice(AppMode.WEB);
+      this.toggleMode(AppMode.WEB);
     }
   }
 
@@ -112,12 +115,12 @@ export default class App extends Vue {
 
     if (isLightMode) {
       this.detectedEgg()
-        ? this.toggleTheme('RAINBOW-LIGHT')
-        : this.toggleTheme('LIGHT');
+        ? this.toggleTheme(ThemeType.RAINBOW_LIGHT)
+        : this.toggleTheme(ThemeType.LIGHT);
     } else if (isDarkMode) {
       this.detectedEgg()
-        ? this.toggleTheme('RAINBOW-DARK')
-        : this.toggleTheme('DARK');
+        ? this.toggleTheme(ThemeType.RAINBOW_DARK)
+        : this.toggleTheme(ThemeType.DARK);
     } else {
       await this.getSunRiseSunSetData();
       this.toggleThemeViaSunRiseSunSet();
@@ -138,7 +141,7 @@ export default class App extends Vue {
     let themePrefix: string = '';
 
     if (isEgg) {
-      themePrefix = 'RAINBOW-';
+      themePrefix = 'RAINBOW_';
     } else {
       themePrefix = '';
     }
@@ -149,56 +152,26 @@ export default class App extends Vue {
       themePrefix += 'DARK';
     }
 
-    this.toggleTheme(themePrefix);
+    this.toggleTheme(ThemeType[themePrefix as keyof typeof ThemeType]);
   }
 
-  private detectedPageBehaviorWithinUrlFallback (): void {
-    this.detectedPopUp();
-    this.detectedHashHook();
-  }
-
-  private detectedPopUp (): void {
-    if (
-      this.$route.query.popUp &&
-      this.validPopupTypes.includes(this.$route.query.popUp)
-    ) {
-      const popupToken = this.$route.query.popUp as keyof TemplateState;
-      const template: TemplateState = {
-        submitInfo: this.submitInfo as string,
-        openSubmit: this.openSubmit as string,
-        loudly: this.loudly as string
-      };
-      const popupContent = template[popupToken] as string;
-
-      this.togglePopupContent(popupContent);
-      this.togglePopup(true);
-
-      setTimeout(() => {
-        this.detectedPopupHashHook();
-      }, 500);
-    }
-  }
-
-  private detectedHashHook (): void {
-    if (this.$route.hash) {
-      const target = document.querySelector(this.$route.hash) as HTMLElement;
-
-      window.scrollTo({ top: target.offsetTop });
-    }
-  }
-
-  private detectedPopupHashHook (): void {
-    if (this.$route.hash) {
-      const target = document.querySelector(
-        `.popup-content>${this.$route.hash}`
-      ) as HTMLElement;
-      const popUp = document.querySelector(`.popup-content`) as HTMLElement;
-      const popupPadding = 24;
-
-      return window.scrollTo({
-        top: target.offsetTop + popUp.offsetTop - popupPadding,
-        behavior: 'smooth'
-      });
+  private detectPopupFromLoadURL (): void {
+    if (this.$route.query && this.$route.query.popUp) {
+      switch (this.$route.query.popUp) {
+        case 'submitInfo':
+          this.togglePopup(true);
+          this.togglePopupContent(this.submitInfo);
+          break;
+        case 'openSubmit':
+          this.togglePopup(true);
+          this.togglePopupContent(this.openSubmit);
+          break;
+        case 'loudly':
+          this.togglePopup(true);
+          this.togglePopupContent(this.loudly);
+          break;
+        default: break;
+      }
     }
   }
 }

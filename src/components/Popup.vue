@@ -24,7 +24,7 @@
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
-import head from '../util/head';
+import head from '@/util/head';
 
 @Component
 export default class Popup extends Vue {

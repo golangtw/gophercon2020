@@ -75,9 +75,6 @@
         </a>
       </div>
     </header>
-    <main class="popup-pre-content" ref="submitInfo" v-html="submitInfo" />
-    <main class="popup-pre-content" ref="openSubmit" v-html="openSubmit" />
-    <main class="popup-pre-content" ref="loudly" v-html="loudly" />
   </div>
 </template>
 
@@ -145,10 +142,6 @@ export default class Banner extends Vue {
   }
 
   private processPopup (hook: string): void {
-    const targetDOM = this.$refs[hook] as HTMLElement;
-
-    this.togglePopup(true);
-    this.togglePopupContent(targetDOM.innerHTML);
     this.$router.push({ query: { popUp: hook } });
   }
 }

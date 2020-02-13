@@ -89,9 +89,9 @@ import { Action, Getter } from 'vuex-class';
 import Banner from '@/components/CFP/Banner.vue';
 import BulletScreen from '@/components/CFP/BulletScreen.vue';
 
-import head from '../util/head';
+import { ThemeType } from '@/store/types/app';
 
-const namespace: string = 'app';
+import head from '@/util/head';
 
 @Component({
   components: {
@@ -100,8 +100,8 @@ const namespace: string = 'app';
   }
 })
 export default class CFP extends Vue {
-  @Action('toggleTheme', { namespace }) private toggleTheme: any;
-  @Getter('isPopup', { namespace }) private isPopup: any;
+  @Action('toggleTheme', { namespace: 'app' }) private toggleTheme!: (theme: ThemeType) => void;
+  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
 
   private defineString: string = '';
   private onSend: boolean = false;
@@ -138,7 +138,7 @@ export default class CFP extends Vue {
       try {
         // Detect Egg
         if (this.defineString.toLowerCase().trim().replace(/ /g, '') === 'genderequality') {
-          this.toggleTheme('RAINBOW-DARK');
+          this.toggleTheme(ThemeType.RAINBOW_DARK);
         }
 
         const defineString = this.defineString;
@@ -163,6 +163,5 @@ export default class CFP extends Vue {
 </script>
 
 <style lang="scss">
-// do not place scoped here
-@import '../assets/scss/CFP/main.scss';
+@import '@/assets/scss/CFP/main.scss';
 </style>
