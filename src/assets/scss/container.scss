@@ -16,7 +16,7 @@
     padding-top: 84px;
     margin-top: $navbar-height;
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1024px) {
       margin-top: $navbar-height-mobile;
     }
 
@@ -41,11 +41,5 @@
         }
       }
     }
-
-   // &#traffic {
-   //   width: 100%;
-   ///   margin: 0;
-   //   // margin-top: $navbar-height;
-   // }
   }
 }

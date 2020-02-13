@@ -5,8 +5,8 @@
         <img class="logo-icon__normal" src="@/assets/images/logo-dark.svg" />
         <img class="logo-icon__mobile" src="@/assets/images/favicon.png" />
         <div class="logo-text">
-          <div class="logo-text__sitcon font-bold">SITCON</div>
-          <div class="logo-text__2020 font-bold">2020</div>
+          <div class="logo-text__sitcon font-bold"><span class="font-black">SITCON</span></div>
+          <div class="logo-text__2020 font-bold"><span>2020</span></div>
         </div>
       </div>
       <div class="menu" :class="{ toggled: isMenuToggled }">

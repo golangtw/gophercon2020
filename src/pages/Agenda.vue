@@ -1,6 +1,6 @@
 <template>
   <div 
-    id="session"
+    id="agenda"
     class="main-container"
     :class="{ 'popuped': isPopup }"
     :style="{ top: `${popupOffsetTop * -1}px` }"
@@ -124,19 +124,3 @@ export default class Agenda extends Vue {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-#session.main-container {
-  padding-left: 200px;
-  padding-right: 200px;
-
-  @media screen and (max-width: 1280px) {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-  @media screen and (max-width: 900px) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-</style>
