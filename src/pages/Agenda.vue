@@ -23,8 +23,6 @@ import sessionDOMString from '@/../template/session.mod';
 
 import { DeviceType } from '@/store/types/app';
 
-import head from '@/util/head';
-
 @Component({
   components: {
     CCIPSessionTable
@@ -68,13 +66,11 @@ export default class Agenda extends Vue {
     } else {
       this.popUp = false;
       this.togglePopup(false);
-      this.setMeta();
     }
   }
 
   public mounted () {
     this.handleSessionPopup();
-    this.setMeta();
   }
 
   private isMobile (): boolean {
@@ -92,14 +88,6 @@ export default class Agenda extends Vue {
 
   private getSpeaker (id: string): any {
     return this.sessionData.speakers.find((speaker) => (speaker.id === id));
-  }
-
-  private setMeta (): void {
-    head.title('議程表');
-    head.ogTitle('議程表');
-    head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
-    head.ogUrl('https://sitcon.org/2020/agenda/');
-    head.ogImage('https://sitcon.org/2020/img/og.png');
   }
 
   private handleSessionPopup (): void {

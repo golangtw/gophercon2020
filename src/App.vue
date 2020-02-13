@@ -73,6 +73,7 @@ export default class App extends Vue {
   private transitionDirect: TransitionDirect = TransitionDirect.SLIDE_LEFT;
 
   public async mounted () {
+    this.autoDetectMetaOg();
     this.detectPopupFromLoadURL();
     this.detectAppMode();
     this.detectDeviceType();
@@ -89,6 +90,7 @@ export default class App extends Vue {
 
   @Watch('$route')
   public onChangeRoute (to: Route, from: Route) {
+    this.autoDetectMetaOg();
     this.detectPopupFromLoadURL();
     this.detectTransitionDirect(to, from);
   }
@@ -226,6 +228,51 @@ export default class App extends Vue {
   private escHandler (event: any): void {
     if (event.keyCode === 27 && this.isPopup) {
       this.togglePopup(false);
+    }
+  }
+
+  private autoDetectMetaOg (): void {
+    switch (this.$route.name) {
+      case 'Agenda':
+        head.title('議程表');
+        head.ogTitle('議程表');
+        head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+        head.ogUrl('https://sitcon.org/2020/agenda/');
+        head.ogImage('https://sitcon.org/2020/img/og.png');
+
+        break;
+
+      case 'Traffic':
+        head.title('交通方式');
+        head.ogTitle('交通方式');
+        head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+        head.ogUrl('https://sitcon.org/2020/traffic/');
+        head.ogImage('https://sitcon.org/2020/img/og.png');
+
+        break;
+
+      case 'Team':
+      case 'Team/Staff':
+      case 'Team/Sponsor':
+      case 'Team/You':
+        head.title('SITCON 團隊');
+        head.ogTitle('SITCON 團隊');
+        head.ogDescription('SITCON 學生計算機年會為學生自發組成籌辦的研討會，秉持著以學生為主軸的核心價值，提供一個經驗交流與資訊技術實務分享的平台，進而達到「學以致用、教學相長」的目標；而維繫這樣的交流平台，需要多人的努力及貢獻，亦十分需要在資金上的支持。');
+        head.ogUrl('https://sitcon.org/2020/team/');
+        head.ogImage('https://sitcon.org/2020/img/og.png');
+
+        break;
+
+      case 'Venue':
+        head.title('會場地圖');
+        head.ogTitle('會場地圖');
+        head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+        head.ogUrl('https://sitcon.org/2020/traffic/');
+        head.ogImage('https://sitcon.org/2020/img/og.png');
+
+        break;
+
+      default: break;
     }
   }
 }
