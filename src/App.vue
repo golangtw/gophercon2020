@@ -1,9 +1,9 @@
 <template>
   <div
     id="app"
-    :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main', isInApp ? 'in-app' : '']"
+    :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main', isInApp() ? 'in-app' : '']"
   >
-    <Navbar v-if="$route.name !== 'CFP' && !isInApp"/>
+    <Navbar v-if="$route.name !== 'CFP' && !isInApp()"/>
     <router-view/>
     <Popup
       :isOpen="isPopup"
@@ -25,6 +25,7 @@ import SponsorSection from '@/components/Sponsor.vue';
 
 import { TemplateState } from '@/store/types/template';
 import { DeviceType, AppMode, ThemeType } from '@/store/types/app';
+
 import head from '@/util/head';
 
 @Component({
@@ -41,18 +42,17 @@ export default class App extends Vue {
   @Action('toggleDevice', { namespace: 'app' }) private toggleDevice!: (device: DeviceType) => void;
   @Action('togglePopup', { namespace: 'app' }) private togglePopup!: (status: boolean) => void;
   @Action('togglePopupContent', { namespace: 'app' }) private togglePopupContent!: (content: string) => void;
-  @Action('getSunRiseSunSetData', { namespace: 'sunRiseSunSet' }) private getSunRiseSunSetData: any;
-  @Getter('device', { namespace: 'app' }) private device: any;
-  @Getter('theme', { namespace: 'app' }) private theme: any;
-  @Getter('isPopup', { namespace: 'app' }) private isPopup: any;
-  @Getter('isInApp', { namespace: 'app' }) private isInApp: any;
-  @Getter('popupContent', { namespace: 'app' }) private popupContent: any;
-  @Getter('validPopupTypes', { namespace: 'app' }) private validPopupTypes: any;
-  @Getter('sunrise', { namespace: 'sunRiseSunSet' }) private sunrise: any;
-  @Getter('sunset', { namespace: 'sunRiseSunSet' }) private sunset: any;
-  @Getter('submitInfo', { namespace: 'template' }) private submitInfo: any;
-  @Getter('openSubmit', { namespace: 'template' }) private openSubmit: any;
-  @Getter('loudly', { namespace: 'template' }) private loudly: any;
+  @Action('getSunRiseSunSetData', { namespace: 'sunRiseSunSet' }) private getSunRiseSunSetData!: () => Promise<void>;
+  @Getter('device', { namespace: 'app' }) private device!: DeviceType;
+  @Getter('mode', { namespace: 'app' }) private mode!: AppMode;
+  @Getter('theme', { namespace: 'app' }) private theme!: ThemeType;
+  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
+  @Getter('popupContent', { namespace: 'app' }) private popupContent!: string;
+  @Getter('sunrise', { namespace: 'sunRiseSunSet' }) private sunrise!: Date;
+  @Getter('sunset', { namespace: 'sunRiseSunSet' }) private sunset!: Date;
+  @Getter('submitInfo', { namespace: 'template' }) private submitInfo!: string;
+  @Getter('openSubmit', { namespace: 'template' }) private openSubmit!: string;
+  @Getter('loudly', { namespace: 'template' }) private loudly!: string;
 
   public async mounted () {
     this.detectPopupFromLoadURL();
@@ -67,13 +67,17 @@ export default class App extends Vue {
     });
   }
 
-    @Watch('$route')
-    public onChangeRoute () {
-      this.detectPopupFromLoadURL();
-    }
+  @Watch('$route')
+  public onChangeRoute () {
+    this.detectPopupFromLoadURL();
+  }
 
   public destroyed () {
     window.removeEventListener('resize', this.detectDeviceType);
+  }
+
+  private isInApp (): boolean {
+    return this.mode === AppMode.APP;
   }
 
   private detectedEgg (): boolean {

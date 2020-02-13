@@ -32,7 +32,6 @@ const getters: GetterTree<AppState, RootState> = {
   sight: (state): AppState['sight'] => state.sight,
   theme: (state): AppState['theme'] => state.theme,
   isPopup: (state): AppState['isPopup'] => state.isPopup,
-  isInApp: (state): boolean => state.mode === AppMode.APP,
   popupContent: (state): AppState['popupContent'] => state.popupContent,
   popupOffsetTop: (state): AppState['popupOffsetTop'] => state.popupOffsetTop,
   validPopupTypes: (state): AppState['validPopupTypes'] => state.validPopupTypes
