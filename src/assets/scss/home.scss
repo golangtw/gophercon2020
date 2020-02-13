@@ -2,20 +2,32 @@
   #home.main-container {
     overflow: hidden;
 
+    @media screen and (max-width: 475px) {
+      margin-top: 0;
+    }
+
     .header {
       display: flex;
       width: 50%;
       padding: 60px 40px;
-      background-color: rgba($dark-3, .75);
+      background-color: rgba($white, .7);
       margin-left: calc(-50% + 40px);
       margin-top: 120px;
       margin-bottom: 100px;
       z-index: 1;
       backdrop-filter: blur(20px);
 
+      @media screen and (max-width: 1200px) {
+        margin-top: 60px;
+        margin-bottom: 40px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+      }
+
       @media screen and (max-width: 900px) {
         width: calc(100% - 40px * 2);
         margin-left: 0;
+        backdrop-filter: blur(5px);
       }
 
       @media screen and (max-width: 675px) {
@@ -85,6 +97,15 @@
       top: 0;
       left: 0;
       z-index: -1;
+      transform-origin: 0 0;
+
+      @media screen and (orientation: landscape) and (max-width: 1200px) {
+        transform: scale(1.4);
+      }
+
+      @media screen and (orientation: portrait) and (max-width: 1200px) {
+        transform: translate(0, 100vh) rotate(-90deg) scale(2);
+      }
 
       .video {
         &-container {
@@ -102,6 +123,10 @@
       display: flex;
       width: 100%;
       margin-bottom: 80px;
+
+      @media screen and (max-width: 475px) {
+        margin-top: 20px;
+      }
 
       .left-container,
       .right-container {
@@ -173,11 +198,13 @@
         .left-container,
         .right-container {
           width: 100%;
+          justify-content: flex-start;
         }
 
         .left-container {
           & > div {
             margin: auto;
+            margin-left: 32px;
 
             & > div {
               .date {
@@ -194,6 +221,8 @@
         .right-container {
           .kktix {
             margin: auto;
+            margin-left: 32px;
+
             a {
               border-top-left-radius: 0;
               border-top-right-radius: 20px;
@@ -204,6 +233,10 @@
             }
           }
         }
+      }
+
+      @media screen and (max-width: 475px) {
+        margin-top: 32px;
       }
     }
 
