@@ -1,5 +1,11 @@
 <template>
   <div id="home" class="main-container">
+    <div class="background-video">
+      <video class="video-container" autoplay="autoplay" loop="true" muted="true">
+        <source class="video" src="https://sitcon.org/2020/video/bg-h264.mp4" type="video/mp4">
+        <source class="video blur-mask" src="https://sitcon.org/2020/video/bg-h264.mp4" type="video/mp4">
+      </video>
+    </div>
     <header class="header">
       <div class="inner-container">
         <h1 class="title font-black">SITCON 2020</h1>

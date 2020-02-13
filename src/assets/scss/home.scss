@@ -1,12 +1,17 @@
 #app.main {
   #home.main-container {
+    overflow: hidden;
+
     .header {
       display: flex;
       width: 50%;
-      padding: 30px 40px;
-      background-color: $dark-3;
+      padding: 60px 40px;
+      background-color: rgba($dark-3, .75);
       margin-left: calc(-50% + 40px);
-      margin-bottom: 40px;
+      margin-top: 120px;
+      margin-bottom: 100px;
+      z-index: 1;
+      backdrop-filter: blur(20px);
 
       @media screen and (max-width: 900px) {
         width: calc(100% - 40px * 2);
@@ -69,6 +74,32 @@
           font-size: 28px;
           margin-bottom: 28px;
         }
+      }
+    }
+
+    .background-video {
+      position: fixed;
+      background-color: $white;
+      height: calc(100vw / 16 * 9);
+      width: 100vw;
+      top: 32px;
+      left: 0;
+      z-index: -1;
+
+      .blur-mask {
+        top: calc(-100vw / 16 * 9);
+        filter: blur(20px);
+      }
+
+      .video {
+        &-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
+        width: 100%;
+        height: auto;
       }
     }
 
@@ -182,10 +213,6 @@
     }
 
     .spotlight {
-      p {
-        
-      }
-
       ul {
         list-style-type: initial;
         list-style-position: outside;
