@@ -59,6 +59,10 @@ export default class SitconTatonMask extends Vue {
     @supports (-webkit-appearance: none) and (stroke-color: transparent) {
       & {
         opacity: 1;
+
+        @media screen and (max-width: 1280px) {
+          opacity: 0;
+        }
       }
     }
   }
