@@ -30,7 +30,7 @@
     }
   }
 
-  >p {
+  > p {
     display: flex;
     flex-direction: column;
     color: $dark-1;
@@ -58,8 +58,8 @@
   a {
     color: inherit;
     text-decoration: none;
-    transition: all ease-in-out .3s;
-    
+    transition: all ease-in-out 0.3s;
+
     &:hover {
       color: $tone;
       text-decoration: underline;
@@ -87,7 +87,7 @@
   &#past {
     grid-area: past;
 
-    >p>span:nth-child(2)>a {
+    > p > span:nth-child(2) > a {
       margin-right: 1rem;
 
       @media screen and (max-width: 1024px) {
@@ -104,7 +104,7 @@
       }
     }
 
-    >p>span {
+    > p > span {
       &:nth-child(2) {
         @media screen and (max-width: 1024px) {
           display: flex;
@@ -117,10 +117,10 @@
   &#media {
     grid-area: media;
 
-    >p>span {
+    > p > span {
       line-height: 1.6;
 
-      &:nth-child(2)>a {
+      &:nth-child(2) > a {
         font-size: 2rem;
         margin-right: 1rem;
       }
