@@ -1,7 +1,7 @@
 <template>
   <div id="home" class="main-container">
     <div class="background-video">
-      <video class="video-container" autoplay="autoplay" loop="true" muted="true">
+      <video id="video-player" class="video-container" autoplay="autoplay" loop="true" muted="true">
         <source class="video" src="https://sitcon.org/2020/video/bg-h264.mp4" type="video/mp4">
         <source class="video blur-mask" src="https://sitcon.org/2020/video/bg-h264.mp4" type="video/mp4">
       </video>
@@ -87,7 +87,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Watch, Vue } from 'vue-property-decorator';
 
 import SitconTatonMask from '@/components/SitconTatonMask.vue';
 
@@ -102,10 +102,16 @@ export default class Home extends Vue {
   private sitconTatonMaskHeight: number = 0;
   private sitconTatonMaskWidth: number = 0;
 
+  @Watch('$route')
+  public onRouteChange () {
+    this.continuePlayVideoWhenFocusBack();
+  }
+
   public mounted () {
     head.reset();
     this.measureMaskSize();
     window.addEventListener('resize', this.measureMaskSize);
+    this.continuePlayVideoWhenFocusBack();
   }
 
   public destroyed () {
@@ -117,5 +123,12 @@ export default class Home extends Vue {
     this.sitconTatonMaskWidth = (this.$refs.sitconTatonMask as Element).clientWidth;
   }
 
+
+  private continuePlayVideoWhenFocusBack (): void {
+    const videoPlayerDOM = document.getElementById('video-player') as HTMLMediaElement;
+    if (videoPlayerDOM && videoPlayerDOM.paused) {
+      videoPlayerDOM.play();
+    }
+  }
 }
 </script>

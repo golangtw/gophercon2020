@@ -4,7 +4,11 @@
     :class="[`theme-${ theme.toLowerCase() }`, $route.name === 'CFP' ? 'cfp' : 'main', isInApp() ? 'in-app' : '']"
   >
     <Navbar v-if="$route.name !== 'CFP' && !isInApp()"/>
-    <router-view/>
+    <transition :name="transitionDirect.toLowerCase()">
+      <keep-alive>
+        <router-view class="transition-group"/>
+      </keep-alive>
+    </transition>
     <Popup
       :isOpen="isPopup"
       :content="popupContent"
@@ -15,6 +19,8 @@
 </template>
 
 <script lang="ts">
+import { Route } from 'vue-router';
+
 import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
@@ -27,6 +33,11 @@ import { TemplateState } from '@/store/types/template';
 import { DeviceType, AppMode, ThemeType } from '@/store/types/app';
 
 import head from '@/util/head';
+
+enum TransitionDirect {
+  SLIDE_LEFT = 'slide-left',
+  SLIDE_RIGHT = 'slide-right'
+}
 
 @Component({
   components: {
@@ -54,6 +65,8 @@ export default class App extends Vue {
   @Getter('openSubmit', { namespace: 'template' }) private openSubmit!: string;
   @Getter('loudly', { namespace: 'template' }) private loudly!: string;
 
+  private transitionDirect: TransitionDirect = TransitionDirect.SLIDE_LEFT;
+
   public async mounted () {
     this.detectPopupFromLoadURL();
     this.detectAppMode();
@@ -68,8 +81,9 @@ export default class App extends Vue {
   }
 
   @Watch('$route')
-  public onChangeRoute () {
+  public onChangeRoute (to: Route, from: Route) {
     this.detectPopupFromLoadURL();
+    this.detectTransitionDirect(to, from);
   }
 
   public destroyed () {
@@ -178,18 +192,38 @@ export default class App extends Vue {
       }
     }
   }
+
+  private detectTransitionDirect (to: Route, from: Route): void {
+    if (to.meta.index < from.meta.index) {
+      this.transitionDirect = TransitionDirect.SLIDE_RIGHT;
+    } else {
+      this.transitionDirect = TransitionDirect.SLIDE_LEFT;
+    }
+  }
 }
 </script>
 
 <style lang="scss">
 @import "@/assets/scss/main.scss";
-</style>
 
-<style lang="scss" scoped>
-.nav-bar-height {
-  height: 112px;
-  @media screen and (max-width: 900px) {
-    height: 60px;
-  }
+.transition-group {
+  min-height: 100vh;
+  transition-property: transform,opacity;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(.55, 0, .1, 1);
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-50%);
 }
 </style>
