@@ -28,7 +28,11 @@
       </div>
     </div>
     <div class="spotlight-container">
-      <div class="spotlight sharp-back-taton">
+      <SitconTatonMask :width="sitconTatonMaskWidth" :height="sitconTatonMaskHeight"/>
+      <div class="spotlight sharp-back-taton sitcon-back-taton" ref="sitconTatonMask">
+        <div class="sitcon placeholder">
+          <img src="/img/icons/SITCON-taton-cliped.svg" alt="">
+        </div>
         <h1 class="title has-prefix-icon">
           <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
           <span class="inner font-black">什麼是 SITCON</span>
@@ -79,12 +83,33 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
+import SitconTatonMask from '@/components/SitconTatonMask.vue';
+
 import head from '@/util/head';
 
-@Component
+@Component({
+  components: {
+    SitconTatonMask
+  }
+})
 export default class Home extends Vue {
+  private sitconTatonMaskHeight: number = 0;
+  private sitconTatonMaskWidth: number = 0;
+
   public mounted () {
     head.reset();
+    this.measureMaskSize();
+    window.addEventListener('resize', this.measureMaskSize);
   }
+
+  public destroyed () {
+    window.removeEventListener('resize', this.measureMaskSize);
+  }
+
+  private measureMaskSize (): void {
+    this.sitconTatonMaskHeight = (this.$refs.sitconTatonMask as Element).clientHeight;
+    this.sitconTatonMaskWidth = (this.$refs.sitconTatonMask as Element).clientWidth;
+  }
+
 }
 </script>

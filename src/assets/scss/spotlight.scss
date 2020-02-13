@@ -8,7 +8,7 @@
     min-height: 500px;
 
     &-container {
-      width: 100%; 
+      width: 100%;
     }
 
     @media screen and (max-width: 1280px) {
@@ -31,26 +31,111 @@
 
     &.sharp-back-taton {
       position: relative;
+      z-index: 1;
+
+      p.content {
+        z-index: 10;
+      }
 
       &:before {
         position: absolute;
-        content: '';
-        right: -32px;
+        content: "";
+        right: -96px;
         bottom: 32px;
         height: 100%;
         width: 100%;
-        background-image: url('/img/icons/sharp-back-taton.png');
-        background-size: 25%;
+        background-image: url("/img/icons/sharp-back-taton.png");
+        background-size: 40%;
         background-position: 100% 100%;
         background-repeat: no-repeat;
-        opacity: .24;
+        opacity: 0.24;
+        pointer-events: none;
+        z-index: 0;
 
         @media screen and (max-width: 1440px) {
-          background-size: 50%;
+          background-size: 70%;
         }
 
         @media screen and (max-width: 1200px) {
-          background-size: 75%;
+          background-size: 100%;
+        }
+      }
+    }
+
+    &.sitcon-back-taton {
+      clip-path: url(#SITCON-taton-mask);
+      position: relative;
+      width: calc(100% - (200px + 64px) * 2);
+
+      @media screen and (max-width: 1280px) {
+        width: calc(100% - (100px + 64px) * 2);
+      }
+
+      @media screen and (max-width: 675px) {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        width: calc(100% - 64px);
+        background-color: $black;
+      }
+
+      @media screen and (max-width: 414px) {
+        width: calc(100% - 16px * 2);
+
+        &:before {
+          opacity: 0;
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        background-color: $black;
+        height: 100%;
+        width: calc(100% + 150px);
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      p.content {
+        margin-right: 128px;
+        z-index: 10;
+
+        @media screen and (max-width: 675px) {
+          margin-right: 156px;
+        }
+
+        @media screen and (max-width: 475px) {
+          margin-right: 0;
+        }
+      }
+
+      .sitcon.placeholder {
+        z-index: 0;
+        pointer-events: none;
+        position: absolute;
+        height: 540.6px;
+        width: 228.63px;
+        transform: translate(33px, 37px) scale(0.7);
+        transform-origin: bottom;
+        top: 0;
+        right: 0;
+
+        @media screen and (max-width: 675px) {
+          opacity: 0.7;
+        }
+
+        @media screen and (max-width: 475px) {
+          opacity: 0.3;
+        }
+      }
+
+      /* Safari 11+ */
+      @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+          & {
+            clip-path: polygon(20px 20px, 100% 0%, 100% 100%, 0% 100%);
+            background-color: none;
+          }
         }
       }
     }
@@ -61,7 +146,7 @@
     ul,
     li,
     a,
-    span{
+    span {
       color: $white;
       text-align: left;
       line-height: 1.6;
@@ -70,15 +155,19 @@
     p.content,
     ul {
       margin: 32px 0;
-      font-size: 18px;
+      font-size: 16px;
 
       li {
         padding: 4px 0;
       }
 
+      @media screen and (max-width: 1024px) {
+        font-size: 14px;
+      }
+
       @media screen and (max-width: 675px) {
         margin: 16px 0;
-        font-size: 14px;
+        font-size: 12px;
       }
     }
 
@@ -96,7 +185,7 @@
         grid-template-areas:
           "icon inner_text_1"
           "icon inner_text_2";
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 128px 1fr;
         gap: 16px;
         row-gap: 0px;
         column-gap: 16px;
@@ -104,18 +193,26 @@
         width: auto;
         height: 100%;
 
+        @media screen and (max-width: 675px) {
+          grid-template-columns: 64px 1fr;
+        }
+
         @media screen and (max-width: 375px) {
+          grid-template-columns: 56px 1fr;
           margin-bottom: 32px;
-          font-size: 22px;
         }
 
         > .prefix-icon {
           grid-area: icon;
-          width: auto;
-          height: 100%;
+          width: 128px;
+          height: auto;
+
+          @media screen and (max-width: 675px) {
+            width: 64px;
+          }
 
           @media screen and (max-width: 375px) {
-            width: 64px;
+            width: 56px;
           }
         }
 
@@ -131,7 +228,11 @@
       }
 
       @media screen and (max-width: 675px) {
-        font-size: 24px;
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 475px) {
+        font-size: 18px;
       }
     }
   }
