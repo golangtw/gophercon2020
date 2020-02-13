@@ -81,12 +81,46 @@
         font-weight: 500;
         line-height: 1.2;
       }
+
+      &-tags,
       &-speakers {
         display: flex;
         flex-direction: column;
+      }
 
+      &-speakers {
         span {
           margin-top: 10px;
+        }
+
+        @media screen and (max-width: 960px) {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+      }
+
+      &-tags {
+        span {
+          margin-bottom: 6px;
+        }
+      }
+
+      &-tag {
+        display: inline-block;
+        width: auto;
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 1px 7px;
+        border-radius: 5px;
+        background-color: $dark-1;
+        color: $white;
+        
+        &:before {
+          content: '#'
+        }
+
+        @media screen and (max-width: 960px) {
+          margin-bottom: 4px;
         }
       }
 
@@ -98,7 +132,7 @@
         &.head {
           position: sticky;
           width: calc(100% - 7px * 2);
-          top: 60px;
+          top: $navbar-height-mobile;
           background-color: $black;
           color: $white;
           font-size: 16px;
