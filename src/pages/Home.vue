@@ -31,7 +31,7 @@
       <SitconTatonMask :width="sitconTatonMaskWidth" :height="sitconTatonMaskHeight"/>
       <div class="spotlight sharp-back-taton sitcon-back-taton" ref="sitconTatonMask">
         <div class="sitcon placeholder">
-          <img src="/img/icons/SITCON-taton-cliped.svg" alt="">
+          <img src="@/../public/img/icons/SITCON-taton-cliped.svg" alt="">
         </div>
         <h1 class="title has-prefix-icon">
           <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
