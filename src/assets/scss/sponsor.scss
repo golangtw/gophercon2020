@@ -1,0 +1,49 @@
+.sponsor {
+  &-footer-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 80px 140px;
+    margin-top: 2rem;
+
+    @media screen and (max-width: 1280px) {
+      padding: 4em 2em;
+    }
+    
+    @media screen and (max-width: 900px) {
+      padding: 4em 1em;
+    }
+
+    @media screen and (max-width: 675px) {
+      padding: 0;
+    }
+  }
+
+  margin: 1rem;
+
+  @media screen and (max-width: 475px) {
+    margin: .5rem;
+  }
+
+  a {
+    img {
+      max-width: 280px;
+      
+      @media screen and (max-width: 1280px) {
+        max-width: 200px;
+      }
+
+      @media screen and (max-width: 675px) {
+        max-width: 100px;
+      }
+
+      @media screen and (max-width: 475px) {
+        max-width: 80px;
+      }
+    }
+  }
+}

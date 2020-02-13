@@ -1,5 +1,8 @@
 <template>
-  <footer :class="{ 'popuped': isPopup }" class="footer-container column-flex extend">
+  <footer
+    :class="{ 'popuped': isPopup }"
+    class="footer-container column-flex extend"
+  >
     <div class="top-box extend column-flex">
       <div id="brand" class="column-flex">
         <p class="font-bold">學生計算機年會</p>

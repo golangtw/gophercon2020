@@ -13,7 +13,7 @@
       :isOpen="isPopup"
       :content="popupContent"
     />
-    <SponsorSection/>
+    <SponsorFooter/>
     <Footer/>
   </div>
 </template>
@@ -27,7 +27,7 @@ import { Action, Getter } from 'vuex-class';
 import Navbar from '@/components/Navbar.vue';
 import Popup from '@/components/Popup.vue';
 import Footer from '@/components/Footer.vue';
-import SponsorSection from '@/components/Sponsor.vue';
+import SponsorFooter from '@/components/SponsorFooter.vue';
 
 import { TemplateState } from '@/store/types/template';
 import { DeviceType, AppMode, ThemeType } from '@/store/types/app';
@@ -44,7 +44,7 @@ enum TransitionDirect {
     Navbar,
     Popup,
     Footer,
-    SponsorSection
+    SponsorFooter
   }
 })
 export default class App extends Vue {
