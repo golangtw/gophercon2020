@@ -1,62 +1,137 @@
 #app.main {
-  .spotlight-container {
-    width: 100%;
+  .spotlight {
+    background-color: $black;
+    color: $white;
+    padding: 64px;
+    clip-path: polygon(20px 20px, 100% 0%, 100% 100%, 0% 100%);
+    margin: 42px 200px;
+    min-height: 500px;
 
-    .spotlight {
-      background-color: $black;
+    &-container {
+      width: 100%; 
+    }
+
+    @media screen and (max-width: 1280px) {
+      margin: 42px 100px;
+    }
+
+    @media screen and (max-width: 675px) {
+      width: calc(100% - 32px * 2);
+      min-height: auto;
+      margin: 0;
+      margin-bottom: 32px;
+      padding: 32px;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    @media screen and (max-width: 414px) {
+      width: calc(100% - 16px * 2);
+      padding: 16px;
+    }
+
+    &.sharp-back-taton {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+        right: -32px;
+        bottom: 32px;
+        height: 100%;
+        width: 100%;
+        background-image: url('/img/icons/sharp-back-taton.png');
+        background-size: 25%;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        opacity: .24;
+
+        @media screen and (max-width: 1440px) {
+          background-size: 50%;
+        }
+
+        @media screen and (max-width: 1200px) {
+          background-size: 75%;
+        }
+      }
+    }
+
+    h1.title,
+    h2.subtitle,
+    p.content,
+    ul,
+    li,
+    a,
+    span{
       color: $white;
-      padding: 64px;
-      clip-path: polygon(20px 20px, 100% 0%, 100% 100%, 0% 100%);
-      margin: 42px 200px;
-      min-height: 500px;
+      text-align: left;
+      line-height: 1.6;
+    }
 
-      @media screen and (max-width: 1280px) {
-        margin: 42px 100px;
+    p.content,
+    ul {
+      margin: 32px 0;
+      font-size: 18px;
+
+      li {
+        padding: 4px 0;
       }
 
       @media screen and (max-width: 675px) {
-        width: calc(100% - 64px);
-        min-height: auto;
-        margin: 0;
-        margin-bottom: 32px;
-        padding: 32px;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        margin: 16px 0;
+        font-size: 14px;
       }
+    }
 
-      h1.title,
-      h2.subtitle,
-      p.content,
-      ul,
-      li,
-      a,
-      span{
-        color: $white;
-        text-align: left;
-        line-height: 1.6;
-      }
+    h1:first-child {
+      margin-bottom: 0.5em;
+    }
 
-      p.content,
-      ul {
-        margin: 32px 0;
-        font-size: 18px;
+    h1.title {
+      position: relative;
+      font-size: 26px;
+      line-height: 1.2;
 
-        @media screen and (max-width: 675px) {
-          margin: 16px 0;
-          font-size: 14px;
+      &.has-prefix-icon {
+        display: grid;
+        grid-template-areas:
+          "icon inner_text_1"
+          "icon inner_text_2";
+        grid-template-columns: auto 1fr;
+        gap: 16px;
+        row-gap: 0px;
+        column-gap: 16px;
+        margin-bottom: 64px;
+        width: auto;
+        height: 100%;
+
+        @media screen and (max-width: 375px) {
+          margin-bottom: 32px;
+          font-size: 22px;
+        }
+
+        > .prefix-icon {
+          grid-area: icon;
+          width: auto;
+          height: 100%;
+
+          @media screen and (max-width: 375px) {
+            width: 64px;
+          }
+        }
+
+        > span.inner {
+          &:nth-child(0) {
+            grid-area: inner_text_1;
+          }
+
+          &:nth-child(1) {
+            grid-area: inner_text_2;
+          }
         }
       }
 
-      h1:first-child {
-        margin-bottom: 0.5em;
-      }
-
-      h1.title {
-        font-size: 26px;
-        line-height: 1.2;
-
-        @media screen and (max-width: 675px) {
-          font-size: 24px;
-        }
+      @media screen and (max-width: 675px) {
+        font-size: 24px;
       }
     }
   }

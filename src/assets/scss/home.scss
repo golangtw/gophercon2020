@@ -26,7 +26,7 @@
           margin: auto;
         }
       }
-  
+
       h1.title,
       h2.subtitle,
       p {
@@ -34,7 +34,7 @@
         margin-bottom: 16px;
         line-height: 1;
       }
-  
+
       h1.title {
         font-size: 56px;
 
@@ -50,7 +50,7 @@
           font-size: 64px;
         }
       }
-  
+
       h2.subtitle {
         font-size: 24px;
         margin-bottom: 48px;
@@ -76,7 +76,7 @@
       display: flex;
       width: 100%;
       margin-bottom: 80px;
-      
+
       .left-container,
       .right-container {
         display: flex;
@@ -101,7 +101,7 @@
               font-size: 28px;
               margin-bottom: 8px;
             }
-      
+
             .location {
               font-size: 24px;
             }
@@ -111,7 +111,7 @@
 
       .right-container {
         flex-direction: column-reverse;
-        
+
         .kktix {
           margin-left: 30%;
           margin-right: auto;
@@ -143,13 +143,13 @@
       @media screen and (max-width: 900px) {
         flex-direction: column;
         margin: 80px auto;
-      
+
         .left-container,
         .right-container {
           width: 100%;
         }
 
-        .left-container{
+        .left-container {
           & > div {
             margin: auto;
 
@@ -157,7 +157,7 @@
               .date {
                 font-size: 22px;
               }
-        
+
               .location {
                 font-size: 16px;
               }
@@ -181,11 +181,15 @@
       }
     }
 
-    .spotlight-container {
+    .spotlight {
+      p {
+        
+      }
+
       ul {
         list-style-type: initial;
-        list-style-position: inside;
-        margin-left: 32px;
+        list-style-position: outside;
+        margin-left: 16px;
       }
     }
   }
