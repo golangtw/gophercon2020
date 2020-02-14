@@ -90,6 +90,14 @@
       @media screen and (max-width: 1024px) {
         padding: 32px;
         min-height: calc(100vh - 32px * 2);
+
+        @media not all and (min-resolution: 0.001dpcm) {
+          @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+            & {
+              padding-bottom: 128px;
+            }
+          }
+        }
       }
 
       &::-webkit-scrollbar {
@@ -97,19 +105,23 @@
       }
 
       h1.title,
-      p.paragraph {
+      p.paragraph,
+      h1,
+      p{
         white-space: pre-wrap;
         margin: 0;
       }
 
       h2.subtitle,
+      h2,
       ul,
       iframe {
         margin-bottom: 2rem;
         line-height: 1.4;
       }
 
-      h1.title {
+      h1.title,
+      h1 {
         font-size: 36px;
         margin: 36px 0;
 
@@ -118,7 +130,8 @@
         }
       }
 
-      h2.subtitle {
+      h2.subtitle,
+      h2 {
         font-size: 24px;
 
         @media screen and (max-width: 1024px) {
@@ -126,7 +139,8 @@
         }
       }
 
-      p.paragraph {
+      p.paragraph,
+      p {
         font-size: 18px;
 
         @media screen and (max-width: 1024px) {
@@ -216,7 +230,8 @@
         }
       }
 
-      iframe.embed-video {
+      iframe.embed-video,
+      iframe {
         width: 640px;
         height: 360px;
 
