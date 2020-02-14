@@ -3,6 +3,8 @@
 // !WARNING! DO NOT EDIT THIS TEMPLATE EXCEPT YOU UNDERSTAND WHAT ARE YOU ACTUALLY DO.
 // This is a session template block, edit this and it will auto inject contents as popup-ready DOMElement.
 
+import { markdown } from 'markdown';
+
 export interface ISpeaker {
   id: string;
   avatar?: string;
@@ -31,14 +33,13 @@ ${data.speakers.map(((speaker: ISpeaker) => (speakerContent(speaker)))).join('')
 
 const speakerContent = (speaker: ISpeaker): string => `
 <h1 class="title font-black">About ${speaker.zh.name}</h1>
-<p class="paragraph"><img src="${speaker.avatar}" alt="Speaker ${speaker.zh.name}'s avatar" />${ speaker.zh.bio ? contentParser(speaker.zh.bio) : '' }</p>
+${ speaker.zh.bio ? contentParser(`![Speaker ${speaker.zh.name}'s avatar](${speaker.avatar})` + speaker.zh.bio) : '' }
 `;
 
 const contentParser = (content: string): string => (
-  content.replace(
-    /(?:http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+/gm,
-    `<a href='$&' target='_blank' rel='noopener noreferrer'>$&</a>`
-  )
+  markdown.toHTML(content)
+    .replace(/<p>/gm, '<p class="paragraph">')
+    .replace(/<a /gm, '<a target="_blank" rel="noreferrer"')
 );
 
 export default content;
