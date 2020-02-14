@@ -115,6 +115,11 @@ export default class CFP extends Vue {
   public mounted () {
     this.setMeta();
     this.measureBulletScreenSize();
+    window.addEventListener('resize', this.measureBulletScreenSize);
+  }
+
+  public destroyed () {
+    window.removeEventListener('resize', this.measureBulletScreenSize);
   }
 
   private toggleSendAnimate (): void {
