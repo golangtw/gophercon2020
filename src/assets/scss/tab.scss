@@ -44,6 +44,10 @@
     border-radius: 18px;
     transform-origin: center;
     cursor: pointer;
+    
+    @media screen and (max-width: 1280px) {
+      width: 280px;
+    }
 
     &.active,
     &:hover {
