@@ -17,9 +17,14 @@
         padding-left: calc(2rem + 84px);
       }
 
+      @media screen and (max-width: 675px) {
+        padding: 2rem;
+        padding-left: calc(2rem + 84px);
+      }
+
       @media screen and (max-width: 475px) {
         padding: 1.5rem 1rem;
-        padding-left: calc(1rem + 96px);
+        padding-left: calc(1rem + 84px);
       }
 
       &:nth-child(odd) {
@@ -83,12 +88,28 @@
     margin-bottom: 1.5em;
     width: 180px;
 
+    @media screen and (max-width: 1280px) {
+      width: 140px;
+    }
+
     @media screen and (max-width: 960px) {
       width: 120px;
     }
 
     @media screen and (max-width: 675px) {
       width: 100px;
+    }
+
+    @media screen and (max-width: 414px) {
+      width: 95px;
+    }
+
+    @media screen and (max-width: 375px) {
+      width: 80px;
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 90px;
     }
 
     img {
@@ -100,10 +121,20 @@
         width: 90px;
         height: 90px;
       }
+
+      @media screen and (max-width: 675px) {
+        width: 80px;
+        height: 80px;
+      }
       
       @media screen and (max-width: 475px) {
         width: 70px;
         height: 70px;
+      }
+
+      @media screen and (max-width: 375px) {
+        width: 65px;
+        height: 65px;
       }
 
       border-radius: 12px;
