@@ -10,8 +10,12 @@
     box-sizing: border-box;
     padding: 80px 140px;
     z-index: 10;
-    background-color: rgba($white, .5);
-    backdrop-filter: blur(5px);
+    background-color: $white;
+
+    &.blur-filter {
+      background-color: rgba($white, .5);
+      backdrop-filter: blur(5px);
+    }
 
     @media screen and (max-width: 1280px) {
       padding: 4em 2em;

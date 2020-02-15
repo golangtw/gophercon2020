@@ -18,7 +18,9 @@
       :isOpen="isPopup"
       :content="popupContent"
     />
-    <SponsorFooter/>
+    <SponsorFooter
+      :class="{ 'blur-filter': $route.name === 'Home' }"
+    />
     <Footer/>
   </div>
 </template>
