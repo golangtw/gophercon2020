@@ -18,11 +18,18 @@
           </p>
         </div>
       </div>
-      <transition :name="transitionDirect.toLowerCase()">
+      <transition
+        :name="transitionDirect.toLowerCase()"
+        @before-enter="isTransisting = true"
+        @after-enter="isTransisting = false"
+        @before-leave="isTransisting = true"
+        @after-leave="isTransisting = false"
+      >
         <keep-alive>
           <router-view class="team-subview transition-group"/>
         </keep-alive>
       </transition>
+      <div v-show="isTransisting" class="empty-block"/>
     </div>
   </div>
 </template>
@@ -48,6 +55,7 @@ export default class Team extends Vue {
 
   private tabs: MenuItem[] = [];
   private transitionDirect: TransitionDirect = TransitionDirect.SLIDE_LEFT;
+  private isTransisting: boolean = false;
 
   @Watch('$route')
   public onChangeRoute (to: Route, from: Route) {
