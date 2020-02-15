@@ -15,4 +15,6 @@
 
   @include footer($black, $dark-4);
   @include agenda($black, $dark-1, $white, $dark-3);
+
+  @include trafficDarkImg;
 }

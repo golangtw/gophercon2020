@@ -56,3 +56,9 @@
     }
   }
 }
+
+@mixin trafficDarkImg {
+  .traffic-flow > img {
+    filter: invert(85%);
+  }
+}
