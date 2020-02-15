@@ -1,0 +1,6 @@
+@mixin dark {
+  @include navbar($black, $dark-1, $white, $dark-3);
+  @include navbarDarkIcon;
+
+  @include footer($black, $dark-4);
+}

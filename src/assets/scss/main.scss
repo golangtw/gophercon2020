@@ -22,6 +22,7 @@
 @import 'traffic';
 @import 'team';
 
+@import 'theme/index';
 
 #app.main {
   width: 100%;
@@ -32,6 +33,12 @@
     > *:not(.popup-container) {
       filter: blur(5px);
     }
+  }
+
+  @include light;
+
+  &.theme-dark {
+    @include dark;
   }
 }
 

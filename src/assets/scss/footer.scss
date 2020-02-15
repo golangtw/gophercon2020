@@ -1,7 +1,7 @@
-#app {
+@mixin footer ($backgroundColor, $fontColor) {
   .footer {
     &-container {
-      background-color: rgba($dark-4, 0.5);
+      background-color: rgba($backgroundColor, 0.5);
       backdrop-filter: blur(25px);
       display: grid;
       grid-template-areas:
@@ -10,10 +10,11 @@
         "contact media";
       grid-gap: 42px;
       padding: 64px $main-padding;
+      transition: all ease-in-out 0.3s;
       z-index: 10;
 
       @supports (-moz-animation: none) {
-        background-color: $dark-4;
+        background-color: $backgroundColor,;
       }
 
       @media screen and (max-width: 1024px) {
@@ -40,7 +41,7 @@
     > p {
       display: flex;
       flex-direction: column;
-      color: $dark-1;
+      color: $fontColor;
 
       @media screen and (max-width: 1024px) {
         word-break: break-word;
