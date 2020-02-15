@@ -243,6 +243,11 @@
     }
 
     .spotlight {
+      p,
+      p.content {
+        text-align: left;
+      }
+
       ul {
         list-style-type: initial;
         list-style-position: outside;
