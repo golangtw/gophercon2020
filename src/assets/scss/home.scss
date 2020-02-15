@@ -1,5 +1,6 @@
 #app.main {
   #home.main-container {
+    background-color: $white;
     overflow: hidden;
 
     @media screen and (max-width: 475px) {
@@ -11,6 +12,7 @@
       width: 50%;
       padding: 60px 40px;
       background-color: rgba($white, .7);
+      color: $black;
       margin-left: calc(-50% + 40px);
       margin-top: 120px;
       margin-bottom: 100px;
@@ -96,7 +98,7 @@
       width: 100vw;
       top: 0;
       left: 0;
-      z-index: -1;
+      z-index: 0;
       transform-origin: 0 0;
 
       @media screen and (orientation: landscape) and (max-width: 1200px) {

@@ -1,9 +1,11 @@
-#app.main {
+@mixin container ($backgroundColor, $fontColor) {
   &.in-app .main-container {
     margin-top: 0;
   }
 
   .main-container {
+    background-color: $backgroundColor;
+    color: $fontColor;
     position: relative;
     width: 100%;
     box-sizing: border-box;
