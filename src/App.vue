@@ -75,6 +75,7 @@ export default class App extends Vue {
   public async mounted () {
     this.autoDetectMetaOg();
     this.detectPopupFromLoadURL();
+    this.assignThemePrefixToBody(this.theme);
     this.detectAppMode();
     this.detectDeviceType();
     window.addEventListener('resize', this.detectDeviceType);
@@ -98,6 +99,11 @@ export default class App extends Vue {
   @Watch('isPopup')
   public onChangePopup (value: boolean) {
     this.toggleBodyLock(value);
+  }
+
+  @Watch('theme')
+  public onThemeChange (theme: ThemeType) {
+    this.assignThemePrefixToBody(theme);
   }
 
   public destroyed () {
@@ -185,6 +191,14 @@ export default class App extends Vue {
     }
 
     this.toggleTheme(ThemeType[themePrefix as keyof typeof ThemeType]);
+  }
+
+  private assignThemePrefixToBody (theme: ThemeType): void {
+    const bodyDOM = (document.querySelector('body') as HTMLElement);
+    bodyDOM.classList.remove('theme-dark');
+    bodyDOM.classList.remove('theme-light');
+    bodyDOM.classList.remove('theme-rainbow-dark');
+    bodyDOM.classList.add(`theme-${theme}`);
   }
 
   private detectPopupFromLoadURL (): void {

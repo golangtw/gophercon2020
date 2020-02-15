@@ -24,6 +24,17 @@
 
 @import 'theme/index';
 
+body {
+  &.theme-light {
+    background-color: $white;
+  }
+
+  &.theme-dark,
+  &.theme-rainbow-dark {
+    background-color: $black;
+  }
+}
+
 #app.main {
   width: 100%;
 
@@ -37,7 +48,8 @@
 
   @include light;
 
-  &.theme-dark {
+  &.theme-dark,
+  &.theme-rainbow-dark {
     @include dark;
   }
 }

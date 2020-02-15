@@ -9,7 +9,6 @@
     width: 100%;
     box-sizing: border-box;
     padding: 80px 140px;
-    margin-top: 2rem;
     z-index: 10;
     background-color: rgba($white, .5);
     backdrop-filter: blur(5px);
@@ -56,19 +55,23 @@
   .sponsor {
     &-container {
       padding: 0 200px;
+      padding-bottom: 100px;
 
       @media screen and (max-width: 1280px) {
         padding: 0 32px;
+        padding-bottom: 32px;
       }
 
       @media screen and (max-width: 960px) {
         padding: 0 32px;
         padding-left: 120px;
+        padding-bottom: 32px;
       }
 
       @media screen and (max-width: 675px) {
         padding: 0 16px;
         padding-left: 96px;
+        padding-bottom: 16px;
       }
     }
 
