@@ -54,5 +54,21 @@
     "description": "",
     "level": "thank",
     "image": "hackmd.png"
+  },
+  {
+    "name": "中央研究院資訊服務處",
+    "slug": "its",
+    "url": "https://its.sinica.edu.tw/",
+    "description": "",
+    "level": "thank",
+    "image": "its.png"
+  },
+  {
+    "name": "Linzin 阿哲",
+    "slug": "linzin",
+    "url": "https://www.youtube.com/channel/UC0oosHZ4k1o-zNT21gg5O7A",
+    "description": "",
+    "level": "media",
+    "image": "linzin.png"
   }
 ]

@@ -86,7 +86,8 @@ export default class Sponsor extends Vue {
     'level-1': '深耕級',
     'level-2': '前瞻級',
     'level-3': '新芽級',
-    'thank': '特別感謝'
+    'thank': '特別感謝',
+    'media': '媒體夥伴'
   };
 
   private sponsorList: object = {};
