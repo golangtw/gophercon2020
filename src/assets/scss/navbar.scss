@@ -253,6 +253,6 @@
   .define-icon,
   .define-text > img,
   .toggle-button {
-    filter: invert(100%);
+    filter: invert(100%) grayscale(1);
   }
 }
