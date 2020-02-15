@@ -572,6 +572,9 @@
   {
     "name": "網路組",
     "description": "負責大會當下的網路架設與維護。",
-    "members": []
+    "members": [{
+      "name": "KlickKlack Communications",
+      "emailHash":"D96D04B778F28E77B4B3C9963509966A"
+    }]
   }
 ]
