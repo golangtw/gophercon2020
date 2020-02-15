@@ -1,7 +1,10 @@
 <template>
   <nav id="nav" class="navbar">
     <div class="navbar-container">
-      <div class="logo">
+      <div
+        class="logo"
+        @click="$router.push({ name: 'Home' })"
+      >
         <img class="logo-icon__normal" src="@/assets/images/logo-dark.svg" />
         <img class="logo-icon__mobile" src="@/assets/images/favicon.png" />
         <div class="logo-text">
