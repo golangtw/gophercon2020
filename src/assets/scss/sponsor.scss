@@ -13,7 +13,7 @@
     background-color: $white;
 
     &.blur-filter {
-      background-color: rgba($white, .5);
+      background-color: rgba($white, 0.5);
       backdrop-filter: blur(5px);
     }
 
@@ -223,24 +223,24 @@
       flex-direction: column;
 
       .card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-width: 5px;
-        padding: 16px;
-        min-height: initial;
-        height: initial;
-        @media screen and (max-width: 480px) {
-          min-height: calc((100vw - 32px - 78px) * 1.414);
-        }
-        .text-container {
+        &,
+        &.horizen {
           width: 100%;
-        }
-        img {
-          height: 33vw;
-          max-height: 180px;
-          margin: 0 0 1em 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-width: 5px;
+          padding: 16px;
+
+          .text-container {
+            width: 100%;
+          }
+
+          img {
+            height: 33vw;
+            max-height: 180px;
+            margin: 0 0 1em 0;
+          }
         }
       }
     }
