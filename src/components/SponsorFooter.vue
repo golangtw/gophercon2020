@@ -29,12 +29,14 @@ export default class SponsorFooter extends Vue {
   }
 
   private getSponsor (): void {
-    this.sponsors = sponsorData.map((data) => {
-      return {
-        ...data,
-        image: `https://sitcon.org/2020/img/sponsors/${data.image}`
-      };
-    });
+    this.sponsors = sponsorData
+      .filter((sponsor) => sponsor.level !== 'media' && sponsor.level !== 'thank')
+      .map((sponsor) => {
+        return {
+          ...sponsor,
+          image: `https://sitcon.org/2020/img/sponsors/${sponsor.image}`
+        };
+      });
   }
 }
 </script>
