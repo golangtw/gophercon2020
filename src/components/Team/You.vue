@@ -21,9 +21,11 @@
         height="640"
         width="640"
       />
-      <div class="capture-btn">
-        <font-awesome-icon v-if="!captured" :icon="['fas', 'camera']" @click="captureMedia()" />
-        <font-awesome-icon v-else :icon="['fas', 'download']" @click="downloadImg()" />
+      <div v-if="!captured" class="capture-btn">
+        <font-awesome-icon :icon="['fas', 'camera']" @click="captureMedia()" />
+      </div>
+      <div v-else class="capture-btn">
+        <font-awesome-icon :icon="['fas', 'download']" @click="downloadImg()" />
       </div>
       <p class="paragraph">提示：此頁面將使用您的相機鏡頭拍攝大頭照，請先授與我們您的相機使用權限。</p>
     </div>
@@ -82,34 +84,18 @@ export default class You extends Vue {
     const sourceHeight = (this.preview as any).videoHeight;
     const sourceWidth = (this.preview as any).videoWidth;
 
-    if (sourceHeight < 640 || sourceWidth < 640) {
-      if (sourceWidth > sourceHeight) {
-        ctx.drawImage(
-          this.preview as CanvasImageSource,
-          (sourceWidth - sourceHeight) / 2, 0, sourceHeight, sourceHeight,
-          0, 0, 640 * dpr, 640 * dpr
-        );
-      } else {
-        ctx.drawImage(
-          this.preview as CanvasImageSource,
-          0, (sourceHeight - sourceWidth) / 2, sourceWidth, sourceWidth,
-          0, 0, 640 * dpr, 640 * dpr
-        );
-      }
+    if (sourceWidth > sourceHeight) {
+      ctx.drawImage(
+        this.preview as CanvasImageSource,
+        (sourceWidth - sourceHeight) / 2, 0, sourceHeight, sourceHeight,
+        0, 0, 640 * dpr, 640 * dpr
+      );
     } else {
-      if (sourceWidth > sourceHeight) {
-        ctx.drawImage(
-          this.preview as CanvasImageSource,
-          (sourceWidth - sourceHeight) / 2, 0, sourceHeight, sourceHeight,
-          0, 0, 640 * dpr, 640 * dpr
-        );
-      } else {
-        ctx.drawImage(
-          this.preview as CanvasImageSource,
-          0, (sourceHeight - sourceWidth) / 2, sourceWidth, sourceWidth,
-          0, 0, 640 * dpr, 640 * dpr
-        );
-      }
+      ctx.drawImage(
+        this.preview as CanvasImageSource,
+        0, (sourceHeight - sourceWidth) / 2, sourceWidth, sourceWidth,
+        0, 0, 640 * dpr, 640 * dpr
+      );
     }
 
     const defineImg = new Image();
