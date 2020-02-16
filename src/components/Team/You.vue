@@ -10,7 +10,7 @@
           class="preview"
           muted="true"
           autoplay
-          playinline
+          playsinline
         />
         <img id="define-img" class="define" src="https://sitcon.org/2020/img/define.jpg"/>
       </div>
