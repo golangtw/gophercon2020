@@ -1,0 +1,98 @@
+#you {
+  @media screen and (max-width: 700px) {
+    margin-top: -8rem;
+  };
+
+  @media screen and (max-width: 600px) {
+    margin-top: -12rem;
+  };
+
+  .staff-spotlight {
+    justify-content: center;
+    align-items: center;
+    
+    p.paragraph {
+      text-align: center;
+    }
+  }
+
+  .frame,
+  .snapshot {
+    position: relative;
+    width: 640px;
+    height: 640px;
+    margin: 1rem;
+    object-fit: cover;
+    overflow: hidden;
+
+    @media screen and (max-width: 800px) {
+      transform: scale(0.8);
+    };
+
+    @media screen and (max-width: 700px) {
+      transform: scale(0.7);
+    };
+
+    @media screen and (max-width: 600px) {
+      transform: scale(0.5);
+    };
+
+    @media screen and (max-width: 475px) {
+      transform: scale(0.4);
+    };
+
+    @media screen and (max-width: 375px) {
+      transform: scale(0.3);
+    };
+  }
+
+  .frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid $black;
+    box-sizing: border-box;
+
+    .preview {
+      height: 640px;
+      width: auto;
+    }
+
+    .define {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .capture-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    width: 640px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: $black;
+    color: $white;
+    font-size: 32px;
+    cursor: pointer;
+
+    @media screen and (max-width: 800px) {
+      width: calc(100% - 1rem * 2);
+    };
+
+    @media screen and (max-width: 700px) {
+      margin-top: -4rem;
+    };
+
+    @media screen and (max-width: 600px) {
+      margin-top: -8rem;
+    };
+
+    @media screen and (max-width: 400px) {
+      margin-top: -12rem;
+    };
+  }
+}
