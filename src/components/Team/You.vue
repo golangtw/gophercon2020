@@ -9,6 +9,8 @@
           id="preview"
           class="preview"
           muted="true"
+          height="1200"
+          width="1200"
           autoplay
           playsinline
         />
@@ -44,7 +46,7 @@ export default class You extends Vue {
   private captured: boolean = false;
 
   @Watch('$route')
-  public onChangeRoute(route: Route) {
+  public onChangeRoute (route: Route) {
     if (route.name !== 'Team/Video') {
       this.turnOffCapture();
     }

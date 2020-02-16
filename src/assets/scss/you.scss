@@ -54,8 +54,9 @@
     box-sizing: border-box;
 
     .preview {
-      height: 640px;
-      width: auto;
+      height: 1200px;
+      width: 1200px;
+      position: absolute;
     }
 
     .define {
