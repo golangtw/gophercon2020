@@ -124,6 +124,7 @@ export default class You extends Vue {
       fakeLink.click();
     });
 
+    this.captured = false;
     this.prepareEnviorment();
     this.setupCamera();
   }
