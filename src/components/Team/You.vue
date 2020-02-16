@@ -11,7 +11,7 @@
           autoplay
           playinline
         />
-        <img id="define-img" class="define" src="/img/define.jpg"/>
+        <img id="define-img" class="define" src="https://sitcon.org/2020/img/define.jpg"/>
       </div>
       <canvas
         id="snapshot"
