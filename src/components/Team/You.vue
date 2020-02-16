@@ -8,6 +8,7 @@
         <video
           id="preview"
           class="preview"
+          muted="true"
           autoplay
           playinline
         />
