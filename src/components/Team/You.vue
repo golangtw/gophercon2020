@@ -46,6 +46,10 @@ export default class You extends Vue {
     this.setupCamera();
   }
 
+  public destroyed () {
+    this.turnOffCapture();
+  }
+
   private prepareEnviorment (): void {
     this.preview = document.querySelector('#preview') as HTMLMediaElement;
     this.snapshot = document.querySelector('#snapshot') as HTMLCanvasElement;
@@ -102,6 +106,10 @@ export default class You extends Vue {
     ctx.clip();
     this.captured = true;
 
+    this.turnOffCapture();
+  }
+
+  private turnOffCapture () {
     this.videoTracks.forEach((track: any) => {
       track.stop();
     });
@@ -114,6 +122,9 @@ export default class You extends Vue {
       fakeLink.download = 'avatar.png';
       fakeLink.click();
     });
+
+    this.prepareEnviorment();
+    this.setupCamera();
   }
 }
 </script>
