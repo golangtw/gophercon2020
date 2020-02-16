@@ -21,11 +21,8 @@
         height="640"
         width="640"
       />
-      <div
-        class="capture-btn"
-        @click="captureMedia()"
-      >
-        <font-awesome-icon v-if="!captured" :icon="['fas', 'camera']" />
+      <div class="capture-btn">
+        <font-awesome-icon v-if="!captured" :icon="['fas', 'camera']" @click="captureMedia()" />
         <font-awesome-icon v-else :icon="['fas', 'download']" @click="downloadImg()" />
       </div>
       <p class="paragraph">提示：此頁面將使用您的相機鏡頭拍攝大頭照，請先授與我們您的相機使用權限。</p>
