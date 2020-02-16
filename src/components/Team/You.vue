@@ -23,11 +23,11 @@
         height="640"
         width="640"
       />
-      <div v-if="!captured" class="capture-btn">
-        <font-awesome-icon :icon="['fas', 'camera']" @click="captureMedia()" />
+      <div v-if="!captured" class="capture-btn" @click="captureMedia()">
+        <font-awesome-icon :icon="['fas', 'camera']"/>
       </div>
-      <div v-else class="capture-btn">
-        <font-awesome-icon :icon="['fas', 'download']" @click="downloadImg()" />
+      <div v-else class="capture-btn" @click="downloadImg()">
+        <font-awesome-icon :icon="['fas', 'download']"/>
       </div>
       <p class="paragraph">提示：此頁面將使用您的相機鏡頭拍攝大頭照，請先授與我們您的相機使用權限。</p>
     </div>
