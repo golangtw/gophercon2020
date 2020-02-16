@@ -92,16 +92,24 @@ export default class You extends Vue {
       } else {
         ctx.drawImage(
           this.preview as CanvasImageSource,
-          (sourceHeight - sourceWidth) / 2, 0, sourceWidth, sourceWidth,
+          0, (sourceHeight - sourceWidth) / 2, sourceWidth, sourceWidth,
           0, 0, 640 * dpr, 640 * dpr
         );
       }
     } else {
-      ctx.drawImage(
-        this.preview as CanvasImageSource,
-        (sourceWidth - 640) / 2, (sourceHeight - 640) / 2, 640, 640,
-        0, 0, 640 * dpr, 640 * dpr
-      );
+      if (sourceWidth > sourceHeight) {
+        ctx.drawImage(
+          this.preview as CanvasImageSource,
+          (sourceWidth - sourceHeight) / 2, 0, sourceHeight, sourceHeight,
+          0, 0, 640 * dpr, 640 * dpr
+        );
+      } else {
+        ctx.drawImage(
+          this.preview as CanvasImageSource,
+          0, (sourceHeight - sourceWidth) / 2, sourceWidth, sourceWidth,
+          0, 0, 640 * dpr, 640 * dpr
+        );
+      }
     }
 
     const defineImg = new Image();
