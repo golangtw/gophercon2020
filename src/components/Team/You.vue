@@ -34,13 +34,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Route } from 'vue-router';
+import { Component, Watch, Vue } from 'vue-property-decorator';
+
 @Component
 export default class You extends Vue {
   private preview!: HTMLMediaElement;
   private snapshot!: HTMLCanvasElement;
   private videoTracks!: any;
   private captured: boolean = false;
+
+  @Watch('$route')
+  public onChangeRoute(route: Route) {
+    if (route.name !== 'Team/Video') {
+      this.turnOffCapture();
+    }
+  }
 
   public mounted () {
     this.prepareEnviorment();
@@ -106,8 +115,6 @@ export default class You extends Vue {
     ctx.rect(0, 0, 640 * dpr, 640 * dpr);
     ctx.clip();
     this.captured = true;
-
-    this.turnOffCapture();
   }
 
   private turnOffCapture () {
@@ -123,10 +130,6 @@ export default class You extends Vue {
       fakeLink.download = 'avatar.png';
       fakeLink.click();
     });
-
-    this.captured = false;
-    this.prepareEnviorment();
-    this.setupCamera();
   }
 }
 </script>
