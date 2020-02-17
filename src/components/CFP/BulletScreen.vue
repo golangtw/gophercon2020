@@ -17,9 +17,7 @@
       :opacity="active ? 1 : 0"
       font-family="Noto Sans TC"
       font-style="italic"
-    >
-      {{ msg }}
-    </text>
+    >{{ msg }}</text>
   </svg>
 </template>
 
@@ -29,9 +27,9 @@ import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 const fontWeights = [400, 500, 700, 900];
 
 interface Vectory {
-    x: number;
-    y: number;
-  }
+  x: number;
+  y: number;
+}
 
 @Component
 export default class BulletScreen extends Vue {
@@ -45,17 +43,15 @@ export default class BulletScreen extends Vue {
   private fontWeightSets: number[] = Array(this.quality).fill(400);
   private fontSizeSets: number[] = Array(this.quality).fill(24);
   private coordinates: Vectory[] = Array(this.quality).fill({ x: 0, y: 0 });
+  private intervalHook!: number;
 
   @Watch('active', { immediate: true, deep: true })
   public onActiveChange (newVal: boolean, oldVal: boolean) {
     this.initPosition();
-
-    let intervalHook;
-
     if (newVal === true && oldVal === false) {
-      intervalHook = setInterval(this.accelerator, 1);
+      this.intervalHook = setInterval(this.accelerator, 5);
     } else {
-      clearInterval(intervalHook);
+      clearInterval(this.intervalHook);
       this.initPosition();
     }
   }
@@ -81,23 +77,31 @@ export default class BulletScreen extends Vue {
   }
 
   private calcAcceleration (index: number): number {
-    const textLengthRaito = (this.msg.replace(/[^\x00-\xff]/g, 'xx').length * (this.fontSizeSets[index] + 2));
+    const textLengthRaito =
+      this.msg.replace(/[^\x00-\xff]/g, 'xx').length *
+      (this.fontSizeSets[index] + 2);
     const base = 10;
     const randomlized = (Math.random() - 0.5) * 25;
-    return base * textLengthRaito / (this.width * 1.5) + randomlized;
+    return (base * textLengthRaito) / (this.width * 1.5) + randomlized;
   }
 
   private initPosition (): void {
     const textLength = this.msg.replace(/[^\x00-\xff]/g, 'xx').length;
     const randomlizedBase = (Math.random() - 0.5) * 100 - 100;
 
-    this.fontWeightSets = this.fontWeightSets.map(() => (this.randomFontWeight()));
-    this.fontSizeSets = this.fontSizeSets.map(() => (this.randomSize(24, 200)));
-    this.accelerations = this.accelerations.map((_, index: number) => (this.calcAcceleration(index)));
-    this.coordinates = this.coordinates.map((originVal: Vectory, index: number) => ({
-      x: randomlizedBase - textLength * (this.fontSizeSets[index] + 2),
-      y: this.randomPositionY()
-    }));
+    this.fontWeightSets = this.fontWeightSets.map(() =>
+      this.randomFontWeight()
+    );
+    this.fontSizeSets = this.fontSizeSets.map(() => this.randomSize(24, 200));
+    this.accelerations = this.accelerations.map((_, index: number) =>
+      this.calcAcceleration(index)
+    );
+    this.coordinates = this.coordinates.map(
+      (originVal: Vectory, index: number) => ({
+        x: randomlizedBase - textLength * (this.fontSizeSets[index] + 2),
+        y: this.randomPositionY()
+      })
+    );
   }
 
   private accelerator (): void {
