@@ -10,7 +10,6 @@ import Team from './pages/Team.vue';
 import CFP from './pages/CFP.vue';
 import Sponsor from '@/components/Team/Sponsor.vue';
 import Staff from '@/components/Team/Staff.vue';
-import You from '@/components/Team/You.vue';
 
 import { Route } from 'vue-router';
 
@@ -110,15 +109,6 @@ export const routes = [
         meta: {
           index: 11,
           label: ['贊助', 'Sponsor']
-        }
-      },
-      {
-        path: '/team/you',
-        name: 'Team/You',
-        component: You,
-        meta: {
-          index: 12,
-          label: ['來參加的你！', 'You']
         }
       }
     ]
