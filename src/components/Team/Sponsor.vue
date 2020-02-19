@@ -4,10 +4,10 @@
       <div class="card-container individual-sponsor">
         <div class="card">
           <h2 class="font-black subtitle">我們歡迎個人贊助</h2>
-          <p class="paragraph">Gopher Conference為學生自發組成籌辦的研討會，秉持著以學生為主軸的核心價值，提供一個經驗交流與資訊技術實務分享的平台，進而達到「學以致用、教學相長」的目標。</p>
+          <p class="paragraph">Gopher Conference 為 Golang Taipei 自發組成籌辦的研討會，秉持著以社群成員為主軸的核心價值，提供一個經驗交流與資訊技術實務分享的平台。</p>
           <p class="paragraph">
             維繫這樣的交流平台，需要多人的努力及貢獻，亦十分需要在資金上的支持。
-            <br />希望能藉由您的一份力量，來促成活動的舉行，讓更多學生能在舞台上展現自我成長。
+            <br />希望能藉由您的一份力量，來促成活動的舉行，讓更多 Golang 使用者能在舞台上展現自我成長。
             <br />歡迎您參與贊助，支持 GopherCon、讓我們將每年的活動辦得盡善盡美！
           </p>
           <p class="paragraph">
@@ -83,9 +83,9 @@ export default class Sponsor extends Vue {
     'holder': '主辦單位',
     'co-holder': '共同主辦',
     'co-organizer': '協辦單位',
-    'level-1': '深耕級',
-    'level-2': '前瞻級',
-    'level-3': '新芽級',
+    'level-1': '鑽石級',
+    'level-2': '金級',
+    'level-3': '銀級',
     'thank': '特別感謝',
     'media': '媒體夥伴'
   };
