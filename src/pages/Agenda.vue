@@ -2,7 +2,7 @@
   <div id="agenda" class="main-container">
     <CCIPSessionTable
       :sessionData="sessionData"
-      :rooms="['R2', 'R0', 'R1', 'R3', 'S']"
+      :rooms="['R0', 'R1']"
       :isMobile="isMobile()"
       :isPopup.sync="popUp"
       :popUpSession.sync="popUpSession"
