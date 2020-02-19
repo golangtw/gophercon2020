@@ -8,67 +8,67 @@
     "image": "golangtw.png"
   },
   {
-    "name": "財團法人開放文化基金會",
-    "slug": "ocf",
-    "url": "https://ocf.tw",
-    "description": "開放文化基金會成立於 2014 年，由多個開源社群及活動組織共同發起，希望協助台灣蓬勃的開放社群，進一步促進開放源碼、開放資料、開放硬體等自由精神，能更廣泛的於各領域中應用，同時也協助政府、企業及非政府組織更能了解開源軟體的優勢、開放資料的重要，進而推廣開放協作的文化。 2015 年起我們除了支援本地社群主辦多場中大型活動，也和英國代表處、美國在台協會及世界銀行等單位共同舉辦各種主題講座，深耕台灣的開放文化並與國際交流。",
+    "name": "贊助募集中",
+    "slug": "co-holder",
+    "url": "https://golang.tw",
+    "description": "tba",
     "level": "co-holder",
-    "image": "ocf.png"
+    "image": "golangtw.png"
   },
   {
-    "name": "智慧創新跨域人才培育計畫",
-    "slug": "itsa",
-    "url": "https://www.itsa.org.tw/",
-    "description": "主要推動重點在協助國內大專校院建立多元培育管道，以解決產業界對軟體與服務人才質與量需求日益殷切的問題。\n\n各大專校院⋯⋯透過教育部推廣計畫的補助機制，導入本計畫推動團隊所發展的創作社群服務平臺、線上協同學習平臺(e-tutor)及學習資源服務平臺，已逐步建立創新的培育模式，為國內軟體專業人才培育系所注入向上提升的助力，是國內目前培養軟體人才的主力之一。",
-    "level": "co-organizer",
-    "image": "itsa.png"
-  },
-  {
-    "name": "KlickKlack",
-    "slug": "klickklack",
-    "url": "https://www.kkco.com.tw/",
-    "description": "KlickKlack Communications 提供專業的有線與無線網路服務，使人與人間的通訊落差降到最低。團隊已服務上百場活動，包含台灣地區最大的線上遊戲、網路直播、資訊社群、產品發表會、演唱會、會場展覽與電音派對等。整合網路監控、系統交叉備援、即時廣告互動，量身為客戶打造優質的網路服務體驗。",
+    "name": "鑽石級贊助募集中",
+    "slug": "dimand",
+    "url": "https://golang.tw",
+    "description": "tba",
     "level": "level-1",
-    "image": "klickklack.png"
+    "image": "golangtw.png"
   },
   {
-    "name": "Tezos Southeast Asia",
-    "slug": "tezos",
-    "url": "https://www.tezos.org.sg/",
-    "description": "Tezos Southeast Asia 是一個致力於支持區塊鏈發展的非營利組織，藉由各項活動來促進商業研發和學術研究、推廣相關技術與科技之教育。",
+    "name": "金級贊助募集中",
+    "slug": "gold1",
+    "url": "https://golang.tw",
+    "description": "tba",
     "level": "level-2",
-    "image": "tezos.png"
+    "image": "golangtw.png"
   },
   {
-    "name": "ZUSO Generation",
-    "slug": "zuso",
-    "url": "https://zuso.ai/",
-    "description": "",
+    "name": "金級贊助募集中",
+    "slug": "gold2",
+    "url": "https://golang.tw",
+    "description": "tba",
+    "level": "level-2",
+    "image": "golangtw.png"
+  },
+  {
+    "name": "銀級贊助募集中",
+    "slug": "silver1",
+    "url": "https://golang.tw",
+    "description": "tba",
     "level": "level-3",
-    "image": "zuso.png"
+    "image": "golangtw.png"
   },
   {
-    "name": "HackMD",
-    "slug": "hackmd",
-    "url": "https://hackmd.io/",
-    "description": "",
-    "level": "thank",
-    "image": "hackmd.png"
+    "name": "銀級贊助募集中",
+    "slug": "silver2",
+    "url": "https://golang.tw",
+    "description": "tba",
+    "level": "level-3",
+    "image": "golangtw.png"
   },
   {
-    "name": "中央研究院資訊服務處",
-    "slug": "its",
-    "url": "https://its.sinica.edu.tw/",
-    "description": "",
-    "level": "thank",
-    "image": "its.png"
+    "name": "銀級贊助募集中",
+    "slug": "silver3",
+    "url": "https://golang.tw",
+    "description": "tba",
+    "level": "level-3",
+    "image": "golangtw.png"
   },
   {
-    "name": "Linzin 阿哲",
-    "slug": "linzin",
-    "url": "https://www.youtube.com/channel/UC0oosHZ4k1o-zNT21gg5O7A",
+    "name": "募集中",
+    "slug": "media",
+    "url": "https://golang.tw",
     "description": "",
     "level": "media",
-    "image": "linzin.png"
+    "image": "golangtw.png"
   }
 ]
