@@ -3,8 +3,8 @@
     <hr class="footer-line">
     <div id="brand" class="footer">
       <p>
-        <span class="font-bold">學生計算機年會</span>
-        <span class="font-bold">Students' Information Technology Conference</span>
+        <span class="font-bold">GopherCon</span>
+        <span class="font-bold">Gopher Conference</span>
       </p>
     </div>
     <div id="contact" class="footer">
@@ -18,13 +18,13 @@
         <span class="font-bold">歷年網站</span>
         <span class="font-bold">
           <a
-            v-for="i in 7"
-            :key="`website-${2012 + i}`"
-            :href="`https://golang.tw/${ 2012 + i }/`"
+            v-for="i in 1"
+            :key="`website-${2019 + i}`"
+            :href="`https://golang.tw/${ 2019 + i }/`"
             target="_blank"
             rel="noopener"
             class="font-bold"
-          >{{ 2012 + i }}</a>
+          >{{ 2019 + i }}</a>
         </span>
       </p>
     </div>
@@ -55,24 +55,28 @@ export default class Footer extends Vue {
 
   private communityMedia = [
     {
-      icon: [ 'fab', 'youtube' ],
-      link: 'https://golang.tw/youtube'
+      icon: [ 'fab', 'meetup' ],
+      link: 'https://www.meetup.com/golang-taipei-meetup'
+    },
+    {
+      icon: [ 'fab', 'github' ],
+      link: 'https://github.com/golangtw'
     },
     {
       icon: [ 'fab', 'facebook-f' ],
-      link: 'https://golang.tw/facebook'
-    },
-    {
-      icon: [ 'fab', 'twitter' ],
-      link: 'https://golang.tw/twitter'
+      link: 'https://www.facebook.com/golangtaipei/'
     },
     {
       icon: [ 'fab', 'telegram-plane' ],
-      link: 'https://golang.tw/telegram'
+      link: 'https://t.me/golangtw'
     },
     {
-      icon: [ 'fab', 'flickr' ],
-      link: 'https://golang.tw/flickr'
+      icon: [ 'fab', 'youtube' ],
+      link: 'https://www.youtube.com/channel/UCjnIy_GQAuszZurUIO3zg9Q'
+    },
+    {
+      icon: [ 'fab', 'twitter' ],
+      link: 'https://twitter.com/golangtw'
     }
   ];
 }
