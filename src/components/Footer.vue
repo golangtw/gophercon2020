@@ -10,7 +10,7 @@
     <div id="contact" class="footer">
       <p>
         <span class="font-bold">聯絡我們</span>
-        <span class="font-bold"><a href="mailto:contact@sitcon.org" class="font-bold">contact@sitcon.org</a></span>
+        <span class="font-bold"><a href="mailto:contact@golang.tw" class="font-bold">contact@golang.tw</a></span>
       </p>
     </div>
     <div id="past" class="footer">
@@ -20,7 +20,7 @@
           <a
             v-for="i in 7"
             :key="`website-${2012 + i}`"
-            :href="`https://sitcon.org/${ 2012 + i }/`"
+            :href="`https://golang.tw/${ 2012 + i }/`"
             target="_blank"
             rel="noopener"
             class="font-bold"
@@ -56,23 +56,23 @@ export default class Footer extends Vue {
   private communityMedia = [
     {
       icon: [ 'fab', 'youtube' ],
-      link: 'https://sitcon.org/youtube'
+      link: 'https://golang.tw/youtube'
     },
     {
       icon: [ 'fab', 'facebook-f' ],
-      link: 'https://sitcon.org/facebook'
+      link: 'https://golang.tw/facebook'
     },
     {
       icon: [ 'fab', 'twitter' ],
-      link: 'https://sitcon.org/twitter'
+      link: 'https://golang.tw/twitter'
     },
     {
       icon: [ 'fab', 'telegram-plane' ],
-      link: 'https://sitcon.org/telegram'
+      link: 'https://golang.tw/telegram'
     },
     {
       icon: [ 'fab', 'flickr' ],
-      link: 'https://sitcon.org/flickr'
+      link: 'https://golang.tw/flickr'
     }
   ];
 }

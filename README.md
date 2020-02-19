@@ -1,4 +1,4 @@
-# SITCON 2020
+# GopherCon 2020
 
 ## Project setup
 ```

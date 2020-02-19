@@ -2,12 +2,12 @@
   <div id="home" class="main-container">
     <div class="background-video">
       <video id="video-player" class="video-container" autoplay="autoplay" loop="true" muted="true" playsInine playsinline>
-        <source class="video" src="https://sitcon.org/2020/video/bg-h264.mp4" type="video/mp4">
+        <source class="video" src="https://golang.tw/2020/video/bg-h264.mp4" type="video/mp4">
       </video>
     </div>
     <header class="header">
       <div class="inner-container">
-        <h1 class="title font-black">SITCON 2020</h1>
+        <h1 class="title font-black">GopherCon 2020</h1>
         <h2 class="subtitle font-black">學生計算機年會</h2>
         <h3 class="keywords font-black">#define student</h3>
       </div>
@@ -23,29 +23,29 @@
       </div>
       <div class="right-container">
         <p class="kktix">
-          <a href="https://sitcon.kktix.cc/events/sitcon2020" target="_blank" rel="noopener">
+          <a href="https://gophercon.kktix.cc/events/gophercon2020" target="_blank" rel="noopener">
             <span>免費報名</span>
           </a>
-          <a href="https://bit.ly/donatesitcon2020" target="_blank" rel="noopener">
+          <a href="https://bit.ly/donategophercon2020" target="_blank" rel="noopener">
             <span>贊助取票</span>
           </a>
         </p>
       </div>
     </div>
     <div class="spotlight-container">
-      <SitconTatonMask :width="sitconTatonMaskWidth" :height="sitconTatonMaskHeight"/>
-      <div class="spotlight sharp-back-taton sitcon-back-taton" ref="sitconTatonMask">
-        <div class="sitcon placeholder">
-          <img src="@/../public/img/icons/SITCON-taton-cliped.svg" alt="">
+      <GopherConTatonMask :width="gopherconTatonMaskWidth" :height="gopherconTatonMaskHeight"/>
+      <div class="spotlight sharp-back-taton gophercon-back-taton" ref="gopherconTatonMask">
+        <div class="gophercon placeholder">
+          <img src="@/../public/img/icons/GopherCon-taton-cliped.svg" alt="">
         </div>
         <h1 class="title has-prefix-icon">
           <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
-          <span class="inner font-black">什麼是 SITCON</span>
-          <span class="inner font-black">About SITCON</span>
+          <span class="inner font-black">什麼是 GopherCon</span>
+          <span class="inner font-black">About GopherCon</span>
         </h1>
         <p class="content">學生計算機年會（Students’ Information Technology Conference）自 2013 年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。</p>
-        <p class="content">二十一世紀已經過了五分之一，今年，我們期待帶著豐沛熱情的你，能和我們一起在 2020 年這麼一個「承先啟後」的年份，綜觀不同領域發展與事件脈絡，自主學習感興趣之專長與技術，彼此分享、相濡以沫。在 SITCON 2020 裡，願所有與會者皆能拓展視野，鍛鍊與發展自我，找到向前邁步的勇氣與目標。相信身為學生的我們，也將能重新定義自我、定義未來！</p>
-        <p class="content">SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 <a href="https://sitcon.org/2020/cfp#call-for-define" target="_blank" rel="noopener">#define stuent</a>。</p>
+        <p class="content">二十一世紀已經過了五分之一，今年，我們期待帶著豐沛熱情的你，能和我們一起在 2020 年這麼一個「承先啟後」的年份，綜觀不同領域發展與事件脈絡，自主學習感興趣之專長與技術，彼此分享、相濡以沫。在 GopherCon 2020 裡，願所有與會者皆能拓展視野，鍛鍊與發展自我，找到向前邁步的勇氣與目標。相信身為學生的我們，也將能重新定義自我、定義未來！</p>
+        <p class="content">GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 <a href="https://golang.tw/2020/cfp#call-for-define" target="_blank" rel="noopener">#define stuent</a>。</p>
       </div>
       <div
         id="call-for-define"
@@ -67,7 +67,7 @@
           <span class="inner font-black">Call for #define</span>
           <span class="inner font-black">#define student</span>
         </h1>
-        <p class="content">今年 SITCON 以 #define student 作為 slogan，希望能夠重新定義學生的價值。同時我們也想知道有什麼大家想瞭解的議題或重新定義的事物，不論是你期望在 SITCON 見到的議題、認同的字彙、想要大家知道的技術，歡迎來和大家分享你的看法，一起 define anything。</p>
+        <p class="content">今年 GopherCon 以 #define student 作為 slogan，希望能夠重新定義學生的價值。同時我們也想知道有什麼大家想瞭解的議題或重新定義的事物，不論是你期望在 GopherCon 見到的議題、認同的字彙、想要大家知道的技術，歡迎來和大家分享你的看法，一起 define anything。</p>
         <div class="input-box">
           <label for="define"><span class="font-black">#define</span></label>
           <input
@@ -106,8 +106,8 @@
             <li>
               <span>
                 大會導遊團：<br>
-                第一次參加 Conference 嗎？第一次來到 SITCON 嗎？是個怕生的人嗎？?到了現場人山人海，不知道從何逛起？不管你是哪種，我們聽見你的聲音了。<br>
-                為了照顧第一次參與 Conference 的你，我們舉辦了 SITCON 導遊團，由走訪總召、幹部、講者、攤位，帶您一步步了解 SITCON 的各個面向、運作模式，並認識學生計算機年會的核心概念！
+                第一次參加 Conference 嗎？第一次來到 GopherCon 嗎？是個怕生的人嗎？?到了現場人山人海，不知道從何逛起？不管你是哪種，我們聽見你的聲音了。<br>
+                為了照顧第一次參與 Conference 的你，我們舉辦了 GopherCon 導遊團，由走訪總召、幹部、講者、攤位，帶您一步步了解 GopherCon 的各個面向、運作模式，並認識學生計算機年會的核心概念！
               </span>
             </li>
             <li>
@@ -147,13 +147,13 @@
             <li>
               <span>
                 Q1.　什麼樣的人適合參與年會？<br>
-                A1.　SITCON 學生計算機年會致力於資訊的推廣，無論是已經身在資訊領域，抑或是還沒踏進資訊領域的學生，只要有想一窺資訊世界的心都適合來參與！
+                A1.　Gopher Conference致力於資訊的推廣，無論是已經身在資訊領域，抑或是還沒踏進資訊領域的學生，只要有想一窺資訊世界的心都適合來參與！
               </span>
             </li>
             <li>
               <span>
                 Q2.　若有其他問題應該如何詢問？<br>
-                A2.　有任何問題都歡迎寄信至 <a href="mailto:contact@sitcon.org">contact@sitcon.org</a> 喔！
+                A2.　有任何問題都歡迎寄信至 <a href="mailto:contact@golang.tw">contact@golang.tw</a> 喔！
               </span>
             </li>
           </ul>
@@ -166,8 +166,8 @@
           <span class="inner font-black">Code of Conduct</span>
         </h1>
         <p class="content">
-          SITCON 冀望打造屬於學生自己的舞台，而我們也致力於為社群中的每位成員提供更友善、開放的環境。我們相信每位參與社群活動的夥伴都值得被尊重，而我們會盡力提供最安全的環境，讓參與 SITCON 盛會的每位朋友能夠認識個體間的差異、在社群中相互扶助、並鼓勵每個人揮灑屬於自己生命的色彩。<br/>
-          因此，若有幸能在 SITCON 社群與您見面，無論您是以會眾、贊助商、工作人員、或是講者的身份參加活動，我們都希望您遵守以下的行為準則：
+          GopherCon 冀望打造屬於學生自己的舞台，而我們也致力於為社群中的每位成員提供更友善、開放的環境。我們相信每位參與社群活動的夥伴都值得被尊重，而我們會盡力提供最安全的環境，讓參與 GopherCon 盛會的每位朋友能夠認識個體間的差異、在社群中相互扶助、並鼓勵每個人揮灑屬於自己生命的色彩。<br/>
+          因此，若有幸能在 GopherCon 社群與您見面，無論您是以會眾、贊助商、工作人員、或是講者的身份參加活動，我們都希望您遵守以下的行為準則：
 
           <ul>
             <li><span>尊重每一位參與者，將對方的感受放在心上</span></li>
@@ -188,7 +188,7 @@
             <li><span>違反法律的行為</span></li>
           </ul>
 
-          為了確保每位參與者的安全，我們將恪守以上規則。違反行為準則的參與者，我們將採取必要且合理的手段予以介入，包含但不限於將參與者請離現場、自相關名冊除名或列為不受歡迎對象，或在必要時移送警察機關法辦。若您或他人遇到了以上情況、或是有任何其他顧慮，都請立即尋求 SITCON 工作人員的協助。 我們誠摯的邀請來到 SITCON 的朋友一同履行以上承諾，將 SITCON 打造為更友善、更溫暖的所在；讓每一位參與者，都能在社群的交流中共同成長、在人與人的互動中找到自信——而這正是我們所珍惜的、屬於學生社群的真正精神。
+          為了確保每位參與者的安全，我們將恪守以上規則。違反行為準則的參與者，我們將採取必要且合理的手段予以介入，包含但不限於將參與者請離現場、自相關名冊除名或列為不受歡迎對象，或在必要時移送警察機關法辦。若您或他人遇到了以上情況、或是有任何其他顧慮，都請立即尋求 GopherCon 工作人員的協助。 我們誠摯的邀請來到 GopherCon 的朋友一同履行以上承諾，將 GopherCon 打造為更友善、更溫暖的所在；讓每一位參與者，都能在社群的交流中共同成長、在人與人的互動中找到自信——而這正是我們所珍惜的、屬於學生社群的真正精神。
         </p>
       </div>
     </div>
@@ -200,7 +200,7 @@ import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Action } from 'vuex-class';
 import axios from 'axios';
 
-import SitconTatonMask from '@/components/SitconTatonMask.vue';
+import GopherConTatonMask from '@/components/GopherConTatonMask.vue';
 import BulletScreen from '@/components/CFP/BulletScreen.vue';
 
 import { ThemeType } from '../store/types/app';
@@ -210,13 +210,13 @@ import head from '@/util/head';
 @Component({
   components: {
     BulletScreen,
-    SitconTatonMask
+    GopherConTatonMask
   }
 })
 export default class Home extends Vue {
   @Action('toggleTheme', { namespace: 'app' }) private toggleTheme!: (theme: ThemeType) => void;
-  private sitconTatonMaskHeight: number = 0;
-  private sitconTatonMaskWidth: number = 0;
+  private gopherconTatonMaskHeight: number = 0;
+  private gopherconTatonMaskWidth: number = 0;
   private defineString: string = '';
   private onSend: boolean = false;
   private bulletScreenWidth: number = 0;
@@ -242,8 +242,8 @@ export default class Home extends Vue {
   }
 
   private measureMaskSize (): void {
-    this.sitconTatonMaskHeight = (this.$refs.sitconTatonMask as Element).clientHeight;
-    this.sitconTatonMaskWidth = (this.$refs.sitconTatonMask as Element).clientWidth;
+    this.gopherconTatonMaskHeight = (this.$refs.gopherconTatonMask as Element).clientHeight;
+    this.gopherconTatonMaskWidth = (this.$refs.gopherconTatonMask as Element).clientWidth;
   }
 
   private continuePlayVideoWhenFocusBack (): void {

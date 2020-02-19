@@ -14,7 +14,7 @@
           autoplay
           playsinline
         />
-        <img id="define-img" class="define" src="https://sitcon.org/2020/img/define.jpg"/>
+        <img id="define-img" class="define" src="https://golang.tw/2020/img/define.jpg"/>
       </div>
       <canvas
         id="snapshot"

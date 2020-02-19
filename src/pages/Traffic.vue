@@ -5,7 +5,7 @@
       中央研究院人文社會科學館<br/>
       台北市南港區研究院路二段 128 號
     </p>
-    <sitcon-map width="100%" height="650px" />
+    <gophercon-map width="100%" height="650px" />
     <div class="traffic-flow">
       <img src="@/assets/images/traffic-flow.svg" alt="">
     </div>
@@ -22,11 +22,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import SitconMap from '@/components/SitconMap.vue';
+import GopherConMap from '@/components/GopherConMap.vue';
 
 @Component({
   components: {
-    SitconMap
+    GopherConMap
   }
 })
 export default class Traffic extends Vue {
