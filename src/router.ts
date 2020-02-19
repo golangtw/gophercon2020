@@ -23,7 +23,7 @@ export const routes = [
     component: Home,
     meta: {
       index: 0,
-      label: 'SITCON 2020',
+      label: 'GopherCon 2020',
       menuItem: true
     }
   },
@@ -90,7 +90,7 @@ export const routes = [
     redirect: '/team/staff',
     meta: {
       index: 5,
-      label: 'SITCON 團隊',
+      label: 'GopherCon 團隊',
       menuItem: true
     },
     children: [

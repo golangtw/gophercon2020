@@ -4,7 +4,7 @@
     xmlns="http://www.w3.org/2000/svg"
     :viewBox="`0 0 ${width + 144.58} ${height}`"
     >
-      <clipPath id="SITCON-taton-mask">
+      <clipPath id="GopherCon-taton-mask">
         <polygon x="0" y="0" :points="`20,20 ${width},0 ${width},${height} 0,${height}`"/>
         <path
           x="0"
@@ -40,7 +40,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
-export default class SitconTatonMask extends Vue {
+export default class GopherConTatonMask extends Vue {
   @Prop({ required: true }) private height!: number;
   @Prop({ required: true }) private width!: number;
 }

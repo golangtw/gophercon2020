@@ -8,11 +8,11 @@
       <div class="spotlight">
         <h1 class="title">
           <span class="sub">About</span>
-          <span class="font-black">關於 SITCON</span>
+          <span class="font-black">關於 GopherCon</span>
         </h1>
-        <p class="paragraph">學生計算機年會（SITCON）自 2013 年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。</p>
-        <p class="paragraph">二十一世紀已經過了五分之一，今年，我們期待帶著豐沛熱情的你，能和我們一起在 2020 年這麼一個「承先啟後」的年份，綜觀不同領域發展與事件脈絡，自主學習感興趣之專長與技術，彼此分享、相濡以沫。在 SITCON 2020 裡，願所有與會者皆能拓展視野，鍛鍊與發展自我，找到向前邁步的勇氣與目標。相信身為學生的我們，也將能重新定義自我、定義未來！</p>
-        <p class="paragraph">SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。</p>
+        <p class="paragraph">學生計算機年會（GopherCon）自 2013 年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。</p>
+        <p class="paragraph">二十一世紀已經過了五分之一，今年，我們期待帶著豐沛熱情的你，能和我們一起在 2020 年這麼一個「承先啟後」的年份，綜觀不同領域發展與事件脈絡，自主學習感興趣之專長與技術，彼此分享、相濡以沫。在 GopherCon 2020 裡，願所有與會者皆能拓展視野，鍛鍊與發展自我，找到向前邁步的勇氣與目標。相信身為學生的我們，也將能重新定義自我、定義未來！</p>
+        <p class="paragraph">GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。</p>
       </div>
       <div
         id="call-for-define"
@@ -34,11 +34,11 @@
           <span class="font-black">#define student</span>
         </h1>
         <p class="paragraph">
-          今年 SITCON 以 #define student 作為 slogan，希望能夠重新定義學生的價值，<br>
+          今年 GopherCon 以 #define student 作為 slogan，希望能夠重新定義學生的價值，<br>
       同時我們也想知道有什麼大家想瞭解的議題或重新定義的事物。<br>
         </p>
         <p class="paragraph">
-          不論是你期望在 SITCON 見到的議題、認同的字彙、想要大家知道的技術，<br>
+          不論是你期望在 GopherCon 見到的議題、認同的字彙、想要大家知道的技術，<br>
       歡迎來和大家分享你的看法，一起 define anything。
         </p>
         <div class="input-box">
@@ -66,14 +66,14 @@
           <span class="font-black">贊助徵求</span>
         </h1>
         <p class="paragraph">
-          SITCON 的舉辦，除了有賴眾多志工的努力，也需要金錢的支持。<br>
-          如果您認同 SITCON 的理念，歡迎以行動支持 SITCON 的運作，讓更多交流產生！
+          GopherCon 的舉辦，除了有賴眾多志工的努力，也需要金錢的支持。<br>
+          如果您認同 GopherCon 的理念，歡迎以行動支持 GopherCon 的運作，讓更多交流產生！
         </p>
         <p class="paragraph">
-          <a href="http://bit.ly/donatesitcon2020" class="font-bold" target="_blank" rel="noopener noreferrer">個人贊助方案</a>
+          <a href="http://bit.ly/donategophercon2020" class="font-bold" target="_blank" rel="noopener noreferrer">個人贊助方案</a>
         </p>
         <p class="paragraph">
-          企業合作歡迎聯繫 <a href="mailto:contact@sitcon.org" class="font-black">contact@sitcon.org</a>
+          企業合作歡迎聯繫 <a href="mailto:contact@golang.tw" class="font-black">contact@golang.tw</a>
         </p>
       </div>
     </main>
@@ -159,9 +159,9 @@ export default class CFP extends Vue {
   private setMeta (): void {
     head.title('Call for Paper｜稿件徵求中！');
     head.ogTitle('Call for Paper｜稿件徵求中！');
-    head.ogDescription('SITCON 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
-    head.ogUrl('https://sitcon.org/2020/cfp/');
-    head.ogImage('https://sitcon.org/2020/img/cfp-og.png');
+    head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+    head.ogUrl('https://golang.tw/2020/cfp/');
+    head.ogImage('https://golang.tw/2020/img/cfp-og.png');
   }
 }
 </script>

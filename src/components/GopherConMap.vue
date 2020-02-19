@@ -1,5 +1,5 @@
 <template>
-  <div id="sitcon-map">
+  <div id="gophercon-map">
     <div :style="{ width: width, height: height }"></div>
     <div class="sitetext">中央研究院人文社會科學館</div>
   </div>
@@ -25,7 +25,7 @@ import { Coordinate } from 'ol/coordinate';
 import 'ol/ol.css';
 
 @Component
-export default class SitconMap extends Vue {
+export default class GopherConMap extends Vue {
   @Prop({
     required: false,
     default: '320px'
@@ -66,7 +66,7 @@ export default class SitconMap extends Vue {
     }
 
   private makeMap () {
-    const iconMain = this.mapMarkerLayer('main', '/2020/img/sitcon-logo.png', [121.6116, 25.0410]);
+    const iconMain = this.mapMarkerLayer('main', '/2020/img/gophercon-logo.png', [121.6116, 25.0410]);
     const osmMap = new Map({
       target: this.$el.firstChild as HTMLElement,
       interactions: Interaction.defaults({mouseWheelZoom: false}),
@@ -88,7 +88,7 @@ export default class SitconMap extends Vue {
 </script>
 
 <style lang="scss" scoped>
-#sitcon-map {
+#gophercon-map {
   position: relative;
   width: calc(100% - 140px * 2);
   padding: 64px 140px;

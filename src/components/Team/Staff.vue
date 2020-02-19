@@ -1,7 +1,7 @@
 <template>
   <div id="staff" class="staff-container">
     <div class="staff-spotlight full-width-banner">
-      <p class="paragraph">SITCON 年會每年皆是許多志工奉獻與時間精神所舉辦；若你對參與 SITCON 年會的籌備有興趣，歡迎填寫表單，我們將在明年活動開始籌備時通知您！</p>
+      <p class="paragraph">GopherCon 年會每年皆是許多志工奉獻與時間精神所舉辦；若你對參與 GopherCon 年會的籌備有興趣，歡迎填寫表單，我們將在明年活動開始籌備時通知您！</p>
       <p class="paragraph">
         <a
           href="https://forms.gle/1J9fxQP2ux55PJXC9"
@@ -26,7 +26,7 @@
         >
           <img
             class="staff-avatar"
-            :src="`https://www.gravatar.com/avatar/${member.emailHash}?s=320&d=https://sitcon.org/2020/img/sitcon-logo.png&r=g`"
+            :src="`https://www.gravatar.com/avatar/${member.emailHash}?s=320&d=https://golang.tw/2020/img/gophercon-logo.png&r=g`"
             :alt="`${member.name}'s Avatar`"
           />
           <p>{{ member.name }}</p>

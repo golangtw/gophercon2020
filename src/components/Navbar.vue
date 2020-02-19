@@ -8,7 +8,7 @@
         <img class="logo-icon__normal" src="@/assets/images/logo-dark.svg" />
         <img class="logo-icon__mobile" src="@/assets/images/favicon.png" />
         <div class="logo-text">
-          <div class="logo-text__sitcon font-bold"><span class="font-black">SITCON</span></div>
+          <div class="logo-text__gophercon font-bold"><span class="font-black">GopherCon</span></div>
           <div class="logo-text__2020 font-bold"><span>2020</span></div>
         </div>
       </div>
@@ -21,7 +21,7 @@
               <div class="define-text">
                 <img src="@/assets/images/define-dark.svg" />
                 <div class="logo-text-container">
-                  <span class="logo-text__sitcon">SITCON</span>
+                  <span class="logo-text__gophercon">GopherCon</span>
                   <span class="logo-text__2020">2020</span>
                 </div>
               </div>

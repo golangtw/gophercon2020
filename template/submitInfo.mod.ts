@@ -7,8 +7,8 @@ const content = `
 <script id="meta-content" type="application/json">
 {
   "title": "投稿資訊",
-  "description": "我們特別期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是探討學生相關議題等等；廣義而言，只要是與資訊技術、電腦相關的講題，都歡迎投稿！以下的投稿範例可以提供一些靈感，或是您可以參與投稿者小聚，亦可前往 SITCON 前幾屆的網站（2013、 2014、 2015、 2016、 2017、2018、2019）查看過去的議程。",
-  "url": "https://sitcon.org/2020/cfp?popUp=submitInfo"
+  "description": "我們特別期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是探討學生相關議題等等；廣義而言，只要是與資訊技術、電腦相關的講題，都歡迎投稿！以下的投稿範例可以提供一些靈感，或是您可以參與投稿者小聚，亦可前往 GopherCon 前幾屆的網站（2013、 2014、 2015、 2016、 2017、2018、2019）查看過去的議程。",
+  "url": "https://golang.tw/2020/cfp?popUp=submitInfo"
 }
 </script>
 <ul class="summary">
@@ -25,37 +25,37 @@ const content = `
   <li>2019/10/18（五）投稿開始</li>
   <li>2020/01/12（日）早上 06:41 投稿截止</li>
   <li>一月下旬審稿結束、隨後公佈完整議程</li>
-  <li>2020/03/28（六）SITCON 2020</li>
+  <li>2020/03/28（六）GopherCon 2020</li>
 </ul>
 <h1 id="subject" class="title font-black">投稿主題範例</h1>
 <p class="paragraph">
   我們特別期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是探討學生相關議題等等；廣義而言，只要是與資訊技術、電腦相關的講題，都歡迎投稿！<br>
-  以下的投稿範例可以提供一些靈感，或是您可以參與投稿者小聚，亦可前往 SITCON 前幾屆的網站（<a href="https://sitcon.org/2013" class="font-bold" target="_blank" rel="noopener noreferrer">2013</a>、 <a href="https://sitcon.org/2014" class="font-bold" target="_blank" rel="noopener noreferrer">2014</a>、 <a href="https://sitcon.org/2015" class="font-bold" target="_blank" rel="noopener noreferrer">2015</a>、 <a href="https://sitcon.org/2016" class="font-bold" target="_blank" rel="noopener noreferrer">2016</a>、 <a href="https://sitcon.org/2017" class="font-bold" target="_blank" rel="noopener noreferrer">2017</a>、<a href="https://sitcon.org/2018" class="font-bold" target="_blank" rel="noopener noreferrer">2018</a>、<a href="https://sitcon.org/2019" class="font-bold" target="_blank" rel="noopener noreferrer">2019</a>）查看過去的議程。
+  以下的投稿範例可以提供一些靈感，或是您可以參與投稿者小聚，亦可前往 GopherCon 前幾屆的網站（<a href="https://golang.tw/2013" class="font-bold" target="_blank" rel="noopener noreferrer">2013</a>、 <a href="https://golang.tw/2014" class="font-bold" target="_blank" rel="noopener noreferrer">2014</a>、 <a href="https://golang.tw/2015" class="font-bold" target="_blank" rel="noopener noreferrer">2015</a>、 <a href="https://golang.tw/2016" class="font-bold" target="_blank" rel="noopener noreferrer">2016</a>、 <a href="https://golang.tw/2017" class="font-bold" target="_blank" rel="noopener noreferrer">2017</a>、<a href="https://golang.tw/2018" class="font-bold" target="_blank" rel="noopener noreferrer">2018</a>、<a href="https://golang.tw/2019" class="font-bold" target="_blank" rel="noopener noreferrer">2019</a>）查看過去的議程。
 </p>
 <p class="paragraph">以下是我們以往的熱門議程，可供您參考：</p>
 <ul>Presentation：
-  <li>從學校到業界，工程師作為職業的現實（<a href="https://sitcon.org/2019/agenda/7a67f4fb-b6f4-4595-b9af-527b3024c8f8" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/qYxdomoMEf8" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>TMML 真相靠自己─You are Fake News！（<a href="https://sitcon.org/2019/agenda/f5d28cd1-5165-4388-9dc2-5d2257a5b5bc" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/9PFZ0_C2Sxo" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>黑客、社團、資訊魔法學習大總匯（<a href="https://sitcon.org/2019/agenda/64ed212c-f1a9-40df-a84e-5f7411d4c887" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/SkUuK731XGY" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>奔跑吧！台北：遊戲開發經驗分享（<a href="https://sitcon.org/2018/#/agenda/sub/d946b6e1-d826-4c64-86a4-bf013bcc0c06" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=85bW97XI4i0" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>Club Mate 與德國駭客精神：34C3 大會實錄（<a href="https://sitcon.org/2018/#/agenda/sub/35598abf-4efe-48fc-93a4-3d539e6f6c47" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=8xrYLc4num8" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>由淺入坑區塊鏈～從認識架構到應用智能合約！（<a href="https://sitcon.org/2018/#/agenda/sub/08c2816d-ea25-4169-89e6-dc0e0bc7b9a4" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=B3fXXElzc9Q" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>從學校到業界，工程師作為職業的現實（<a href="https://golang.tw/2019/agenda/7a67f4fb-b6f4-4595-b9af-527b3024c8f8" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/qYxdomoMEf8" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>TMML 真相靠自己─You are Fake News！（<a href="https://golang.tw/2019/agenda/f5d28cd1-5165-4388-9dc2-5d2257a5b5bc" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/9PFZ0_C2Sxo" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>黑客、社團、資訊魔法學習大總匯（<a href="https://golang.tw/2019/agenda/64ed212c-f1a9-40df-a84e-5f7411d4c887" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/SkUuK731XGY" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>奔跑吧！台北：遊戲開發經驗分享（<a href="https://golang.tw/2018/#/agenda/sub/d946b6e1-d826-4c64-86a4-bf013bcc0c06" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=85bW97XI4i0" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>Club Mate 與德國駭客精神：34C3 大會實錄（<a href="https://golang.tw/2018/#/agenda/sub/35598abf-4efe-48fc-93a4-3d539e6f6c47" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=8xrYLc4num8" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>由淺入坑區塊鏈～從認識架構到應用智能合約！（<a href="https://golang.tw/2018/#/agenda/sub/08c2816d-ea25-4169-89e6-dc0e0bc7b9a4" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=B3fXXElzc9Q" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
   <li>開發學校雲端服務的奇技淫巧（<a href="https://www.youtube.com/watch?v=msrsjX8mddE" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
   <li>校園資訊系統的困境與嘗試改善（<a href="https://www.youtube.com/watch?v=1N3HZsPzKrI" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>cjdns: 重新發明網路（<a href="https://sitcon.org/2017/#schedule-page" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=l75ArFBCMlM" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>cjdns: 重新發明網路（<a href="https://golang.tw/2017/#schedule-page" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=l75ArFBCMlM" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
 </ul>
 <ul>Espresso：
-  <li>淺談社會網路分析（<a href="https://sitcon.org/2019/agenda/f60637a1-0ccb-4c02-b1b0-be7a6a393d87" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/GFfaD-kVe_A" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>你所不知道的維基 - Wikidata（<a href="https://sitcon.org/2019/agenda/7959ab0b-cdfa-40bc-8566-099477abb195" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/kD-jGfDZGGo" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>AI for the Art in a Box（<a href="https://sitcon.org/2019/agenda/0b49bfce-a147-4702-a5b9-87eb2dfa5135" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/iZz5au-vVHk" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>校園駭客-看你學號() return 你家住址; （<a href="https://sitcon.org/2018/#/agenda/sub/b8998705-c6e2-4c48-ae76-984f23b54719" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=yahEwM88q-Q" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>600秒學會UI設計（<a href="https://sitcon.org/2018/#/agenda/sub/d6daa14b-39ef-410b-883c-0b1c3ae02a60" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=hqhmwt7SCJc" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
-  <li>深度學習如何深度學習（<a href="https://sitcon.org/2018/#/agenda/sub/f3c6853d-2b0e-464c-8837-9411455961d8" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=H5o5Oa_nbqs" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>淺談社會網路分析（<a href="https://golang.tw/2019/agenda/f60637a1-0ccb-4c02-b1b0-be7a6a393d87" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/GFfaD-kVe_A" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>你所不知道的維基 - Wikidata（<a href="https://golang.tw/2019/agenda/7959ab0b-cdfa-40bc-8566-099477abb195" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/kD-jGfDZGGo" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>AI for the Art in a Box（<a href="https://golang.tw/2019/agenda/0b49bfce-a147-4702-a5b9-87eb2dfa5135" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://youtu.be/iZz5au-vVHk" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>校園駭客-看你學號() return 你家住址; （<a href="https://golang.tw/2018/#/agenda/sub/b8998705-c6e2-4c48-ae76-984f23b54719" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=yahEwM88q-Q" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>600秒學會UI設計（<a href="https://golang.tw/2018/#/agenda/sub/d6daa14b-39ef-410b-883c-0b1c3ae02a60" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=hqhmwt7SCJc" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
+  <li>深度學習如何深度學習（<a href="https://golang.tw/2018/#/agenda/sub/f3c6853d-2b0e-464c-8837-9411455961d8" class="font-bold" target="_blank" rel="noopener noreferrer">Link</a>、<a href="https://www.youtube.com/watch?v=H5o5Oa_nbqs" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
   <li>格鬥遊戲 AI 開發經驗談（<a href="https://www.youtube.com/watch?v=ryLLzSwQ54w" class="font-bold" target="_blank" rel="noopener noreferrer">Video</a>）</li>
 </ul>
 <h1 id="coc" class="title font-black">Code of Conduct 行為準則</h1>
 <p class="paragraph">
-  SITCON 非常歡迎女性、跨性別與多元背景的投稿者。為了讓大家都能愉快的參加 SITCON，我們鼓勵所有參與者閱讀年會的<a href="https://sitcon.org/code-of-conduct/" class="font-bold" target="_blank" rel="noopener noreferrer">行為守則（Code of Conduct）</a>，共同創造一個友善的環境。
+  GopherCon 非常歡迎女性、跨性別與多元背景的投稿者。為了讓大家都能愉快的參加 GopherCon，我們鼓勵所有參與者閱讀年會的<a href="https://golang.tw/code-of-conduct/" class="font-bold" target="_blank" rel="noopener noreferrer">行為守則（Code of Conduct）</a>，共同創造一個友善的環境。
 </p>
 <h1 id="session-type" class="title font-black">議程種類</h1>
 <h2 class="subtitle font-bold">Presentation</h2>
@@ -66,7 +66,7 @@ const content = `
 <p class="paragraph">大會當天早上開放報名，每位講者有 3 分鐘，3 分鐘一到可是會被趕下臺喔！</p>
 <h1 id="submission" class="title font-black">投稿方式</h1>
 <p class="paragraph">
-  稿件均經議程組形式審查，交予該領域之審稿委員審稿；審稿委員由業界人士、學界人士及 SITCON 議程組員組成。
+  稿件均經議程組形式審查，交予該領域之審稿委員審稿；審稿委員由業界人士、學界人士及 GopherCon 議程組員組成。
 </p>
 <h2 class="subtitle font-bold">格式</h2>
 <p class="paragraph">Espresso 與 Presentation 的投稿格式相同，除有特別標示會公布的資料外，其餘則只會供審稿委員閱讀。</p>
@@ -98,23 +98,23 @@ const content = `
 <ul>
   <li>稿件內容：包含的知識分享、經驗案例、想法觀點是否獨特等。</li>
   <li>表達能力：提供的資料是否有條理、文句暢通，提供資料（尤其是稿件的詳細說明）之完整度。我們偏好完整的資料，讓審稿委員更清楚了解演講細節。</li>
-  <li>適合聽眾：稿件是否適合 SITCON 大多數的會眾，若經我們評估比較小眾的議程可能會被安排至較小的演講廳。</li>
+  <li>適合聽眾：稿件是否適合 GopherCon 大多數的會眾，若經我們評估比較小眾的議程可能會被安排至較小的演講廳。</li>
 </ul>
 <h1 id="notice" class="title font-black">投稿注意事項</h1>
 <ul>
-  <li>SITCON 2020 採用 Google Forms 接收投稿。</li>
-  <li>SITCON 2020 將會有 4 軌議程同時進行（不計 Unconference 及 Lightning talk）。</li>
+  <li>GopherCon 2020 採用 Google Forms 接收投稿。</li>
+  <li>GopherCon 2020 將會有 4 軌議程同時進行（不計 Unconference 及 Lightning talk）。</li>
   <li>Lightning talk 將於所有議程結束後，閉幕前於國際會議廳舉行。</li>
   <li>上述審稿方式不考慮稿件內容的技術難度，我們仍以稿件是否能夠吸引人、高品質、適合聽眾（即上述篩選方式）為考量。</li>
   <li>為鼓勵投稿，大會提供投稿人一組邀請碼 （一人一組，非一稿一組），可優先報名參與本年會，獲選講者請使用講者身分入場，不需要報名，並可將邀請碼轉移他人使用。</li>
   <li>在截稿之前，投稿者可以隨時使用投稿系統修改已投的稿件。</li>
-  <li>SITCON 議程組得經作者同意，轉換 Presentation 或 Espresso 稿件之投稿類型。</li>
+  <li>GopherCon 議程組得經作者同意，轉換 Presentation 或 Espresso 稿件之投稿類型。</li>
   <li>無論有無入選，仍然歡迎於年會當天報名 Lightning Talk 或 Unconference！</li>
   <li>凡稿件經接受者，年會將頒予感謝狀以表彰投稿人之熱情付出與貢獻。</li>
   <li>「議程題目」、「摘要」與「先備知識」會放置於官網以及會前發行的電子報中。</li>
 </ul>
 <p class="paragraph">
-  若有任何問題或需投稿建議請 Email 至 SITCON 議程組信箱 <a href="mailto:session@sitcon.org" class="font-bold">session@sitcon.org</a>。
+  若有任何問題或需投稿建議請 Email 至 GopherCon 議程組信箱 <a href="mailto:session@golang.tw" class="font-bold">session@golang.tw</a>。
 </p>
 <h2 class="subtitle font-bold">錄影以及記錄</h2>
 <p class="paragraph">所有議程皆會錄影，若不希望被錄影與釋出可以與議程組聯絡。</p>
@@ -153,7 +153,7 @@ const content = `
 </p>
 <p class="paragraph">
   Q：還有疑問怎麼辦？<br>
-  A：歡迎來投稿者小聚與我們聊聊，或是寄信至 <a href="mailto:session@sitcon.org" class="font-bold">session@sitcon.org</a> 詢問，我們會儘速回應。
+  A：歡迎來投稿者小聚與我們聊聊，或是寄信至 <a href="mailto:session@golang.tw" class="font-bold">session@golang.tw</a> 詢問，我們會儘速回應。
 </p>
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuKARckZoYPw5RdagVQk9IBrASuS3TA-rS8LUzaCBB79955A/viewform" class="submission button font-black" target="_blank" rel="noopener noreferrer">
   <p>我要投稿</p>
