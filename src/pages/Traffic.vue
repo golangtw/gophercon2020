@@ -2,8 +2,8 @@
   <div id="traffic" class="traffic main-container">
     <h1 class="title">地點</h1>
     <p class="content">
-      中央研究院人文社會科學館<br/>
-      台北市南港區研究院路二段 128 號
+      集思北科大會議中心感恩廳<br/>
+      台北市大安區忠孝東路三段1號億光大樓
     </p>
     <gophercon-map width="100%" height="650px" />
     <div class="traffic-flow">

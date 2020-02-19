@@ -10,57 +10,10 @@
           <span class="sub">About</span>
           <span class="font-black">關於 GopherCon</span>
         </h1>
-        <p class="paragraph">學生計算機年會（GopherCon）自 2013 年發起，以學生為本、由學生自發舉辦，長期投身學生資訊教育與推廣開源精神，希望引領更多學子踏入資訊的殿堂，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發，達到「學以致用、教學相長」的實際展現。</p>
-        <p class="paragraph">二十一世紀已經過了五分之一，今年，我們期待帶著豐沛熱情的你，能和我們一起在 2020 年這麼一個「承先啟後」的年份，綜觀不同領域發展與事件脈絡，自主學習感興趣之專長與技術，彼此分享、相濡以沫。在 GopherCon 2020 裡，願所有與會者皆能拓展視野，鍛鍊與發展自我，找到向前邁步的勇氣與目標。相信身為學生的我們，也將能重新定義自我、定義未來！</p>
-        <p class="paragraph">GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。</p>
+        <p class="paragraph">Gopher Conference 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體工程從業人員使用 Golang 語言，更冀望所有對 Golang 有興趣的朋友可以一同參與社群。</p>
+        <p class="paragraph">GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define golang。</p>
       </div>
-      <div
-        id="call-for-define"
-        class="spotlight"
-        ref="bulletScreen"
-        :class="{ 'on-send': onSend }"
-      >
-        <BulletScreen
-          class="sketch-box"
-          :class="{ 'on-send': onSend }"
-          :msg="defineString"
-          :width="bulletScreenWidth"
-          :height="bulletScreenHeight"
-          :active="onSend"
-          :quality="defineString.replace(/[^\x00-\xff]/g, 'xx').length > 10 ? 25 : 50"
-        />
-        <h1 class="title">
-          <span class="sub">Call for #define</span>
-          <span class="font-black">#define student</span>
-        </h1>
-        <p class="paragraph">
-          今年 GopherCon 以 #define student 作為 slogan，希望能夠重新定義學生的價值，<br>
-      同時我們也想知道有什麼大家想瞭解的議題或重新定義的事物。<br>
-        </p>
-        <p class="paragraph">
-          不論是你期望在 GopherCon 見到的議題、認同的字彙、想要大家知道的技術，<br>
-      歡迎來和大家分享你的看法，一起 define anything。
-        </p>
-        <div class="input-box">
-          <label for="define"><span class="font-black">#define</span></label>
-          <input
-            v-model="defineString"
-            type="text"
-            name="define"
-            placeholder="student"
-            class="font-black"
-            maxlength="30"
-            @keypress.enter="sendDefineForm"
-          >
-          <span
-            class="icon"
-            @click="sendDefineForm"
-          >
-            <font-awesome-icon :icon="['far', 'paper-plane']" />
-          </span>
-        </div>
-      </div>
-      <div id="sponsor" class="spotlight">
+        <div id="sponsor" class="spotlight">
         <h1 class="title">
           <span class="sub">Call for Sponsor</span>
           <span class="font-black">贊助徵求</span>
@@ -86,7 +39,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
 import Banner from '@/components/CFP/Banner.vue';
-import BulletScreen from '@/components/CFP/BulletScreen.vue';
+// import BulletScreen from '@/components/CFP/BulletScreen.vue';
 
 import { ThemeType } from '@/store/types/app';
 
@@ -94,8 +47,8 @@ import head from '@/util/head';
 
 @Component({
   components: {
-    Banner,
-    BulletScreen
+    Banner
+    // BulletScreen
   }
 })
 export default class CFP extends Vue {
@@ -114,12 +67,12 @@ export default class CFP extends Vue {
 
   public mounted () {
     this.setMeta();
-    this.measureBulletScreenSize();
-    window.addEventListener('resize', this.measureBulletScreenSize);
+    // this.measureBulletScreenSize();
+    // window.addEventListener('resize', this.measureBulletScreenSize);
   }
 
   public destroyed () {
-    window.removeEventListener('resize', this.measureBulletScreenSize);
+    // window.removeEventListener('resize', this.measureBulletScreenSize);
   }
 
   private toggleSendAnimate (): void {
@@ -159,7 +112,7 @@ export default class CFP extends Vue {
   private setMeta (): void {
     head.title('Call for Paper｜稿件徵求中！');
     head.ogTitle('Call for Paper｜稿件徵求中！');
-    head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+    head.ogDescription('GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define golang。');
     head.ogUrl('https://golang.tw/2020/cfp/');
     head.ogImage('https://golang.tw/2020/img/cfp-og.png');
   }
