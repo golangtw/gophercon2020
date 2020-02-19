@@ -1,19 +1,11 @@
 [
   {
-    "name": "GopherCon 學生計算機年會籌備團隊",
-    "slug": "gophercon",
-    "url": "https://hackfoldr.golangtw.org",
-    "description": "GopherCon 學生計算機年會 (Students’ Information Technology Conference) 是一個由各校同學於網路串聯發起，鼓勵自發學習、切磋成長的學生社群。\n因為熱愛資訊領域、知道尋找興趣相近夥伴的不容易，籌備團隊從 2013 年以來，便致力於連結對資訊科技相關領域有興趣的學生們，透過每年三月的研討會分享彼此所學，在每週的定期聚交流精進。發展至今，GopherCon 除了是東亞最大的學生資訊社群與研討會，各地參與者也藉由夏令營、一小時學程式 (Hour of Code)、黑客松等不同的面向活動，推廣創新、實作、教學相長、以及開源貢獻的精神與理念；在台灣與海外各地，都有 GopherCon 參與者的身影。",
+    "name": "Golang Taipei",
+    "slug": "golangtaipei",
+    "url": "https://golang.tw",
+    "description": "成立於2013年，由一群熱愛 Golang 程式語言的成員組成，在國內推廣Golang，並促進社群成員交流。每個月舉辦 Meetup 技術分享會、參與國內外大型研討會議程。目前有社團成員6000多人。歡迎有興趣的朋友加入。",
     "level": "holder",
     "image": "golangtw.png"
-  },
-  {
-    "name": "中央研究院資訊科學研究所",
-    "slug": "iis",
-    "url": "https://www.iis.sinica.edu.tw/",
-    "description": "中央研究院資訊科學研究所於 1977 年開始設立籌備處，歷經五年籌備，於 1982 年 9 月正式成立研究所，是中央研究院數理組十一個單位之一。目前編制內有 39 位研究人員，另外有 29 位博士後研究學者，將近 300 位專任之資訊技術人員與非全時之研究助理，支援資訊領域之研究與系統之開發。「件件工作，反映自我，凡經我手，必為佳作」是全體同仁一致秉持的工作信念，重視工作之卓越品質，發揮最佳綜效之團隊精神。",
-    "level": "co-holder",
-    "image": "iis.png"
   },
   {
     "name": "財團法人開放文化基金會",
