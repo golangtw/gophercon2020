@@ -1,7 +1,7 @@
 <template>
   <div id="gophercon-map">
     <div :style="{ width: width, height: height }"></div>
-    <div class="sitetext">集思北科大會議中心感恩廳</div>
+    <div class="sitetext">集思台大會議中心</div>
   </div>
 </template>
 
