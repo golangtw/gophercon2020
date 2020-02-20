@@ -7,7 +7,7 @@
       GIS NTU Convention Center<br/>
       Taipei City, Da’an District, Section 4, Roosevelt Rd, No.85 B1
     </p>
-    <gophercon-map width="100%" height="650px" />
+    <gopher-con-map width="100%" height="650px" />
     <div class="traffic-flow">
       <img src="@/assets/images/traffic-flow.png" alt="">
     </div>
