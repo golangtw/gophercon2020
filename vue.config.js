@@ -30,8 +30,6 @@ module.exports = {
         '/2020/team/',
         '/2020/team/sponsor',
         '/2020/team/sponsor/',
-        '/2020/team/you',
-        '/2020/team/you/',
         '/2020/team/staff',
         '/2020/team/staff/',
       ],
