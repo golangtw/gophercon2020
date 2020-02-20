@@ -20,7 +20,7 @@
           <a
             v-for="i in 1"
             :key="`website-${2019 + i}`"
-            :href="`https://golang.tw/${ 2019 + i }/`"
+            :href="`https://gophercon.golang.tw/${ 2019 + i }/`"
             target="_blank"
             rel="noopener"
             class="font-bold"

@@ -23,7 +23,7 @@ const content = (data: any): string => `
 {
   "title": "${data.zh.title}",
   "description": "${data.zh.description.replace(/\n/gm, '')}",
-  "url": "https://golang.tw/2020/agenda/${data.id}"
+  "url": "https://gopohercon.golang.tw/2020/agenda/${data.id}"
 }
 </script>
 <h1 class="title font-black">${data.zh.title}</h1>

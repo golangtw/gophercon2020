@@ -34,7 +34,7 @@ export default class SponsorFooter extends Vue {
       .map((sponsor) => {
         return {
           ...sponsor,
-          image: `https://golang.tw/2020/img/sponsors/${sponsor.image}`
+          image: `https://gophercon.golang.tw/2020/img/sponsors/${sponsor.image}`
         };
       });
   }

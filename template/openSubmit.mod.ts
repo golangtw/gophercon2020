@@ -8,7 +8,7 @@ const content = `
 {
   "title": "開放式議程",
   "description": "過往的議程都是從講者對聽眾單向式的演講，而開放式議程跳脫這種單向的資訊傳遞，期待藉由主講者與與會者的雙向交流，碰撞出更多的觀點與討論。在開放式議程，你可以主持一個圓桌會議，一起腦力激盪，甚至辦一場競賽，任何你想得到的非傳統議程形式，都可以在開放式議程中進行；我們特別期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是探討學生相關議題等等；廣義而言，只要是與資訊技術、電腦相關的講題，都歡迎投稿！主題可以是：新課綱的現狀與困難、程式相關科目的家教市場、自由軟體滋潤不同領域的成果、女性與 LGBTQ 族群在資訊學術界或產業的處境等。",
-  "url": "https://golang.tw/2020/cfp?popUp=openSubmit"
+  "url": "https://gophercon.golang.tw/2020/cfp?popUp=openSubmit"
 }
 </script>
 <ul class="summary">
@@ -30,7 +30,7 @@ const content = `
 <p class="paragraph">過往的議程都是從講者對聽眾單向式的演講，而開放式議程跳脫這種單向的資訊傳遞，期待藉由主講者與與會者的雙向交流，碰撞出更多的觀點與討論。在開放式議程，你可以主持一個圓桌會議，一起腦力激盪，甚至辦一場競賽，任何你想得到的非傳統議程形式，都可以在開放式議程中進行。</p>
 <p class="paragraph">我們特別期待以學生為主體的投稿，可以是從學生角度出發的經驗分享、技術分享，或是探討學生相關議題等等；廣義而言，只要是與資訊技術、電腦相關的講題，都歡迎投稿！主題可以是：新課綱的現狀與困難、程式相關科目的家教市場、自由軟體滋潤不同領域的成果、女性與 LGBTQ 族群在資訊學術界或產業的處境等。</p>
 <h1 id="coc" class="title font-black">Code of Conduct 行為準則</h1>
-<p class="paragraph">GopherCon 非常歡迎女性、跨性別與多元背景的投稿者。為了讓大家都能愉快的參加 GopherCon，我們鼓勵所有參與者閱讀年會的<a href="https://golang.tw/code-of-conduct/" class="font-bold" target="_blank" rel="noopener noreferrer">行為守則（Code of Conduct）</a>，共同創造一個友善的環境。</p>
+<p class="paragraph">GopherCon 非常歡迎女性、跨性別與多元背景的投稿者。為了讓大家都能愉快的參加 GopherCon，我們鼓勵所有參與者閱讀年會的<a href="https://gophercon.golang.tw/code-of-conduct/" class="font-bold" target="_blank" rel="noopener noreferrer">行為守則（Code of Conduct）</a>，共同創造一個友善的環境。</p>
 <h1 id="format" class="title font-black">格式</h1>
 <p class="paragraph">除有特別標示會公布的資料外，其餘則只會供審稿委員閱讀。</p>
 <ul>

@@ -8,7 +8,7 @@ const content = `
 {
   "title": "大鳴大放",
   "description": "籌備中，敬請期待",
-  "url": "https://golang.tw/2020/cfp?popUp=loudly"
+  "url": "https://gophercon.golang.tw/2020/cfp?popUp=loudly"
 }
 </script>
 <h1 class="title font-black">籌備中，敬請期待</h1>

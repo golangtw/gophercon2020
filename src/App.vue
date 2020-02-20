@@ -253,8 +253,8 @@ export default class App extends Vue {
         head.title('議程表');
         head.ogTitle('議程表');
         head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
-        head.ogUrl('https://golang.tw/2020/agenda/');
-        head.ogImage('https://golang.tw/2020/img/og.png');
+        head.ogUrl('https://gophercon.golang.tw/2020/agenda/');
+        head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 
         break;
 
@@ -262,8 +262,8 @@ export default class App extends Vue {
         head.title('交通方式');
         head.ogTitle('交通方式');
         head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
-        head.ogUrl('https://golang.tw/2020/traffic/');
-        head.ogImage('https://golang.tw/2020/img/og.png');
+        head.ogUrl('https://gophercon.golang.tw/2020/traffic/');
+        head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 
         break;
 
@@ -274,8 +274,8 @@ export default class App extends Vue {
         head.title('會場地圖');
         head.ogTitle('會場地圖');
         head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
-        head.ogUrl('https://golang.tw/2020/traffic/');
-        head.ogImage('https://golang.tw/2020/img/og.png');
+        head.ogUrl('https://gophercon.golang.tw/2020/traffic/');
+        head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 
         break;
 
