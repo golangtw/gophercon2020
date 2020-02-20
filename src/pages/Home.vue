@@ -33,11 +33,7 @@
       </div>
     </div>
     <div class="spotlight-container">
-      <GopherConTatonMask :width="gopherconTatonMaskWidth" :height="gopherconTatonMaskHeight"/>
-      <div class="spotlight sharp-back-taton gophercon-back-taton" ref="gopherconTatonMask">
-        <div class="gophercon placeholder">
-          <img src="@/../public/img/icons/GopherCon-taton-cliped.svg" alt="">
-        </div>
+      <div class="spotlight sharp-back-taton" ref="gopherconTatonMask">
         <h1 class="title has-prefix-icon">
           <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
           <span class="inner font-black">什麼是 GopherCon</span>
