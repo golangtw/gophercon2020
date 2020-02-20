@@ -84,7 +84,7 @@ export const routes = [
   },
   {
     path: '/team',
-    name: 'Team',
+    name: 'Staff',
     component: Team,
     redirect: '/team/staff',
     meta: {
@@ -115,7 +115,7 @@ export const routes = [
   },
   {
     path: '/sponsor',
-    name: 'SponsorRedirect',
+    name: 'Sponsor',
     redirect: '/team/sponsor',
     meta: {
       label: '贊助',
