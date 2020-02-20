@@ -1,9 +1,8 @@
 #app.main {
   .spotlight {
-    background-color: $black;
+    background-color: $blue;
     color: $white;
     padding: 64px;
-    clip-path: polygon(20px 20px, 100% 0%, 100% 100%, 0% 100%);
     margin: 42px 200px;
     min-height: 500px;
 
@@ -21,7 +20,6 @@
       margin: 0;
       margin-bottom: 32px;
       padding: 32px;
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 
     @media screen and (max-width: 414px) {
@@ -63,7 +61,6 @@
     }
 
     &.gophercon-back-taton {
-      clip-path: url(#GopherCon-taton-mask);
       position: relative;
       width: calc(100% - (200px + 64px) * 2);
 
@@ -72,9 +69,8 @@
       }
 
       @media screen and (max-width: 675px) {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         width: calc(100% - 64px);
-        background-color: $black;
+        background-color: $blue;
       }
 
       @media screen and (max-width: 414px) {
@@ -88,7 +84,7 @@
       &:after {
         content: "";
         position: absolute;
-        background-color: $black;
+        background-color: $blue;
         height: 100%;
         width: calc(100% + 150px);
         top: 0;
@@ -133,11 +129,9 @@
       @media not all and (min-resolution: 0.001dpcm) {
         @supports (-webkit-appearance: none) and (stroke-color: transparent) {
           & {
-            clip-path: polygon(20px 20px, 100% 0%, 100% 100%, 0% 100%);
             background-color: none;
 
             @media screen and (max-width: 675px) {
-              clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
             }
           }
         }
