@@ -17,7 +17,7 @@
         <div>
           <div>
             <p class="date font-bold">9/29</p>
-            <p class="location font-bold">集思北科大會議中心感恩廳</p>
+            <p class="location font-bold">集思台大會議中心</p>
           </div>
         </div>
       </div>
@@ -38,10 +38,12 @@
           <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
           <span class="inner font-black">什麼是 GopherCon</span>
           <span class="inner font-black">About GopherCon</span>
-        /</h1>
-        <p class="content">Gopher Conference 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體工程從業人員使用 Golang 語言，更冀望所有對 Golang 有興趣的朋友可以一同參與社群。</p>
+        </h1>
+        <p class="content">Gopher Conference 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體從業人員使用 Golang 語言，對 Golang 有興趣的朋友可以一同參與社群。</p>
         <p class="content">GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 <a href="https://golang.tw/2020/cfp#call-for-define" target="_blank" rel="noopener">#define golang</a>。</p>
-      </div>
+        <p class="content">Gopher Conference is a conference held by Golang Taipei User Group since 2020. It's aim is promoting Go language and Go's communities. The event is held with talks, sponsor, and communities booths. Whoever you are a Golang coder, open source promoter, or even a newcomer, we sincerely welcome you to be part of GopherCon!</>
+        <p class="content">Call for Papers! We are looking for talks in Golang related areas. Join us and <a href="https://golang.tw/2020/cfp#call-for-paper" target="_blank" rel="noopener">#define golang</a> by sharing your Golang experiences!</p>
+    </div>
       <div class="spotlight sharp-back-taton">
         <h1 class="title has-prefix-icon">
           <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
@@ -49,12 +51,12 @@
           <span class="inner font-black">Activity</span>
         </h1>
         <p class="content">
-          延續過去有的雙向交流，今年我們有這些活動可以讓大家一起參與：
-
+          今年我們有這些活動可以讓大家一起參與：</br>
+          This years, we also have some activities to be involved:
           <ul>
             <li>
               <span>
-                攤位活動：<br>
+                Community Booths 攤位活動：<br>
                 社群攤位的目的是在促進會眾或相關資訊社群交流。多元的活動讓你在聽完議程意猶未盡之餘，更能充分交流！休息時間，別忘記到場外的攤位逛逛！
               </span>
             </li>
@@ -78,7 +80,7 @@
             <li>
               <span>
                 Q1.　什麼樣的人適合參與 GopherCon？<br>
-                A1.　Gopher Conference 致力於 Golang 的推廣，無論是已經身在資訊領域，抑或是還沒踏進資訊領域的學生，只要有想一窺資訊世界的心都適合來參與！
+                A1.　Gopher Conference 致力於 Golang 的推廣，無論是已經身在資訊領域，或是還沒踏進資訊領域的學生，只要想一窺資訊世界，都適合來參與！
               </span>
             </li>
             <li>

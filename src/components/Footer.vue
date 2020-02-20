@@ -9,7 +9,7 @@
     </div>
     <div id="contact" class="footer">
       <p>
-        <span class="font-bold">聯絡我們</span>
+        <span class="font-bold">Contact 聯絡我們</span>
         <span class="font-bold"><a href="mailto:contact@golang.tw" class="font-bold">contact@golang.tw</a></span>
       </p>
     </div>
