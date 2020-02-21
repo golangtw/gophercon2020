@@ -63,7 +63,7 @@ export default class Team extends Vue {
   }
 
   public mounted () {
-    this.tabs = this.menu.filter((item) => item.name === 'Team')[0].children as MenuItem[];
+    this.tabs = this.menu.filter((item) => item.name === 'Staff')[0].children as MenuItem[];
   }
 
   private isInApp (): boolean {
