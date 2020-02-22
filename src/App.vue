@@ -252,7 +252,7 @@ export default class App extends Vue {
       case 'Agenda':
         head.title('議程表');
         head.ogTitle('議程表');
-        head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+        head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define golang。');
         head.ogUrl('https://gophercon.golang.tw/2020/agenda/');
         head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 
@@ -261,7 +261,7 @@ export default class App extends Vue {
       case 'Traffic':
         head.title('交通方式');
         head.ogTitle('交通方式');
-        head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+        head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define golang。');
         head.ogUrl('https://gophercon.golang.tw/2020/traffic/');
         head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 
@@ -270,10 +270,19 @@ export default class App extends Vue {
       case 'Team':
       case 'Team/Staff':
       case 'Team/Sponsor':
+      case 'Team/You':
+        head.title('GopherCon 團隊');
+        head.ogTitle('GopherCon 團隊');
+        head.ogDescription('Gopher Conference 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體工程從業人員使用 Golang 語言；而維繫這樣的交流平台，需要多人的努力及貢獻，亦十分需要在資金上的支持。');
+        head.ogUrl('https://golang.tw/2020/team/');
+        head.ogImage('https://golang.tw/2020/img/og.png');
+
+        break;
+
       case 'Venue':
         head.title('會場地圖');
         head.ogTitle('會場地圖');
-        head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+        head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define golang。');
         head.ogUrl('https://gophercon.golang.tw/2020/traffic/');
         head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 
