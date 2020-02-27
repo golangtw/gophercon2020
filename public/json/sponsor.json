@@ -10,7 +10,7 @@
   {
     "name": "贊助募集中",
     "slug": "co-holder",
-    "url": "https://golang.tw",
+    "url": "mailto:david74.chou@gmail.com?cc=kakashi1000@gmail.com&subject=SponsorGopherConTW%202020",
     "description": "tba",
     "level": "co-holder",
     "image": "golangtw.png"
@@ -18,23 +18,15 @@
   {
     "name": "鑽石級贊助募集中",
     "slug": "dimand",
-    "url": "https://golang.tw",
+    "url": "mailto:david74.chou@gmail.com?cc=kakashi1000@gmail.com&subject=SponsorGopherConTW%202020%20Diamond",
     "description": "tba",
     "level": "level-1",
     "image": "golangtw.png"
   },
   {
     "name": "金級贊助募集中",
-    "slug": "gold1",
-    "url": "https://golang.tw",
-    "description": "tba",
-    "level": "level-2",
-    "image": "golangtw.png"
-  },
-  {
-    "name": "金級贊助募集中",
     "slug": "gold2",
-    "url": "https://golang.tw",
+    "url": "mailto:david74.chou@gmail.com?cc=kakashi1000@gmail.com&subject=SponsorGopherConTW%202020%20Gold",
     "description": "tba",
     "level": "level-2",
     "image": "golangtw.png"
@@ -42,31 +34,15 @@
   {
     "name": "銀級贊助募集中",
     "slug": "silver1",
-    "url": "https://golang.tw",
+    "url": "mailto:david74.chou@gmail.com?cc=kakashi1000@gmail.com&subject=SponsorGopherConTW%202020%20Silver",
     "description": "tba",
     "level": "level-3",
     "image": "golangtw.png"
   },
   {
-    "name": "銀級贊助募集中",
-    "slug": "silver2",
-    "url": "https://golang.tw",
-    "description": "tba",
-    "level": "level-3",
-    "image": "golangtw.png"
-  },
-  {
-    "name": "銀級贊助募集中",
-    "slug": "silver3",
-    "url": "https://golang.tw",
-    "description": "tba",
-    "level": "level-3",
-    "image": "golangtw.png"
-  },
-  {
-    "name": "募集中",
+    "name": "任何詢問",
     "slug": "media",
-    "url": "https://golang.tw",
+    "url": "https://github.com/golangtw/gophercon2020/issues",
     "description": "",
     "level": "media",
     "image": "golangtw.png"
