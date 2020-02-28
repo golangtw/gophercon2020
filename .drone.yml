@@ -1,16 +1,14 @@
 ---
-  kind: pipeline
-  name: testing
+kind: pipeline
+name: testing
 
-  platform:
-    os: linux
-    arch: amd64
+platform:
+  os: linux
+  arch: amd64
 
-  steps:
-  - name: release
-    image: node:13
-    environment:
-      NODE_ENV: gh-pages
-    commands:
-    - npm install
-    - npm run build
+steps:
+- name: release
+  image: node:13
+  commands:
+  - npm install
+  - npm run build
