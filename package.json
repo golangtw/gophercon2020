@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "npm run generate && vue-cli-service serve",
     "generate": "node src/util/session/index.js > public/json/session.json",
-    "build": "npm run generate && vue-cli-service build && mv ./dist/2020/* ./dist && rm -rf 2020",
+    "build": "npm run generate && vue-cli-service build && cp -r ./dist/2020/* ./dist",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
