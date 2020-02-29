@@ -9,6 +9,18 @@ platform:
 steps:
 - name: release
   image: node:13
+  environment:
+    NODE_ENV: production
   commands:
   - npm install
   - npm run build
+
+- name: publish
+  image: appleboy/gh-pages
+  pull: always
+  settings:
+    username:
+      from_secret: username
+    password:
+      from_secret: password
+    pages_directory: dist
