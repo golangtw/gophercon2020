@@ -7,13 +7,16 @@ platform:
   arch: amd64
 
 steps:
-- name: release
+- name: install
+  image: node:13
+  commands:
+  - npm install
+
+- name: build
   image: node:13
   environment:
     NODE_ENV: production
   commands:
-  - npm install
-  - ls -al ./node_modules/.bin
   - npm run build
 
 - name: publish
