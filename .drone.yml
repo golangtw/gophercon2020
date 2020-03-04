@@ -32,3 +32,6 @@ steps:
     target_branch: master
     target_directory: 2020
     remote_url: https://github.com/golangtw/gophercon.github.io.git
+  when:
+    branch:
+    - master
