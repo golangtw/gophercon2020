@@ -23,9 +23,11 @@
       </div>
       <div class="right-container">
         <p class="kktix">
+          <!--
           <a href="https://gophercon.kktix.cc/events/gophercon2020" target="_blank" rel="noopener">
-            <span>免費報名</span>
+            <span>線上報名</span>
           </a>
+          -->
           <a href="https://bit.ly/donategophercon2020" target="_blank" rel="noopener">
             <span>贊助取票</span>
           </a>
