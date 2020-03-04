@@ -5,7 +5,7 @@
     "members": [
       {
         "name": "Evan Lin",
-        "emailHash": "205e460b479e2e5b48aec07710c08d50"
+        "emailHash": "670eb312a14e540fee9f24d740275774"
       }
     ]
   },
@@ -34,6 +34,10 @@
       {
         "name": "Yun Chen",
         "emailHash": "b0afebacee0682f094fb53399a1c1dc8"
+      },
+      {
+        "name": "Bo Yi Wu",
+        "emailHash": "265bcbb56e831266de7a9f9281aab57a"
       }
     ]
   },
