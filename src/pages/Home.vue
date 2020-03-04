@@ -16,7 +16,7 @@
       <div class="left-container">
         <div>
           <div>
-            <p class="date font-bold">9/29</p>
+            <p class="date font-bold">9/19 (星期六)</p>
             <p class="location font-bold">集思台大會議中心</p>
           </div>
         </div>
