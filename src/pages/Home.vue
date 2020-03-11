@@ -23,11 +23,9 @@
       </div>
       <div class="right-container">
         <p class="kktix">
-          <!--
-          <a href="https://gophercon.kktix.cc/events/gophercon2020" target="_blank" rel="noopener">
-            <span>線上報名</span>
+          <a href="https://www.papercall.io/gophercon-2020-taiwan" target="_blank" rel="noopener">
+            <span>會議徵稿</span>
           </a>
-          -->
           <a href="https://bit.ly/donategophercon2020" target="_blank" rel="noopener">
             <span>贊助取票</span>
           </a>
