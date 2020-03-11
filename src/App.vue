@@ -270,6 +270,11 @@ export default class App extends Vue {
       case 'Team':
       case 'Team/Staff':
       case 'Team/Sponsor':
+        head.title('GopherCon團隊');
+        head.ogTitle('GopherCon團隊');
+        head.ogDescription('GopherCon 2020 邀請身為學生的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define student。');
+        head.ogUrl('https://gophercon.golang.tw/2020/team/staff');
+        head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
       case 'Venue':
         head.title('會場地圖');
         head.ogTitle('會場地圖');
