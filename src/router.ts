@@ -121,14 +121,6 @@ export const routes = [
       label: '贊助',
       menuItem: true
     }
-  },
-  {
-    path: '/cfp',
-    name: 'CFP',
-    component: CFP,
-    meta: {
-      menuItem: false
-    }
   }
 ];
 
@@ -137,16 +129,7 @@ const router = new Router({
   base: '/2020/',
   routes,
   scrollBehavior (to, from, savedPosition) {
-    if (to.name === 'CFP' && to.query.popUp && to.hash) {
-      const target = document.querySelector(`.popup-content>${to.hash}`) as HTMLElement;
-      const popUp = document.querySelector(`.popup-content`) as HTMLElement;
-      const popupPadding = 24;
-
-      return window.scrollTo({
-        top: target.offsetTop + popUp.offsetTop - popupPadding,
-        behavior: 'smooth'
-      });
-    } else if (to.hash) {
+    if (to.hash) {
       const target = document.querySelector(to.hash) as HTMLElement;
 
       return window.scrollTo({

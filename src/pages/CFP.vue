@@ -116,7 +116,7 @@ export default class CFP extends Vue {
     head.title('Call for Paper｜稿件徵求中！');
     head.ogTitle('Call for Paper｜稿件徵求中！');
     head.ogDescription('GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 #define golang。');
-    head.ogUrl('https://golang.tw/2020/cfp/');
+    head.ogUrl('https://www.papercall.io/gophercon-2020-taiwan');
     head.ogImage('https://golang.tw/2020/img/cfp-og.png');
   }
 }

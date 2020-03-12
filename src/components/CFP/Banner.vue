@@ -42,9 +42,9 @@
           <p class="code font-black font-italic">future</p>
           <p class="code font-black font-italic">programmer</p>
           <div class="board">
-            <h1 class="date font-black">3/28（六）</h1>
-            <h3>中央研究院</h3>
-            <h2 class="font-bold">人文社會科學館</h2>
+            <h1 class="date font-black">9/19（六）</h1>
+            <h3>集思台大會議中心</h3>
+            <h2 class="font-bold">國際會議廳</h2>
           </div>
         </div>
       </div>
