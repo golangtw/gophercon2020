@@ -83,10 +83,9 @@ export const routes = [
     }
   },
   {
-    path: '/team',
+    path: '/team/staff',
     name: 'Staff',
     component: Team,
-    redirect: '/team/staff',
     meta: {
       index: 5,
       label: 'GopherCon 團隊',
