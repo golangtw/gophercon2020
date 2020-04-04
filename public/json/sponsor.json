@@ -8,43 +8,19 @@
     "image": "golangtw.png"
   },
   {
-    "name": "贊助募集中",
-    "slug": "co-holder",
-    "url": "mailto:david74.chou@gmail.com?cc=kakashi1000@gmail.com&subject=SponsorGopherConTW%202020",
-    "description": "tba",
-    "level": "co-holder",
-    "image": "golangtw.png"
-  },
-  {
-    "name": "鑽石級贊助募集中",
-    "slug": "dimand",
-    "url": "mailto:david74.chou@gmail.com?cc=kakashi1000@gmail.com&subject=SponsorGopherConTW%202020%20Diamond",
-    "description": "tba",
-    "level": "level-1",
-    "image": "golangtw.png"
-  },
-  {
-    "name": "金級贊助募集中",
-    "slug": "gold2",
-    "url": "mailto:david74.chou@gmail.com?cc=kakashi1000@gmail.com&subject=SponsorGopherConTW%202020%20Gold",
-    "description": "tba",
-    "level": "level-2",
-    "image": "golangtw.png"
-  },
-  {
-    "name": "銀級贊助募集中",
+    "name": "中佑集團",
     "slug": "silver1",
-    "url": "mailto:david74.chou@gmail.com?cc=kakashi1000@gmail.com&subject=SponsorGopherConTW%202020%20Silver",
-    "description": "tba",
+    "url": "https://www.chungyo.net/",
+    "description": "中佑集團成立於1999年，為國內具代表地位的遊戲軟體系統開發商， 致力於開發線上遊戲軟體並提供系統整合平台服務，數十年來穩健的經營成功將產品行銷至亞洲各地，除了開發自有品牌旗下更同時擁有關係企業凡谷興業。專業的遊戲研發及設計團隊為後盾，追求最佳品質不間斷的研發創新技術 ，逐步建構亞洲最大網路娛樂事業體。中佑集團一直是市場上最值得信賴的遊戲軟體系統開發商，我們的目標是亞洲第一的遊戲市佔率，同時與我們的商業夥伴們將多元網路娛樂的業務推廣至全世界，創造雙贏的局面。",
     "level": "level-3",
-    "image": "golangtw.png"
+    "image": "chungyo.png"
   },
   {
-    "name": "任何詢問",
-    "slug": "media",
-    "url": "https://github.com/golangtw/gophercon2020/issues",
-    "description": "",
-    "level": "media",
-    "image": "golangtw.png"
+    "name": "財團法人開放文化基金會",
+    "slug": "ocf",
+    "url": "https://ocf.tw",
+    "description": "開放文化基金會成立於 2014 年，由多個開源社群及活動組織共同發起，希望協助台灣蓬勃的開放社群，進一步促進開放源碼、開放資料、開放硬體等自由精神，能更廣泛的於各領域中應用，同時也協助政府、企業及非政府組織更能了解開源軟體的優勢、開放資料的重要，進而推廣開放協作的文化。 2015 年起我們除了支援本地社群主辦多場中大型活動，也和英國代表處、美國在台協會及世界銀行等單位共同舉辦各種主題講座，深耕台灣的開放文化並與國際交流。",
+    "level": "co-holder",
+    "image": "ocf.png"
   }
 ]
