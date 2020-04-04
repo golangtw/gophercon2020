@@ -1,10 +1,12 @@
 #app.main {
   .spotlight {
-    background-color: $blue;
+    background-color: $black;
+    opacity: 0.6;
     color: $white;
     padding: 64px;
     margin: 42px 200px;
     min-height: 500px;
+    border-radius: 30px;
 
     &-container {
       width: 100%;
@@ -70,7 +72,7 @@
 
       @media screen and (max-width: 675px) {
         width: calc(100% - 64px);
-        background-color: $blue;
+        background-color: $black;
       }
 
       @media screen and (max-width: 414px) {
@@ -84,7 +86,7 @@
       &:after {
         content: "";
         position: absolute;
-        background-color: $blue;
+        background-color: $black;
         height: 100%;
         width: calc(100% + 150px);
         top: 0;

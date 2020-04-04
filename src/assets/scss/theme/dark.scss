@@ -6,15 +6,15 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: $blue;
+    background-color: $black;
     z-index: -1;
   }
-  @include container($blue, $white);
-  @include navbar($blue, $blue-1, $white, $blue-3);
+  @include container($black, $white);
+  @include navbar($black, $dark-1, $white, $dark-3);
   @include navbarDarkIcon;
 
-  @include footer($blue, $blue-1);
-  @include agenda($blue, $blue-1, $white, $blue-3);
+  @include footer($black, $dark-4);
+  @include agenda($black, $dark-1, $white, $dark-3);
 
   @include trafficDarkImg;
 }

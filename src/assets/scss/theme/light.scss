@@ -1,7 +1,7 @@
 @mixin light {
-  @include container($white, $blue);
-  @include navbar($white, $blue-4, $blue, $blue-1);
+  @include container($white, $black);
+  @include navbar($white, $dark-4, $black, $dark-1);
 
-  @include footer($blue-4, $blue);
-  @include agenda($white, $blue-3, $blue, $blue-1);
+  @include footer($dark-4, $dark-1);
+  @include agenda($white, $dark-3, $black, $dark-1);
 }
