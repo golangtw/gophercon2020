@@ -1,13 +1,5 @@
 [
   {
-    "name": "Golang Taipei",
-    "slug": "golangtaipei",
-    "url": "https://golang.tw",
-    "description": "成立於2013年，由一群熱愛 Golang 程式語言的成員組成，在國內推廣Golang，並促進社群成員交流。每個月舉辦 Meetup 技術分享會、參與國內外大型研討會議程。目前有社團成員6000多人。歡迎有興趣的朋友加入。",
-    "level": "holder",
-    "image": "golangtw.png"
-  },
-  {
     "name": "中佑集團",
     "slug": "silver1",
     "url": "https://www.chungyo.net/",
