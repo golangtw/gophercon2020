@@ -130,11 +130,36 @@
         margin-top: 20px;
       }
 
+      .container,
       .left-container,
       .right-container {
         opacity: 0.8;
         display: flex;
         width: 50%;
+      }
+
+      .container {
+        flex-direction: column-reverse;
+
+        & > div {
+          padding: 16px 24px;
+          margin-left: auto;
+          background-color: $black;
+          color: $white;
+
+          & > div {
+            transform: skewX(-10deg);
+
+            .date {
+              font-size: 28px;
+              margin-bottom: 8px;
+            }
+
+            .location {
+              font-size: 24px;
+            }
+          }
+        }
       }
 
       .left-container {
@@ -198,10 +223,28 @@
         flex-direction: column;
         margin: 80px auto;
 
+        .container,
         .left-container,
         .right-container {
           width: 100%;
           justify-content: flex-start;
+        }
+
+        .container {
+          & > div {
+            margin: auto;
+            margin-left: 32px;
+
+            & > div {
+              .date {
+                font-size: 22px;
+              }
+
+              .location {
+                font-size: 16px;
+              }
+            }
+          }
         }
 
         .left-container {

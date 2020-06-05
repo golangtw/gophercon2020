@@ -9,7 +9,7 @@
       <div class="inner-container">
         <h1 class="title font-black">GopherCon 2020</h1>
         <h2 class="subtitle font-black">Gopher Conference</h2>
-        <h3 class="keywords font-black">#define golang</h3>
+        <h3 class="keywords font-black">Gopher with golang</h3>
       </div>
     </header>
     <div class="info">
@@ -35,9 +35,8 @@
     <div class="spotlight-container">
       <div class="spotlight sharp-back-taton" ref="gopherconTatonMask">
         <h1 class="title has-prefix-icon">
-          <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
-          <span class="inner font-black">什麼是 GopherCon</span>
-          <span class="inner font-black">About GopherCon</span>
+          <span class="inner font-black"></span>
+          <span class="inner font-black">關於 About</span>
         </h1>
         <p class="content">Gopher Conference 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體從業人員使用 Golang 語言，對 Golang 有興趣的朋友可以一同參與社群。</p>
         <p class="content">GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 <a href="https://gophercon.golang.tw/2020/cfp#call-for-define" target="_blank" rel="noopener">#define golang</a>。</p>
@@ -46,9 +45,8 @@
     </div>
       <div class="spotlight sharp-back-taton">
         <h1 class="title has-prefix-icon">
-          <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
-          <span class="inner font-black">活動</span>
-          <span class="inner font-black">Activity</span>
+          <span class="inner font-black"></span>
+          <span class="inner font-black">活動 Activity</span>
         </h1>
         <p class="content">
           今年我們有這些活動可以讓大家一起參與：</br>
@@ -71,8 +69,7 @@
       </div>
       <div class="spotlight sharp-back-taton">
         <h1 class="title has-prefix-icon">
-          <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
-          <span class="inner font-black">問答</span>
+          <span class="inner font-black"></span>
           <span class="inner font-black">Q &amp; A</span>
         </h1>
         <p class="content">
@@ -94,9 +91,8 @@
       </div>
       <div class="spotlight sharp-back-taton">
         <h1 class="title has-prefix-icon">
-          <img class="prefix-icon" src="@/assets/images/sharp-white.svg" />
+          <span class="inner font-black"></span>
           <span class="inner font-black">行為準則</span>
-          <span class="inner font-black">Code of Conduct</span>
         </h1>
         <p class="content">
           GopherCon 致力於為社群中的每位成員提供更友善、開放的環境。我們相信每位參與社群活動的夥伴都值得被尊重，而我們會盡力提供最安全的環境，讓參與 GopherCon 盛會的每位朋友能夠認識個體間的差異、在社群中相互扶助、並鼓勵每個人揮灑屬於自己生命的色彩。<br/>
