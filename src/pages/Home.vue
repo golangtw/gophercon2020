@@ -9,14 +9,14 @@
       <div class="inner-container">
         <h1 class="title font-black">GopherCon 2020</h1>
         <h2 class="subtitle font-black">Gopher Conference</h2>
-        <h3 class="keywords font-black">Gopher with golang</h3>
+        <h3 class="keywords font-black">Have fun with Golang</h3>
       </div>
     </header>
     <div class="info">
       <div class="left-container">
         <div>
           <div>
-            <p class="date font-bold">9/19 (星期六)</p>
+            <p class="date font-bold">11/14 (星期六)</p>
             <p class="location font-bold">集思台大會議中心</p>
           </div>
         </div>
@@ -39,9 +39,9 @@
           <span class="inner font-black">關於 About</span>
         </h1>
         <p class="content">Gopher Conference 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體從業人員使用 Golang 語言，對 Golang 有興趣的朋友可以一同參與社群。</p>
-        <p class="content">GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 <a href="https://gophercon.golang.tw/2020/cfp#call-for-define" target="_blank" rel="noopener">#define golang</a>。</p>
+        <p class="content">GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 <a href="https://gophercon.golang.tw/2020/cfp#call-for-golang" target="_blank" rel="noopener">have fun with golang</a>。</p>
         <p class="content">Gopher Conference is a conference held by Golang Taipei User Group since 2020. It's aim is promoting Go language and Go's communities. The event is held with talks, sponsor, and communities booths. Whoever you are a Golang coder, open source promoter, or even a newcomer, we sincerely welcome you to be part of GopherCon!</p>
-        <p class="content">Call for Papers! We are looking for talks in Golang related areas. Join us and <a href="https://gophercon.golang.tw/2020/cfp#call-for-paper" target="_blank" rel="noopener">#define golang</a> by sharing your Golang experiences!</p>
+        <p class="content">Call for Papers! We are looking for talks in Golang related areas. Join us and <a href="https://gophercon.golang.tw/2020/cfp#call-for-paper" target="_blank" rel="noopener">have fun with golang</a> by sharing your Golang experiences!</p>
     </div>
       <div class="spotlight sharp-back-taton">
         <h1 class="title has-prefix-icon">

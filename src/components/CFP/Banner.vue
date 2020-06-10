@@ -30,7 +30,7 @@
       </div>
       <div class="view-box">
         <div class="define">
-          <p class="code font-black font-italic">#define</p>
+          <p class="code font-black font-italic">have fun with golang</p>
           <p
             v-if="theme.includes('RAINBOW')"
             class="code font-black font-italic"
@@ -42,7 +42,7 @@
           <p class="code font-black font-italic">future</p>
           <p class="code font-black font-italic">programmer</p>
           <div class="board">
-            <h1 class="date font-black">9/19（六）</h1>
+            <h1 class="date font-black">11/14（六）</h1>
             <h3>集思台大會議中心</h3>
             <h2 class="font-bold">國際會議廳</h2>
           </div>
