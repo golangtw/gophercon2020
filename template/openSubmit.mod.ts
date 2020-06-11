@@ -24,7 +24,7 @@ const content = `
   <li>2019/12/10（二）投稿開始</li>
   <li>2020/01/12（日）早上 06:41 投稿截止</li>
   <li>一月下旬審稿結束、隨後公佈完整議程</li>
-  <li>2020/03/28（六）GopherCon 2020</li>
+  <li>2020/03/28（六）GopherCon TW 2020</li>
 </ul>
 <h1 id="subject" class="title font-black">投稿主題</h1>
 <p class="paragraph">過往的議程都是從講者對聽眾單向式的演講，而開放式議程跳脫這種單向的資訊傳遞，期待藉由主講者與與會者的雙向交流，碰撞出更多的觀點與討論。在開放式議程，你可以主持一個圓桌會議，一起腦力激盪，甚至辦一場競賽，任何你想得到的非傳統議程形式，都可以在開放式議程中進行。</p>
@@ -59,7 +59,7 @@ const content = `
 </ul>
 <h1 id="notice" class="title font-black">投稿注意事項</h1>
 <ul>
-  <li>GopherCon 2020 採用 Google Forms 接收投稿。</li>
+  <li>GopherCon TW 2020 採用 Google Forms 接收投稿。</li>
   <li>議程時間長度以 40 分鐘為原則。</li>
   <li>L除了開放式議程外，同一時間將有 3 至 4 軌一般議程同時進行。</li>
   <li>上述審稿方式不考慮稿件內容的技術難度，我們仍以稿件是否能夠吸引人、高品質、適合與會者（即上述篩選方式）為考量。</li>

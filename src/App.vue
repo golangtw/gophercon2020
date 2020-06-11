@@ -252,7 +252,7 @@ export default class App extends Vue {
       case 'Agenda':
         head.title('議程表');
         head.ogTitle('議程表');
-        head.ogDescription('GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。');
+        head.ogDescription('GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。');
         head.ogUrl('https://gophercon.golang.tw/2020/agenda/');
         head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 
@@ -261,7 +261,7 @@ export default class App extends Vue {
       case 'Traffic':
         head.title('交通方式');
         head.ogTitle('交通方式');
-        head.ogDescription('GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。');
+        head.ogDescription('GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。');
         head.ogUrl('https://gophercon.golang.tw/2020/traffic/');
         head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 
@@ -272,13 +272,13 @@ export default class App extends Vue {
       case 'Team/Sponsor':
         head.title('GopherCon團隊');
         head.ogTitle('GopherCon團隊');
-        head.ogDescription('GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。');
+        head.ogDescription('GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。');
         head.ogUrl('https://gophercon.golang.tw/2020/team/staff');
         head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
       case 'Venue':
         head.title('會場地圖');
         head.ogTitle('會場地圖');
-        head.ogDescription('GopherCon 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。');
+        head.ogDescription('GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。');
         head.ogUrl('https://gophercon.golang.tw/2020/traffic/');
         head.ogImage('https://gophercon.golang.tw/2020/img/og.png');
 

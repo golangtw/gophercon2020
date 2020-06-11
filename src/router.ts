@@ -22,7 +22,7 @@ export const routes = [
     component: Home,
     meta: {
       index: 0,
-      label: 'GopherCon 2020',
+      label: 'GopherCon TW',
       menuItem: true
     }
   },

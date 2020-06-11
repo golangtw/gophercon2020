@@ -24,7 +24,7 @@
     </div>
     <header class="banner-header">
       <div class="view-box">
-        <h3 class="flag font-bold">GopherCon 2020</h3>
+        <h3 class="flag font-bold">GopherCon TW 2020</h3>
         <h1 class="title font-black">Call for<br>Paper</h1>
         <h2 class="subtitle font-black">稿件徵求中！</h2>
       </div>
