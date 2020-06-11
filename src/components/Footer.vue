@@ -3,8 +3,8 @@
     <hr class="footer-line">
     <div id="brand" class="footer">
       <p>
-        <span class="font-bold">GopherCon</span>
-        <span class="font-bold">Gopher Conference</span>
+        <span class="font-bold">GopherCon TW</span>
+        <span class="font-bold">Gopher Conference Taiwan</span>
       </p>
     </div>
     <div id="contact" class="footer">

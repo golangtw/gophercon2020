@@ -25,7 +25,7 @@ const content = `
   <li>2019/10/18（五）投稿開始</li>
   <li>2020/01/12（日）早上 06:41 投稿截止</li>
   <li>一月下旬審稿結束、隨後公佈完整議程</li>
-  <li>2020/03/28（六）GopherCon 2020</li>
+  <li>2020/03/28（六）GopherCon TW 2020</li>
 </ul>
 <h1 id="subject" class="title font-black">投稿主題範例</h1>
 <p class="paragraph">
@@ -102,8 +102,8 @@ const content = `
 </ul>
 <h1 id="notice" class="title font-black">投稿注意事項</h1>
 <ul>
-  <li>GopherCon 2020 採用 Google Forms 接收投稿。</li>
-  <li>GopherCon 2020 將會有 4 軌議程同時進行（不計 Unconference 及 Lightning talk）。</li>
+  <li>GopherCon TW 2020 採用 Google Forms 接收投稿。</li>
+  <li>GopherCon TW 2020 將會有 4 軌議程同時進行（不計 Unconference 及 Lightning talk）。</li>
   <li>Lightning talk 將於所有議程結束後，閉幕前於國際會議廳舉行。</li>
   <li>上述審稿方式不考慮稿件內容的技術難度，我們仍以稿件是否能夠吸引人、高品質、適合聽眾（即上述篩選方式）為考量。</li>
   <li>為鼓勵投稿，大會提供投稿人一組邀請碼 （一人一組，非一稿一組），可優先報名參與本年會，獲選講者請使用講者身分入場，不需要報名，並可將邀請碼轉移他人使用。</li>
