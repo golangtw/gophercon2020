@@ -1,14 +1,14 @@
 <template>
   <div id="staff" class="staff-container">
     <div class="staff-spotlight full-width-banner">
-      <p class="paragraph">GopherCon TW 年會每年皆是許多志工奉獻與時間精神所舉辦；若你對參與 GopherCon 年會的籌備有興趣，歡迎填寫表單，我們將在明年活動開始籌備時通知您！</p>
+      <p class="paragraph">GopherCon TW 年會每年皆是許多志工奉獻與時間精神所舉辦；若你對參與 GopherCon 年會的籌備有興趣，歡迎填寫表單，我們將在活動開始籌備時通知您！</p>
       <p class="paragraph">
         <a
-          href="https://forms.gle/1J9fxQP2ux55PJXC9"
+          href="mailto: contact@golang.tw"
           class="tone-trans form-link font-bold"
           target="_blank"
           rel="noopener"
-        >表單連結</a>
+        >聯絡我們</a>
       </p>
     </div>
     <div
