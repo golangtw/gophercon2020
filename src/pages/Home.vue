@@ -38,9 +38,9 @@
           <span class="inner font-black"></span>
           <span class="inner font-black">關於 About</span>
         </h1>
-        <p class="content">Gopher Conference 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體從業人員使用 Golang 語言，對 Golang 有興趣的朋友可以一同參與社群。</p>
+        <p class="content">Gopher Conference Taiwan 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體從業人員使用 Golang 語言，對 Golang 有興趣的朋友可以一同參與社群。</p>
         <p class="content">GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 <a href="https://gophercon.golang.tw/2020/cfp#call-for-golang" target="_blank" rel="noopener">have fun with golang</a>。</p>
-        <p class="content">Gopher Conference is a conference held by Golang Taipei User Group since 2020. It's aim is promoting Go language and Go's communities. The event is held with talks, sponsor, and communities booths. Whoever you are a Golang coder, open source promoter, or even a newcomer, we sincerely welcome you to be part of GopherCon!</p>
+        <p class="content">Gopher Conference Taiwan is a conference held by Golang Taipei User Group since 2020. It's aim is promoting Go language and Go's communities. The event is held with talks, sponsor, and communities booths. Whoever you are a Golang coder, open source promoter, or even a newcomer, we sincerely welcome you to be part of GopherCon TW!</p>
         <p class="content">Call for Papers! We are looking for talks in Golang related areas. Join us and <a href="https://gophercon.golang.tw/2020/cfp#call-for-paper" target="_blank" rel="noopener">have fun with golang</a> by sharing your Golang experiences!</p>
     </div>
       <div class="spotlight sharp-back-taton">
@@ -76,8 +76,8 @@
           <ul>
             <li>
               <span>
-                Q1.　什麼樣的人適合參與 GopherCon？<br>
-                A1.　Gopher Conference 致力於 Golang 的推廣，無論是已經身在資訊領域，或是還沒踏進資訊領域的學生，只要想一窺資訊世界，都適合來參與！
+                Q1.　什麼樣的人適合參與 GopherCon TW ？<br>
+                A1.　Gopher Conference Taiwan 致力於 Golang 的推廣，無論是已經身在資訊領域，或是還沒踏進資訊領域的學生，只要想一窺資訊世界，都適合來參與！
               </span>
             </li>
             <li>
@@ -95,8 +95,8 @@
           <span class="inner font-black">行為準則</span>
         </h1>
         <p class="content">
-          GopherCon 致力於為社群中的每位成員提供更友善、開放的環境。我們相信每位參與社群活動的夥伴都值得被尊重，而我們會盡力提供最安全的環境，讓參與 GopherCon 盛會的每位朋友能夠認識個體間的差異、在社群中相互扶助、並鼓勵每個人揮灑屬於自己生命的色彩。<br/>
-          因此，若有幸能在 GopherCon 社群與您見面，無論您是以會眾、贊助商、工作人員、或是講者的身份參加活動，我們都希望您遵守以下的行為準則：
+          GopherCon TW 致力於為社群中的每位成員提供更友善、開放的環境。我們相信每位參與社群活動的夥伴都值得被尊重，而我們會盡力提供最安全的環境，讓參與 GopherCon TW 盛會的每位朋友能夠認識個體間的差異、在社群中相互扶助、並鼓勵每個人揮灑屬於自己生命的色彩。<br/>
+          因此，若有幸能在 GopherCon TW 社群與您見面，無論您是以會眾、贊助商、工作人員、或是講者的身份參加活動，我們都希望您遵守以下的行為準則：
 
           <ul>
             <li><span>尊重每一位參與者，將對方的感受放在心上</span></li>
@@ -117,7 +117,7 @@
             <li><span>違反法律的行為</span></li>
           </ul>
 
-          為了確保每位參與者的安全，我們將恪守以上規則。違反行為準則的參與者，我們將採取必要且合理的手段予以介入，包含但不限於將參與者請離現場、自相關名冊除名或列為不受歡迎對象，或在必要時移送警察機關法辦。若您或他人遇到了以上情況、或是有任何其他顧慮，都請立即尋求 GopherCon 工作人員的協助。 我們誠摯的邀請來到 GopherCon 的朋友一同履行以上承諾，將 GopherCon 打造為更友善、更溫暖的所在；讓每一位參與者，都能在社群的交流中共同成長、在人與人的互動中找到自信——而這正是我們所珍惜的、屬於開放社群的真正精神。
+          為了確保每位參與者的安全，我們將恪守以上規則。違反行為準則的參與者，我們將採取必要且合理的手段予以介入，包含但不限於將參與者請離現場、自相關名冊除名或列為不受歡迎對象，或在必要時移送警察機關法辦。若您或他人遇到了以上情況、或是有任何其他顧慮，都請立即尋求 GopherCon TW 工作人員的協助。 我們誠摯的邀請來到 GopherCon TW 的朋友一同履行以上承諾，將 GopherCon TW 打造為更友善、更溫暖的所在；讓每一位參與者，都能在社群的交流中共同成長、在人與人的互動中找到自信——而這正是我們所珍惜的、屬於開放社群的真正精神。
         </p>
       </div>
     </div>
