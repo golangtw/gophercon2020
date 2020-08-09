@@ -1,5 +1,36 @@
 @mixin footer ($backgroundColor, $fontColor) {
   .footer {
+    &-contact{
+      display: flex;
+      flex-wrap: wrap;
+      height: 273px;
+      .contact-text {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 21px;
+        font-family: LTCSquareFace;
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #343942;
+        margin-top: 80px;
+      }
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+        .icn_mail {
+          width: 44px;
+          height: 45px;
+          object-fit: contain;
+        }
+      }
+    }
     &-container {
       background-color: rgba($backgroundColor, 1);
       backdrop-filter: blur(25px);
@@ -12,7 +43,6 @@
       padding: 64px $main-padding;
       transition: all ease-in-out 0.3s;
       z-index: 10;
-
       @supports (-moz-animation: none) {
         background-color: $backgroundColor,;
       }

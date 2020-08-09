@@ -1,6 +1,8 @@
 <template>
   <div id="home" class="main-container">
-    <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
+    <a href="/2020/" class="Logo">
+      <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
+    </a>
     <div class="background-image">
       <img src="https://gophercon.golang.tw/2020/img/group-9.png"
        srcset="https://gophercon.golang.tw/2020/img/group-9@2x.png 2x,https://gophercon.golang.tw/2020/img/group-9@3x.png 3x"

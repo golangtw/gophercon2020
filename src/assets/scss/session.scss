@@ -1,27 +1,36 @@
 @mixin agenda ($backgroundColor, $backgroundColorHover, $fontColor, $fontColorLevel2) {
   #agenda {
+    .Logo {
+      width: 457px;
+      height: 190px;
+      object-fit: contain;
+      z-index: 1000;
+      position: absolute;
+      top: 0;
+    }
+
     &.main-container {
       padding-left: 200px;
       padding-right: 200px;
       background-color: $backgroundColor;
-  
+
       @media screen and (max-width: 1280px) {
         padding-left: 50px;
         padding-right: 50px;
       }
-  
+
       @media screen and (max-width: 1024px) {
         padding-top: 0;
         padding-left: 0;
         padding-right: 0;
       }
     }
-  
+
     .ccip-app {
       @media screen and (max-width: 1024px) {
         width: 100%;
       }
-  
+
       &.ccip-session {
         &-table {
           margin-bottom: 6rem;
@@ -29,7 +38,7 @@
             margin: 0;
           }
         }
-  
+
         &-block {
           color: $fontColor;
 
@@ -37,13 +46,13 @@
             font-size: 24px;
             text-align: center;
             margin-bottom: 16px;
-  
+
             p {
               font-weight: 500;
               font-family: "Fira Code", monospace;
             }
           }
-  
+
           &.session-block {
             position: relative;
             display: flex;
@@ -56,12 +65,12 @@
             border: 2px solid $fontColor;
             border-radius: 10px;
             text-align: center;
-  
+
             &.clickable {
               cursor: pointer;
             }
           }
-  
+
           &.time-block {
             position: absolute;
             font-size: 14px;
@@ -74,47 +83,47 @@
             color: $backgroundColor;
             padding: 4px 5px;
             border-radius: 10px;
-  
+
             p {
               font-family: "Fira Code", monospace;
             }
           }
         }
-  
+
         &-title {
           font-size: 20px;
           font-weight: 500;
           line-height: 1.2;
         }
-  
+
         &-tags,
         &-speakers {
           display: flex;
           flex-direction: column;
         }
-  
+
         &-speakers {
           span {
             margin-top: 10px;
           }
-  
+
           @media screen and (max-width: 960px) {
             flex-direction: row;
             flex-wrap: wrap;
           }
         }
-  
+
         &-tags {
           span {
             margin-bottom: 6px;
           }
-  
+
           @media screen and (max-width: 960px) {
             flex-direction: row;
             flex-wrap: wrap;
           }
         }
-  
+
         &-tag {
           display: inline-block;
           width: auto;
@@ -124,16 +133,16 @@
           border-radius: 5px;
           background-color: $fontColorLevel2;
           color: $backgroundColor;
-          
+
           &:before {
             content: '#'
           }
-  
+
           @media screen and (max-width: 960px) {
             margin-bottom: 4px;
           }
         }
-  
+
         &-time-group {
           &.head,
           &.session-block {
@@ -147,12 +156,12 @@
             color: $backgroundColor;
             font-size: 16px;
             z-index: 1;
-  
+
             p {
               font-family: "Fira Code", monospace;
             }
           }
-  
+
           &.session-block {
             position: relative;
             background-color: $backgroundColor;
@@ -166,20 +175,20 @@
             &:hover {
               background-color: $backgroundColorHover;
             }
-  
+
             &.clickable {
               cursor: pointer;
             }
-  
+
             &:last-child {
               border: 0;
             }
-  
+
             .ccip-session-time {
               margin-top: 10px;
               color: rgba($fontColor, 0.7);
             }
-  
+
             .ccip-session-room {
               position: absolute;
               right: 8px;
@@ -190,5 +199,5 @@
         }
       }
     }
-  }  
+  }
 }
