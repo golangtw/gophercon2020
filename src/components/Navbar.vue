@@ -15,7 +15,6 @@
         </div>
       </div>
       <div class="menu" :class="{ toggled: isMenuToggled }">
-        <div class="menu-mask" @click.self="toggleMenu(false)"></div>
         <div class="menu-container">
           <header>
             <div class="define-logo">

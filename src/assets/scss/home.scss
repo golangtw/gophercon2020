@@ -7,6 +7,15 @@
       margin-top: 0;
     }
 
+    .Logo {
+      width: 457px;
+      height: 190px;
+      object-fit: contain;
+      z-index: 1000;
+      position: fixed;
+      top: 23px
+    }
+
     .header {
       display: flex;
       width: 50%;
@@ -91,7 +100,7 @@
       }
     }
 
-    .background-video {
+    .background-image {
       position: fixed;
       background-color: $white;
       height: calc(100vw / 16 * 9);
@@ -100,6 +109,7 @@
       left: 0;
       z-index: 0;
       transform-origin: 0 0;
+      margin-top: 72px;
 
       @media screen and (orientation: landscape) and (max-width: 1200px) {
         transform: scale(1.4);
@@ -109,7 +119,7 @@
         transform: translate(0, 100vh) rotate(-90deg) scale(2);
       }
 
-      .video {
+      .Group-9 {
         &-container {
           position: relative;
           width: 100%;
@@ -123,11 +133,37 @@
 
     .info {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
-      margin-bottom: 80px;
+      margin-top: 262px;
 
       @media screen and (max-width: 475px) {
         margin-top: 20px;
+      }
+
+      .badge-container {
+        z-index: 1;
+        flex-basis: 100%;
+        margin-bottom: 77px;
+        width: 190px;
+        height: 67px;
+        object-fit: contain;
+        background-image: url("https://gophercon.golang.tw/2020/img/badge-1280.svg");
+        background-repeat:no-repeat;
+        padding: 20px 66px 12px 28px;
+
+        .text {
+          width: 96px;
+          height: 35px;
+          font-family: SourceHanSansTW;
+          font-size: 24px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #343942;
+        }
       }
 
       .container,

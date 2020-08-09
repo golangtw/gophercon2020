@@ -15,7 +15,7 @@ const defaultValue = {
   title: `Gopher Conference Taiwan 2020`,
   description: 'GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。',
   url: 'https://golang.tw/2020',
-  image: 'https://golang.tw/2020/img/og.png',
+  image: 'https://gophercon.golang.tw/2020/img/og.png',
   type: 'website'
 };
 

@@ -1,7 +1,7 @@
 @mixin footer ($backgroundColor, $fontColor) {
   .footer {
     &-container {
-      background-color: rgba($backgroundColor, 0.5);
+      background-color: rgba($backgroundColor, 1);
       backdrop-filter: blur(25px);
       display: grid;
       grid-template-areas:
