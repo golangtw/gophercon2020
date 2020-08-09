@@ -9,12 +9,12 @@
     background-color: $black;
     z-index: -1;
   }
-  @include container($black, $white);
-  @include navbar($black, $dark-1, $white, $dark-3);
+  @include container($white, $black);
+  @include navbar($blue-5, $dark-4, $green-1, $dark-1);
   @include navbarDarkIcon;
 
-  @include footer($black, $dark-4);
-  @include agenda($black, $dark-1, $white, $dark-3);
+  @include footer($blue-5, $green-1);
+  @include agenda($white, $dark-3, $black, $dark-1);
 
   @include trafficDarkImg;
 }

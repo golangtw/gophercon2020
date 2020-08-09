@@ -41,7 +41,7 @@
           >
             <div class="img-container">
               <a :href="`${sponsor.url}`" target="_blank" rel="noopener">
-                <img :alt="sponsor.name" :src="`https://golang.tw/2020/img/sponsors/${sponsor.image}`" />
+                <img :alt="sponsor.name" :src="`https://gophercon.golang.tw/2020/img/sponsors/${sponsor.image}`" />
               </a>
             </div>
             <div class="text-container">

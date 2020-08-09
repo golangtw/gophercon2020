@@ -1,36 +1,18 @@
 <template>
   <div id="home" class="main-container">
-    <div class="background-video">
-      <video id="video-player" class="video-container" autoplay="autoplay" loop="true" muted="true" playsInine playsinline>
-        <source class="video" src="https://gophercon.golang.tw/2020/video/bg-h264.mp4" type="video/mp4">
-      </video>
+    <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
+    <div class="background-image">
+      <img src="https://gophercon.golang.tw/2020/img/group-9.png"
+       srcset="https://gophercon.golang.tw/2020/img/group-9@2x.png 2x,https://gophercon.golang.tw/2020/img/group-9@3x.png 3x"
+       class="Group-9">
     </div>
-    <header class="header">
-      <div class="inner-container">
-        <h1 class="title font-black">GopherCon TW 2020</h1>
-        <h2 class="subtitle font-black">Gopher Conference Taiwan</h2>
-        <h3 class="keywords font-black">Have fun with Golang</h3>
-      </div>
-    </header>
     <div class="info">
-      <div class="left-container">
-        <div>
-          <div>
-            <p class="date font-bold">11/14 (星期六)</p>
-            <p class="location font-bold">集思台大會議中心</p>
-          </div>
+        <div class="badge-container">
+          <div class="text">贊助取票</div>
         </div>
-      </div>
-      <div class="right-container">
-        <p class="kktix">
-          <a href="https://www.papercall.io/gophercon-2020-taiwan" target="_blank" rel="noopener">
-            <span>會議徵稿</span>
-          </a>
-          <a href="https://bit.ly/donategophercon2020" target="_blank" rel="noopener">
-            <span>贊助取票</span>
-          </a>
-        </p>
-      </div>
+        <div class="badge-container">
+          <div class="text">會議徵稿</div>
+        </div>
     </div>
     <div class="spotlight-container">
       <div class="spotlight sharp-back-taton" ref="gopherconTatonMask">

@@ -23,7 +23,7 @@ export const routes = [
     meta: {
       index: 0,
       label: 'GopherCon TW',
-      menuItem: true
+      menuItem: false
     }
   },
   {

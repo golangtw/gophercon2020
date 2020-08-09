@@ -1,11 +1,18 @@
 #app.main {
   .spotlight {
-    background-color: $black;
-    opacity: 0.6;
-    color: $white;
+    background-color: $white;
+    opacity: 0.9;
+    color: $dark-5;
     padding: 64px;
     margin: 42px 200px;
     min-height: 500px;
+    font-family: SourceHanSansTW;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
 
     &-container {
       width: 100%;
@@ -30,6 +37,8 @@
 
     &.sharp-back-taton {
       position: relative;
+      float: right;
+      width: 528px;
       z-index: 1;
 
       p.content {
@@ -145,7 +154,7 @@
     li,
     a,
     span {
-      color: $white;
+      color: $dark-5;
       text-align: left;
       line-height: 1.6;
     }
@@ -179,7 +188,7 @@
       line-height: 1.2;
 
       &.has-prefix-icon {
-        display: grid;
+        // display: grid;
         grid-template-areas:
           "icon inner_text_1"
           "icon inner_text_2";
@@ -215,6 +224,8 @@
         }
 
         > span.inner {
+          color: $blue-6;
+          float: left;
           &:nth-child(0) {
             grid-area: inner_text_1;
           }
