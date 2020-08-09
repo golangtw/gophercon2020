@@ -76,6 +76,11 @@
         margin-left: auto;
         color: $fontColor;
         width: 100%;
+
+        &-right {
+          flex: 1;
+          justify-content: flex-end !important;
+        }
       }
 
       .toggle-button {

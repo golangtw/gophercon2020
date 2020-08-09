@@ -13,7 +13,7 @@
     background-color: $white;
 
     &.blur-filter {
-      background-color: rgba($gray-1, 1);
+      background-color: rgba($white, 1);
       backdrop-filter: blur(5px);
     }
 

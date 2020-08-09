@@ -30,7 +30,25 @@
             </div>
           </header>
           <router-link
-            v-for="item in menu"
+            v-for="item in menu.slice(0,3)"
+            :key="item.name"
+            :to="item.path"
+            class="menu-item font-bold"
+            :class="{ active: $route.name.includes(item.name) }"
+          >
+            <span>{{ item.meta.label }}</span>
+          </router-link>
+          <router-link
+            v-for="item in menu.slice(3,4)"
+            :key="item.name"
+            :to="item.path"
+            class="menu-item menu-right font-bold"
+            :class="{ active: $route.name.includes(item.name) }"
+          >
+            <span>{{ item.meta.label }}</span>
+          </router-link>
+          <router-link
+            v-for="item in menu.slice(4)"
             :key="item.name"
             :to="item.path"
             class="menu-item font-bold"

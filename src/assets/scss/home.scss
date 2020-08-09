@@ -12,8 +12,8 @@
       height: 190px;
       object-fit: contain;
       z-index: 1000;
-      position: fixed;
-      top: 23px
+      position: absolute;
+      top: 0;
     }
 
     .header {
@@ -135,7 +135,7 @@
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      margin-top: 262px;
+      margin-top: 200px;
 
       @media screen and (max-width: 475px) {
         margin-top: 20px;

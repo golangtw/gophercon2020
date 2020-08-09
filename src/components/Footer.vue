@@ -1,6 +1,5 @@
 <template>
   <footer class="footer-container">
-    <hr class="footer-line">
     <div id="brand" class="footer">
       <p>
         <span class="font-bold">GopherCon TW</span>
