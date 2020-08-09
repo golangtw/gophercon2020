@@ -6,7 +6,7 @@
           Contact us in one of the following social networks
         </div>
         <div class="contact-info">
-          <img src="/img/icn-mail.svg" class="icn_mail">
+          <img src="https://gophercon.golang.tw/2020/img/icn-mail.svg" class="icn_mail">
         </div>
       </div>
     </div>
