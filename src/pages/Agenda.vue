@@ -1,12 +1,24 @@
 <template>
   <div id="agenda" class="main-container">
-    <CCIPSessionTable
-      :sessionData="sessionData"
-      :rooms="['R0', 'R1']"
-      :isMobile="isMobile()"
-      :isPopup.sync="popUp"
-      :popUpSession.sync="popUpSession"
-    />
+    <a href="/2020/" class="Logo">
+      <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
+    </a>
+    <div class="background-image">
+      <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
+           srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
+           class="Group-9">
+    </div>
+    <div id="agenda" class="main-container">
+      <div id="agenda" class="main-container" style="margin-top:150px">
+        <CCIPSessionTable
+          :sessionData="sessionData"
+          :rooms="['R0', 'R1']"
+          :isMobile="isMobile()"
+          :isPopup.sync="popUp"
+          :popUpSession.sync="popUpSession"
+        />
+      </div>
+    </div>
   </div>
 </template>
 

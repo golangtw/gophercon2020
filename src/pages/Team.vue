@@ -1,35 +1,45 @@
 <template>
   <div id="team" class="main-container">
-    <div class="team-wrapper">
-      <div
-        v-if="!isInApp()"
-        class="tab-container"
-      >
+    <a href="/2020/" class="Logo">
+      <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
+    </a>
+    <div class="background-image">
+      <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
+           srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
+           class="Group-9">
+    </div>
+    <div id="team" class="main-container">
+      <div class="team-wrapper">
         <div
-          v-for="tab in tabs"
-          :key="`tab-${tab.name}`"
-          class="tab"
-          :class="{ active: tab.name === $route.name }"
-          @click="$router.push({ name: tab.name })"
+          v-if="!isInApp()"
+          class="tab-container"
         >
-          <p>
-            <span>{{ tab.meta.label[0] }}</span>
-            <span>{{ tab.meta.label[1] }}</span>
-          </p>
+          <div
+            v-for="tab in tabs"
+            :key="`tab-${tab.name}`"
+            class="tab"
+            :class="{ active: tab.name === $route.name }"
+            @click="$router.push({ name: tab.name })"
+          >
+            <p>
+              <span>{{ tab.meta.label[0] }}</span>
+              <span>{{ tab.meta.label[1] }}</span>
+            </p>
+          </div>
         </div>
+        <transition
+          :name="transitionDirect.toLowerCase()"
+          @before-enter="isTransisting = true"
+          @after-enter="isTransisting = false"
+          @before-leave="isTransisting = true"
+          @after-leave="isTransisting = false"
+        >
+          <keep-alive>
+            <router-view class="team-subview transition-group"/>
+          </keep-alive>
+        </transition>
+        <div v-show="isTransisting" class="empty-block"/>
       </div>
-      <transition
-        :name="transitionDirect.toLowerCase()"
-        @before-enter="isTransisting = true"
-        @after-enter="isTransisting = false"
-        @before-leave="isTransisting = true"
-        @after-leave="isTransisting = false"
-      >
-        <keep-alive>
-          <router-view class="team-subview transition-group"/>
-        </keep-alive>
-      </transition>
-      <div v-show="isTransisting" class="empty-block"/>
     </div>
   </div>
 </template>
