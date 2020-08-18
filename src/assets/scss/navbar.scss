@@ -71,16 +71,9 @@
         }
       }
 
-      .toggle-button,
       .menu {
-        margin-left: auto;
         color: $fontColor;
         width: 100%;
-
-        &-right {
-          flex: 1;
-          justify-content: flex-end !important;
-        }
       }
 
       .toggle-button {
@@ -226,7 +219,7 @@
           &-item {
             display: flex;
             align-items: center;
-            width: 60%;
+            width: 70%;
             margin-left: auto;
             padding: 16px;
             border-radius: 10px;
