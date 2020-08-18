@@ -38,17 +38,9 @@
           >
             <span>{{ item.meta.label }}</span>
           </router-link>
+          <div style="width: auto; display: block;"></div>
           <router-link
-            v-for="item in menu.slice(3,4)"
-            :key="item.name"
-            :to="item.path"
-            class="menu-item menu-right font-bold"
-            :class="{ active: $route.name.includes(item.name) }"
-          >
-            <span>{{ item.meta.label }}</span>
-          </router-link>
-          <router-link
-            v-for="item in menu.slice(4)"
+            v-for="item in menu.slice(3,5)"
             :key="item.name"
             :to="item.path"
             class="menu-item font-bold"
