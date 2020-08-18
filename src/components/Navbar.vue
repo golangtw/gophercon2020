@@ -38,7 +38,7 @@
           >
             <span>{{ item.meta.label }}</span>
           </router-link>
-          <div style="width: auto; display: block;"></div>
+          <div style="margin-left: auto; display: block;"></div>
           <router-link
             v-for="item in menu.slice(3,5)"
             :key="item.name"
