@@ -1,4 +1,4 @@
-@mixin container ($backgroundColor, $fontColor) {
+@mixin container($backgroundColor, $fontColor) {
   &.in-app .main-container {
     margin-top: 0;
   }
@@ -20,10 +20,6 @@
 
     @media screen and (max-width: 1024px) {
       margin-top: $navbar-height-mobile;
-    }
-
-    h1.title {
-      margin-bottom: 32px;
     }
 
     h1.title,

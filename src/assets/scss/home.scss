@@ -1,8 +1,11 @@
 #app.main {
   #home.main-container {
-    background-color: $white;
     overflow: hidden;
     min-height: 100vh;
+    background-image: url("https://gophercon.golang.tw/2020/img/group-9.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
     @media screen and (max-width: 475px) {
       margin-top: 0;
@@ -136,7 +139,8 @@
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      margin-top: 200px;
+      position: fixed;
+      top: calc(50vh - 120px);
 
       @media screen and (max-width: 475px) {
         margin-top: 20px;
@@ -145,7 +149,6 @@
       .badge-container {
         z-index: 1;
         flex-basis: 100%;
-        margin-bottom: 77px;
         width: 190px;
         height: 67px;
         object-fit: contain;
@@ -165,6 +168,10 @@
           letter-spacing: normal;
           color: #343942;
         }
+      }
+
+      .badge-container + .badge-container {
+        margin-top: 77px;
       }
 
       .container,
@@ -327,6 +334,10 @@
       p,
       p.content {
         text-align: left;
+      }
+
+      p + p {
+        margin-top: 16px;
       }
 
       ul {
