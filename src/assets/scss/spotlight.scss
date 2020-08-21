@@ -3,9 +3,8 @@
     background-color: $white;
     opacity: 0.9;
     color: $dark-5;
-    padding: 64px;
+    padding: 40px 40px;
     margin: 42px 200px;
-    font-family: SourceHanSansTW;
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
@@ -50,6 +49,13 @@
 
       p.content {
         z-index: 10;
+      }
+
+      div.content {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 14px;
+        font-size: 16px;
       }
 
       &:before {

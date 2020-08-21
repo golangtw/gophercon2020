@@ -4,12 +4,12 @@
       <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
     </a>
     <div class="info">
-        <div class="badge-container">
-          <div class="text">贊助取票</div>
-        </div>
-        <div class="badge-container">
-          <div class="text">會議徵稿</div>
-        </div>
+      <div class="badge-container">
+        <a href="https://www.papercall.io/gophercon-2020-taiwan" target="_blank" rel="noopener"><div class="text">會議徵稿</div></a>
+      </div>
+      <div class="badge-container">
+        <div class="text">贊助取票</div>
+      </div>
     </div>
     <div class="spotlight-wrapper">
       <div class="spotlight sharp-back-taton">
@@ -17,8 +17,8 @@
           <span class="inner font-black"></span>
           <span class="inner font-black">活動資訊 Info</span>
         </h1>
-        <p class="content"><strong>時間：</strong>2020/11/14</p>
-        <p class="content"><strong>地點：</strong>集思台大會議中心 - 台北市大安區羅斯福路四段85號B1</p>
+        <div class="content"><b>時間：</b>2020/11/14</div>
+        <div class="content"><b>地點：</b><div>集思台大會議中心<br/>台北市大安區羅斯福路四段85號B1</div></div>
       </div>
       <div class="spotlight sharp-back-taton" ref="gopherconTatonMask">
         <h1 class="title has-prefix-icon">
