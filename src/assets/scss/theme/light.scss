@@ -1,6 +1,6 @@
 @mixin light {
   @include container($white, $black);
-  @include navbar($blue-5, $dark-4, $green-1, $dark-1);
+  @include navbar($blue-5, $green-1, $dark-1);
 
   @include footer($blue-5, $green-1);
   @include agenda($white, $dark-3, $black, $dark-1);

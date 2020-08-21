@@ -1,4 +1,4 @@
-@mixin navbar ($backgroundColor, $backgroundColorHover, $fontColor, $fontColorLevel2) {
+@mixin navbar ($backgroundColor, $fontColor, $fontColorLevel2) {
   .navbar {
     position: fixed;
     top: 0;
@@ -122,10 +122,6 @@
             &.active span:before {
               min-width: 100px;
             }
-
-            &:hover {
-              background: $backgroundColorHover;
-            }
           }
         }
       }
@@ -229,10 +225,6 @@
             span {
               margin-left: auto;
               transform: skewX(10deg) translateX(-40px);
-            }
-
-            &:hover {
-              background-color: $backgroundColorHover;
             }
 
             &.active {
