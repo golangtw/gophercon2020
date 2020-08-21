@@ -8,11 +8,11 @@
         <a href="https://www.papercall.io/gophercon-2020-taiwan" target="_blank" rel="noopener"><div class="text">會議徵稿</div></a>
       </div>
       <div class="badge-container">
-        <div class="text">贊助取票</div>
+        <div class="text">會議門票</div>
       </div>
     </div>
     <div class="spotlight-wrapper">
-      <div class="spotlight sharp-back-taton">
+      <div class="spotlight sharp-back-taton" ref="gopherconTatonMask">
         <h1 class="title has-prefix-icon">
           <span class="inner font-black"></span>
           <span class="inner font-black">活動資訊 Info</span>
@@ -26,35 +26,28 @@
           <span class="inner font-black">關於 About</span>
         </h1>
         <p class="content">Gopher Conference Taiwan 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體從業人員使用 Golang 語言，對 Golang 有興趣的朋友可以一同參與社群。</p>
-        <p class="content">GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 <a href="https://gophercon.golang.tw/2020/cfp#call-for-golang" target="_blank" rel="noopener">have fun with golang</a>。</p>
+        <p class="content">GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang</a>。</p>
         <p class="content">Gopher Conference Taiwan is a conference held by Golang Taipei User Group since 2020. It's aim is promoting Go language and Go's communities. The event is held with talks, sponsor, and communities booths. Whoever you are a Golang coder, open source promoter, or even a newcomer, we sincerely welcome you to be part of GopherCon TW!</p>
-        <p class="content">Call for Papers! We are looking for talks in Golang related areas. Join us and <a href="https://gophercon.golang.tw/2020/cfp#call-for-paper" target="_blank" rel="noopener">have fun with golang</a> by sharing your Golang experiences!</p>
+        <p class="content">Call for Papers! We are looking for talks in Golang related areas. Join us and have fun with golang</a> by sharing your Golang experiences!</p>
       </div>
-      <div class="spotlight sharp-back-taton">
+      <div class="spotlight sharp-back-taton" ref="gopherconTatonMask">
         <h1 class="title has-prefix-icon">
           <span class="inner font-black"></span>
           <span class="inner font-black">活動 Activity</span>
         </h1>
+        <p class="content">今年我們有這些活動可以讓大家一起參與：</p>
         <p class="content">
-          今年我們有這些活動可以讓大家一起參與：</br>
-          This years, we also have some activities to be involved:
           <ul>
-            <li>
-              <span>
-                Community Booths 攤位活動：<br>
-                社群攤位的目的是在促進會眾或相關資訊社群交流。多元的活動讓你在聽完議程意猶未盡之餘，更能充分交流！休息時間，別忘記到場外的攤位逛逛！
-              </span>
-            </li>
-            <li>
-              <span>
-                Lightning Talk 閃電秀：<br>
-                Lightning Talk，中文譯為「閃電秀」，又稱 data blitz（資料閃電戰），顧名思義即為「閃電一般短的演講」。包含準備與連接投影機的時間在內，每位講者僅有 3 分鐘的時間。講者必須以飛快的速度，進行簡潔扼要的分享。要是沒能在 3 分鐘結束，會被直接切斷投影機訊號！無論是對台上的講者，或是台下的聽眾，都是十分刺激又轟動全場的體驗唷！Lightning Talk 將會在年會當天早上 10 點於白板區開放報名，先搶先贏，並在所有議程結束後、閉幕前，在國際會議廳進行演講。
-              </span>
-            </li>
+            <li>Booths 攤位活動：<br>攤位的目的是在促進會眾或相關資訊社群交流。多元的活動讓你在聽完議程意猶未盡之餘，更能充分交流！休息時間，別忘記到場外的攤位逛逛！</li>
+          </ul>
+        </p>
+        <p class="content">
+          <ul>
+            <li>Lightning Talk 閃電秀：<br>閃電秀在所有議程結束後、閉幕前舉辦，是每個演講包含設置投影片僅限五分鐘的刺激活動。如果要報名閃電秀，請在註冊櫃檯的「閃電秀」罐中投入你的講題與姓名，我們會在中午抽出中選名單。</li>
           </ul>
         </p>
       </div>
-      <div class="spotlight sharp-back-taton">
+      <div class="spotlight sharp-back-taton" ref="gopherconTatonMask">
         <h1 class="title has-prefix-icon">
           <span class="inner font-black"></span>
           <span class="inner font-black">Q &amp; A</span>
@@ -76,36 +69,16 @@
           </ul>
         </p>
       </div>
-      <div class="spotlight sharp-back-taton">
+      <div class="spotlight sharp-back-taton" ref="gopherconTatonMask">
         <h1 class="title has-prefix-icon">
           <span class="inner font-black"></span>
-          <span class="inner font-black">行為準則</span>
+          <span class="inner font-black">行為準則 Code of Conduct</span>
         </h1>
-        <p class="content">
-          GopherCon TW 致力於為社群中的每位成員提供更友善、開放的環境。我們相信每位參與社群活動的夥伴都值得被尊重，而我們會盡力提供最安全的環境，讓參與 GopherCon TW 盛會的每位朋友能夠認識個體間的差異、在社群中相互扶助、並鼓勵每個人揮灑屬於自己生命的色彩。<br/>
-          因此，若有幸能在 GopherCon TW 社群與您見面，無論您是以會眾、贊助商、工作人員、或是講者的身份參加活動，我們都希望您遵守以下的行為準則：
-
-          <ul>
-            <li><span>尊重每一位參與者，將對方的感受放在心上</span></li>
-            <li><span>避免使用帶有侮辱、歧視、或具有潛在騷擾意涵的言語及手勢</span></li>
-            <li><span>多關心周遭的社群夥伴，適度詢問對方是否需要協助</span></li>
-            <li><span>當遭遇危險、或發現事情不對勁時，適時尋求工作人員的支援與協助</span></li>
-            <li><span>在年會裡多交朋友，珍惜彼此相聚的時光！</span></li>
-          </ul>
-
-          以下的行為是不被社群所容忍的：
-
-          <ul>
-            <li><span>針對性別、性向、種族、外貌、宗教、年齡、身體狀況或個人身份的挑釁或冒犯</span></li>
-            <li><span>任何形式的性騷擾、言語及肢體霸凌</span></li>
-            <li><span>公開發表、展示或放映含有侮辱、歧視、仇恨、暴力、或是性暗示的言論、影像、或錄影</span></li>
-            <li><span>無故干擾議程或活動的正常進行，無視工作人員或會眾的制止</span></li>
-            <li><span>干擾、攻擊會場網路，未經同意側錄封包或散佈隱私資訊</span></li>
-            <li><span>違反法律的行為</span></li>
-          </ul>
-
-          為了確保每位參與者的安全，我們將恪守以上規則。違反行為準則的參與者，我們將採取必要且合理的手段予以介入，包含但不限於將參與者請離現場、自相關名冊除名或列為不受歡迎對象，或在必要時移送警察機關法辦。若您或他人遇到了以上情況、或是有任何其他顧慮，都請立即尋求 GopherCon TW 工作人員的協助。 我們誠摯的邀請來到 GopherCon TW 的朋友一同履行以上承諾，將 GopherCon TW 打造為更友善、更溫暖的所在；讓每一位參與者，都能在社群的交流中共同成長、在人與人的互動中找到自信——而這正是我們所珍惜的、屬於開放社群的真正精神。
-        </p>
+        <p class="content">參加者不可有騷擾言行，大會不容忍任何的騷擾或歧視，無分國籍、種族、語言、性別、性取向、年齡、身心狀況、信仰、職業、資歷、政治傾向、智力，每一位參加者都應該獲得同樣的尊重。</p>
+        <p class="content">彼此欣賞，每位參加者都應該抱持專業的態度與行為，GopherCon 的成員來自不同的專業分工、技術背景與應用領域，任何貶低社群中其它成員的言行都是不適當的。</p>
+        <p class="content">體貼他人，任何形式的性暗示，都不適於大會中的任何場合。這些場合包含但不限於演講、開放空間，社群媒體。請避免源自刻板印象的言行。會議中請把手機調為靜音，或是其它不會影響他人的模式。</p>
+        <p class="content">研討會籌備團隊有權調整任何違反此準則的行為。僅需根據籌備團隊的裁決，違反準則者可能必須離開會場，並不得要求退費。</p>
+        <p class="content">Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers.</p>
       </div>
     </div>
   </div>
