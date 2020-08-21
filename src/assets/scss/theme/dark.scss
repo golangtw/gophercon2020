@@ -10,7 +10,7 @@
     z-index: -1;
   }
   @include container($white, $black);
-  @include navbar($blue-5, $dark-4, $green-1, $dark-1);
+  @include navbar($blue-5, $green-1, $dark-1);
   @include navbarDarkIcon;
 
   @include footer($blue-5, $green-1);
