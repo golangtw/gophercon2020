@@ -17,9 +17,18 @@
     &-container {
       width: 100%;
       height: 440px;
-      overflow: auto;
+      overflow: hidden;
       position: absolute;
       top: 220px;
+      bottom: 0;
+    }
+
+    &-content{
+      width: 100%;
+      height: 440px;
+      overflow: auto;
+      padding-right: 15px;
+      position: absolute;
       bottom: 0;
     }
 
