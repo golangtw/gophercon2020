@@ -32,12 +32,7 @@
               :key="`${group.name}-${member.name}`"
               class="staff"
             >
-              <img
-                class="staff-avatar"
-                :src="`https://www.gravatar.com/avatar/${member.emailHash}?s=320&d=https://golang.tw/2020/img/gophercon-logo.png&r=g`"
-                :alt="`${member.name}'s Avatar`"
-              />
-              <div class="staff-name">{{ member.name }}</div>
+              <StaffInfo :member=member></StaffInfo>
             </div>
           </div>
         </div>
@@ -52,10 +47,12 @@ import { Component, Vue } from 'vue-property-decorator';
 import staffData from '@/../public/json/staff.json';
 
 import LogoTop from '../components/LogoTop.vue';
+import StaffInfo from '../components/Team/StaffInfo.vue';
 
 @Component({
   components: {
-    LogoTop
+    LogoTop,
+    StaffInfo
   },
 })
 export default class TeamPage extends Vue {
@@ -216,7 +213,6 @@ export default class TeamPage extends Vue {
       display: inline-block;
       margin-right: 24px;
       margin-bottom: 24px;
-      text-align: center;
 
       @include for-size(md) {
         &:nth-child(4n) {
@@ -225,22 +221,6 @@ export default class TeamPage extends Vue {
       }
     }
 
-    .staff-avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-    }
-
-    .staff-name {
-      margin-top: 8px;
-      font-size: 14px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: #333943;
-    }
   }
 
   .sponsor-text-container {
