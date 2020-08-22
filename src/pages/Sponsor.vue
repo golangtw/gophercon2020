@@ -223,6 +223,8 @@ export default class SponsorPage extends Vue {
     padding-right: 68px;
   }
   @include for-size(lg) {
+    margin-left: 0px;
+    margin-right: 0px;
     padding-left: 82px;
     padding-right: 82px;
   }
