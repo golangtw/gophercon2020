@@ -41,10 +41,10 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
-import LogoBottom from "./LogoBottom.vue";
-import EmailIcon from "./icons/Email.vue";
+import LogoBottom from './LogoBottom.vue';
+import EmailIcon from './icons/Email.vue';
 
 @Component({
   components: {
@@ -53,38 +53,38 @@ import EmailIcon from "./icons/Email.vue";
   },
 })
 export default class Footer extends Vue {
-  @Prop() private showSponsors!:boolean;
+  @Prop() private showSponsors!: boolean;
   private socialMedia = [
     {
-      icon: ["fab", "meetup"],
-      link: "https://www.meetup.com/golang-taipei-meetup",
+      icon: ['fab', 'meetup'],
+      link: 'https://www.meetup.com/golang-taipei-meetup',
     },
     {
-      icon: ["fab", "github"],
-      link: "https://github.com/golangtw",
+      icon: ['fab', 'github'],
+      link: 'https://github.com/golangtw',
     },
     {
-      icon: ["fab", "facebook"],
-      link: "https://www.facebook.com/golangtaipei/",
+      icon: ['fab', 'facebook'],
+      link: 'https://www.facebook.com/golangtaipei/',
     },
     {
-      icon: ["fab", "telegram-plane"],
-      link: "https://t.me/golangtw",
+      icon: ['fab', 'telegram-plane'],
+      link: 'https://t.me/golangtw',
     },
     {
-      icon: ["fab", "twitter"],
-      link: "https://twitter.com/golangtw",
+      icon: ['fab', 'twitter'],
+      link: 'https://twitter.com/golangtw',
     },
     {
-      icon: ["fab", "youtube"],
-      link: "https://www.youtube.com/channel/UCjnIy_GQAuszZurUIO3zg9Q",
+      icon: ['fab', 'youtube'],
+      link: 'https://www.youtube.com/channel/UCjnIy_GQAuszZurUIO3zg9Q',
     },
   ];
 }
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import '@/assets/scss/variables.scss';
 
 @mixin iconColor($color) {
   path {

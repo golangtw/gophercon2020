@@ -44,7 +44,7 @@
     "vuex-class": "^0.3.2"
   },
   "prettier": {
-    "singleQuote": false,
+    "singleQuote": true,
     "tabWidth": 2
   }
 }
