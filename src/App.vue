@@ -288,6 +288,20 @@ export default class App extends Vue {
         );
         head.ogUrl("https://gophercon.golang.tw/2020/team/staff");
         head.ogImage("https://gophercon.golang.tw/2020/img/og.png");
+
+        break;
+
+      case "Sponsor":
+        head.title("贊助");
+        head.ogTitle("贊助");
+        head.ogDescription(
+          "GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。"
+        );
+        head.ogUrl("https://gophercon.golang.tw/2020/sponsor");
+        head.ogImage("https://gophercon.golang.tw/2020/img/og.png");
+
+        break;
+
       case "Venue":
         head.title("會場地圖");
         head.ogTitle("會場地圖");

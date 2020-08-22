@@ -6,9 +6,7 @@ const gaTempHTML = fs.readFileSync(path.join(__dirname, './template/ga.html'));
 const sessionData = require(path.join(__dirname, './public/json/session.json'));
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/2020/'
-    : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/2020/' : '/',
   pluginOptions: {
     prerenderSpa: {
       registry: undefined,
@@ -28,8 +26,8 @@ module.exports = {
         '/2020/traffic/',
         '/2020/team',
         '/2020/team/',
-        '/2020/team/sponsor',
-        '/2020/team/sponsor/',
+        '/2020/sponsor',
+        '/2020/sponsor/',
         '/2020/team/staff',
         '/2020/team/staff/',
       ],
@@ -38,10 +36,12 @@ module.exports = {
       onlyProduction: true,
       postProcess: route => {
         // Auto inject GA template
-        route.html = route.html
-          .replace('<noscript>{{{ %GA_TEMPLATE% }}}</noscript>', gaTempHTML);
+        route.html = route.html.replace(
+          '<noscript>{{{ %GA_TEMPLATE% }}}</noscript>',
+          gaTempHTML
+        );
         return route;
       }
     }
   }
-}
+};
