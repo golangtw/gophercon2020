@@ -37,7 +37,7 @@
                 :src="`https://www.gravatar.com/avatar/${member.emailHash}?s=320&d=https://golang.tw/2020/img/gophercon-logo.png&r=g`"
                 :alt="`${member.name}'s Avatar`"
               />
-              <p>{{ member.name }}</p>
+              <div class="staff-name">{{ member.name }}</div>
             </div>
           </div>
         </div>
@@ -171,8 +171,8 @@ export default class TeamPage extends Vue {
     padding-right: 24px;
   }
   @include for-size(md) {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
     padding-left: 68px;
     padding-right: 68px;
   }
@@ -209,17 +209,42 @@ export default class TeamPage extends Vue {
     }
   }
 
-  .sponsor-img-container {
-    padding-right: 24px;
-    margin-bottom: 24px;
+  .staff-wrapper {
+    margin-bottom: 40px;
 
-    img {
-      width: 100%;
-      max-width: 100%;
+    .staff {
+      display: inline-block;
+      margin-right: 24px;
+      margin-bottom: 24px;
+      text-align: center;
+
+      @include for-size(md) {
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .staff-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+
+    .staff-name {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #333943;
     }
   }
 
-  p.sponsor-text {
+  .sponsor-text-container {
+    margin-bottom: 24px;
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
