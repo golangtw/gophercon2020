@@ -1,0 +1,15 @@
+@import 'variables';
+
+@mixin for-size($size) {
+    @if $size == xs {
+      @media (max-width: map-get($grid-breakpoints, "sm")) { @content; }
+    } @else if $size == sm {
+      @media (min-width: map-get($grid-breakpoints, "sm")) { @content; }
+    } @else if $size == md {
+      @media (min-width: map-get($grid-breakpoints, "md")) { @content; }
+    } @else if $size == lg {
+      @media (min-width: map-get($grid-breakpoints, "lg")) { @content; }
+    } @else if $size == xl {
+      @media (min-width: map-get($grid-breakpoints, "xl")) { @content; }
+    }
+  }
