@@ -1,74 +1,232 @@
 <template>
-  <div id="team" class="main-container">
-    <a href="/2020/" class="Logo">
-      <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
-    </a>
-    <div class="background-image">
-      <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
-           srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
-           class="Group-9">
-    </div>
-    <div id="team" class="main-container">
-      <div class="team-wrapper">
-        <transition
-          :name="transitionDirect.toLowerCase()"
-          @before-enter="isTransisting = true"
-          @after-enter="isTransisting = false"
-          @before-leave="isTransisting = true"
-          @after-leave="isTransisting = false"
+  <div id="sponsor" class="container">
+    <LogoTop />
+    <div class="content">
+      <div class="card-container individual-sponsor">
+        <div class="card">
+          <h2 class="font-black subtitle">GopherCon 團隊</h2>
+          <p class="paragraph">GopherCon TW 年會每年皆是許多志工奉獻與時間精神所舉辦；若你對參與 GopherCon 年會的籌備有興趣，歡迎填寫表單，我們將在活動開始籌備時通知您！</p>
+          <p class="paragraph">
+            <a
+              href="mailto: contact@golang.tw"
+              class="tone-trans form-link font-bold"
+              target="_blank"
+              rel="noopener"
+            >點我寫表單</a>
+          </p>
+        </div>
+      </div>
+      <div class="sponsor-wrapper">
+        <div
+          v-for="group in staffs"
+          :key="`staff-group-${group.name}`"
+          class="sponsor-card"
         >
-          <keep-alive>
-            <router-view class="team-subview transition-group"/>
-          </keep-alive>
-        </transition>
-        <div v-show="isTransisting" class="empty-block"/>
+          <h2 class="sponsor-name">
+            <span>{{ group.name }}</span>
+           </h2>
+          <div class="sponsor-text-container">{{ group.description }}</div>
+          <div class="staff-wrapper">
+            <div
+              v-for="member in group.members"
+              :key="`${group.name}-${member.name}`"
+              class="staff"
+            >
+              <img
+                class="staff-avatar"
+                :src="`https://www.gravatar.com/avatar/${member.emailHash}?s=320&d=https://golang.tw/2020/img/gophercon-logo.png&r=g`"
+                :alt="`${member.name}'s Avatar`"
+              />
+              <p>{{ member.name }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Route } from 'vue-router';
+import { Component, Vue } from 'vue-property-decorator';
 
-import { Component, Watch, Vue } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
+import staffData from '@/../public/json/staff.json';
 
-import { AppMode } from '@/store/types/app';
-import { MenuItem } from '@/store/types/menu';
+import LogoTop from '../components/LogoTop.vue';
 
-enum TransitionDirect {
-  SLIDE_LEFT = 'slide-left',
-  SLIDE_RIGHT = 'slide-right'
+@Component({
+  components: {
+    LogoTop
+  },
+})
+export default class TeamPage extends Vue {
+  private staffs = staffData;
 }
+</script>
 
-@Component
-export default class Team extends Vue {
-  @Getter('mode', { namespace: 'app' }) private mode!: AppMode;
-  @Getter('menu', { namespace: 'menu' }) private menu!: MenuItem[];
+<style lang="scss" scoped>
+@import '@/assets/scss/mixin.scss';
 
-  private tabs: MenuItem[] = [];
-  private transitionDirect: TransitionDirect = TransitionDirect.SLIDE_LEFT;
-  private isTransisting: boolean = false;
+#sponsor {
+  min-width: 375px;
+  width: 100%;
 
-  @Watch('$route')
-  public onChangeRoute (to: Route, from: Route) {
-    this.detectTransitionDirect(to, from);
+  @include for-size(xs) {
+    padding-top: 159px;
+  }
+  @include for-size(sm) {
+    padding-top: 165px;
+  }
+  @include for-size(md) {
+    padding-top: 165px;
+  }
+  @include for-size(lg) {
+    padding-top: 165px;
+  }
+  @include for-size(xl) {
+    padding-top: 216px;
   }
 
-  public mounted () {
-    this.tabs = this.menu.filter((item) => item.name === 'Staff')[0].children as MenuItem[];
-  }
+  background-image: url('~@/assets/images/subpage-bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-  private isInApp (): boolean {
-    return this.mode === AppMode.APP;
-  }
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
 
-  private detectTransitionDirect (to: Route, from: Route): void {
-    if (to.meta.index < from.meta.index) {
-      this.transitionDirect = TransitionDirect.SLIDE_RIGHT;
-    } else {
-      this.transitionDirect = TransitionDirect.SLIDE_LEFT;
+    @include for-size(md) {
+      width: 688px;
+    }
+    @include for-size(lg) {
+      width: 716px;
+    }
+    @include for-size(xl) {
+      width: 716px;
     }
   }
 }
-</script>
+
+.card-container.individual-sponsor {
+  font-family: SourceHanSansTW;
+  margin-bottom: 40px;
+
+  @include for-size(xs) {
+    padding: 0 16px;
+  }
+  @include for-size(sm) {
+    padding: 0 16px;
+  }
+  @include for-size(md) {
+    padding: 0 68px;
+  }
+  @include for-size(lg) {
+    padding: 0 82px;
+  }
+  @include for-size(xl) {
+    padding: 0 82px;
+  }
+
+  h2.subtitle {
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #44484f;
+  }
+
+  p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #343942;
+  }
+}
+
+.sponsor-wrapper {
+  background-color: #f7f8f9;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include for-size(xs) {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include for-size(sm) {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include for-size(md) {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 68px;
+    padding-right: 68px;
+  }
+  @include for-size(lg) {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 82px;
+    padding-right: 82px;
+  }
+  @include for-size(xl) {
+    padding-left: 82px;
+    padding-right: 82px;
+  }
+
+  > .sponsor-card:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  h2.sponsor-name {
+    margin-bottom: 8px;
+
+    span {
+      font-size: 24px;
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #7bd6eb;
+
+      &.sponsor-level {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .sponsor-img-container {
+    padding-right: 24px;
+    margin-bottom: 24px;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  p.sponsor-text {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #333943;
+  }
+}
+</style>
