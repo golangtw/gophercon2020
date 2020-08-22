@@ -10,23 +10,6 @@
     </div>
     <div id="team" class="main-container">
       <div class="team-wrapper">
-        <div
-          v-if="!isInApp()"
-          class="tab-container"
-        >
-          <div
-            v-for="tab in tabs"
-            :key="`tab-${tab.name}`"
-            class="tab"
-            :class="{ active: tab.name === $route.name }"
-            @click="$router.push({ name: tab.name })"
-          >
-            <p>
-              <span>{{ tab.meta.label[0] }}</span>
-              <span>{{ tab.meta.label[1] }}</span>
-            </p>
-          </div>
-        </div>
         <transition
           :name="transitionDirect.toLowerCase()"
           @before-enter="isTransisting = true"
