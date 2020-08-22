@@ -14,8 +14,8 @@
         <router-view class="transition-group" />
       </keep-alive>
     </transition>
+    <Footer :show-sponsors="$route.name === 'Home'" />
     <Popup :isOpen="isPopup" :content="popupContent" />
-    <Footer />
   </div>
 </template>
 
