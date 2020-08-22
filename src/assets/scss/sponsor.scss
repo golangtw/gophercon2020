@@ -35,24 +35,6 @@
   @media screen and (max-width: 475px) {
     margin: 0.5rem;
   }
-
-  a {
-    img {
-      max-width: 230px;
-
-      @media screen and (max-width: 1280px) {
-        max-width: 200px;
-      }
-
-      @media screen and (max-width: 675px) {
-        max-width: 100px;
-      }
-
-      @media screen and (max-width: 475px) {
-        max-width: 80px;
-      }
-    }
-  }
 }
 
 @mixin Sponsor {
@@ -133,14 +115,6 @@
         }
       }
 
-      img {
-        height: 180px;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
       &.horizen {
         display: flex;
         flex-direction: row;
@@ -150,10 +124,6 @@
         align-items: center;
         margin-right: 0;
         border-radius: 18px;
-
-        img {
-          margin-right: 1em;
-        }
 
         .text-container {
           width: 0;
@@ -178,12 +148,31 @@
     box-sizing: border-box;
     font-size: 12pt;
 
+
     .org {
       // min-height: calc((100vw - 500px - 66.5px) * 1.414 / 3);
+      display: flex;
       align-items: center;
+      padding: 40px 80px;
 
-      img {
-        margin-bottom: 1em;
+      & > .img-container {
+        display: flex;
+        flex: 1;
+        height: 100%;
+
+        & > a {
+          width: 100%;
+          padding-right: 24px;
+          margin-bottom: 24px;
+
+          & > img {
+            width: 100%;
+          }
+        }
+      }
+
+      & > .text-container {
+        flex: 1;
       }
 
       // Three cards per row
@@ -238,12 +227,6 @@
             h3 {
               text-align: center;
             }
-          }
-
-          img {
-            height: 33vw;
-            max-height: 180px;
-            margin: 0 0 1em 0;
           }
         }
       }
