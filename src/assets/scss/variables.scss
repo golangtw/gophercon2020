@@ -31,3 +31,12 @@ $screen-lg: 1280px;
 $screen-md: 960px;
 $screen-sm: 768px;
 $screen-xs: 375px;
+
+// breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 375px,
+  md: 768px,
+  lg: 960px,
+  xl: 1280px
+) !default;

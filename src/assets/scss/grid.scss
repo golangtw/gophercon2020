@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'mixin';
+
+.layout-flex-md {
+    @include for-size(md) {
+        display: flex;
+        flex-direction: row;
+
+        > .layout-flex-md-50 {
+            flex-basis: 50%;
+        }
+    }
+
+}
