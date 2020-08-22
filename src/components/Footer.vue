@@ -2,10 +2,10 @@
   <div class="g-footer">
     <div v-if="showSponsors" class="g-footer-sponsors">
       <div class="sponsor">
-        <img src="/img/sponsors/chungyo.png" alt="chung yo group" />
+        <img src="https://gophercon.golang.tw/2020/img/sponsors/chungyo.png" alt="chung yo group" />
       </div>
       <div class="sponsor">
-        <img src="/img/sponsors/ocf.png" alt="open culture foundation" />
+        <img src="https://gophercon.golang.tw/2020/img/sponsors/ocf.png" alt="open culture foundation" />
       </div>
     </div>
     <div class="g-footer-socialMedia">
