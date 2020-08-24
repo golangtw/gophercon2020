@@ -1,8 +1,6 @@
 <template>
   <div id="agenda" class="main-container">
-    <a href="/2020/" class="Logo">
-      <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
-    </a>
+    <LogoTop />
     <div class="background-image">
       <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
            srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
@@ -34,10 +32,12 @@ import sessionData from '@/../public/json/session.json';
 import sessionDOMString from '@/../template/session.mod';
 
 import { DeviceType } from '@/store/types/app';
+import LogoTop from '../components/LogoTop.vue';
 
 @Component({
   components: {
-    CCIPSessionTable
+    CCIPSessionTable,
+    LogoTop,
   }
 })
 export default class Agenda extends Vue {

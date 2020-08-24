@@ -10,10 +10,10 @@
     </div>
     <div class="g-footer-socialMedia">
       <div class="g-footer-socialMedia--text">
-        Contact us in one of the following social networks
+        <b>Contact us in one of the following social networks</b>
       </div>
       <div class="g-footer-socialMedia--icons">
-        <div class="social-media-icon">
+        <div class="media-icon">
           <a href="mailto:contact@golang.tw">
             <EmailIcon />
           </a>
@@ -21,7 +21,7 @@
         <div
           v-for="s in socialMedia"
           :key="`media-${s.icon[1]}`"
-          class="social-media-icon"
+          class="media-icon"
         >
           <a :href="s.link" target="_blank" rel="noopener">
             <font-awesome-icon :icon="s.icon" />
@@ -135,6 +135,7 @@ export default class Footer extends Vue {
     &--text {
       display: flex;
       margin-top: 40px;
+      margin-bottom: 20px;
       padding: 0 16px;
       justify-content: center;
       color: #343942;
@@ -148,7 +149,7 @@ export default class Footer extends Vue {
       justify-content: center;
       align-items: flex-start;
 
-      & > .social-media-icon {
+      & > .media-icon {
         width: 45px;
         height: 45px;
         margin: 24px 32px;

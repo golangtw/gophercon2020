@@ -1,8 +1,6 @@
 <template>
   <div id="home" class="main-container">
-    <a href="/2020/" class="Logo">
-      <img src="https://gophercon.golang.tw/2020/img/logo.svg" class="Logo">
-    </a>
+    <LogoTop />
     <div class="info">
       <div class="badge-container">
         <a href="https://www.papercall.io/gophercon-2020-taiwan" target="_blank" rel="noopener"><div class="text">會議徵稿</div></a>
@@ -89,6 +87,7 @@ import { Component, Watch, Vue } from "vue-property-decorator";
 import { Action } from "vuex-class";
 import axios from "axios";
 
+import LogoTop from '../components/LogoTop.vue';
 import GopherConTatonMask from "@/components/GopherConTatonMask.vue";
 // import BulletScreen from '@/components/CFP/BulletScreen.vue';
 
@@ -100,6 +99,7 @@ import head from "@/util/head";
   components: {
     // BulletScreen,
     GopherConTatonMask,
+    LogoTop,
   },
 })
 export default class Home extends Vue {

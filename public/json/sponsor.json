@@ -1,11 +1,19 @@
 [
   {
     "name": "中佑集團",
-    "slug": "silver1",
+    "slug": "gold1",
     "url": "https://www.chungyo.net/",
     "description": "中佑集團成立於1999年，為國內具代表地位的遊戲軟體系統開發商， 致力於開發線上遊戲軟體並提供系統整合平台服務，數十年來穩健的經營成功將產品行銷至亞洲各地，除了開發自有品牌旗下更同時擁有關係企業凡谷興業。專業的遊戲研發及設計團隊為後盾，追求最佳品質不間斷的研發創新技術 ，逐步建構亞洲最大網路娛樂事業體。中佑集團一直是市場上最值得信賴的遊戲軟體系統開發商，我們的目標是亞洲第一的遊戲市佔率，同時與我們的商業夥伴們將多元網路娛樂的業務推廣至全世界，創造雙贏的局面。",
-    "level": "level-3",
+    "level": "level-2",
     "image": "chungyo.png"
+  },
+  {
+    "name": "JetBrains",
+    "slug": "thank1",
+    "url": "https://www.jetbrains.com",
+    "description": "JetBrains is a cutting-edge software vendor specializing in the creation of intelligent development tools, including IntelliJ IDEA – the leading Java IDE, and the Kotlin programming language.",
+    "level": "thank",
+    "image": "jetbrains.png"
   },
   {
     "name": "財團法人開放文化基金會",

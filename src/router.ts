@@ -22,7 +22,7 @@ export const routes = [
     meta: {
       index: 0,
       label: 'GopherCon TW',
-      menuItem: false
+      menuItem: true
     }
   },
   {
@@ -87,7 +87,7 @@ export const routes = [
     component: Team,
     meta: {
       index: 5,
-      label: 'GopherCon 團隊',
+      label: '主辦團隊',
       menuItem: true
     },
   },
