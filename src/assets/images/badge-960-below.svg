@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="224" height="67" viewBox="0 0 224 67">
+    <defs>
+        <path id="piah9lgpla" d="M179 2L222 2 202.651 30 222 58 179 58 179 18.121z"/>
+        <path id="ghkd5wik4b" d="M2 2L45 2 25.651 30 45 58 2 58 2 18.121z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <use fill="#343942" xlink:href="#piah9lgpla"/>
+        <use fill="#A7FCD4" stroke="#365980" stroke-width="2.4" xlink:href="#piah9lgpla"/>
+        <g transform="matrix(-1 0 0 1 47 0)">
+            <use fill="#343942" xlink:href="#ghkd5wik4b"/>
+            <use fill="#A7FCD4" stroke="#365980" stroke-width="2.4" xlink:href="#ghkd5wik4b"/>
+        </g>
+        <path fill="#A3FCCF" stroke="#365980" stroke-width="2.4" d="M32 9H192V65H32z"/>
+        <path fill="#44B8F8" stroke="#365980" stroke-width="2.4" d="M179 2L192 8 179 8z"/>
+        <path fill="#44B8F8" stroke="#365980" stroke-width="2.4" d="M32 2L45 8 32 8z" transform="matrix(-1 0 0 1 77 0)"/>
+    </g>
+</svg>
