@@ -78,7 +78,7 @@ export default class GopherConMap extends Vue {
         iconMain
       ],
       view: new View({
-        center: Proj.fromLonLat([121.6116, 25.0410]),
+        center: Proj.fromLonLat([121.5367, 25.01305]),
         zoom: 15
       })
     });
