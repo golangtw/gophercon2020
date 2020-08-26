@@ -83,6 +83,28 @@
         "name": "Hsiao Chieh Tsai",
         "emailHash": "7d4e5aa664cfadffe48f586d761f84d0"
       }
-]
+    ]
+  },
+  {
+    "name": "網站組",
+    "description": "網站組負責網站設計規劃及實作內容。",
+    "members": [
+      {
+        "name": "Flynn Hou",
+        "emailHash": "6d20df600bf17cd0908a4639cde9a3bd"
+      },
+      {
+        "name": "Jack Liao",
+        "emailHash": "a52cb07206b1815d5e9a920fea864fee"
+      },
+      {
+        "name": "Morgan Chang",
+        "emailHash": "140efeaa8db1a5a4861da638595716ca"
+      },
+      {
+        "name": "Vincent Ho",
+        "emailHash": "adc1ce3eaa291de96ee60d635195d3d5"
+      }
+    ]
   }
 ]

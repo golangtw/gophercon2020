@@ -66,6 +66,7 @@ export default class TeamPage extends Vue {
 #sponsor {
   min-width: 375px;
   width: 100%;
+  font-family: SourceHanSansTW;
 
   @include for-size(xs) {
     padding-top: 159px;
