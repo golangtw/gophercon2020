@@ -40,8 +40,8 @@
         <template v-slot:spotlight-card-content>
           <p>Gopher Conference Taiwan 自 2020 年發起，由 Golang Taipei 社群舉辦，長期投身推廣 Golang 程式語言與相關技術，希望引領更多軟體從業人員使用 Golang 語言，對 Golang 有興趣的朋友可以一同參與社群。</p>
           <p>GopherCon TW 2020 邀請身為 Golang 使用者的你，向大家分享您的經驗與技術，期待您能在演講桌前，與我們一起 have fun with golang。</p>
-          <p>Gopher Conference Taiwan is a conference held by Golang Taipei User Group since 2020. It's aim is promoting Go language and Go's communities. The event is held with talks, sponsor, and communities booths. Whoever you are a Golang coder, open source promoter, or even a newcomer, we sincerely welcome you to be part of GopherCon TW!</p>
-          <p>Call for Papers! We are looking for talks in Golang related areas. Join us and have fun with golang by sharing your Golang experiences!</p>
+          <p>Gopher Conference Taiwan is a conference held by Golang Taipei User Group since 2020. Its aim is to promote Go language and Go's communities. The event is held with talks, sponsors, and community booths. Whoever you are a Golang coder, open-source promoter, or even a newcomer, we sincerely welcome you to be part of GopherCon TW!</p>
+          <p>Call for Papers! We are looking for talks in Golang related areas. Join us and have fun with Golang by sharing your Golang experiences!</p>
         </template>
       </SpotlightCard>
 
@@ -92,7 +92,7 @@
           <p>彼此欣賞，每位參加者都應該抱持專業的態度與行為，GopherCon 的成員來自不同的專業分工、技術背景與應用領域，任何貶低社群中其它成員的言行都是不適當的。</p>
           <p>體貼他人，任何形式的性暗示，都不適於大會中的任何場合。這些場合包含但不限於演講、開放空間，社群媒體。請避免源自刻板印象的言行。會議中請把手機調為靜音，或是其它不會影響他人的模式。</p>
           <p>研討會籌備團隊有權調整任何違反此準則的行為。僅需根據籌備團隊的裁決，違反準則者可能必須離開會場，並不得要求退費。</p>
-          <p>Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers.</p>
+          <p>Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of conference participants in any form. Sexual language and imagery are not appropriate for any conference venue, including talks, workshops, parties, Twitter, and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organizers.</p>
         </template>
       </SpotlightCard>
     </div>
