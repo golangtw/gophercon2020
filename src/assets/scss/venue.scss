@@ -26,6 +26,10 @@
       transform: translate(0, 100vh) rotate(-90deg) scale(2);
     }
 
+    .image-wrapper {
+      position: relative;
+    }
+
     .Group-9 {
       &-container {
         position: relative;

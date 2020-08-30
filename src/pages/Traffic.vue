@@ -8,7 +8,8 @@
            class="Group-9">
         <img src="https://gophercon.golang.tw/2020/img/graphic-map-1.png"
              srcset="https://gophercon.golang.tw/2020/img/graphic-map-1@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-map-1@3x.png 3x" class="map-1">
-        <img src="https://gophercon.golang.tw/2020/img/graphic-schedule-2.png" srcset="https://gophercon.golang.tw/2020/img/graphic-schedule-2@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-schedule-2@3x.png 3x" class="map-2">
+        <img src="https://gophercon.golang.tw/2020/img/graphic-map-2.png"
+             srcset="https://gophercon.golang.tw/2020/img/graphic-map-2@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-map-2@3x.png 3x" class="map-2">
         <img src="https://gophercon.golang.tw/2020/img/graphic-map-3.png"
              srcset="https://gophercon.golang.tw/2020/img/graphic-map-3@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-map-3@3x.png 3x" class="map-3">
       </div>
