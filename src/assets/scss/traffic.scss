@@ -36,6 +36,22 @@
       width: 100%;
       height: auto;
     }
+
+    .map-1 {
+      position: absolute;
+      left: 10%;
+      bottom: 65%;
+    }
+    .map-2 {
+      position: absolute;
+      right: 40%;
+      bottom: 75%;
+    }
+    .map-3 {
+      position: absolute;
+      right: 5%;
+      bottom: 55%;
+    }
   }
 
   &.main-container {
@@ -62,7 +78,7 @@
     @media screen and (max-width: 1600px) {
       padding: 64px 0;
     }
-  
+
     @media screen and (max-width: 1200px) {
       overflow-x: scroll;
     }
@@ -80,7 +96,7 @@
   .hint {
     display: none;
     margin: 1rem auto;
-    
+
     p {
       text-align: center;
       font-size: 16px;

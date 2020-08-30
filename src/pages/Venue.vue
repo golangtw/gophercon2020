@@ -2,9 +2,15 @@
   <div id="venue" class="main-container">
     <LogoTop />
     <div class="background-image">
-      <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
+      <div class="image-wrapper">
+        <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
            srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
            class="Group-9">
+        <img src="https://gophercon.golang.tw/2020/img/graphic-direction-1.png"
+             srcset="https://gophercon.golang.tw/2020/img/graphic-direction-1@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-direction-1@3x.png 3x" class="direction-1">
+        <img src="https://gophercon.golang.tw/2020/img/graphic-direction-2.png"
+             srcset="https://gophercon.golang.tw/2020/img/graphic-direction-2@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-direction-2@3x.png 3x" class="direction-2">
+      </div>
     </div>
     <div id="venue" class="main-container">
       <h1 class="title">會場地圖</h1>

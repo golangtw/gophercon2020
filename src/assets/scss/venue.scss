@@ -36,6 +36,17 @@
       width: 100%;
       height: auto;
     }
+
+    .direction-1 {
+      position: absolute;
+      left: 13%;
+      bottom: 75%;
+    }
+    .direction-2 {
+      position: absolute;
+      right: 5%;
+      bottom: 59%;
+    }
   }
 
   &.main-container {
