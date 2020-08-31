@@ -20,6 +20,10 @@
       {
         "name": "Kakashi",
         "emailHash": "a78f6cc4fc127a344343983280674d46"
+      },
+      {
+        "name": "Rain Wu",
+        "emailHash": "243d4187137f1549aafa9ac220d37699"
       }
     ]
   },
@@ -32,16 +36,12 @@
         "emailHash": "e56eaaf62e2112055827c197b938d620"
       },
       {
-        "name": "Yun Chen",
-        "emailHash": "b0afebacee0682f094fb53399a1c1dc8"
-      },
-      {
-        "name": "Bo-Yi Wu",
-        "emailHash": "265bcbb56e831266de7a9f9281aab57a"
-      },
-      {
         "name": "Benjamin",
         "emailHash": "29cbf36c5ee3a10ed835734a6c657d6a"
+      },
+      {
+        "name": "Ray Change",
+        "emailHash": "243d4187137f1549aafa9ac220d37699"
       }
     ]
   },
@@ -52,6 +52,66 @@
       {
         "name": "Cherie Hsieh",
         "emailHash": "86d54dc23ace2b5920f7d5777949ed8f"
+      },
+      {
+        "name": "Jalex Chang",
+        "emailHash": "243d4187137f1549aafa9ac220d37699"
+      },
+      {
+        "name": "Kaka Lin",
+        "emailHash": "243d4187137f1549aafa9ac220d37699"
+      }
+    ]
+  },
+  {
+    "name": "網站組",
+    "description": "網站組負責網站設計規劃及實作內容。",
+    "members": [
+      {
+        "name": "Yun Chen",
+        "emailHash": "b0afebacee0682f094fb53399a1c1dc8"
+      },
+      {
+        "name": "Flynn Hou",
+        "emailHash": "6d20df600bf17cd0908a4639cde9a3bd"
+      },
+      {
+        "name": "Jack Liao",
+        "emailHash": "a52cb07206b1815d5e9a920fea864fee"
+      },
+      {
+        "name": "Morgan Chang",
+        "emailHash": "140efeaa8db1a5a4861da638595716ca"
+      },
+      {
+        "name": "Vincent Ho",
+        "emailHash": "adc1ce3eaa291de96ee60d635195d3d5"
+      },
+      {
+        "name": "Wias Liaw",
+        "emailHash": "243d4187137f1549aafa9ac220d37699"
+      },
+      {
+        "name": "Bo-Yi Wu",
+        "emailHash": "265bcbb56e831266de7a9f9281aab57a"
+      },
+      {
+        "name": "Che Chia Chang",
+        "emailHash": "e56eaaf62e2112055827c197b938d620"
+      }
+    ]
+  },
+  {
+    "name": "攝影組",
+    "description": "攝影組負責當天會場內講者與會眾的攝影。",
+    "members": [
+      {
+        "name": "Hsiao Chieh Tsai",
+        "emailHash": "7d4e5aa664cfadffe48f586d761f84d0"
+      },
+      {
+        "name": "Sean Hsieh",
+        "emailHash": "243d4187137f1549aafa9ac220d37699"
       }
     ]
   },
@@ -78,32 +138,6 @@
       {
         "name": "Luffy Tsai",
         "emailHash": "9c23db3f46d3a95b7f0e6d1833c310a2"
-      },
-      {
-        "name": "Hsiao Chieh Tsai",
-        "emailHash": "7d4e5aa664cfadffe48f586d761f84d0"
-      }
-    ]
-  },
-  {
-    "name": "網站組",
-    "description": "網站組負責網站設計規劃及實作內容。",
-    "members": [
-      {
-        "name": "Flynn Hou",
-        "emailHash": "6d20df600bf17cd0908a4639cde9a3bd"
-      },
-      {
-        "name": "Jack Liao",
-        "emailHash": "a52cb07206b1815d5e9a920fea864fee"
-      },
-      {
-        "name": "Morgan Chang",
-        "emailHash": "140efeaa8db1a5a4861da638595716ca"
-      },
-      {
-        "name": "Vincent Ho",
-        "emailHash": "adc1ce3eaa291de96ee60d635195d3d5"
       }
     ]
   }
