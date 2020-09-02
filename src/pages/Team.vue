@@ -1,6 +1,15 @@
 <template>
   <div id="sponsor" class="container">
     <LogoTop />
+    <div class="background-image">
+      <div class="image-wrapper">
+        <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
+            srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
+            class="Group-9">
+        <img src="https://gophercon.golang.tw/2020/img/graphic-team.png"
+          srcset="https://gophercon.golang.tw/2020/img/graphic-team@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-team@3x.png 3x" class="team-1">
+      </div>
+    </div>
     <div class="content">
       <div class="card-container individual-sponsor">
         <div class="card">
@@ -24,7 +33,7 @@
         >
           <h2 class="sponsor-name">
             <span>{{ group.name }}</span>
-           </h2>
+          </h2>
           <div class="sponsor-text-container">{{ group.description }}</div>
           <div class="staff-wrapper">
             <div
@@ -84,11 +93,39 @@ export default class TeamPage extends Vue {
     padding-top: 216px;
   }
 
-  background-image: url('~@/assets/images/subpage-bg.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  .background-image {
+    position: fixed;
+    background-color: #fff;
+    height: calc(100vw / 16 * 9);
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform-origin: 0 0;
+    margin-top: 72px;
+    z-index: -10;
+
+    .image-wrapper {
+      position: relative;
+    }
+
+    .Group-9 {
+      &-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      width: 100%;
+      height: auto;
+    }
+
+    .team-1 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
 
   .content {
     margin-left: auto;
