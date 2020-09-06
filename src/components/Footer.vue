@@ -7,6 +7,9 @@
       <div class="sponsor">
         <img src="https://gophercon.golang.tw/2020/img/sponsors/ocf.png" alt="open culture foundation" />
       </div>
+      <div class="sponsor">
+        <img src="https://gophercon.golang.tw/2020/img/sponsors/jetbrains.png" alt="jetbrain" />
+      </div>
     </div>
     <div class="g-footer-socialMedia">
       <div class="g-footer-socialMedia--text">
@@ -113,7 +116,7 @@ export default class Footer extends Vue {
 
       img {
         min-height: 64px;
-        max-height: 80px;
+        max-height: 150px;
         object-fit: contain;
 
         @media (max-width: $screen-md) {
