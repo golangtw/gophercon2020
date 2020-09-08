@@ -16,7 +16,11 @@
     left: 0;
     z-index: 0;
     transform-origin: 0 0;
-    margin-top: 72px;
+    margin-top: $navbar-height-mobile;
+
+    @include for-size(lg) {
+      margin-top: $navbar-height;
+    }
 
     @media screen and (orientation: landscape) and (max-width: 1200px) {
       // transform: scale(1.4);

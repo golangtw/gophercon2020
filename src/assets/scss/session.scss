@@ -1,4 +1,9 @@
-@mixin agenda ($backgroundColor, $backgroundColorHover, $fontColor, $fontColorLevel2) {
+@mixin agenda(
+  $backgroundColor,
+  $backgroundColorHover,
+  $fontColor,
+  $fontColorLevel2
+) {
   #agenda {
     .Logo {
       width: 457px;
@@ -17,7 +22,11 @@
       left: 0;
       z-index: 0;
       transform-origin: 0 0;
-      margin-top: 72px;
+      margin-top: $navbar-height-mobile;
+
+      @include for-size(lg) {
+        margin-top: $navbar-height;
+      }
 
       @media screen and (orientation: landscape) and (max-width: 1200px) {
         // transform: scale(1.4);
@@ -94,7 +103,7 @@
 
             p {
               font-weight: 500;
-              font-family: "Fira Code", monospace;
+              font-family: 'Fira Code', monospace;
             }
           }
 
@@ -130,7 +139,7 @@
             border-radius: 10px;
 
             p {
-              font-family: "Fira Code", monospace;
+              font-family: 'Fira Code', monospace;
             }
           }
         }
@@ -180,7 +189,7 @@
           color: $backgroundColor;
 
           &:before {
-            content: '#'
+            content: '#';
           }
 
           @media screen and (max-width: 960px) {
@@ -203,7 +212,7 @@
             z-index: 1;
 
             p {
-              font-family: "Fira Code", monospace;
+              font-family: 'Fira Code', monospace;
             }
           }
 
