@@ -23,7 +23,7 @@
   }
 
   @include for-size(xl) {
-    top: calc(#{$navbar-height} -32 px);
+    top: calc(#{$navbar-height} - 32px);
   }
 
   a {

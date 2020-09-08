@@ -3,20 +3,30 @@
     <LogoTop />
     <div class="background-image">
       <div class="image-wrapper">
-        <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
-          srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
-            class="Group-9">
-        <img src="https://gophercon.golang.tw/2020/img/graphic-sponsor-1.png"
-          srcset="https://gophercon.golang.tw/2020/img/graphic-sponsor-1@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-sponsor-1@3x.png 3x" class="sponsor-1">
-        <img src="https://gophercon.golang.tw/2020/img/graphic-sponsor-2.png"
-          srcset="https://gophercon.golang.tw/2020/img/graphic-sponsor-2@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-sponsor-2@3x.png 3x" class="sponsor-2">
+        <img
+          src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
+          srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x, https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
+          class="Group-9"
+        />
+        <img
+          src="https://gophercon.golang.tw/2020/img/graphic-sponsor-1.png"
+          srcset="https://gophercon.golang.tw/2020/img/graphic-sponsor-1@2x.png 2x, https://gophercon.golang.tw/2020/img/graphic-sponsor-1@3x.png 3x"
+          class="sponsor-1"
+        />
+        <img
+          src="https://gophercon.golang.tw/2020/img/graphic-sponsor-2.png"
+          srcset="https://gophercon.golang.tw/2020/img/graphic-sponsor-2@2x.png 2x, https://gophercon.golang.tw/2020/img/graphic-sponsor-2@3x.png 3x"
+          class="sponsor-2"
+        />
       </div>
     </div>
     <div class="content">
       <div class="card-container individual-sponsor">
         <div class="card">
           <h2 class="font-black subtitle">我們歡迎個人贊助</h2>
-          <p class="paragraph">Gopher Conference 為 Golang Taipei 自發組成籌辦的研討會，秉持著以社群成員為主軸的核心價值，提供一個經驗交流與資訊技術實務分享的平台。</p>
+          <p
+            class="paragraph"
+          >Gopher Conference 為 Golang Taipei 自發組成籌辦的研討會，秉持著以社群成員為主軸的核心價值，提供一個經驗交流與資訊技術實務分享的平台。</p>
           <p class="paragraph">
             維繫這樣的交流平台，需要多人的努力及貢獻，亦十分需要在資金上的支持。
             <br />希望能藉由您的一份力量，來促成活動的舉行，讓更多 Golang 使用者能在舞台上展現自我成長。
@@ -37,24 +47,23 @@
         </div>
       </div>
       <div class="sponsor-wrapper">
-        <div
-          v-for="sponsor in sponsorList"
-          :key="sponsor.slug"
-          class="sponsor-card"
-        >
+        <div v-for="sponsor in sponsorList" :key="sponsor.slug" class="sponsor-card">
           <h2 class="sponsor-name">
-            <span class="sponsor-level">{{ sponsorLevelText[sponsor.level] }}</span><br/>
+            <span class="sponsor-level">{{ sponsorLevelText[sponsor.level] }}</span>
+            <br />
             <span>{{ sponsor.name }}</span>
-           </h2>
+          </h2>
           <div class="sponsor-card-content layout-flex-md">
             <div class="sponsor-img-container layout-flex-md-50">
               <a :href="`${sponsor.url}`" target="_blank" rel="noopener">
-                <img :alt="sponsor.name" :src="`https://gophercon.golang.tw/2020/img/sponsors/${sponsor.image}`" />
+                <img
+                  :alt="sponsor.name"
+                  :src="`https://gophercon.golang.tw/2020/img/sponsors/${sponsor.image}`"
+                />
               </a>
             </div>
-            <div class="sponsor-text-container layout-flex-md-50"
-                v-if="sponsor.description">
-                <p class="sponsor-text">{{ sponsor.description }}</p>
+            <div class="sponsor-text-container layout-flex-md-50" v-if="sponsor.description">
+              <p class="sponsor-text">{{ sponsor.description }}</p>
             </div>
           </div>
         </div>
@@ -90,31 +99,31 @@ import { Route } from 'vue-router';
   components: {
     LogoTop,
     Sponsor
-  },
+  }
 })
 export default class SponsorPage extends Vue {
   private sponsorLevelText = {
-    'holder': '主辦單位',
+    holder: '主辦單位',
     'co-holder': '共同主辦',
     'co-organizer': '協辦單位',
     'level-1': '鑽石級',
     'level-2': '金級',
     'level-3': '銀級',
-    'thank': '特別感謝',
-    'media': '媒體夥伴'
+    thank: '特別感謝',
+    media: '媒體夥伴'
   };
 
   private sponsorList: object = {};
 
-  public mounted () {
+  public mounted() {
     this.processSponsor();
   }
 
-  private processSponsor (): void {
+  private processSponsor(): void {
     this.sponsorList = sponsorData;
   }
 
-  private markdownParser (rawContent: string): string {
+  private markdownParser(rawContent: string): string {
     return markdown.toHTML(rawContent);
   }
 }
@@ -122,25 +131,34 @@ export default class SponsorPage extends Vue {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/mixin.scss';
+@import '@/assets/scss/variables.scss';
+
+$logo-margin-bottom: 20px;
 
 #sponsor {
   min-width: 375px;
   width: 100%;
 
   @include for-size(xs) {
-    padding-top: 159px;
+    padding-top: calc(
+      #{$navbar-height-mobile} + 36px + 84px + #{$logo-margin-bottom}
+    );
   }
   @include for-size(sm) {
-    padding-top: 165px;
+    padding-top: calc(
+      #{$navbar-height-mobile} + 36px + 100px + #{$logo-margin-bottom}
+    );
   }
   @include for-size(md) {
-    padding-top: 165px;
+    padding-top: calc(
+      #{$navbar-height-mobile} + 36px + 153px + #{$logo-margin-bottom}
+    );
   }
   @include for-size(lg) {
-    padding-top: 165px;
+    padding-top: calc(#{$navbar-height} + 28px + 153px + 20px);
   }
   @include for-size(xl) {
-    padding-top: 216px;
+    padding-top: calc(#{$navbar-height} - 32px + 153px + 20px);
   }
 
   .background-image {
@@ -152,8 +170,12 @@ export default class SponsorPage extends Vue {
     left: 0;
     z-index: 0;
     transform-origin: 0 0;
-    margin-top: 72px;
+    margin-top: $navbar-height-mobile;
     z-index: -10;
+
+    @include for-size(lg) {
+      margin-top: $navbar-height;
+    }
 
     .image-wrapper {
       position: relative;
