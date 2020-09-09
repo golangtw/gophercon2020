@@ -3,18 +3,25 @@
     <LogoTop />
     <div class="background-image">
       <div class="image-wrapper">
-        <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
-            srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
-            class="Group-9">
-        <img src="https://gophercon.golang.tw/2020/img/graphic-team.png"
-          srcset="https://gophercon.golang.tw/2020/img/graphic-team@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-team@3x.png 3x" class="team-1">
+        <img
+          src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
+          srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x, https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
+          class="Group-9"
+        />
+        <img
+          src="https://gophercon.golang.tw/2020/img/graphic-team.png"
+          srcset="https://gophercon.golang.tw/2020/img/graphic-team@2x.png 2x, https://gophercon.golang.tw/2020/img/graphic-team@3x.png 3x"
+          class="team-1"
+        />
       </div>
     </div>
     <div class="content">
       <div class="card-container individual-sponsor">
         <div class="card">
           <h2 class="font-black subtitle">GopherCon 團隊</h2>
-          <p class="paragraph">GopherCon TW 年會每年皆是許多志工奉獻與時間精神所舉辦；若你對參與 GopherCon 年會的籌備有興趣，歡迎填寫表單，我們將在活動開始籌備時通知您！</p>
+          <p
+            class="paragraph"
+          >GopherCon TW 年會每年皆是許多志工奉獻與時間精神所舉辦；若你對參與 GopherCon 年會的籌備有興趣，歡迎填寫表單，我們將在活動開始籌備時通知您！</p>
           <p class="paragraph">
             <a
               href="mailto: contact@golang.tw"
@@ -26,11 +33,7 @@
         </div>
       </div>
       <div class="sponsor-wrapper">
-        <div
-          v-for="group in staffs"
-          :key="`staff-group-${group.name}`"
-          class="sponsor-card"
-        >
+        <div v-for="group in staffs" :key="`staff-group-${group.name}`" class="sponsor-card">
           <h2 class="sponsor-name">
             <span>{{ group.name }}</span>
           </h2>
@@ -41,7 +44,7 @@
               :key="`${group.name}-${member.name}`"
               class="staff"
             >
-              <StaffInfo :member=member></StaffInfo>
+              <StaffInfo :member="member"></StaffInfo>
             </div>
           </div>
         </div>
@@ -62,7 +65,7 @@ import StaffInfo from '../components/Team/StaffInfo.vue';
   components: {
     LogoTop,
     StaffInfo
-  },
+  }
 })
 export default class TeamPage extends Vue {
   private staffs = staffData;
@@ -71,6 +74,9 @@ export default class TeamPage extends Vue {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/mixin.scss';
+@import '@/assets/scss/variables.scss';
+
+$logo-margin-bottom: 20px;
 
 #sponsor {
   min-width: 375px;
@@ -78,19 +84,25 @@ export default class TeamPage extends Vue {
   font-family: SourceHanSansTW;
 
   @include for-size(xs) {
-    padding-top: 159px;
+    padding-top: calc(
+      #{$navbar-height-mobile} + 36px + 84px + #{$logo-margin-bottom}
+    );
   }
   @include for-size(sm) {
-    padding-top: 165px;
+    padding-top: calc(
+      #{$navbar-height-mobile} + 36px + 100px + #{$logo-margin-bottom}
+    );
   }
   @include for-size(md) {
-    padding-top: 165px;
+    padding-top: calc(
+      #{$navbar-height-mobile} + 36px + 153px + #{$logo-margin-bottom}
+    );
   }
   @include for-size(lg) {
-    padding-top: 165px;
+    padding-top: calc(#{$navbar-height} + 28px + 153px + 20px);
   }
   @include for-size(xl) {
-    padding-top: 216px;
+    padding-top: calc(#{$navbar-height} - 32px + 153px + 20px);
   }
 
   .background-image {
@@ -102,8 +114,12 @@ export default class TeamPage extends Vue {
     left: 0;
     z-index: 0;
     transform-origin: 0 0;
-    margin-top: 72px;
+    margin-top: $navbar-height-mobile;
     z-index: -10;
+
+    @include for-size(lg) {
+      margin-top: $navbar-height;
+    }
 
     .image-wrapper {
       position: relative;
@@ -258,7 +274,6 @@ export default class TeamPage extends Vue {
         }
       }
     }
-
   }
 
   .sponsor-text-container {
