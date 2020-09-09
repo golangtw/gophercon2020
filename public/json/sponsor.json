@@ -11,7 +11,7 @@
     "name": "JetBrains",
     "slug": "thank1",
     "url": "https://www.jetbrains.com",
-    "description": "JetBrains is a cutting-edge software vendor specializing in the creation of intelligent development tools, including IntelliJ IDEA – the leading Java IDE, and the Kotlin programming language.",
+    "description": "JetBrains 是知名 IntelliJ IDEA、ReSharper、PyCharm、GoLand、WebStorm、PhpStorm…等 IDE 工具及 Kotlin 程式語言背後的公司。過去 20 年來我們專注於生產能提升開發效率的工具，透過智能提示、快速修正，自動化地處理繁瑣且重複性高的任務，讓開發者有更多時間和精神關注在創新、設計、架構及更多美好的事物上。目前全球已有超過 800 萬使用者、225 多個國家信任我們的產品。",
     "level": "thank",
     "image": "jetbrains.png"
   },
