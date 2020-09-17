@@ -48,10 +48,8 @@
       </div>
       <div class="sponsor-wrapper">
         <div v-for="sponsor in sponsorList" :key="sponsor.slug" class="sponsor-card">
-          <h2 class="sponsor-name">
-            <span class="sponsor-level">{{ sponsorLevelText[sponsor.level] }}</span>
-            <br />
-            <span>{{ sponsor.name }}</span>
+          <h2 class="sponsor-level">
+            <span class="sponsor-text">{{ sponsorLevelText[sponsor.level] }}</span>
           </h2>
           <div class="sponsor-card-content layout-flex-md">
             <div class="sponsor-img-container layout-flex-md-50">
@@ -62,6 +60,11 @@
                 />
               </a>
             </div>
+          </div>
+          <div class="sponsor-card-content" style="background-color: #f0f2f4;padding: 16px;">
+            <span class="sponsor-name">
+              <span>{{ sponsor.name }}</span>
+            </span>
             <div class="sponsor-text-container layout-flex-md-50" v-if="sponsor.description">
               <p class="sponsor-text">{{ sponsor.description }}</p>
             </div>
@@ -306,29 +309,26 @@ $logo-margin-bottom: 20px;
 
   h2.sponsor-name {
     margin-bottom: 24px;
+  }
 
-    span {
-      font-size: 24px;
-      font-weight: 900;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: #7bd6eb;
-
-      &.sponsor-level {
-        font-size: 14px;
-      }
+  span {
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7bd6eb;
+    &.sponsor-level {
+      font-size: 14px;
     }
   }
 
   .sponsor-img-container {
-    padding-right: 24px;
-    margin-bottom: 24px;
+    padding-top: 13px;
 
     img {
-      width: 100%;
-      max-width: 100%;
+      width: 100px;
+      max-width: 100px;
     }
   }
 
