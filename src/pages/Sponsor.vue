@@ -59,6 +59,7 @@
               <div
                 v-for="sponsor in filterSponsor(order)"
                 :key="sponsor.slug"
+                v-on:click="handleClick(order, sponsor)"
                 class="sponsor-img-container"
               >
                 <img
@@ -70,15 +71,16 @@
             </div>
           </div>
           <div
+            :id="`${order}`"
             class="sponsor-card-content"
             style="background-color: #f0f2f4;padding: 16px;"
           >
-            <!-- <a href="sss" target="_blank" rel="noopener">
-              <span></span>
+            <a :href="state.url" target="_blank" rel="noopener">
+              <span>{{ state.name }}</span>
             </a>
             <div class="sponsor-text-container layout-flex-md-50">
-              <p class="sponsor-text">ccc</p>
-            </div> -->
+              <p class="sponsor-text">{{ state.description }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -137,6 +139,14 @@ export default class SponsorPage extends Vue {
 
   private sponsorList: object = {};
 
+  private state: SponsorData = {
+    name: '',
+    slug: '',
+    image: '',
+    description: '',
+    readmore: false,
+  };
+
   public mounted() {
     this.processSponsor();
   }
@@ -151,6 +161,19 @@ export default class SponsorPage extends Vue {
 
   private filterSponsor(level: string): any {
     return sponsorData.filter(sponsor => sponsor.level === level);
+  }
+
+  private handleClick(order: string, sponsor: any): void {
+    this.sponsorOrderText.forEach(text => {
+      const element = document.querySelector<HTMLDivElement>(`#${text}`);
+      console.log(element, text, order, sponsor);
+      if (element && text !== order) {
+        element.style.display = 'none';
+      } else if (element && text === order) {
+        element.style.display = 'block';
+        this.state = sponsor;
+      }
+    });
   }
 }
 </script>
@@ -328,6 +351,10 @@ $logo-margin-bottom: 20px;
 
   .sponsor-card {
     margin-top: 16px;
+  }
+
+  .sponsor-card-content {
+    display: none;
   }
 
   h2.sponsor-name {
