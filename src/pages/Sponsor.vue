@@ -65,7 +65,6 @@
                 <img
                   :alt="sponsor.name"
                   :src="`https://gophercon.golang.tw/2020/img/sponsors/${sponsor.image}`"
-                  style="margin-right: 4px;"
                 />
               </div>
             </div>
@@ -166,7 +165,6 @@ export default class SponsorPage extends Vue {
   private handleClick(order: string, sponsor: any): void {
     this.sponsorOrderText.forEach(text => {
       const element = document.querySelector<HTMLDivElement>(`#${text}`);
-      console.log(element, text, order, sponsor);
       if (element && text !== order) {
         element.style.display = 'none';
       } else if (element && text === order) {
@@ -378,6 +376,7 @@ $logo-margin-bottom: 20px;
     img {
       width: 100px;
       max-width: 100px;
+      margin-right: 4px;
     }
   }
 
