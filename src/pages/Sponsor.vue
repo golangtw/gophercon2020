@@ -47,27 +47,38 @@
         </div>
       </div>
       <div class="sponsor-wrapper">
-        <div v-for="sponsor in sponsorList" :key="sponsor.slug" class="sponsor-card">
+        <div v-for="order in sponsorOrderText" :key="order" class="sponsor-card">
           <h2 class="sponsor-level">
-            <span class="sponsor-text">{{ sponsorLevelText[sponsor.level] }}</span>
+            <span class="sponsor-text">{{ sponsorLevelText[order] }}</span>
           </h2>
-          <div class="sponsor-card-content layout-flex-md">
-            <div class="sponsor-img-container layout-flex-md-50">
-              <a :href="`${sponsor.url}`" target="_blank" rel="noopener">
+          <div class="sponsor-card">
+            <div
+              class="sponsor-card-content"
+              style="display: flex; justify-content: flex-start; align-items: center;"
+            >
+              <div
+                v-for="sponsor in filterSponsor(order)"
+                :key="sponsor.slug"
+                class="sponsor-img-container"
+              >
                 <img
                   :alt="sponsor.name"
                   :src="`https://gophercon.golang.tw/2020/img/sponsors/${sponsor.image}`"
+                  style="margin-right: 4px;"
                 />
-              </a>
+              </div>
             </div>
           </div>
-          <div class="sponsor-card-content" style="background-color: #f0f2f4;padding: 16px;">
-            <span class="sponsor-name">
-              <span>{{ sponsor.name }}</span>
-            </span>
-            <div class="sponsor-text-container layout-flex-md-50" v-if="sponsor.description">
-              <p class="sponsor-text">{{ sponsor.description }}</p>
-            </div>
+          <div
+            class="sponsor-card-content"
+            style="background-color: #f0f2f4;padding: 16px;"
+          >
+            <!-- <a href="sss" target="_blank" rel="noopener">
+              <span></span>
+            </a>
+            <div class="sponsor-text-container layout-flex-md-50">
+              <p class="sponsor-text">ccc</p>
+            </div> -->
           </div>
         </div>
       </div>
@@ -105,6 +116,14 @@ import { Route } from 'vue-router';
   }
 })
 export default class SponsorPage extends Vue {
+  private sponsorOrderText = [
+    'level-1',
+    'level-2',
+    'level-3',
+    'co-organizer',
+    'thank',
+  ];
+
   private sponsorLevelText = {
     holder: '主辦單位',
     'co-holder': '共同主辦',
@@ -128,6 +147,10 @@ export default class SponsorPage extends Vue {
 
   private markdownParser(rawContent: string): string {
     return markdown.toHTML(rawContent);
+  }
+
+  private filterSponsor(level: string): any {
+    return sponsorData.filter(sponsor => sponsor.level === level);
   }
 }
 </script>
@@ -303,8 +326,8 @@ $logo-margin-bottom: 20px;
     padding-right: 82px;
   }
 
-  > .sponsor-card:not(:last-child) {
-    margin-bottom: 40px;
+  .sponsor-card {
+    margin-top: 16px;
   }
 
   h2.sponsor-name {
@@ -324,8 +347,7 @@ $logo-margin-bottom: 20px;
   }
 
   .sponsor-img-container {
-    padding-top: 13px;
-
+    cursor: pointer;
     img {
       width: 100px;
       max-width: 100px;
