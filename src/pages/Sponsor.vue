@@ -41,7 +41,7 @@
               <span>{{ sponsor.name }}</span>
             </span>
             <div class="sponsor-text-container layout-flex-md-50" v-if="sponsor.description">
-              <p class="sponsor-text">{{ sponsor.description }}</p>
+              <p class="sponsor-text" v-html="sponsor.description"></p>
             </div>
           </div>
         </div>
