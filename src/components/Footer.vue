@@ -1,5 +1,6 @@
 <template>
   <div class="g-footer">
+    <!--
     <div v-if="showSponsors" class="g-footer-sponsors">
       <div class="sponsor">
         <img src="https://gophercon.golang.tw/2020/img/sponsors/chungyo.png" alt="chung yo group" />
@@ -11,6 +12,7 @@
         <img src="https://gophercon.golang.tw/2020/img/sponsors/jetbrains.png" alt="jetbrain" />
       </div>
     </div>
+    -->
     <div class="g-footer-socialMedia">
       <div class="g-footer-socialMedia--text">
         <b>Contact us in one of the following social networks</b>
