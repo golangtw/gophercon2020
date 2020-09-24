@@ -32,12 +32,12 @@
     "description": "議程組負責一切與議程相關的事情，舉凡投稿與審稿、講者聯繫、Keynote 與論壇的安排，以及會議廳的主持等，都是議程組的工作範圍，此外，議程組也負責一部分的大會活動。",
     "members": [
       {
-        "name": "Che Chia Chang",
-        "emailHash": "e56eaaf62e2112055827c197b938d620"
+        "name": "Benjamin Wang",
+        "emailHash": "29cbf36c5ee3a10ed835734a6c657d6a"
       },
       {
-        "name": "Benjamin",
-        "emailHash": "29cbf36c5ee3a10ed835734a6c657d6a"
+        "name": "Che Chia Chang",
+        "emailHash": "e56eaaf62e2112055827c197b938d620"
       },
       {
         "name": "Ray Change",
@@ -138,6 +138,10 @@
       {
         "name": "Luffy Tsai",
         "emailHash": "9c23db3f46d3a95b7f0e6d1833c310a2"
+      },
+      {
+        "name": "Michelle Liu",
+        "emailHash": "86e29e4ea7e4645f440bb3c3cda7fe01"
       }
     ]
   }
