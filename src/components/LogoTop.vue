@@ -52,4 +52,16 @@
     }
   }
 }
+
+@media (max-width: 480px) and (max-height: 1024px) {
+  .logo-top {
+    position: absolute;
+  }
+}
+
+@media (max-height: 1024px) {
+  .logo-top {
+    position: absolute;
+  }
+}
 </style>
