@@ -32,6 +32,14 @@
     "image": "sponsorlogo-appier.png"
   },
   {
+    "name": "MaiCoin",
+    "slug": "gold4",
+    "url": "https://www.maicoin.com/",
+    "description": "MaiCoin 成立於 2014 年，為台灣最大數位資產代買代售平台，也是台灣第一個提供以太幣(ETH)、萊特幣(LTC)等兌換新台幣的交易平台。目前平台支援虛擬貨幣市場三大主流幣: BTC(比特幣），ETH(以太幣)，LTC(萊特幣)以及兩大穩定幣 USDT(泰達幣)，USDC。平台支援銀行轉帳及超商繳款，提供多元的支付管道可以輕鬆便利的買賣虛擬貨幣。",
+    "level": "level-2",
+    "image": "sponsorlogo-maicoin.png"
+  },
+  {
     "name": "KKStream",
     "slug": "silver1",
     "url": "https://www.kkstream.com/",

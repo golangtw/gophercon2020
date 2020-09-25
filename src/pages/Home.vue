@@ -4,8 +4,8 @@
     <div class="badge-container">
       <div class="badge-item">
         <Badge>
-          <a href="https://www.papercall.io/gophercon-2020-taiwan" target="_blank" rel="noopener">
-            <div class="text">會議徵稿</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSffrFjdHDGWtU9GWlXhYGzWX-vjUjmHv2bA4imHFe_Lpj7COQ/viewform" target="_blank" rel="noopener">
+            <div class="text">志工招募</div>
           </a>
         </Badge>
       </div>
