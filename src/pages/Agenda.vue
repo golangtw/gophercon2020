@@ -13,15 +13,14 @@
       </div>
     </div>
     <div id="agenda" class="main-container">
-      <div id="agenda" class="main-container" style="margin-top:150px">
-        <CCIPSessionTable
-          :sessionData="sessionData"
-          :rooms="['R0', 'R1']"
-          :isMobile="isMobile()"
-          :isPopup.sync="popUp"
-          :popUpSession.sync="popUpSession"
-        />
-      </div>
+      <CCIPSessionTable
+        :sessionData="sessionData"
+        :rooms="['']"
+        :isMobile="isMobile()"
+        :isPopup.sync="popUp"
+        :popUpSession.sync="popUpSession"
+        style="margin-right:60px"
+      />
     </div>
   </div>
 </template>
