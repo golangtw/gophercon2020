@@ -11,7 +11,9 @@
       </div>
       <div>
         <Badge>
-          <div class="text">會議門票</div>
+          <a href="https://golang.kktix.cc/events/gophercontw2020" target="_blank" rel="noopener">
+            <div class="text">會議門票</div>
+          </a>
         </Badge>
       </div>
     </div>
