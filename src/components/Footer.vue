@@ -15,7 +15,7 @@
     -->
     <div class="g-footer-socialMedia">
       <div class="g-footer-socialMedia--text">
-        <b>Contact us in one of the following social networks</b>
+        <span>Contact us in one of the following social networks</span>
       </div>
       <div class="g-footer-socialMedia--icons">
         <div class="media-icon">
@@ -39,7 +39,9 @@
         <LogoBottom />
       </div>
       <div class="g-footer-copyright--text">
-        Copyright © 2010-2020 GopherCon Taiwan. All rights reserved.
+        <span>
+          Copyright © 2010-2020 GopherCon Taiwan. All rights reserved.
+        </span>
       </div>
     </div>
   </div>
@@ -101,6 +103,7 @@ export default class Footer extends Vue {
   position: absolute;
   z-index: 10;
   width: 100%;
+  font-family: Noto Sans TC, sans-serif;
 
   &-sponsors {
     display: flex;
@@ -134,17 +137,23 @@ export default class Footer extends Vue {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 40px 0 100px;
+    padding: 40px 37px 100px;
     background: #e8e8e8;
 
     &--text {
       display: flex;
       margin-top: 40px;
       margin-bottom: 20px;
-      padding: 0 16px;
       justify-content: center;
       color: #343942;
       text-align: center;
+
+      span {
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: normal;
+        line-height: normal;
+      }
     }
 
     &--icons {
@@ -194,7 +203,7 @@ export default class Footer extends Vue {
   }
 
   &-copyright {
-    padding: 40px 16px;
+    padding: 40px 45px;
     background: #4e687e;
 
     &--image {
@@ -209,6 +218,13 @@ export default class Footer extends Vue {
       justify-content: center;
       color: #bbfad7;
       text-align: center;
+
+      span {
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: normal;
+        line-height: normal;
+      }
     }
   }
 }
