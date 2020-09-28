@@ -1,6 +1,6 @@
 <template>
   <div id="sponsor" class="container">
-    <LogoTop />
+    <LogoTop v-if="$store.state.app.device !== 'mobile'"/>
     <div class="background-image">
       <div class="image-wrapper">
         <img
