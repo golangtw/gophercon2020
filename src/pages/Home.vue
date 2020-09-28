@@ -109,7 +109,7 @@ import axios from 'axios';
 import LogoTop from '../components/LogoTop.vue';
 import SpotlightCard from '../components/Home/SpotlightCard.vue';
 import Badge from '../components/Home/Badge.vue';
-import GopherConTatonMask from '@/components/GopherConTatonMask.vue';
+// import GopherConTatonMask from '@/components/GopherConTatonMask.vue';
 // import BulletScreen from '@/components/CFP/BulletScreen.vue';
 
 import { ThemeType } from '../store/types/app';
@@ -119,7 +119,7 @@ import head from '@/util/head';
 @Component({
   components: {
     // BulletScreen,
-    GopherConTatonMask,
+    // GopherConTatonMask,
     LogoTop,
     SpotlightCard,
     Badge
@@ -143,7 +143,7 @@ export default class Home extends Vue {
 
   public mounted() {
     head.reset();
-    this.measureMaskSize();
+    // this.measureMaskSize();
     // this.measureBulletScreenSize();
     this.continuePlayVideoWhenFocusBack();
     window.addEventListener('resize', this.measureMaskSize);
@@ -155,12 +155,12 @@ export default class Home extends Vue {
     // window.removeEventListener('resize', this.measureBulletScreenSize);
   }
 
-  private measureMaskSize(): void {
-    this.gopherconTatonMaskHeight = (this.$refs
-      .gopherconTatonMask as Element).clientHeight;
-    this.gopherconTatonMaskWidth = (this.$refs
-      .gopherconTatonMask as Element).clientWidth;
-  }
+  // private measureMaskSize(): void {
+  //   this.gopherconTatonMaskHeight = (this.$refs
+  //     .gopherconTatonMask as Element).clientHeight;
+  //   this.gopherconTatonMaskWidth = (this.$refs
+  //     .gopherconTatonMask as Element).clientWidth;
+  // }
 
   private continuePlayVideoWhenFocusBack(): void {
     const videoPlayerDOM = document.getElementById(
