@@ -9,6 +9,7 @@ import Venue from './pages/Venue.vue';
 import Team from './pages/Team.vue';
 import CFP from './pages/CFP.vue';
 import Sponsor from './pages/Sponsor.vue';
+import Covid from './pages/Covid.vue';
 
 import { Route } from 'vue-router';
 
@@ -97,6 +98,15 @@ export const routes = [
     component: Sponsor,
     meta: {
       label: '贊助',
+      menuItem: true
+    }
+  },
+  {
+    path: '/covid-19',
+    name: 'covid-19',
+    component: Covid,
+    meta: {
+      label: '防疫守則',
       menuItem: true
     }
   },

@@ -40,7 +40,7 @@
           </router-link>
           <div style="margin-left: auto; display: block;"></div>
           <router-link
-            v-for="item in menu.slice(3,6)"
+            v-for="item in menu.slice(3,7)"
             :key="item.name"
             :to="item.path"
             class="menu-item font-bold"
