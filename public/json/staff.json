@@ -4,8 +4,8 @@
     "description": "掌握協調年會籌備進度，主持核心討論及決策。",
     "members": [
       {
-        "name": "Evan Lin",
-        "emailHash": "670eb312a14e540fee9f24d740275774"
+        "name": "David Chou",
+        "emailHash": "b3a7c0d5c590642dbce68bce8929a2df"
       }
     ]
   },
@@ -13,10 +13,6 @@
     "name": "贊助組",
     "description": "負責年會與金錢相關的業務。",
     "members": [
-      {
-        "name": "David Chou",
-        "emailHash": "b3a7c0d5c590642dbce68bce8929a2df"
-      },
       {
         "name": "Kakashi",
         "emailHash": "a78f6cc4fc127a344343983280674d46"
@@ -42,6 +38,10 @@
       {
         "name": "Ray Change",
         "emailHash": "243d4187137f1549aafa9ac220d37699"
+      },
+      {
+        "name": "Evan Lin",
+        "emailHash": "670eb312a14e540fee9f24d740275774"
       }
     ]
   },
