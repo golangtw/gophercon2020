@@ -56,31 +56,31 @@ export default class Footer extends Vue {
   @Prop() private showSponsors!: boolean;
   private socialMedia = [
     {
-      imgSrc: '@/assets/icons/mail.png',
-      link: 'mailto:contact@golang.tw',
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/mail.png',
+      link: 'mailto:golangtaipei@gmail.com',
     },
     {
-      imgSrc: '@/assets/icons/meetup.png',
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/meetup.png',
       link: 'https://www.meetup.com/golang-taipei-meetup',
     },
     {
-      imgSrc: '@/assets/icons/github.png',
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/github.png',
       link: 'https://github.com/golangtw',
     },
     {
-      imgSrc: '@/assets/icons/facebook.png',
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/facebook.png',
       link: 'https://www.facebook.com/golangtaipei/',
     },
     {
-      imgSrc: '@/assets/icons/telegram.png',
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/telegram.png',
       link: 'https://t.me/golangtw',
     },
     {
-      imgSrc: '@/assets/icons/twitter.png',
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/twitter.png',
       link: 'https://twitter.com/golangtw',
     },
     {
-      imgSrc: '@/assets/icons/youtube.png',
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/youtube.png',
       link: 'https://www.youtube.com/channel/UCjnIy_GQAuszZurUIO3zg9Q',
     },
   ];
