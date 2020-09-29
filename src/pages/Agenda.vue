@@ -1,6 +1,6 @@
 <template>
   <div id="agenda" class="main-container">
-    <LogoTop />
+    <LogoTop v-if="$store.state.app.device !== 'mobile'"/>
     <div class="background-image">
       <div class="image-wrapper">
         <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
