@@ -146,12 +146,12 @@ export default class Home extends Vue {
     // this.measureMaskSize();
     // this.measureBulletScreenSize();
     this.continuePlayVideoWhenFocusBack();
-    window.addEventListener('resize', this.measureMaskSize);
+    // window.addEventListener('resize', this.measureMaskSize);
     // window.addEventListener('resize', this.measureBulletScreenSize);
   }
 
   public destroyed() {
-    window.removeEventListener('resize', this.measureMaskSize);
+    // window.removeEventListener('resize', this.measureMaskSize);
     // window.removeEventListener('resize', this.measureBulletScreenSize);
   }
 
