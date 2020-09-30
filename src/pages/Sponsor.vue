@@ -46,12 +46,17 @@
               </div>
             </div>
           </div>
-          <div class="sponsor-card-content" style="background-color: #f0f2f4;padding: 16px;">
-            <span class="sponsor-name">
-              <span>{{ sponsor.name }}</span>
-            </span>
-            <div class="sponsor-text-container layout-flex-md-50" v-if="sponsor.description">
-              <p class="sponsor-text" v-html="sponsor.description"></p>
+          <!-- display card -->
+          <div
+            :id="`${order}`"
+            class="sponsor-card-content"
+            style="background-color: #f0f2f4;padding: 16px;"
+          >
+            <a :href="state.url" target="_blank" rel="noopener">
+              <span>{{ state.name }}</span>
+            </a>
+            <div class="sponsor-text-container layout-flex-md-50">
+              <p class="sponsor-text">{{ state.description }}</p>
             </div>
           </div>
         </div>
