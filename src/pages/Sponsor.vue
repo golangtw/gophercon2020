@@ -51,6 +51,7 @@
           <h2 class="sponsor-level">
             <span class="sponsor-text">{{ sponsorLevelText[order] }}</span>
           </h2>
+          <!-- image list -->
           <div class="sponsor-card">
             <div
               class="sponsor-card-content"
@@ -64,11 +65,13 @@
               >
                 <img
                   :alt="sponsor.name"
+                  :id="`img-${sponsor.name}`"
                   :src="`https://gophercon.golang.tw/2020/img/sponsors/${sponsor.image}`"
                 />
               </div>
             </div>
           </div>
+          <!-- display card -->
           <div
             :id="`${order}`"
             class="sponsor-card-content"
@@ -136,6 +139,14 @@ export default class SponsorPage extends Vue {
     media: '媒體夥伴'
   };
 
+  private sponsorColorText: Record<string, string> = {
+    'level-1': '#b3f7ff',
+    'level-2': '#ffb976',
+    'level-3': '#dddfe2',
+    'co-organizer': '#61c3ff',
+    thank: '#bbfad7',
+  };
+
   private sponsorList: object = {};
 
   private state: SponsorData = {
@@ -163,13 +174,24 @@ export default class SponsorPage extends Vue {
   }
 
   private handleClick(order: string, sponsor: any): void {
+    // displat sponsor content
     this.sponsorOrderText.forEach(text => {
-      const element = document.querySelector<HTMLDivElement>(`#${text}`);
-      if (element && text !== order) {
-        element.style.display = 'none';
-      } else if (element && text === order) {
-        element.style.display = 'block';
+      const contentDisplayer = document.querySelector<HTMLDivElement>(`#${text}`);
+      if (contentDisplayer && text !== order) {
+        contentDisplayer.style.display = 'none';
+      } else if (contentDisplayer && text === order) {
+        contentDisplayer.style.display = 'block';
         this.state = sponsor;
+      }
+    });
+    // display border-top
+    (this.sponsorList as Array<any>).forEach(s => {
+      const sponsorImg = document.querySelector<HTMLImageElement>(`#img-${s.name}`);
+      if (sponsor.name !== s.name && sponsorImg) {
+        sponsorImg.style.borderTop = 'transparent';
+      } else if (sponsor.name === s.name && sponsorImg) {
+        sponsorImg.style.borderTop = `3px solid ${this.sponsorColorText[order]}`;
+        sponsorImg.style.borderRadius = '5px';
       }
     });
   }
