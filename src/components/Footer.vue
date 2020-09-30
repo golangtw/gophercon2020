@@ -1,5 +1,6 @@
 <template>
   <div class="g-footer">
+    <!--
     <div v-if="showSponsors" class="g-footer-sponsors">
       <div class="sponsor">
         <img src="https://gophercon.golang.tw/2020/img/sponsors/chungyo.png" alt="chung yo group" />
@@ -11,23 +12,19 @@
         <img src="https://gophercon.golang.tw/2020/img/sponsors/jetbrains.png" alt="jetbrain" />
       </div>
     </div>
+    -->
     <div class="g-footer-socialMedia">
       <div class="g-footer-socialMedia--text">
-        <b>Contact us in one of the following social networks</b>
+        <span>Contact us in one of the following social networks</span>
       </div>
       <div class="g-footer-socialMedia--icons">
-        <div class="media-icon">
-          <a href="mailto:contact@golang.tw">
-            <EmailIcon />
-          </a>
-        </div>
         <div
-          v-for="s in socialMedia"
-          :key="`media-${s.icon[1]}`"
+          v-for="(s, i) in socialMedia"
+          :key="`media-${i}`"
           class="media-icon"
         >
           <a :href="s.link" target="_blank" rel="noopener">
-            <font-awesome-icon :icon="s.icon" />
+            <img :src="s.imgSrc" alt="" />
           </a>
         </div>
       </div>
@@ -37,7 +34,9 @@
         <LogoBottom />
       </div>
       <div class="g-footer-copyright--text">
-        Copyright © 2010-2020 GopherCon Taiwan. All rights reserved.
+        <span>
+          Copyright © 2010-2020 GopherCon Taiwan. All rights reserved.
+        </span>
       </div>
     </div>
   </div>
@@ -47,11 +46,9 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 import LogoBottom from './LogoBottom.vue';
-import EmailIcon from './icons/Email.vue';
 
 @Component({
   components: {
-    EmailIcon,
     LogoBottom,
   },
 })
@@ -59,27 +56,31 @@ export default class Footer extends Vue {
   @Prop() private showSponsors!: boolean;
   private socialMedia = [
     {
-      icon: ['fab', 'meetup'],
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/mail.png',
+      link: 'mailto:golangtaipei@gmail.com',
+    },
+    {
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/meetup.png',
       link: 'https://www.meetup.com/golang-taipei-meetup',
     },
     {
-      icon: ['fab', 'github'],
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/github.png',
       link: 'https://github.com/golangtw',
     },
     {
-      icon: ['fab', 'facebook'],
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/facebook.png',
       link: 'https://www.facebook.com/golangtaipei/',
     },
     {
-      icon: ['fab', 'telegram-plane'],
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/telegram.png',
       link: 'https://t.me/golangtw',
     },
     {
-      icon: ['fab', 'twitter'],
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/twitter.png',
       link: 'https://twitter.com/golangtw',
     },
     {
-      icon: ['fab', 'youtube'],
+      imgSrc: 'https://gophercon.golang.tw/2020/img/icons/youtube.png',
       link: 'https://www.youtube.com/channel/UCjnIy_GQAuszZurUIO3zg9Q',
     },
   ];
@@ -99,6 +100,7 @@ export default class Footer extends Vue {
   position: absolute;
   z-index: 10;
   width: 100%;
+  font-family: Noto Sans TC, sans-serif;
 
   &-sponsors {
     display: flex;
@@ -132,17 +134,23 @@ export default class Footer extends Vue {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 40px 0 100px;
+    padding: 40px 37px 100px;
     background: #e8e8e8;
 
     &--text {
       display: flex;
       margin-top: 40px;
       margin-bottom: 20px;
-      padding: 0 16px;
       justify-content: center;
       color: #343942;
       text-align: center;
+
+      span {
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: normal;
+        line-height: normal;
+      }
     }
 
     &--icons {
@@ -153,38 +161,17 @@ export default class Footer extends Vue {
       align-items: flex-start;
 
       & > .media-icon {
-        width: 45px;
-        height: 45px;
-        margin: 24px 32px;
-        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin: 8px 12px;
 
         & > a {
           width: 100%;
           height: 100%;
 
-          & > svg {
+          img {
             width: 100%;
-            height: 100%;
-
-            &.fa-meetup {
-              @include iconColor(#ea3340);
-            }
-
-            &.fa-facebook {
-              @include iconColor(#2e76f3);
-            }
-
-            &.fa-telegram-plane {
-              @include iconColor(#49a7da);
-            }
-
-            &.fa-twitter {
-              @include iconColor(#4caeef);
-            }
-
-            &.fa-youtube {
-              @include iconColor(#eb3323);
-            }
+            object-fit: contain;
           }
         }
       }
@@ -192,7 +179,7 @@ export default class Footer extends Vue {
   }
 
   &-copyright {
-    padding: 40px 16px;
+    padding: 40px 45px;
     background: #4e687e;
 
     &--image {
@@ -207,6 +194,13 @@ export default class Footer extends Vue {
       justify-content: center;
       color: #bbfad7;
       text-align: center;
+
+      span {
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: normal;
+        line-height: normal;
+      }
     }
   }
 }

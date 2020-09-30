@@ -9,6 +9,7 @@ import Venue from './pages/Venue.vue';
 import Team from './pages/Team.vue';
 import CFP from './pages/CFP.vue';
 import Sponsor from './pages/Sponsor.vue';
+import Covid from './pages/Covid.vue';
 
 import { Route } from 'vue-router';
 
@@ -68,7 +69,7 @@ export const routes = [
     meta: {
       index: 3,
       label: '會場地圖',
-      menuItem: true
+      menuItem: false
     }
   },
   {
@@ -77,7 +78,7 @@ export const routes = [
     component: Traffic,
     meta: {
       index: 4,
-      label: '交通方式',
+      label: '會場交通',
       menuItem: true
     }
   },
@@ -97,6 +98,24 @@ export const routes = [
     component: Sponsor,
     meta: {
       label: '贊助',
+      menuItem: true
+    }
+  },
+  {
+    path: '/covid-19',
+    name: 'covid-19',
+    component: Covid,
+    meta: {
+      label: '防疫守則',
+      menuItem: true
+    }
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    beforeEnter() {location.href = 'https://medium.com/@gophercon.taiwan'},
+    meta: {
+      label: '部落格',
       menuItem: true
     }
   }

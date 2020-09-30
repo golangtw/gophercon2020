@@ -1,6 +1,6 @@
 <template>
   <div id="sponsor" class="container">
-    <LogoTop />
+    <LogoTop v-if="$store.state.app.device !== 'mobile'" />
     <div class="background-image">
       <div class="image-wrapper">
         <img
@@ -24,7 +24,7 @@
           >GopherCon TW 年會每年皆是許多志工奉獻與時間精神所舉辦；若你對參與 GopherCon 年會的籌備有興趣，歡迎填寫表單，我們將在活動開始籌備時通知您！</p>
           <p class="paragraph">
             <a
-              href="mailto: contact@golang.tw"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSffrFjdHDGWtU9GWlXhYGzWX-vjUjmHv2bA4imHFe_Lpj7COQ/viewform"
               class="tone-trans form-link font-bold"
               target="_blank"
               rel="noopener"

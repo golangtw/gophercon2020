@@ -129,6 +129,7 @@
       h1 {
         font-size: 36px;
         margin: 36px 0;
+        color: $blue-4;
 
         @media screen and (max-width: 1024px) {
           font-size: 36px * $zoom-general-mobile-font;
@@ -147,6 +148,7 @@
       p.paragraph,
       p {
         font-size: 18px;
+        color: white;
 
         @media screen and (max-width: 1024px) {
           font-size: 18px * $zoom-general-mobile-font;

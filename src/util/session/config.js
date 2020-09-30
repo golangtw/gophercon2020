@@ -1,7 +1,7 @@
 var config = {};
 
 // GopherCon (TODO)
-config.spreadsheetKey = "1xqOmMPLvtUp_8C31ZanwLhK4dhBcmMZyrKLtdh9vVEw"
+config.spreadsheetKey = "1-_N72U19kA2xrxkD7obXpdcjzJwZMpALB_MjprMYr2Y"
 // SITCON
 // config.spreadsheetKey = "18PleK7TU6zseEnujAp6c9RSb4SkK9PZ2MUfd5N2iMPw";
 

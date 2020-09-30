@@ -26,9 +26,6 @@
           請支持我們的贊助夥伴。
         </p>
         <p class="paragraph">
-          <a href="http://bit.ly/donategophercon2020" class="font-bold" target="_blank" rel="noopener noreferrer">個人贊助方案</a>
-        </p>
-        <p class="paragraph">
           企業合作歡迎聯繫 <a href="mailto:contact@golang.tw" class="font-black">contact@golang.tw</a>
         </p>
       </div>

@@ -10,21 +10,13 @@
         <img class="logo-icon__mobile" src="@/assets/images/favicon.png" />
         -->
         <div class="logo-text">
-          <div class="logo-text__gophercon font-bold"><span class="font-black">GopherCon TW</span></div>
-          <div class="logo-text__2020 font-bold"><span>2020</span></div>
+          <span class="logo-text__gophercon font-black">GopherCon TW</span>
+          <span class="logo-text__2020">2020</span>
         </div>
       </div>
       <div class="menu" :class="{ toggled: isMenuToggled }">
         <div class="menu-container">
           <header>
-            <div class="define-logo">
-              <div class="define-text">
-                <div class="logo-text-container">
-                  <span class="logo-text__gophercon">GopherCon TW</span>
-                  <span class="logo-text__2020">2020</span>
-                </div>
-              </div>
-            </div>
             <div class="close-button-container">
               <span class="close-button" @click.self="toggleMenu(false)">+</span>
             </div>
@@ -40,7 +32,7 @@
           </router-link>
           <div style="margin-left: auto; display: block;"></div>
           <router-link
-            v-for="item in menu.slice(3,6)"
+            v-for="item in menu.slice(3,7)"
             :key="item.name"
             :to="item.path"
             class="menu-item font-bold"
