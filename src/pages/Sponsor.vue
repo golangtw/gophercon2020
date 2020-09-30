@@ -55,8 +55,8 @@
             <a :href="state.url" target="_blank" rel="noopener">
               <span>{{ state.name }}</span>
             </a>
-            <div class="sponsor-text-container layout-flex-md-50">
-              <p class="sponsor-text">{{ state.description }}</p>
+            <div class="sponsor-text-container layout-flex-md-50" v-if="state.description">
+              <p class="sponsor-text" v-html="state.description"></p>
             </div>
           </div>
         </div>
