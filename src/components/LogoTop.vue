@@ -18,12 +18,26 @@
   top: calc(#{$navbar-height-mobile} + 36px);
   height: 0;
 
+  @include for-size(xs) {
+    z-index: 999;
+  }
+
+  @include for-size(sm) {
+    z-index: 999;
+  }
+
+  @include for-size(md) {
+    z-index: 999;
+  }
+
   @include for-size(lg) {
     top: calc(#{$navbar-height} + 28px);
+    z-index: 999;
   }
 
   @include for-size(xl) {
     top: calc(#{$navbar-height} - 32px);
+    z-index: 1009;
   }
 
   a {

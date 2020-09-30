@@ -22,26 +22,41 @@
     </div>
     <div class="content">
       <div class="sponsor-wrapper">
-        <div v-for="sponsor in sponsorList" :key="sponsor.slug" class="sponsor-card">
+        <div v-for="order in sponsorOrderText" :key="order" class="sponsor-card">
           <h2 class="sponsor-level">
-            <span class="sponsor-text">{{ sponsorLevelText[sponsor.level] }}</span>
+            <span class="sponsor-text">{{ sponsorLevelText[order] }}</span>
           </h2>
-          <div class="sponsor-card-content layout-flex-md">
-            <div class="sponsor-img-container layout-flex-md-50">
-              <a :href="`${sponsor.url}`" target="_blank" rel="noopener">
+          <!-- image list -->
+          <div class="sponsor-card">
+            <div
+              class="sponsor-card-content"
+              style="display: flex; justify-content: flex-start; align-items: center;"
+            >
+              <div
+                v-for="sponsor in filterSponsor(order)"
+                :key="sponsor.slug"
+                v-on:click="handleClick(order, sponsor)"
+                class="sponsor-img-container"
+              >
                 <img
                   :alt="sponsor.name"
+                  :id="`img-${sponsor.name}`"
                   :src="`https://gophercon.golang.tw/2020/img/sponsors/${sponsor.image}`"
                 />
-              </a>
+              </div>
             </div>
           </div>
-          <div class="sponsor-card-content" style="background-color: #f0f2f4;padding: 16px;">
-            <span class="sponsor-name">
-              <span>{{ sponsor.name }}</span>
-            </span>
-            <div class="sponsor-text-container layout-flex-md-50" v-if="sponsor.description">
-              <p class="sponsor-text" v-html="sponsor.description"></p>
+          <!-- display card -->
+          <div
+            :id="`${order}`"
+            class="sponsor-card-content"
+            style="background-color: #f0f2f4;padding: 16px;"
+          >
+            <a :href="state.url" target="_blank" rel="noopener">
+              <span>{{ state.name }}</span>
+            </a>
+            <div class="sponsor-text-container layout-flex-md-50" v-if="state.description">
+              <p class="sponsor-text" v-html="state.description"></p>
             </div>
           </div>
         </div>
@@ -80,6 +95,14 @@ import { Route } from 'vue-router';
   }
 })
 export default class SponsorPage extends Vue {
+  private sponsorOrderText = [
+    'level-1',
+    'level-2',
+    'level-3',
+    'co-organizer',
+    'thank',
+  ];
+
   private sponsorLevelText = {
     holder: '主辦單位',
     'co-holder': '共同主辦',
@@ -91,7 +114,23 @@ export default class SponsorPage extends Vue {
     media: '媒體夥伴'
   };
 
+  private sponsorColorText: Record<string, string> = {
+    'level-1': '#b3f7ff',
+    'level-2': '#ffb976',
+    'level-3': '#dddfe2',
+    'co-organizer': '#61c3ff',
+    thank: '#bbfad7',
+  };
+
   private sponsorList: object = {};
+
+  private state: SponsorData = {
+    name: '',
+    slug: '',
+    image: '',
+    description: '',
+    readmore: false,
+  };
 
   public mounted() {
     this.processSponsor();
@@ -103,6 +142,33 @@ export default class SponsorPage extends Vue {
 
   private markdownParser(rawContent: string): string {
     return markdown.toHTML(rawContent);
+  }
+
+  private filterSponsor(level: string): any {
+    return sponsorData.filter(sponsor => sponsor.level === level);
+  }
+
+  private handleClick(order: string, sponsor: any): void {
+    // displat sponsor content
+    this.sponsorOrderText.forEach(text => {
+      const contentDisplayer = document.querySelector<HTMLDivElement>(`#${text}`);
+      if (contentDisplayer && text !== order) {
+        contentDisplayer.style.display = 'none';
+      } else if (contentDisplayer && text === order) {
+        contentDisplayer.style.display = 'block';
+        this.state = sponsor;
+      }
+    });
+    // display border-top
+    (this.sponsorList as Array<any>).forEach(s => {
+      const sponsorImg = document.querySelector<HTMLImageElement>(`#img-${s.name}`);
+      if (sponsor.name !== s.name && sponsorImg) {
+        sponsorImg.style.borderTop = 'transparent';
+      } else if (sponsor.name === s.name && sponsorImg) {
+        sponsorImg.style.borderTop = `3px solid ${this.sponsorColorText[order]}`;
+        sponsorImg.style.borderRadius = '5px';
+      }
+    });
   }
 }
 </script>
@@ -278,8 +344,12 @@ $logo-margin-bottom: 20px;
     padding-right: 82px;
   }
 
-  > .sponsor-card:not(:last-child) {
-    margin-bottom: 40px;
+  .sponsor-card {
+    margin-top: 16px;
+  }
+
+  .sponsor-card-content {
+    display: none;
   }
 
   h2.sponsor-name {
@@ -299,11 +369,11 @@ $logo-margin-bottom: 20px;
   }
 
   .sponsor-img-container {
-    padding-top: 13px;
-
+    cursor: pointer;
     img {
       width: 100px;
       max-width: 100px;
+      margin-right: 4px;
     }
   }
 
