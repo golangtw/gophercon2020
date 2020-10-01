@@ -26,7 +26,7 @@
           請支持我們的贊助夥伴。
         </p>
         <p class="paragraph">
-          企業合作歡迎聯繫 <a href="mailto:contact@golang.tw" class="font-black">contact@golang.tw</a>
+          企業合作歡迎聯繫 <a href="mailto:golangtaipei@gmail.com" class="font-black">golangtaipei@gmail.com</a>
         </p>
       </div>
     </main>
