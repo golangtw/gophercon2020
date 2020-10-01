@@ -80,7 +80,7 @@
               <span>
                 Q2. 若有其他問題應該如何詢問？
                 <br />A2. 有任何問題都歡迎寄信至
-                <a href="mailto:contact@golang.tw">contact@golang.tw</a> 喔！
+                <a href="mailto:golangtaipei@gmail.com">golangtaipei@gmail.com</a> 喔！
               </span>
             </li>
           </ul>
