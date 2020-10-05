@@ -214,13 +214,20 @@ $logo-margin-bottom: 20px;
     width: 100vw;
     top: 0;
     left: 0;
-    z-index: 0;
     transform-origin: 0 0;
     margin-top: $navbar-height-mobile;
     z-index: -10;
 
     @include for-size(lg) {
       margin-top: $navbar-height;
+    }
+
+    @include for-size(sm) {
+      height: 100%;
+
+      img {
+        object-fit: fill;
+      }
     }
 
     .image-wrapper {
@@ -248,6 +255,17 @@ $logo-margin-bottom: 20px;
       position: absolute;
       left: 5%;
       bottom: 45%;
+    }
+
+    .sponsor-1,
+    .sponsor-2 {
+      @include for-size(sm) {
+        visibility: hidden;
+      }
+
+      @include for-size(md) {
+        visibility: visible;
+      }
     }
   }
 
