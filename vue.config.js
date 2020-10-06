@@ -30,6 +30,8 @@ module.exports = {
         '/2020/sponsor/',
         '/2020/team/staff',
         '/2020/team/staff/',
+        '/2020/covid-19',
+        '/2020/covid-19/',
       ],
       useRenderEvent: true,
       headless: true,

@@ -103,7 +103,7 @@ export const routes = [
   },
   {
     path: '/covid-19',
-    name: 'covid-19',
+    name: 'Covid-19',
     component: Covid,
     meta: {
       label: '防疫守則',
