@@ -106,6 +106,17 @@ import LogoTop from '../components/LogoTop.vue';
 import Sponsor from '../components/Team/Sponsor.vue';
 import LinkIcon from '../components/icons/Link.vue';
 
+interface SponsorData {
+  id: string;
+  name: string;
+  slug: string;
+  image: string;
+  description: string;
+  url?: string;
+  level: string;
+  readmore: boolean;
+}
+
 @Component({
   components: {
     LogoTop,
@@ -127,21 +138,29 @@ export default class SponsorPage extends Vue {
 
   private sponsorList: object = {};
 
-  private selectedSponsor: object = {};
+  private selectedSponsor: SponsorData = {
+    id: '',
+    name: '',
+    slug: '',
+    image: '',
+    description: '',
+    level: '',
+    readmore: false,
+  };
 
   public mounted() {
     this.processSponsor();
   }
 
-  private isSponsorSelected(id): boolean {
+  private isSponsorSelected(id: string): boolean {
     return this.selectedSponsor.id === id;
   }
 
-  private isLevelSelected(level): boolean {
+  private isLevelSelected(level: string): boolean {
     return this.selectedSponsor.level === level;
   }
 
-  private getImgContainerClasses(sponsor): object {
+  private getImgContainerClasses(sponsor: SponsorData): object {
     return {
       [sponsor.level]: true,
       'sponsor-img-container': true,
@@ -153,11 +172,11 @@ export default class SponsorPage extends Vue {
     return !window.matchMedia('(min-width: 768px)').matches;
   }
 
-  private isSelectedInDesktop(level): boolean {
+  private isSelectedInDesktop(level: string): boolean {
     return !SponsorPage.isMobile() && this.isLevelSelected(level);
   }
 
-  private isSelectedInMobile(sponsor): boolean {
+  private isSelectedInMobile(sponsor: SponsorData): boolean {
     return SponsorPage.isMobile() && this.isSponsorSelected(sponsor.id);
   }
 
@@ -165,9 +184,9 @@ export default class SponsorPage extends Vue {
     this.sponsorList = sponsorData;
   }
 
-  private toggleSponsor(sponsor: any): void {
+  private toggleSponsor(sponsor: SponsorData): void {
     if (this.selectedSponsor.id === sponsor.id) {
-      this.selectedSponsor = {};
+      this.selectedSponsor = {} as SponsorData;
     } else {
       this.selectedSponsor = sponsor;
     }
