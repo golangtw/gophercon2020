@@ -1,4 +1,5 @@
 # GopherCon TW 2020
+Last update: 2020/10/07 v2
 
 ## Project setup
 ```
