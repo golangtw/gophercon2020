@@ -166,6 +166,15 @@
             margin-bottom: 1rem;
           }
         }
+
+        a.slido {
+          border-radius: 5px;
+          padding: 3px 11px;
+          background-color: $green-1;
+          color: $blue-5;
+          font-size: 12px;
+          line-height: 50px;
+        }
       }
 
       a {
