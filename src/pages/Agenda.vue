@@ -16,7 +16,6 @@
       <CCIPSessionTable
         :sessionData="sessionData"
         :rooms="['']"
-        :isMobile="isMobile()"
         :isPopup.sync="popUp"
         :popUpSession.sync="popUpSession"
         style="margin-right:60px"

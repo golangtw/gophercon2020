@@ -18,7 +18,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "@ccip-app/session-table": "^1.0.0",
+    "@ccip-app/session-table": "^1.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
