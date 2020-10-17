@@ -102,6 +102,24 @@
         "description": "天瓏資訊提供平價專業電腦資訊書籍販售、團購優惠、公司機關報價服務，包括繁體中文、簡體中文、外文原文書籍代訂服務，目前正在拓展實體課程、講座活動、技術交流分享聚會中，有興趣讀者、講者、講師歡迎與我們聯繫。",
         "level": "thank",
         "image": "sponsorlogo-tlbc.png"
+      },
+      {
+        "id": "9",
+        "name": "Google Developer Groups (GDG)",
+        "slug": "thank3",
+        "url": "https://gdg.community.dev/",
+        "description": "提供開發者討論 google 相關技術的社群，目前在台北、桃園、新竹、台中、台南、花蓮、高雄等地均有地區社群，會定期舉辦技術分享會或是 workshop，並且每年舉辦大型 DevFast 研討會，讓各地喜愛 google 技術的開發者們能有機會彼此互動交流。<br><br>歡迎大家前往 GDG community (https://gdg.community.dev/) 官方網站，查閱各地舉辦的最新技術活動，更重要的是一起加入社群來學習吧！",
+        "level": "thank",
+        "image": "sponsorlogo-gdg.png"
+      },
+      {
+        "id": "10",
+        "name": "HackMD",
+        "slug": "thank4",
+        "url": "https://hackmd.io/",
+        "description": "HackMD 讓您在線上多人協作 Markdown 筆記，更支援簡報、圖表、數學表達式、標註留言等，讓內容更豐富，協作更便利。<br><br>自上線以來，已經有超過兩百萬份筆記、以及超過六千個的團隊空間在 HackMD 上。無論是書寫筆記、便條、工作事項、教學文件，甚至是提供開放討論的社群平台，HackMD 都會是您絕佳的選擇。<br><br>現在就開始使用 HackMD 吧！您也能用聰明的方式寫作！一用就愛上 <3",
+        "level": "thank",
+        "image": "sponsorlogo-hackmd.png"
       }
     ]
   ]
