@@ -1,120 +1,159 @@
 <template>
   <div id="agenda" class="main-container">
-    <LogoTop v-if="$store.state.app.device !== 'mobile'"/>
+    <LogoTop v-if="$store.state.app.device !== 'mobile'" />
     <div class="background-image">
       <div class="image-wrapper">
-        <img src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
-           srcset="https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x"
-          class="Group-9">
-        <img src="https://gophercon.golang.tw/2020/img/graphic-schedule-1.png"
-             srcset="https://gophercon.golang.tw/2020/img/graphic-schedule-1@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-schedule-1@3x.png 3x" class="schedule-1">
-        <img src="https://gophercon.golang.tw/2020/img/graphic-schedule-2.png"
-             srcset="https://gophercon.golang.tw/2020/img/graphic-schedule-2@2x.png 2x,https://gophercon.golang.tw/2020/img/graphic-schedule-2@3x.png 3x" class="schedule-2">
+        <img
+          src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
+          srcset="
+            https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,
+            https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x
+          "
+          class="Group-9"
+        />
+        <img
+          src="https://gophercon.golang.tw/2020/img/graphic-schedule-1.png"
+          srcset="
+            https://gophercon.golang.tw/2020/img/graphic-schedule-1@2x.png 2x,
+            https://gophercon.golang.tw/2020/img/graphic-schedule-1@3x.png 3x
+          "
+          class="schedule-1"
+        />
+        <img
+          src="https://gophercon.golang.tw/2020/img/graphic-schedule-2.png"
+          srcset="
+            https://gophercon.golang.tw/2020/img/graphic-schedule-2@2x.png 2x,
+            https://gophercon.golang.tw/2020/img/graphic-schedule-2@3x.png 3x
+          "
+          class="schedule-2"
+        />
       </div>
     </div>
     <div id="agenda" class="main-container">
-      <CCIPSessionTable
-        :sessionData="sessionData"
-        :rooms="['']"
-        :isPopup.sync="popUp"
-        :popUpSession.sync="popUpSession"
-        style="margin-right:60px"
-      />
+      <agenda-list>
+        <agenda-list-item
+          v-for="(session, i) in sessionData.sessions"
+          :key="i"
+          :time="getStartTime(session)"
+          :title="session.zh.title"
+          :speaker="getSpeakerName(session)"
+          @click="selectSession(session)"
+        >
+        </agenda-list-item>
+      </agenda-list>
+      <agenda-list-item-detail
+        v-model="showDetail"
+        :session="selectedSession"
+        :speaker="getSpeaker(selectedSession)"
+      ></agenda-list-item-detail>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Route } from 'vue-router';
-
+import { markdown } from 'markdown';
 import { Component, Watch, Vue } from 'vue-property-decorator';
 import { Action, Getter } from 'vuex-class';
 
-import CCIPSessionTable from '@ccip-app/session-table';
-
 import sessionData from '@/../public/json/session.json';
-import sessionDOMString from '@/../template/session.mod';
 
 import { DeviceType } from '@/store/types/app';
 import LogoTop from '../components/LogoTop.vue';
+import AgendaList from '@/components/AgendaList/AgendaList.vue';
+import AgendaListItem from '@/components/AgendaList/AgendaListItem.vue';
+import AgendaListItemDetail from '@/components/AgendaList/AgendaListItemDetail.vue';
+
+interface SessionMetadata {
+  title: string;
+  description: string;
+}
+
+interface SpeakerMetadata {
+  name: string;
+  bio: string;
+}
+
+export interface Session {
+  id: string;
+  start: string;
+  end: string;
+  note: string;
+  zh: SessionMetadata;
+  speakers: string[];
+}
+
+export interface Speaker {
+  id: string;
+  avatar: string;
+  zh: SpeakerMetadata;
+}
+
+export const getFormattedTime = (d: string) => {
+  const date = new Date(d);
+  const padUnit = (t: number) => `${t}`.padStart(2, '0');
+  const hours = padUnit(date.getHours());
+  const minutes = padUnit(date.getMinutes());
+  return `${hours}:${minutes}`;
+};
+
+const emptySession: Session = {
+  id: '',
+  start: '',
+  end: '',
+  note: '',
+  speakers: [],
+  zh: { title: '', description: '' },
+};
+const emptySpeaker: Speaker = {
+  id: '',
+  avatar: '',
+  zh: { name: '', bio: '' },
+};
 
 @Component({
   components: {
-    CCIPSessionTable,
     LogoTop,
-  }
+    AgendaList,
+    AgendaListItem,
+    AgendaListItemDetail,
+  },
 })
 export default class Agenda extends Vue {
-  @Action('toggleTheme', { namespace: 'app' }) private toggleTheme!: () => void;
-  @Action('togglePopup', { namespace: 'app' }) private togglePopup!: (status: boolean) => void;
-  @Action('togglePopupContent', { namespace: 'app' }) private togglePopupContent!: (content: string) => void;
-  @Action('setPopupOffsetTop', { namespace: 'app' }) private setPopupOffsetTop!: (offset: number) => Promise<void>;
-  @Getter('isPopup', { namespace: 'app' }) private isPopup!: boolean;
-  @Getter('device', { namespace: 'app' }) private device!: DeviceType;
-  @Getter('popupOffsetTop', { namespace: 'app' }) private popupOffsetTop!: number;
-
   private sessionData = sessionData;
-  private popUp = false;
-  private popUpSession = {};
+  private showDetail = false;
+  private selectedSession: Session = emptySession;
 
-  @Watch('popUp')
-  public async onChangeInnerPopup (popuped: boolean) {
-    if (popuped) {
-      await this.setPopupOffsetTop(document.documentElement.offsetTop);
-      this.$router.push({ name: 'AgendaView', params: { sid: (this.popUpSession as any).id }});
+  @Watch('showDetail')
+  private onChangeShowDetail(newValue: boolean) {
+    if (!newValue) {
+      this.selectedSession = { ...emptySession };
     }
   }
 
-  @Watch('isPopup')
-  public async onChangePopup (isPopup: boolean) {
-    if (isPopup) {
-      this.$router.push({ name: 'AgendaView', params: { sid: (this.popUpSession as any).id }});
-    } else {
-      this.$router.push({ name: 'Agenda' });
+  private getStartTime(session: Session) {
+    return getFormattedTime(session.start);
+  }
+
+  private getSpeaker(session: Session): Speaker {
+    const notFoundSpeaker: Speaker = { ...emptySpeaker };
+    if (!session) {
+      return notFoundSpeaker;
     }
+    const [speakerId] = session.speakers;
+    return (
+      this.sessionData.speakers.find((s) => s.id === speakerId) ||
+      notFoundSpeaker
+    );
   }
 
-  @Watch('$route')
-  public onChangeRoute (route: Route) {
-    if (route.name === 'AgendaView') {
-      this.processPopup();
-      this.togglePopup(true);
-    } else {
-      this.popUp = false;
-      this.togglePopup(false);
-    }
+  private getSpeakerName(session: Session) {
+    const speaker = this.getSpeaker(session);
+    return speaker ? speaker.zh.name : '';
   }
 
-  public mounted () {
-    this.handleSessionPopup();
-  }
-
-  private isMobile (): boolean {
-    return this.device === DeviceType.MOBILE;
-  }
-
-  private processPopup (): void {
-    const targetSessionId = this.$route.params.sid as string;
-    const targetSession = sessionData.sessions.filter((session) => session.id === targetSessionId)[0];
-    const result = this.deepCopy(targetSession);
-    result.speakers = result.speakers.map((id: string) => this.deepCopy(this.getSpeaker(id)));
-    this.togglePopupContent(sessionDOMString(result));
-    this.togglePopup(true);
-  }
-
-  private getSpeaker (id: string): any {
-    return this.sessionData.speakers.find((speaker) => (speaker.id === id));
-  }
-
-  private handleSessionPopup (): void {
-    if (this.$route.params.sid) {
-      this.popUpSession = this.sessionData.sessions.filter((session) => (session.id === this.$route.params.sid))[0];
-      this.processPopup();
-    }
-  }
-
-  private deepCopy (obj: any): any {
-    return JSON.parse(JSON.stringify(obj));
+  private selectSession(session: Session) {
+    this.selectedSession = session;
+    this.showDetail = true;
   }
 }
 </script>
