@@ -45,6 +45,8 @@
         v-model="showDetail"
         :session="selectedSession"
         :speaker="getSpeaker(selectedSession)"
+        :on-click-next="onClickNext"
+        :on-click-prev="onClickPrev"
       ></agenda-list-item-detail>
     </div>
   </div>
@@ -77,7 +79,7 @@ export interface Session {
   id: string;
   start: string;
   end: string;
-  note: string;
+  note: string | null;
   zh: SessionMetadata;
   speakers: string[];
 }
@@ -144,6 +146,31 @@ export default class Agenda extends Vue {
       this.sessionData.speakers.find((s) => s.id === speakerId) ||
       notFoundSpeaker
     );
+  }
+
+  private getIndexes(session: Session) {
+    const currentId = session.id;
+    const current = this.sessionData.sessions.findIndex(
+      (s) => s.id == currentId
+    );
+    const sessionCount = this.sessionData.sessions.length;
+    const next = current + 1 !== sessionCount ? current + 1 : 0;
+    const prev = current !== 0 ? current - 1 : sessionCount - 1;
+    return {
+      current,
+      next,
+      prev,
+    };
+  }
+
+  private onClickNext() {
+    const { next } = this.getIndexes(this.selectedSession);
+    this.selectedSession = this.sessionData.sessions[next];
+  }
+
+  private onClickPrev() {
+    const { prev } = this.getIndexes(this.selectedSession);
+    this.selectedSession = this.sessionData.sessions[prev];
   }
 
   private getSpeakerName(session: Session) {

@@ -16,10 +16,10 @@
       <div class="g-agenda-list-item-detail-description">
         {{ session.zh.description }}
       </div>
-      <div class="g-agenda-list-item-detail-link">
+      <div v-if="session.note" class="g-agenda-list-item-detail-link">
         <a :href="session.note">加入此議程的線上共筆</a>
       </div>
-      <div class="g-agenda-list-item-detail-about">
+      <div v-if="speaker.id" class="g-agenda-list-item-detail-about">
         <div class="g-agenda-list-item-detail-about__image">
           <img :src="speaker.avatar" alt="" />
         </div>
@@ -34,10 +34,10 @@
         </div>
       </div>
     </div>
-    <div class="g-agenda-list-item-detail__prev-action">
+    <div @click="onClickPrev" class="g-agenda-list-item-detail__prev-action">
       <prev-icon />
     </div>
-    <div class="g-agenda-list-item-detail__next-action">
+    <div @click="onClickNext" class="g-agenda-list-item-detail__next-action">
       <next-icon />
     </div>
   </div>
@@ -61,6 +61,8 @@ export default class AgendaListItemDetail extends Vue {
   @Prop() private value!: boolean;
   @Prop() private session!: Session;
   @Prop() private speaker!: Speaker;
+  @Prop() private onClickNext!: Function;
+  @Prop() private onClickPrev!: Function;
 
   private detailValue = this.value;
 
