@@ -13,9 +13,10 @@
       <div class="g-agenda-list-item-detail-title">
         {{ session.zh.title }}
       </div>
-      <div class="g-agenda-list-item-detail-description">
-        {{ session.zh.description }}
-      </div>
+      <div
+        v-html="sessionDescription"
+        class="g-agenda-list-item-detail-description"
+      ></div>
       <div v-if="session.note" class="g-agenda-list-item-detail-link">
         <a :href="session.note">加入此議程的線上共筆</a>
       </div>
@@ -28,9 +29,7 @@
           <div class="name">
             {{ speaker.zh.name }}
           </div>
-          <div class="bio">
-            {{ speaker.zh.bio }}
-          </div>
+          <div v-html="speakerBio" class="bio"></div>
         </div>
       </div>
     </div>
@@ -44,6 +43,7 @@
 </template>
 
 <script lang="ts">
+import { markdown } from 'markdown';
 import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
 import CloseIcon from '@/components/icons/Close.vue';
 import NextIcon from '@/components/icons/Next.vue';
@@ -73,6 +73,14 @@ export default class AgendaListItemDetail extends Vue {
     };
   }
 
+  get sessionDescription() {
+    return this.parseDescription(this.session.zh.description);
+  }
+
+  get speakerBio() {
+    return this.parseDescription(this.speaker.zh.bio);
+  }
+
   @Watch('value')
   private onChangeValue(newValue: boolean) {
     this.detailValue = newValue;
@@ -85,6 +93,23 @@ export default class AgendaListItemDetail extends Vue {
 
   private closeDetail() {
     this.$emit('input', false);
+  }
+
+  private parseDescription(text: string) {
+    const styles = Object.entries({
+      'margin-bottom': '16px',
+      'font-family': `'Noto Sans TC', sans-serif`,
+      'font-size': '14px',
+      'font-weight': 'normal',
+      'line-height': '1.71',
+      'letter-spacing': 'normal',
+      color: '#333943',
+    })
+      .map(([k, v]) => `${k}: ${v};`)
+      .join('');
+    return markdown
+      .toHTML(text)
+      .replace(/<p>/gm, `<p style="${styles}">`);
   }
 }
 </script>
