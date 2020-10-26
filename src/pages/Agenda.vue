@@ -53,17 +53,16 @@
 </template>
 
 <script lang="ts">
-import { markdown } from 'markdown';
 import { Component, Watch, Vue } from 'vue-property-decorator';
-import { Action, Getter } from 'vuex-class';
 
 import sessionData from '@/../public/json/session.json';
 
-import { DeviceType } from '@/store/types/app';
 import LogoTop from '../components/LogoTop.vue';
 import AgendaList from '@/components/AgendaList/AgendaList.vue';
 import AgendaListItem from '@/components/AgendaList/AgendaListItem.vue';
 import AgendaListItemDetail from '@/components/AgendaList/AgendaListItemDetail.vue';
+
+import head from '@/util/head';
 
 interface SessionMetadata {
   title: string;
@@ -125,11 +124,27 @@ export default class Agenda extends Vue {
   private showDetail = false;
   private selectedSession: Session = emptySession;
 
+  public async mounted() {
+    const { sid } = this.$route.params;
+    if (!sid) {
+      return;
+    }
+    const session = this.sessionData.sessions.find((s) => s.id === sid) || {
+      ...emptySession,
+    };
+    await this.selectSession(session);
+  }
+
   @Watch('showDetail')
   private onChangeShowDetail(newValue: boolean) {
     if (!newValue) {
       this.selectedSession = { ...emptySession };
     }
+  }
+  @Watch('selectedSession')
+  private onChangeSelectedSession(newValue: Session) {
+    this.selectSession(newValue);
+    this.setMetaContent(newValue);
   }
 
   private getStartTime(session: Session) {
@@ -178,9 +193,23 @@ export default class Agenda extends Vue {
     return speaker ? speaker.zh.name : '';
   }
 
-  private selectSession(session: Session) {
+  private async selectSession(session: Session) {
+    if (!session.id) {
+			await this.$router.push({ name: 'Agenda' });
+      return;
+    }
     this.selectedSession = session;
     this.showDetail = true;
+		await this.$router.push({ name: 'AgendaView', params: { sid: session.id }});
+	}
+
+  private setMetaContent(session: Session) {
+    const { title, description } = session.zh;
+    head.title(title);
+    head.ogTitle(title);
+    if (description) {
+      head.ogDescription(description);
+    }
   }
 }
 </script>
