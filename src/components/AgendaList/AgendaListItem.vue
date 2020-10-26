@@ -41,8 +41,11 @@ export default class AgendaListItem extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixin.scss';
+
 .g-agenda-list-item {
-  width: 448px;
+  width: 295px;
   padding: 16px 24px;
   margin-bottom: 4px;
   font-family: 'Noto Sans TC', sans-serif;
@@ -51,6 +54,14 @@ export default class AgendaListItem extends Vue {
   letter-spacing: normal;
   background-color: #ffffff;
   cursor: default;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @include for-size(md) {
+    width: 448px;
+  }
 
   &:last-child {
     margin-bottom: 40px;

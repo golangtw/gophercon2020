@@ -34,11 +34,11 @@
         </div>
       </div>
     </div>
-    <div @click="onClickPrev" class="g-agenda-list-item-detail__prev-action">
-      <prev-icon />
+    <div class="g-agenda-list-item-detail__prev-action">
+      <prev-icon @click.native="onClickPrev" />
     </div>
-    <div @click="onClickNext" class="g-agenda-list-item-detail__next-action">
-      <next-icon />
+    <div class="g-agenda-list-item-detail__next-action">
+      <next-icon @click.native="onClickNext" />
     </div>
   </div>
 </template>
@@ -90,10 +90,18 @@ export default class AgendaListItemDetail extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixin.scss';
+
 @mixin section-hint {
+  margin-top: 16px;
   margin-bottom: 8px;
   line-height: normal;
   color: #61c3ff;
+
+  @include for-size(md) {
+    margin-top: unset;
+  }
 }
 
 @mixin section-title {
@@ -122,10 +130,16 @@ export default class AgendaListItemDetail extends Vue {
 
   &.--active {
     display: grid;
-    grid-template-rows: 72px auto;
-    grid-template-columns: auto 540px auto;
-    grid-template-areas: 'header header header' 'action-prev content action-next';
+    grid-template-rows: 52px auto;
+    grid-template-columns: 80px 80px auto;
+    grid-template-areas: 'action-prev action-next header' 'content content content';
     background-color: rgba(255, 255, 255, 0.9);
+
+    @include for-size(md) {
+      grid-template-rows: 72px auto;
+      grid-template-columns: auto 540px auto;
+      grid-template-areas: 'header header header' 'action-prev content action-next';
+    }
 
     & > .g-agenda-list-item-detail {
       &__header {
@@ -138,7 +152,7 @@ export default class AgendaListItemDetail extends Vue {
       }
 
       &__body {
-        margin-top: 40px;
+        margin: 16px;
         overflow-y: auto;
         grid-area: content;
         font-family: 'Noto Sans TC', sans-serif;
@@ -146,6 +160,13 @@ export default class AgendaListItemDetail extends Vue {
         font-weight: normal;
         letter-spacing: normal;
         color: #333943;
+
+        @include for-size(md) {
+          margin-top: 40px;
+          margin-right: unset;
+          margin-bottom: unset;
+          margin-left: unset;
+        }
 
         & > .g-agenda-list-item-detail {
           &-time {
@@ -161,7 +182,11 @@ export default class AgendaListItemDetail extends Vue {
           }
 
           &-link {
-            margin-bottom: 78px;
+            margin-bottom: 36px;
+
+            @include for-size(md) {
+              margin-bottom: 78px;
+            }
 
             a {
               display: inline-flex;
@@ -178,11 +203,20 @@ export default class AgendaListItemDetail extends Vue {
           &-about {
             display: flex;
             margin-bottom: 40px;
+            flex-direction: column-reverse;
+
+            @include for-size(md) {
+              flex-direction: row;
+            }
 
             & > .g-agenda-list-item-detail-about__image {
               display: flex;
-              width: 250px;
-              padding-right: 12px;
+              width: 100%;
+
+              @include for-size(md) {
+                width: 250px;
+                padding-right: 12px;
+              }
 
               img {
                 width: 100%;
@@ -191,8 +225,12 @@ export default class AgendaListItemDetail extends Vue {
             }
 
             & > .g-agenda-list-item-detail-about__text {
-              width: 290px;
-              padding-left: 24px;
+              width: 100%;
+
+              @include for-size(md) {
+                width: 290px;
+                padding-left: 24px;
+              }
 
               .header {
                 @include section-hint;
@@ -210,39 +248,58 @@ export default class AgendaListItemDetail extends Vue {
         }
       }
 
-      &__prev-action {
+      &__prev-action,
+      &__next-action {
+        position: relative;
+        top: 8px;
         display: flex;
-        padding-right: 46px;
-        justify-content: flex-end;
-        align-items: center;
+        height: 100%;
+        justify-content: center;
+        align-items: flex-end;
+
+        svg {
+          cursor: pointer;
+        }
+
+        @include for-size(md) {
+          position: unset;
+          top: unset;
+          align-items: center;
+        }
+      }
+
+      &__prev-action {
         grid-area: action-prev;
-        cursor: pointer;
+
+        @include for-size(md) {
+          padding-right: 46px;
+          justify-content: flex-end;
+        }
       }
 
       &__next-action {
-        display: flex;
-        padding-left: 46px;
-        align-items: center;
         grid-area: action-next;
-        cursor: pointer;
+
+        @include for-size(md) {
+          padding-left: 46px;
+          justify-content: flex-start;
+        }
       }
     }
   }
 
-  &.--desktop {
-  }
-
-  &.--mobile {
-  }
-
   .close-detail-button {
     display: inline-flex;
-    padding: 6px 16px;
+    padding: 5px 16px;
+    align-items: center;
     border: 1px solid #333943;
     cursor: pointer;
 
     span {
       margin-left: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.71;
       color: #333943;
     }
   }
