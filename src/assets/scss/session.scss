@@ -28,14 +28,6 @@
         margin-top: $navbar-height;
       }
 
-      @media screen and (orientation: landscape) and (max-width: 1200px) {
-        // transform: scale(1.4);
-      }
-
-      @media screen and (orientation: portrait) and (max-width: 1200px) {
-        // transform: translate(0, 100vh) rotate(-90deg) scale(2);
-      }
-
       .image-wrapper {
         position: relative;
       }
@@ -55,29 +47,33 @@
         position: absolute;
         left: 0;
         bottom: 0;
+        visibility: hidden;
+
+        @include for-size(md) {
+          visibility: visible;
+        }
       }
       .schedule-2 {
         position: absolute;
         right: 5%;
         bottom: 59%;
+        visibility: hidden;
+
+        @include for-size(md) {
+          visibility: visible;
+        }
       }
     }
 
     &.main-container {
-      padding-top: 50px;
-      padding-left: 300px;
-      padding-right: 300px;
+      padding-top: 40px;
+      padding-left: 24px;
+      padding-right: 24px;
       background-color: rgba(#f7f8f9, 0.8) !important;
 
-      @media screen and (max-width: 1280px) {
-        padding-left: 50px;
-        padding-right: 50px;
-      }
-
-      @media screen and (max-width: 1024px) {
-        padding-top: 0;
-        padding-left: 0;
-        padding-right: 0;
+      @include for-size(md) {
+        padding-left: 300px;
+        padding-right: 300px;
       }
     }
 
