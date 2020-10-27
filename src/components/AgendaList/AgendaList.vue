@@ -4,8 +4,6 @@
   </div>
 </template>
 
-<script lang="ts"></script>
-
 <style lang="scss" scoped>
 @import '@/assets/scss/variables.scss';
 @import '@/assets/scss/mixin.scss';
