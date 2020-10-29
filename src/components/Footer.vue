@@ -192,7 +192,7 @@ export default class Footer extends Vue {
       display: flex;
       margin-top: 40px;
       justify-content: center;
-      color: #bbfad7;
+      color: #ffffff;
       text-align: center;
 
       span {
