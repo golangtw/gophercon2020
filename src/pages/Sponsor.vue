@@ -19,14 +19,6 @@
           "
           class="sponsor-1"
         />
-        <img
-          src="https://gophercon.golang.tw/2020/img/graphic-sponsor-2.png"
-          srcset="
-            https://gophercon.golang.tw/2020/img/graphic-sponsor-2@2x.png 2x,
-            https://gophercon.golang.tw/2020/img/graphic-sponsor-2@3x.png 3x
-          "
-          class="sponsor-2"
-        />
       </div>
     </div>
     <div class="content">
