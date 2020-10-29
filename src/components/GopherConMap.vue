@@ -90,8 +90,11 @@ export default class GopherConMap extends Vue {
 <style lang="scss" scoped>
 #gophercon-map {
   position: relative;
-  width: calc(100% - 140px * 2);
-  padding: 64px 140px;
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
 
   @media screen and (max-width: 900px) {
     width: 100%;
