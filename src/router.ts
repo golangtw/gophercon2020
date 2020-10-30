@@ -113,7 +113,7 @@ export const routes = [
   {
     path: '/blog',
     name: 'Blog',
-    beforeEnter() {location.href = 'https://medium.com/@gophercon.taiwan'},
+    beforeEnter() {location.href = 'https://gophercon-taiwan.medium.com/'},
     meta: {
       label: '部落格',
       menuItem: true
