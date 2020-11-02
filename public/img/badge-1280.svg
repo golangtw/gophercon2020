@@ -1,11 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="190" height="67" viewBox="0 0 190 67">
     <defs>
-        <path id="caxbes4mha" d="M147 2L190 2 170.651 30 190 58 147 58 147 18.121z"/>
+        <path id="znal3vb4wa" d="M147 2L190 2 170.651 30 190 58 147 58 147 18.121z"/>
     </defs>
-    <g fill="none" fill-rule="evenodd" stroke-linejoin="round" transform="translate(-2)">
-        <use fill="#343942" xlink:href="#caxbes4mha"/>
-        <use fill="#A7FCD4" stroke="#365980" stroke-width="2.4" xlink:href="#caxbes4mha"/>
-        <path fill="#A3FCCF" stroke="#365980" stroke-width="2.4" d="M0 9H160V65H0z"/>
-        <path fill="#44B8F8" stroke="#365980" stroke-width="2.4" d="M147 2L160 8 147 8z"/>
+    <g fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g>
+            <g>
+                <g transform="translate(0 -478) translate(-2 478)">
+                    <use fill="#343942" xlink:href="#znal3vb4wa"/>
+                    <use fill="#FFF" stroke="#365980" stroke-width="2.4" xlink:href="#znal3vb4wa"/>
+                </g>
+                <path fill="#FFF" stroke="#365980" stroke-width="2.4" d="M0 9H160V65H0z" transform="translate(0 -478) translate(-2 478)"/>
+                <path fill="#44B8F8" stroke="#365980" stroke-width="2.4" d="M147 2L160 8 147 8z" transform="translate(0 -478) translate(-2 478)"/>
+            </g>
+        </g>
     </g>
 </svg>

@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="menu-24px" width="40" height="40" viewBox="0 0 46 46">
-    <defs>
-        <style>
-            .cls-1{fill:none}
-            path {fill:#bbfad7;}
-        </style>
-    </defs>
-    <path id="Path_1050" d="M0 0h46v46H0z" class="cls-1" data-name="Path 1050"/>
-    <path id="Path_1051" d="M3 29h34.5v-3.833H3zm0-9.583h34.5v-3.834H3zM3 6v3.833h34.5V6z" data-name="Path 1051" transform="translate(2.75 5.5)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <path d="M0 0H32V32H0z" transform="translate(-880 -20) translate(880 20)"/>
+                <path fill="#FFF" fill-rule="nonzero" d="M27.5 2C28.88 2 30 3.12 30 4.5c0 1.325-1.032 2.41-2.336 2.495L27.5 7h-23C3.12 7 2 5.88 2 4.5c0-1.325 1.032-2.41 2.336-2.495L4.5 2h23zM27.5 25c1.38 0 2.5 1.12 2.5 2.5 0 1.325-1.032 2.41-2.336 2.495L27.5 30h-23C3.12 30 2 28.88 2 27.5c0-1.325 1.032-2.41 2.336-2.495L4.5 25h23zM27.5 13.5c1.38 0 2.5 1.12 2.5 2.5 0 1.325-1.032 2.41-2.336 2.495l-.164.005h-23C3.12 18.5 2 17.38 2 16c0-1.325 1.032-2.41 2.336-2.495L4.5 13.5h23z" transform="translate(-880 -20) translate(880 20)"/>
+            </g>
+        </g>
+    </g>
 </svg>

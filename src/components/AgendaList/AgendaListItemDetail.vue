@@ -107,9 +107,7 @@ export default class AgendaListItemDetail extends Vue {
     })
       .map(([k, v]) => `${k}: ${v};`)
       .join('');
-    return markdown
-      .toHTML(text)
-      .replace(/<p>/gm, `<p style="${styles}">`);
+    return markdown.toHTML(text).replace(/<p>/gm, `<p style="${styles}">`);
   }
 }
 </script>
@@ -144,6 +142,7 @@ export default class AgendaListItemDetail extends Vue {
 .g-agenda-list-item-detail {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 10000;
   display: none;
   width: 100%;

@@ -33,9 +33,9 @@
         </div>
       </div>
       <div class="sponsor-wrapper">
-        <div v-for="group in staffs" :key="`staff-group-${group.name}`" class="sponsor-card">
-          <h2 class="sponsor-name">
-            <span>{{ group.name }}</span>
+        <div v-for="group in staffs" :key="`staff-group-${group.name}`" class="sponsor-card-container">
+          <h2 class="sponsor-level">
+            <span class="sponsor-level-text">{{ group.name }}</span>
           </h2>
           <div class="sponsor-text-container">{{ group.description }}</div>
           <div class="staff-wrapper">

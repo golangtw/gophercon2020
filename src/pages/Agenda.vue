@@ -1,54 +1,63 @@
 <template>
-  <div id="agenda" class="main-container">
-    <LogoTop v-if="$store.state.app.device !== 'mobile'" />
-    <div class="background-image">
-      <div class="image-wrapper">
-        <img
-          src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
-          srcset="
-            https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,
-            https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x
-          "
-          class="Group-9"
-        />
-        <img
-          src="https://gophercon.golang.tw/2020/img/graphic-schedule-1.png"
-          srcset="
-            https://gophercon.golang.tw/2020/img/graphic-schedule-1@2x.png 2x,
-            https://gophercon.golang.tw/2020/img/graphic-schedule-1@3x.png 3x
-          "
-          class="schedule-1"
-        />
-        <img
-          src="https://gophercon.golang.tw/2020/img/graphic-schedule-2.png"
-          srcset="
-            https://gophercon.golang.tw/2020/img/graphic-schedule-2@2x.png 2x,
-            https://gophercon.golang.tw/2020/img/graphic-schedule-2@3x.png 3x
-          "
-          class="schedule-2"
-        />
+  <div>
+    <div id="sponsor" :class="containerClasses">
+      <LogoTop v-if="$store.state.app.device !== 'mobile'" />
+      <div class="background-image">
+        <div class="image-wrapper">
+          <img
+            src="https://gophercon.golang.tw/2020/img/subpage-bg.png"
+            srcset="
+              https://gophercon.golang.tw/2020/img/subpage-bg@2x.png 2x,
+              https://gophercon.golang.tw/2020/img/subpage-bg@3x.png 3x
+            "
+            class="Group-9"
+          />
+          <img
+            src="https://gophercon.golang.tw/2020/img/graphic-schedule-1.png"
+            srcset="
+              https://gophercon.golang.tw/2020/img/graphic-schedule-1@2x.png 2x,
+              https://gophercon.golang.tw/2020/img/graphic-schedule-1@3x.png 3x
+            "
+            class="schedule-1"
+          />
+          <img
+            src="https://gophercon.golang.tw/2020/img/graphic-schedule-2.png"
+            srcset="
+              https://gophercon.golang.tw/2020/img/graphic-schedule-2@2x.png 2x,
+              https://gophercon.golang.tw/2020/img/graphic-schedule-2@3x.png 3x
+            "
+            class="schedule-2"
+          />
+        </div>
+      </div>
+      <div class="content">
+        <div class="card-container individual-sponsor">
+          <div class="card">
+            <h2 class="font-black subtitle">議程資訊</h2>
+          </div>
+        </div>
+        <div class="sponsor-wrapper">
+          <agenda-list>
+            <agenda-list-item
+              v-for="(session, i) in sessionData.sessions"
+              :key="i"
+              :time="getStartTime(session)"
+              :title="session.zh.title"
+              :speaker="getSpeakerName(session)"
+              @click="selectSession(session)"
+            >
+            </agenda-list-item>
+          </agenda-list>
+        </div>
       </div>
     </div>
-    <div id="agenda" class="main-container">
-      <agenda-list>
-        <agenda-list-item
-          v-for="(session, i) in sessionData.sessions"
-          :key="i"
-          :time="getStartTime(session)"
-          :title="session.zh.title"
-          :speaker="getSpeakerName(session)"
-          @click="selectSession(session)"
-        >
-        </agenda-list-item>
-      </agenda-list>
-      <agenda-list-item-detail
-        v-model="showDetail"
-        :session="selectedSession"
-        :speaker="getSpeaker(selectedSession)"
-        :on-click-next="onClickNext"
-        :on-click-prev="onClickPrev"
-      ></agenda-list-item-detail>
-    </div>
+    <agenda-list-item-detail
+      v-model="showDetail"
+      :session="selectedSession"
+      :speaker="getSpeaker(selectedSession)"
+      :on-click-next="onClickNext"
+      :on-click-prev="onClickPrev"
+    ></agenda-list-item-detail>
   </div>
 </template>
 
@@ -123,6 +132,7 @@ export default class Agenda extends Vue {
   private sessionData = sessionData;
   private showDetail = false;
   private selectedSession: Session = emptySession;
+  private containerClasses = { container: true, '--is-showing-detail': false };
 
   public async mounted() {
     const { sid } = this.$route.params;
@@ -137,8 +147,13 @@ export default class Agenda extends Vue {
 
   @Watch('showDetail')
   private onChangeShowDetail(newValue: boolean) {
+    this.containerClasses['--is-showing-detail'] = newValue;
+
     if (!newValue) {
       this.selectedSession = { ...emptySession };
+      document.body.style.overflowY = 'auto';
+    } else {
+      document.body.style.overflowY = 'hidden';
     }
   }
   @Watch('selectedSession')
@@ -195,13 +210,16 @@ export default class Agenda extends Vue {
 
   private async selectSession(session: Session) {
     if (!session.id) {
-			await this.$router.push({ name: 'Agenda' });
+      await this.$router.push({ name: 'Agenda' });
       return;
     }
     this.selectedSession = session;
     this.showDetail = true;
-		await this.$router.push({ name: 'AgendaView', params: { sid: session.id }});
-	}
+    await this.$router.push({
+      name: 'AgendaView',
+      params: { sid: session.id },
+    });
+  }
 
   private setMetaContent(session: Session) {
     const { title, description } = session.zh;
@@ -213,3 +231,56 @@ export default class Agenda extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/mixin.scss';
+@import '@/assets/scss/variables.scss';
+
+.container {
+  &.--is-showing-detail {
+    filter: blur(10px);
+    overflow-y: hidden;
+  }
+
+  .image-wrapper {
+    position: relative;
+  }
+
+  .Group-9 {
+    &-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    width: 100%;
+    height: auto;
+  }
+
+  .schedule-1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+
+    @include for-size(md) {
+      visibility: visible;
+    }
+  }
+  .schedule-2 {
+    position: absolute;
+    right: 5%;
+    bottom: 59%;
+    visibility: hidden;
+
+    @include for-size(md) {
+      visibility: visible;
+    }
+  }
+
+  .sponsor-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+</style>

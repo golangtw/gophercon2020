@@ -19,17 +19,14 @@
           "
           class="sponsor-1"
         />
-        <img
-          src="https://gophercon.golang.tw/2020/img/graphic-sponsor-2.png"
-          srcset="
-            https://gophercon.golang.tw/2020/img/graphic-sponsor-2@2x.png 2x,
-            https://gophercon.golang.tw/2020/img/graphic-sponsor-2@3x.png 3x
-          "
-          class="sponsor-2"
-        />
       </div>
     </div>
     <div class="content">
+      <div class="card-container individual-sponsor">
+        <div class="card">
+          <h2 class="font-black subtitle">贊助</h2>
+        </div>
+      </div>
       <div class="sponsor-wrapper">
         <div
           v-for="(leveledSponsors, sponsorOrder) in sponsorList"
@@ -194,7 +191,7 @@ export default class SponsorPage extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/assets/scss/mixin.scss';
 @import '@/assets/scss/variables.scss';
 
@@ -496,6 +493,22 @@ $logo-margin-bottom: 20px;
     line-height: 1.71;
     letter-spacing: normal;
     color: #333943;
+  }
+
+  .sponsor-text-container {
+    margin-top: 8px;
+    font-family: SourceHanSansTW;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333943;
+
+    &:first-child:not(:last-child) {
+      margin-bottom: 24px;
+    }
   }
 }
 </style>
