@@ -13,6 +13,7 @@
       </div>
     </div>
     <div id="covid" class="main-container">
+
       <div>
       <h1 class="font-black subtitle">GopherCon Taiwan COVID-19 防疫守則</h1>
       <hr>
@@ -21,6 +22,16 @@
         請您與我們一同遵守，保護自己與他人的健康。此防疫守則將視疫情發展與我國中央疫情疫情指揮中心指示有所變動，所有更動將不另通知，請在會前持續回來關心。
       </p>
       <hr>
+
+       <h2 class="title">
+         <a
+           href="https://docs.google.com/forms/d/1hbf60Af6KmTiJo58sQVZp2LIoz1o00PB_nfPGX1axb4/viewform"
+           class="tone-trans form-link font-bold"
+           target="_blank"
+           rel="noopener"
+           style="color:red;text-decoration: underline;font-weight: bold"
+        >*點我填寫個人健康聲明書</a>
+       </h2>
 
       <h2 class="title">防疫要點</h2>
       <br/>
