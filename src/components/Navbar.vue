@@ -40,6 +40,7 @@
           >
             <span>{{ item.meta.label }}</span>
           </router-link>
+          <a href="https://gophercon-taiwan.medium.com/" class="menu-item font-bold"><span>部落格</span></a>
         </div>
       </div>
       <img

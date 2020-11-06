@@ -109,15 +109,6 @@ export const routes = [
       label: '防疫守則',
       menuItem: true
     }
-  },
-  {
-    path: '/blog',
-    name: 'Blog',
-    beforeEnter() {location.href = 'https://gophercon-taiwan.medium.com/'},
-    meta: {
-      label: '部落格',
-      menuItem: true
-    }
   }
 ];
 
