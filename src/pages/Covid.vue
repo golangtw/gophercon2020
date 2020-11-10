@@ -34,11 +34,12 @@
        </h2>
 
       <h2 class="title">防疫要點</h2>
-      <br/>
       <ol>
         <li>
-          <b>每一位與會者須線上填寫「個人健康聲明書 」</b>。
           <ul>
+            <li>
+              <b>每一位與會者須線上填寫「個人健康聲明書 」</b>。
+            </li>
             <li>
               個人健康聲明書預計於 <b>2020 年 11 月 07 日開放檢視</b>，並於 <b>2020 年 11 月 12 日開放填寫</b>。
             </li>
@@ -64,10 +65,8 @@
           若有身體不適或具感染風險 (居家隔離、居家檢疫、自主健康管理) 等情形者，請在家裡好好休息，請勿前往 GopherCon TW 會場。
         </li>
       </ol>
-      <br/>
 
       <h2 class="title">參與者防疫準備</h2>
-      <br/>
       <ol>
         <li>
           務必填寫<b>「個人健康聲明書」</b>。
@@ -78,10 +77,8 @@
         <li>勤洗手，可搭配酒精消毒手部與座位。</li>
         <li>議程移動時，請與會者自行消毒桌椅。</li>
       </ol>
-      <br/>
 
       <h2 class="title">GopherCon TW 防疫準備</h2>
-      <br/>
       <ol>
         <li>
           活動前一天與第一天會議結束時，我們將以漂白水做全區域消毒，消毒範圍包含：室內與走廊地板、門把、窗戶把手、電器開關、桌椅、洗手臺、樓梯扶手。
@@ -91,10 +88,8 @@
         </li>
         <li>大會報到處與服務台備有消毒用酒精，如有需要，可自行取用。</li>
       </ol>
-      <br/>
 
       <h2 class="title">針對 COVID-19 防疫工作之個人資料收集與保護聲明</h2>
-      <br/>
       <ol>
         <li>
           蒐集您的個人資料目的及法令依據，係為確保會眾健康安全及「嚴重特殊傳染性肺炎」防疫安全管理所必須，我們將依個人資料保護法，以公共衛生或傳染病防治及場所進出安全管理等目的，故有必要蒐集、處理或利用相關個人資料。
@@ -106,10 +101,9 @@
 
       <h2 class="title">授權 License (CC BY-SA 3.0 TW)</h2>
       <p>此文件採用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW">姓名標示-相同方式分享 3.0 台灣</a> 授權條款。</p>
-      <p><img src="https://gophercon.golang.tw/2020/img/CC_icon.png"></p>
+      <p><img class="license-img" src="https://gophercon.golang.tw/2020/img/CC_icon.png"></p>
 
-      <p>本個人資料保護聲明從 2020 年 07 月 01 日起開始生效，惟為因應社會環境及法令的變遷與科技的進步，為保護客戶個人資料安全及隱私，我們將隨時修改這份公告聲明，並將儘速更新與公告予您。</p>
-      <p>感謝。</p>
+      <p class="margin-bottom">本個人資料保護聲明從 2020 年 07 月 01 日起開始生效，惟為因應社會環境及法令的變遷與科技的進步，為保護客戶個人資料安全及隱私，我們將隨時修改這份公告聲明，並將儘速更新與公告予您。</p>
       </div>
     </div>
   </div>
@@ -127,3 +121,18 @@ import LogoTop from '../components/LogoTop.vue';
 
 export default class Covid extends Vue { }
 </script>
+
+<style lang="scss" scoped>
+   * {
+     line-height: 1.6;
+   }
+
+  .margin-bottom {
+    margin-bottom: 20px;
+  }
+
+  .license-img {
+    width: 140px;
+  }
+
+</style>
